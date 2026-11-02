@@ -33,7 +33,18 @@ export const loadEuropeMap = () =>
 export const loadDachRegions = () =>
   loadJson<RegionFeatureCollection>("/data/maps/dach-regions.geojson");
 
-export const loadFacts = () => loadJson<Fact[]>("/data/facts/europe.json");
+export const loadFacts = async () => {
+  const [curated, generated] = await Promise.all([
+    loadJson<Fact[]>("/data/facts/europe.json"),
+    loadJson<Fact[]>("/data/facts/generated.json"),
+  ]);
+  return [...curated, ...generated];
+};
 
-export const loadReveals = () =>
-  loadJson<RevealMap>("/data/reveals/europe.json");
+export const loadReveals = async () => {
+  const [curated, generated] = await Promise.all([
+    loadJson<RevealMap>("/data/reveals/europe.json"),
+    loadJson<RevealMap>("/data/reveals/generated.json"),
+  ]);
+  return { ...curated, ...generated };
+};

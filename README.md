@@ -2,11 +2,11 @@
 
 Geografie-Spiel für den Browser — später Android. Länder werden nicht über Flaggen, sondern über ihre Orte, Landschaften und Rekorde entdeckt.
 
-**Aktueller Stand: M2 (Atlas & Fortschritt).** Die Europa-Karte läuft im Browser, Länder und DACH-Regionen lassen sich antippen. Der Quiz-Modus ist spielbar: Multiple Choice, Drag-to-Map, Land antippen, Bundesland/Kanton antippen sowie Fragen zu Meeren und Meerengen. Nach der Auflösung wird das Ziel auf der Karte markiert — Flüsse als Linie, Seen und Meere als Fläche, Berge und Städte als Punkt. Der Länder-Atlas zeigt alle Fakten, Orte, Gewässer und Regionen; Mastery, Erfolge und die Tages-Challenge sind aktiv.
+**Aktueller Stand: M3 (Europa & Politur).** Die Europa-Karte läuft im Browser, Länder und DACH-Regionen lassen sich antippen. Der Quiz-Modus ist spielbar: Multiple Choice, Drag-to-Map, Land antippen, Bundesland/Kanton antippen sowie Fragen zu Meeren und Meerengen. Nach der Auflösung wird das Ziel auf der Karte markiert — Flüsse als Linie, Seen und Meere als Fläche, Berge und Städte als Punkt. Der Länder-Atlas zeigt alle Fakten, Orte, Gewässer und Regionen; Mastery, Erfolge, Tages-Challenge, Onboarding, Sound und Einstellungen sind aktiv. 95 Fakten (58 kuratiert + 37 generiert) decken alle europäischen Länder mit Kernfakten ab.
 
 ![Europa-Karte mit ausgewähltem Deutschland](docs/m0-map.png)
 
-Weitere Eindrücke: [Quiz-Run](docs/m1-run.png) · [Feedback](docs/m1-feedback.png) · [Meerengen-Frage](docs/m1-strait.png) · [Fluss-Auflösung](docs/m2-reveal-river.png) · [See-Auflösung](docs/m2-reveal-lake.png) · [Länder-Atlas](docs/m2-atlas.png) · [Sammlung](docs/m2-collection.png) · [Tages-Challenge](docs/m2-daily.png)
+Weitere Eindrücke: [Quiz-Run](docs/m1-run.png) · [Feedback](docs/m1-feedback.png) · [Meerengen-Frage](docs/m1-strait.png) · [Fluss-Auflösung](docs/m2-reveal-river.png) · [See-Auflösung](docs/m2-reveal-lake.png) · [Länder-Atlas](docs/m2-atlas.png) · [Sammlung](docs/m2-collection.png) · [Tages-Challenge](docs/m2-daily.png) · [Onboarding](docs/m3-onboarding.png) · [Einstellungen](docs/m3-settings.png)
 
 ## Schnellstart
 
@@ -46,7 +46,7 @@ Die Karten und Basisdaten werden aus **Natural Earth 1:10m** (Public Domain) erz
 - Admin-1-Regionen für Deutschland, Österreich und die Schweiz
 - Hauptstädte aus dem Natural-Earth-Layer „Populated Places“
 - Einwohner und Fläche aus World-Bank-/Wikidata-Referenzdaten (2023)
-- 58 kuratierte Fakten für 10 Länder, inkl. Meere und Meerengen
+- 95 Fakten für alle 45 Länder: 58 kuratiert, 37 aus Natural Earth generiert (Flüsse/Seen), inkl. Meere und Meerengen
 
 Die Pipeline liegt in `tools/build-data.ts` und wird mit `npm run data` ausgeführt. Rohdaten liegen in `data/raw/` (nicht im Repo), die erzeugten Dateien in `public/data/`.
 
@@ -69,11 +69,10 @@ e2e/            Playwright-Tests
 docs/           Screenshots
 ```
 
-## Nächste Schritte (M3)
+## Nächste Schritte (M4)
 
-- Europa komplett: alle Länder mit Kernfakten
-- Regionen für weitere europäische Länder (Frankreich, Italien, Spanien, Polen …)
-- Onboarding, Sound, Animationen, Einstellungen und Credits
-- Content-QA und Playtest
+- Android-Build über Capacitor, Safe Areas, Zurück-Taste und Performance
+- Regionen für weitere Länder (Frankreich, Italien, Spanien, Polen …)
+- Playtest, Content-QA und Store-Vorbereitung
 
 Der vollständige Plan steht in [`PLAN.md`](PLAN.md).

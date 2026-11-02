@@ -664,11 +664,11 @@ spasmitflaggen/
 
 ### M3 — Europa komplett & Politur
 
-- Alle europäischen Länder mit Kernfakten.
-- Regionen für weitere europäische Länder (Frankreich, Italien, Spanien, Polen, ...).
+- Alle 45 Länder mit Kernfakten (Hauptstadt, höchster Punkt, generierte Flüsse/Seen).
+- Regionen für DACH; weitere Länder folgen.
 - Onboarding, Sound, Animationen, Einstellungen, Credits.
 - Content-QA, Mobile-Playtest, Bugfixes.
-- **Abnahme:** Europa-Run und Atlas fühlen sich vollständig an; keine kritischen Bugs.
+- **Abnahme:** Europa-Run und Atlas fühlen sich vollständig an; keine kritischen Bugs. Offen: Regionen für weitere Länder und Playtest.
 
 ### M4 — Android
 

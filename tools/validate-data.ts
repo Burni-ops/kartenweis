@@ -30,8 +30,17 @@ const countryFile = path.join(DATA, "countries.json");
 const europeFile = path.join(DATA, "maps", "europe.geojson");
 const regionsFile = path.join(DATA, "maps", "dach-regions.geojson");
 const revealsFile = path.join(DATA, "reveals", "europe.json");
+const generatedFactsFile = path.join(DATA, "facts", "generated.json");
+const generatedRevealsFile = path.join(DATA, "reveals", "generated.json");
 
-for (const file of [countryFile, europeFile, regionsFile, revealsFile]) {
+for (const file of [
+  countryFile,
+  europeFile,
+  regionsFile,
+  revealsFile,
+  generatedFactsFile,
+  generatedRevealsFile,
+]) {
   if (!fs.existsSync(file)) {
     fail(`Missing file: ${path.relative(ROOT, file)}`);
   }
@@ -158,7 +167,10 @@ if (errors.length === 0) {
 
   const factsFile = path.join(DATA, "facts", "europe.json");
   if (fs.existsSync(factsFile)) {
-    const facts = readJson(factsFile);
+    const facts = [
+      ...readJson(factsFile),
+      ...readJson(generatedFactsFile),
+    ];
     const factIds = new Set<string>();
     const categories = new Set([
       "country",
@@ -225,9 +237,14 @@ if (errors.length === 0) {
       }
     }
 
-    console.log(`Validated ${facts.length} facts in public/data/facts/europe.json.`);
+    console.log(
+      `Validated ${facts.length} facts (curated + generated).`,
+    );
 
-    const reveals = readJson(revealsFile);
+    const reveals = {
+      ...readJson(revealsFile),
+      ...readJson(generatedRevealsFile),
+    };
     for (const [id, reveal] of Object.entries<any>(reveals)) {
       if (!factIds.has(id)) {
         fail(`Reveal references unknown fact: ${id}`);
@@ -259,7 +276,7 @@ if (errors.length === 0) {
     }
 
     console.log(
-      `Validated ${Object.keys(reveals).length} map reveals in public/data/reveals/europe.json.`,
+      `Validated ${Object.keys(reveals).length} map reveals (curated + generated).`,
     );
   }
 

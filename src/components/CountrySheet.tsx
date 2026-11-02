@@ -78,7 +78,7 @@ export default function CountrySheet({
           📅 {dailyDone ? "Tages-Challenge erledigt" : "Tages-Challenge starten"}
         </button>
         <p className="mt-3 text-center text-[10px] text-ink-muted">
-          Karten: Natural Earth (Public Domain) · Prototyp M2
+          Karten: Natural Earth (Public Domain) · Prototyp M3
         </p>
       </div>
     );
@@ -235,7 +235,7 @@ export default function CountrySheet({
       </div>
 
       <p className="mt-2 text-center text-[10px] text-ink-muted">
-        Prototyp M2 · Karten: Natural Earth (Public Domain) ·{" "}
+        Prototyp M3 · Karten: Natural Earth (Public Domain) ·{" "}
         {country.population_year
           ? `Einwohner ${country.population_year}`
           : "Einwohner ca."}

@@ -7,6 +7,8 @@ import ResultCard from "../components/ResultCard";
 import RunHud from "../components/RunHud";
 import AtlasPanel from "../components/AtlasPanel";
 import CollectionPanel from "../components/CollectionPanel";
+import SettingsPanel from "../components/SettingsPanel";
+import OnboardingOverlay from "../components/OnboardingOverlay";
 import {
   loadCountries,
   loadDachRegions,
@@ -25,6 +27,8 @@ import {
 } from "../game/atlas";
 import { dailySeed, todayKey } from "../game/daily";
 import { masteryMap, useProgress } from "../store/progress";
+import { useSettings } from "../store/settings";
+import { playClick, playCorrect, playWrong } from "../audio/sfx";
 import type {
   CountriesDataset,
   Country,
@@ -68,6 +72,7 @@ export default function App() {
     regions: true,
   });
   const [collectionOpen, setCollectionOpen] = useState(false);
+  const [settingsOpen, setSettingsOpen] = useState(false);
 
   const recordAnswer = useProgress((state) => state.recordAnswer);
   const recordRun = useProgress((state) => state.recordRun);
@@ -77,6 +82,14 @@ export default function App() {
   const recordDaily = useProgress((state) => state.recordDaily);
   const progressFacts = useProgress((state) => state.facts);
   const daily = useProgress((state) => state.daily);
+  const sound = useSettings((state) => state.sound);
+  const reducedMotion = useSettings((state) => state.reducedMotion);
+  const onboardingDone = useSettings(
+    (state) => state.onboardingDone,
+  );
+  const completeOnboarding = useSettings(
+    (state) => state.completeOnboarding,
+  );
 
   useEffect(() => {
     if (!import.meta.env.DEV) return;
@@ -119,6 +132,13 @@ export default function App() {
       cancelled = true;
     };
   }, []);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle(
+      "reduce-motion",
+      reducedMotion,
+    );
+  }, [reducedMotion]);
 
   const regions = useMemo(
     () =>
@@ -206,6 +226,7 @@ export default function App() {
 
       if (questions.length === 0) return;
 
+      playClick(sound);
       setSelectedCountry(null);
       setSelectedRegion(null);
       setAtlasCountry(null);
@@ -225,7 +246,7 @@ export default function App() {
       setSummary(null);
       setMode("run");
     },
-    [dataset, facts, regions],
+    [dataset, facts, regions, sound],
   );
 
   const startRun = useCallback(
@@ -310,6 +331,8 @@ export default function App() {
         category: question.category,
         country: question.countryCode,
       });
+      if (evaluation.correct) playCorrect(sound);
+      else playWrong(sound);
       setFeedback(evaluation.feedback);
       setRun((previous) => {
         if (!previous) return previous;
@@ -326,7 +349,7 @@ export default function App() {
         };
       });
     },
-    [run, feedback, recordAnswer],
+    [run, feedback, recordAnswer, sound],
   );
 
   const handleSkip = useCallback(() => {
@@ -338,6 +361,7 @@ export default function App() {
       category: question.category,
       country: question.countryCode,
     });
+    playWrong(sound);
     setFeedback({
       correct: false,
       points: 0,
@@ -469,7 +493,7 @@ export default function App() {
                   Spasmitflaggen
                 </div>
                 <div className="text-[11px] font-medium text-ink-muted">
-                  Europa · {dataset.countries.length} Länder · M2
+                  Europa · {dataset.countries.length} Länder · M3
                 </div>
               </div>
               <div className="ml-auto flex shrink-0 items-center gap-1.5">
@@ -509,9 +533,10 @@ export default function App() {
                 </button>
                 <button
                   type="button"
-                  disabled
-                  aria-label="Einstellungen (kommt später)"
-                  className="hidden h-9 w-9 place-items-center rounded-full bg-paper-deep text-sm text-ink-muted opacity-70 sm:grid"
+                  onClick={() => setSettingsOpen(true)}
+                  aria-label="Einstellungen öffnen"
+                  title="Einstellungen öffnen"
+                  className="hidden h-9 w-9 place-items-center rounded-full bg-paper-deep text-sm text-ink-muted transition hover:bg-line hover:text-ink sm:grid"
                 >
                   ⚙️
                 </button>
@@ -588,6 +613,14 @@ export default function App() {
           regions={regions}
           onClose={handleCloseCollection}
         />
+      )}
+
+      {settingsOpen && (
+        <SettingsPanel onClose={() => setSettingsOpen(false)} />
+      )}
+
+      {!onboardingDone && (
+        <OnboardingOverlay onDone={completeOnboarding} />
       )}
     </main>
   );

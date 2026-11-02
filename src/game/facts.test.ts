@@ -20,12 +20,20 @@ const regions = (
     ),
   ) as { features: Array<{ properties: Region }> }
 ).features.map((feature) => feature.properties);
-const facts = JSON.parse(
-  fs.readFileSync(
-    path.join(root, "public/data/facts/europe.json"),
-    "utf8",
-  ),
-) as Fact[];
+const facts = [
+  ...(JSON.parse(
+    fs.readFileSync(
+      path.join(root, "public/data/facts/europe.json"),
+      "utf8",
+    ),
+  ) as Fact[]),
+  ...(JSON.parse(
+    fs.readFileSync(
+      path.join(root, "public/data/facts/generated.json"),
+      "utf8",
+    ),
+  ) as Fact[]),
+];
 
 describe("real data + question engine", () => {
   it("can build every fact and includes sea and strait questions", () => {

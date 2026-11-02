@@ -32,10 +32,12 @@ export function resolveGeometryReveal(
   if (question.answer.regionCode || question.answer.countryCode) {
     return null;
   }
+  const reveal = reveals[question.factId];
+  if (reveal) return reveal;
   if (question.answer.point) {
     return pointReveal(question.answer.point, question.answer.label);
   }
-  return reveals[question.factId] ?? null;
+  return null;
 }
 
 export function questionHasReveal(

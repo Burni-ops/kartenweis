@@ -13,7 +13,7 @@
     "e2e": "playwright test",
     "validate": "tsx tools/validate-data.ts",
     "check": "tsc --noEmit && npm run validate && npm run test",
-    "data": "tsx tools/build-data.ts && node tools/build-reveals.mjs",
+    "data": "tsx tools/build-data.ts && node tools/build-reveals.mjs && tsx tools/build-generated-facts.ts",
     "data:reveals": "node tools/build-reveals.mjs"
   },
   "keywords": [
@@ -27,7 +27,9 @@
   "dependencies": {
     "@turf/area": "^7.4.0",
     "@turf/bbox": "^7.4.0",
+    "@turf/boolean-intersects": "^7.4.0",
     "@turf/helpers": "^7.4.0",
+    "@turf/length": "^7.4.0",
     "framer-motion": "^14.9.0",
     "howler": "^2.2.4",
     "i18next": "^26.7.1",

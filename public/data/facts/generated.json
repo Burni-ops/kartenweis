@@ -1,0 +1,927 @@
+[
+  {
+    "id": "gen-lake-AL",
+    "country": "AL",
+    "category": "lake",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Seen liegt in Albanien?",
+    "answer": {
+      "label": "Skutarisee",
+      "point": [
+        19.280099999999997,
+        42.20205
+      ]
+    },
+    "options": [
+      "Peipussee",
+      "Loch Ness",
+      "Skutarisee",
+      "Chiemsee"
+    ],
+    "fact": "Skutarisee liegt in Albanien.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-BY",
+    "country": "BY",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Belarus?",
+    "answer": {
+      "label": "Dnipro",
+      "point": [
+        30.018077,
+        53.046454
+      ]
+    },
+    "options": [
+      "Elbe",
+      "Dnipro",
+      "Maas",
+      "Ems"
+    ],
+    "fact": "Dnipro fließt durch Belarus.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-BE",
+    "country": "BE",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Belgien?",
+    "answer": {
+      "label": "Maas",
+      "point": [
+        4.888601,
+        49.697374
+      ]
+    },
+    "options": [
+      "Neris",
+      "Inn",
+      "Maas",
+      "Garonne"
+    ],
+    "fact": "Maas fließt durch Belgien.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-BA",
+    "country": "BA",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Bosnien und Herzegowina?",
+    "answer": {
+      "label": "Save",
+      "point": [
+        17.59254,
+        45.129828
+      ]
+    },
+    "options": [
+      "Torne älv",
+      "Maas",
+      "Save",
+      "Dalälven"
+    ],
+    "fact": "Save fließt durch Bosnien und Herzegowina.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-BG",
+    "country": "BG",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Bulgarien?",
+    "answer": {
+      "label": "Donau",
+      "point": [
+        18.988292,
+        45.379462
+      ]
+    },
+    "options": [
+      "Oder",
+      "Donau",
+      "Duero",
+      "Garonne"
+    ],
+    "fact": "Donau fließt durch Bulgarien.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-EE",
+    "country": "EE",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Estland?",
+    "answer": {
+      "label": "Narva",
+      "point": [
+        27.78419,
+        59.076728
+      ]
+    },
+    "options": [
+      "Narva",
+      "Trent",
+      "Garonne",
+      "Maas"
+    ],
+    "fact": "Narva fließt durch Estland.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-lake-EE",
+    "country": "EE",
+    "category": "lake",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Seen liegt in Estland?",
+    "answer": {
+      "label": "Peipussee",
+      "point": [
+        27.391,
+        58.6186
+      ]
+    },
+    "options": [
+      "Vänern",
+      "Balaton",
+      "Peipussee",
+      "Bodensee"
+    ],
+    "fact": "Peipussee liegt in Estland.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-FI",
+    "country": "FI",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Finnland?",
+    "answer": {
+      "label": "Kemijoki",
+      "point": [
+        28.18157,
+        67.280097
+      ]
+    },
+    "options": [
+      "Kemijoki",
+      "Shannon",
+      "Torne älv",
+      "Themse"
+    ],
+    "fact": "Kemijoki fließt durch Finnland.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-lake-FI",
+    "country": "FI",
+    "category": "lake",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Seen liegt in Finnland?",
+    "answer": {
+      "label": "Saimaa",
+      "point": [
+        28.44885,
+        62.327600000000004
+      ]
+    },
+    "options": [
+      "Ladogasee",
+      "Vättern",
+      "Mälaren",
+      "Saimaa"
+    ],
+    "fact": "Saimaa liegt in Finnland.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-GR",
+    "country": "GR",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Griechenland?",
+    "answer": {
+      "label": "Evros",
+      "point": [
+        26.211355,
+        41.7508
+      ]
+    },
+    "options": [
+      "Ebro",
+      "Donau",
+      "Evros",
+      "Weichsel"
+    ],
+    "fact": "Evros fließt durch Griechenland.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-IE",
+    "country": "IE",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Irland?",
+    "answer": {
+      "label": "Shannon",
+      "point": [
+        -8.579172,
+        52.673855
+      ]
+    },
+    "options": [
+      "Vltava",
+      "Kemijoki",
+      "Donau",
+      "Shannon"
+    ],
+    "fact": "Shannon fließt durch Irland.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-lake-IE",
+    "country": "IE",
+    "category": "lake",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Seen liegt in Irland?",
+    "answer": {
+      "label": "Derg",
+      "point": [
+        -8.32965,
+        52.948
+      ]
+    },
+    "options": [
+      "Bodensee",
+      "Gardasee",
+      "Neuenburgersee",
+      "Derg"
+    ],
+    "fact": "Derg liegt in Irland.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-IS",
+    "country": "IS",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Island?",
+    "answer": {
+      "label": "Þjórsá",
+      "point": [
+        -20.149566,
+        64.04206
+      ]
+    },
+    "options": [
+      "Vltava",
+      "Torne älv",
+      "Þjórsá",
+      "Rhone"
+    ],
+    "fact": "Þjórsá fließt durch Island.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-XK",
+    "country": "XK",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Kosovo?",
+    "answer": {
+      "label": "Morava",
+      "point": [
+        21.339041,
+        43.805609
+      ]
+    },
+    "options": [
+      "Garonne",
+      "Ebro",
+      "Morava",
+      "Memel"
+    ],
+    "fact": "Morava fließt durch Kosovo.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-HR",
+    "country": "HR",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Kroatien?",
+    "answer": {
+      "label": "Donau",
+      "point": [
+        18.988292,
+        45.379462
+      ]
+    },
+    "options": [
+      "Donau",
+      "Rhone",
+      "Trent",
+      "Glomma"
+    ],
+    "fact": "Donau fließt durch Kroatien.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-LV",
+    "country": "LV",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Lettland?",
+    "answer": {
+      "label": "Düna",
+      "point": [
+        29.054454,
+        55.326361
+      ]
+    },
+    "options": [
+      "Neris",
+      "Düna",
+      "Inn",
+      "Torne älv"
+    ],
+    "fact": "Düna fließt durch Lettland.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-LT",
+    "country": "LT",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Litauen?",
+    "answer": {
+      "label": "Neris",
+      "point": [
+        25.76767,
+        54.832587
+      ]
+    },
+    "options": [
+      "Neris",
+      "Po",
+      "Kemijoki",
+      "Ebro"
+    ],
+    "fact": "Neris fließt durch Litauen.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-lake-LT",
+    "country": "LT",
+    "category": "lake",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Seen liegt in Litauen?",
+    "answer": {
+      "label": "Kaunasser Meer",
+      "point": [
+        24.1133,
+        54.848200000000006
+      ]
+    },
+    "options": [
+      "Kaunasser Meer",
+      "Vänern",
+      "Lac du Bourget",
+      "Ohridsee"
+    ],
+    "fact": "Kaunasser Meer liegt in Litauen.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-LU",
+    "country": "LU",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Luxemburg?",
+    "answer": {
+      "label": "Mosel",
+      "point": [
+        6.345985,
+        49.452122
+      ]
+    },
+    "options": [
+      "Seine",
+      "Maas",
+      "Mosel",
+      "Torne älv"
+    ],
+    "fact": "Mosel fließt durch Luxemburg.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-lake-ME",
+    "country": "ME",
+    "category": "lake",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Seen liegt in Montenegro?",
+    "answer": {
+      "label": "Skutarisee",
+      "point": [
+        19.280099999999997,
+        42.20205
+      ]
+    },
+    "options": [
+      "Mälaren",
+      "Skutarisee",
+      "Peipussee",
+      "Genfersee"
+    ],
+    "fact": "Skutarisee liegt in Montenegro.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-MK",
+    "country": "MK",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Nordmazedonien?",
+    "answer": {
+      "label": "Drin",
+      "point": [
+        20.205333,
+        42.201728
+      ]
+    },
+    "options": [
+      "Weichsel",
+      "Schelde",
+      "Drin",
+      "Torne älv"
+    ],
+    "fact": "Drin fließt durch Nordmazedonien.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-NO",
+    "country": "NO",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Norwegen?",
+    "answer": {
+      "label": "Glomma",
+      "point": [
+        10.89031,
+        61.676459
+      ]
+    },
+    "options": [
+      "Severn",
+      "Mosel",
+      "Glomma",
+      "Garonne"
+    ],
+    "fact": "Glomma fließt durch Norwegen.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-lake-NO",
+    "country": "NO",
+    "category": "lake",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Seen liegt in Norwegen?",
+    "answer": {
+      "label": "Mjøsa",
+      "point": [
+        10.846150000000002,
+        60.7619
+      ]
+    },
+    "options": [
+      "Vänern",
+      "Mjøsa",
+      "Vierwaldstättersee",
+      "Gardasee"
+    ],
+    "fact": "Mjøsa liegt in Norwegen.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-PT",
+    "country": "PT",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Portugal?",
+    "answer": {
+      "label": "Duero",
+      "point": [
+        -4.544016,
+        41.623847
+      ]
+    },
+    "options": [
+      "Weichsel",
+      "Neris",
+      "Inn",
+      "Duero"
+    ],
+    "fact": "Duero fließt durch Portugal.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-MD",
+    "country": "MD",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Republik Moldau?",
+    "answer": {
+      "label": "Dnister",
+      "point": [
+        27.069835,
+        48.562567
+      ]
+    },
+    "options": [
+      "Göta älv",
+      "Po",
+      "Ems",
+      "Dnister"
+    ],
+    "fact": "Dnister fließt durch Republik Moldau.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-RO",
+    "country": "RO",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Rumänien?",
+    "answer": {
+      "label": "Donau",
+      "point": [
+        18.988292,
+        45.379462
+      ]
+    },
+    "options": [
+      "Rhone",
+      "Schelde",
+      "Donau",
+      "Vltava"
+    ],
+    "fact": "Donau fließt durch Rumänien.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-RU",
+    "country": "RU",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Russland?",
+    "answer": {
+      "label": "Lena",
+      "point": [
+        106.699718,
+        57.045111
+      ]
+    },
+    "options": [
+      "Lena",
+      "Elbe",
+      "Kemijoki",
+      "Schelde"
+    ],
+    "fact": "Lena fließt durch Russland.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-lake-RU",
+    "country": "RU",
+    "category": "lake",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Seen liegt in Russland?",
+    "answer": {
+      "label": "Baikalsee",
+      "point": [
+        106.8349,
+        53.63195
+      ]
+    },
+    "options": [
+      "Prespasee",
+      "Baikalsee",
+      "Lough Neagh",
+      "Ohridsee"
+    ],
+    "fact": "Baikalsee liegt in Russland.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-RS",
+    "country": "RS",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Serbien?",
+    "answer": {
+      "label": "Donau",
+      "point": [
+        18.988292,
+        45.379462
+      ]
+    },
+    "options": [
+      "Shannon",
+      "Maas",
+      "Donau",
+      "Themse"
+    ],
+    "fact": "Donau fließt durch Serbien.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-SK",
+    "country": "SK",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Slowakei?",
+    "answer": {
+      "label": "Donau",
+      "point": [
+        18.988292,
+        45.379462
+      ]
+    },
+    "options": [
+      "Oder",
+      "Weser",
+      "Donau",
+      "Vltava"
+    ],
+    "fact": "Donau fließt durch Slowakei.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-SI",
+    "country": "SI",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Slowenien?",
+    "answer": {
+      "label": "Save",
+      "point": [
+        17.59254,
+        45.129828
+      ]
+    },
+    "options": [
+      "Vltava",
+      "Torne älv",
+      "Save",
+      "Rhone"
+    ],
+    "fact": "Save fließt durch Slowenien.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-lake-ES",
+    "country": "ES",
+    "category": "lake",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Seen liegt in Spanien?",
+    "answer": {
+      "label": "Embalse de Cala",
+      "point": [
+        -4.91,
+        39.33675
+      ]
+    },
+    "options": [
+      "Vättern",
+      "Embalse de Cala",
+      "Lac du Bourget",
+      "Skutarisee"
+    ],
+    "fact": "Embalse de Cala liegt in Spanien.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-CZ",
+    "country": "CZ",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Tschechien?",
+    "answer": {
+      "label": "Elbe",
+      "point": [
+        14.240245,
+        50.451443
+      ]
+    },
+    "options": [
+      "Ems",
+      "Elbe",
+      "Kemijoki",
+      "Göta älv"
+    ],
+    "fact": "Elbe fließt durch Tschechien.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-UA",
+    "country": "UA",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Ukraine?",
+    "answer": {
+      "label": "Donau",
+      "point": [
+        18.988292,
+        45.379462
+      ]
+    },
+    "options": [
+      "Main",
+      "Garonne",
+      "Tejo",
+      "Donau"
+    ],
+    "fact": "Donau fließt durch Ukraine.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-lake-UA",
+    "country": "UA",
+    "category": "lake",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Seen liegt in Ukraine?",
+    "answer": {
+      "label": "Sywaschsee",
+      "point": [
+        34.5616,
+        45.766949999999994
+      ]
+    },
+    "options": [
+      "Ladogasee",
+      "Balaton",
+      "Saimaa",
+      "Sywaschsee"
+    ],
+    "fact": "Sywaschsee liegt in Ukraine.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-river-HU",
+    "country": "HU",
+    "category": "river",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Flüsse fließt durch Ungarn?",
+    "answer": {
+      "label": "Donau",
+      "point": [
+        18.988292,
+        45.379462
+      ]
+    },
+    "options": [
+      "Dalälven",
+      "Oder",
+      "Mosel",
+      "Donau"
+    ],
+    "fact": "Donau fließt durch Ungarn.",
+    "source": "https://www.naturalearthdata.com/"
+  },
+  {
+    "id": "gen-lake-HU",
+    "country": "HU",
+    "category": "lake",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher dieser Seen liegt in Ungarn?",
+    "answer": {
+      "label": "Balaton",
+      "point": [
+        17.70865,
+        46.887150000000005
+      ]
+    },
+    "options": [
+      "Neuenburgersee",
+      "Gardasee",
+      "Balaton",
+      "Vierwaldstättersee"
+    ],
+    "fact": "Balaton liegt in Ungarn.",
+    "source": "https://www.naturalearthdata.com/"
+  }
+]

@@ -1,5 +1,22 @@
 import { test, expect } from "@playwright/test";
 
+test.beforeEach(async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem(
+      "spasmitflaggen.settings.v1",
+      JSON.stringify({
+        state: {
+          sound: false,
+          reducedMotion: true,
+          difficulty: "auto",
+          onboardingDone: true,
+        },
+        version: 1,
+      }),
+    );
+  });
+});
+
 test("loads the Europe map and selects Germany and Bavaria", async ({
   page,
 }) => {
@@ -179,6 +196,20 @@ test("opens the atlas, selects a river and reveals it on the map", async ({
 
   await expect(page.locator(".reveal-label")).toBeVisible();
   await expect(page.locator(".reveal-label")).toContainText("Rhein");
+});
+
+test("opens settings and credits", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.getByText("Europa entdecken")).toBeVisible({
+    timeout: 20_000,
+  });
+
+  await page.getByRole("button", { name: "Einstellungen öffnen" }).click();
+  await expect(page.getByText("Einstellungen")).toBeVisible();
+  await expect(page.getByText("Credits & Quellen")).toBeVisible();
+  await page
+    .getByRole("button", { name: "Einstellungen schließen" })
+    .click();
 });
 
 test("opens the collection and the daily challenge", async ({ page }) => {
