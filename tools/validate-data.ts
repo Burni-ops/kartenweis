@@ -27,15 +27,19 @@ function warn(message: string) {
 }
 
 const countryFile = path.join(DATA, "countries.json");
-const europeFile = path.join(DATA, "maps", "europe.geojson");
-const regionsFile = path.join(DATA, "maps", "dach-regions.geojson");
+const worldFile = path.join(DATA, "maps", "world.geojson");
+const regionsFile = path.join(
+  DATA,
+  "maps",
+  "world-regions.geojson",
+);
 const revealsFile = path.join(DATA, "reveals", "europe.json");
 const generatedFactsFile = path.join(DATA, "facts", "generated.json");
 const generatedRevealsFile = path.join(DATA, "reveals", "generated.json");
 
 for (const file of [
   countryFile,
-  europeFile,
+  worldFile,
   regionsFile,
   revealsFile,
   generatedFactsFile,
@@ -48,7 +52,7 @@ for (const file of [
 
 if (errors.length === 0) {
   const dataset = readJson(countryFile);
-  const europe = readJson(europeFile);
+  const world = readJson(worldFile);
   const regions = readJson(regionsFile);
 
   const countries = new Map<string, any>();
@@ -63,6 +67,14 @@ if (errors.length === 0) {
     }
     if (!country.name?.de || !country.name?.en) {
       fail(`${country.code}: missing localized name`);
+    }
+    for (const key of ["name_von", "name_in", "name_acc"] as const) {
+      if (!country[key] || typeof country[key] !== "string") {
+        fail(`${country.code}: missing ${key}`);
+      }
+    }
+    if (!dataset.continents.some((continent: any) => continent.id === country.continent)) {
+      fail(`${country.code}: unknown continent ${country.continent}`);
     }
     if (!Array.isArray(country.bbox) || country.bbox.length !== 4) {
       fail(`${country.code}: invalid bbox`);
@@ -88,7 +100,10 @@ if (errors.length === 0) {
     }
     const flagRel = (country.flag_url ?? "").replace(/^\//, "");
     const flagFile = path.join(PUBLIC, flagRel);
-    if (!country.flag_url || !fs.existsSync(flagFile)) {
+    if (
+      !country.flag_url ||
+      (!fs.existsSync(flagFile) && !/^https?:\/\//.test(country.flag_url))
+    ) {
       fail(`${country.code}: missing flag asset (${country.flag_url})`);
     }
     if (
@@ -109,16 +124,13 @@ if (errors.length === 0) {
   }
 
   const mapCodes = new Set<string>(
-    europe.features.map((feature: any) => String(feature.properties?.code)),
+    world.features
+      .filter((feature: any) => feature.properties?.playable)
+      .map((feature: any) => String(feature.properties?.code)),
   );
-  for (const code of mapCodes) {
-    if (!countries.has(code)) {
-      fail(`Europe map contains unknown country code: ${code}`);
-    }
-  }
   for (const code of countries.keys()) {
     if (!mapCodes.has(code)) {
-      fail(`Country missing from Europe map: ${code}`);
+      fail(`Country missing from world map: ${code}`);
     }
   }
 
@@ -133,7 +145,9 @@ if (errors.length === 0) {
     if (!region.name_de || !region.name_en) {
       fail(`${region.code}: missing localized name`);
     }
-    if (!["DE", "AT", "CH"].includes(region.country)) {
+    if (
+      !countries.has(region.country)
+    ) {
       fail(`${region.code}: unexpected country ${region.country}`);
     }
     if (!Array.isArray(region.bbox) || region.bbox.length !== 4) {
@@ -155,7 +169,16 @@ if (errors.length === 0) {
     }
   }
 
-  const expectedRegions: Record<string, number> = { DE: 16, AT: 9, CH: 26 };
+  const expectedRegions: Record<string, number> = {
+    DE: 16,
+    AT: 9,
+    CH: 26,
+    FR: 18,
+    IT: 20,
+    ES: 19,
+    PL: 16,
+    NL: 12,
+  };
   for (const [code, expected] of Object.entries(expectedRegions)) {
     const actual = [...regions.features].filter(
       (feature: any) => feature.properties?.country === code,
@@ -205,11 +228,11 @@ if (errors.length === 0) {
       if (
         fact.interactions?.includes("mc") &&
         (!Array.isArray(fact.options) ||
-          fact.options.length !== 4 ||
-          new Set(fact.options).size !== 4 ||
+          ![2, 4].includes(fact.options.length) ||
+          new Set(fact.options).size !== fact.options.length ||
           !fact.options.includes(fact.answer?.label))
       ) {
-        fail(`${fact.id}: MC options must be four unique values including the answer`);
+        fail(`${fact.id}: MC options must be unique values including the answer`);
       }
       if (
         fact.interactions?.includes("drag") &&
@@ -281,7 +304,7 @@ if (errors.length === 0) {
   }
 
   console.log(
-    `Validated ${countries.size} countries, ${mapCodes.size} map shapes and ${regionCodes.size} DACH regions.`,
+    `Validated ${countries.size} countries, ${mapCodes.size} map shapes and ${regionCodes.size} regions.`,
   );
 }
 

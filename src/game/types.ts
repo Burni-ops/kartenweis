@@ -1,5 +1,5 @@
 import type { Geometry } from "geojson";
-import type { BBox, LonLat } from "../data/types";
+import type { BBox, ContinentId, LonLat } from "../data/types";
 import type { Precision } from "./geo";
 
 export type Interaction = "mc" | "drag" | "tap-country" | "tap-region";
@@ -28,7 +28,7 @@ export interface FactAnswer {
 export interface Fact {
   id: string;
   country: string;
-  focus?: "europe";
+  focus?: ContinentId | "world";
   category: FactCategory;
   interactions: Interaction[];
   difficulty: 1 | 2 | 3 | 4;
@@ -41,7 +41,8 @@ export interface Fact {
 
 export type MapFocus =
   | { kind: "country"; code: string }
-  | { kind: "europe" };
+  | { kind: "continent"; id: ContinentId }
+  | { kind: "world" };
 
 export interface Question {
   /** Stable id used for mastery tracking, including synthetic questions. */
@@ -59,7 +60,8 @@ export interface Question {
 }
 
 export interface RunConfig {
-  scope: "europe" | "country";
+  scope: "world" | "continent" | "country";
+  continent?: ContinentId;
   countryCode?: string;
   count: number;
   seed: number;

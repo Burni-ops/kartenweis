@@ -61,7 +61,7 @@ export function buildAtlasFeatures(
       id: `capital:${country.code}`,
       label: country.capital.name_de,
       category: "capital",
-      fact: `${country.capital.name_de} ist die Hauptstadt von ${country.name.de}.`,
+      fact: `${country.capital.name_de} ist die Hauptstadt ${country.name_von}.`,
       source: `https://www.wikidata.org/wiki/${country.wikidata ?? ""}`,
       kind: "point",
       point: country.capital.point,
@@ -76,8 +76,8 @@ export function buildAtlasFeatures(
       category: "mountain",
       fact:
         country.highest_point.elevation_m !== null
-          ? `${country.highest_point.name} ist mit ${Math.round(country.highest_point.elevation_m).toLocaleString("de-DE")} m der höchste Berg von ${country.name.de}.`
-          : `${country.highest_point.name} ist der höchste Berg von ${country.name.de}.`,
+          ? `${country.highest_point.name} ist mit ${Math.round(country.highest_point.elevation_m).toLocaleString("de-DE")} m der höchste Berg ${country.name_von}.`
+          : `${country.highest_point.name} ist der höchste Berg ${country.name_von}.`,
       source: `https://www.wikidata.org/wiki/${country.wikidata ?? ""}`,
       kind: "point",
       point: country.highest_point.point,
@@ -91,7 +91,7 @@ export function buildAtlasFeatures(
       id: `region:${region.code}`,
       label: region.name_de,
       category: "region",
-      fact: `${region.name_de} ist ein ${region.country === "CH" ? "Kanton" : "Bundesland"} von ${country.name.de}.`,
+      fact: `${region.name_de} ist ${["Region", "Autonome Gemeinschaft", "Autonome Region", "Autonome Stadt", "Woiwodschaft", "Provinz", "Republik", "Präfektur", "Gemeinde", "Division", "Insel", "Wilaya", "Oblast"].includes(region.type) ? "eine" : "ein"} ${region.type} ${country.name_von}.`,
       source: `https://www.wikidata.org/wiki/${region.wikidata ?? ""}`,
       kind: "region",
       regionCode: region.code,

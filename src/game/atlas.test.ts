@@ -18,7 +18,7 @@ const countries = (
 const regions = (
   JSON.parse(
     fs.readFileSync(
-      path.join(root, "public/data/maps/dach-regions.geojson"),
+      path.join(root, "public/data/maps/world-regions.geojson"),
       "utf8",
     ),
   ) as { features: Array<{ properties: Region }> }

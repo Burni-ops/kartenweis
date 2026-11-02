@@ -43,8 +43,12 @@ function country(
     has_regions: code === "DE",
     region_label: code === "DE" ? "Bundesland" : null,
     region_plural: code === "DE" ? "Bundesländer" : null,
-    regions_map: code === "DE" ? "/data/maps/dach-regions.geojson" : null,
-    map: "/data/maps/europe.geojson",
+    regions_map:
+      code === "DE" ? "/data/maps/world-regions.geojson" : null,
+    map: "/data/maps/world.geojson",
+    name_von: `von ${name}`,
+    name_in: `in ${name}`,
+    name_acc: name,
   };
 }
 
@@ -159,7 +163,7 @@ const facts: Fact[] = [
 describe("buildRun", () => {
   it("builds a varied Europe run with unique fact ids", () => {
     const run = buildRun(
-      { scope: "europe", count: 10, seed: 42 },
+      { scope: "continent", continent: "europe", count: 10, seed: 42 },
       countries,
       regions,
       facts,
@@ -219,7 +223,7 @@ describe("buildRun", () => {
 
   it("is deterministic for the same seed", () => {
     const first = buildRun(
-      { scope: "europe", count: 10, seed: 99 },
+      { scope: "continent", continent: "europe", count: 10, seed: 99 },
       countries,
       regions,
       facts,
@@ -227,7 +231,7 @@ describe("buildRun", () => {
       mulberry32(99),
     );
     const second = buildRun(
-      { scope: "europe", count: 10, seed: 99 },
+      { scope: "continent", continent: "europe", count: 10, seed: 99 },
       countries,
       regions,
       facts,
@@ -241,7 +245,7 @@ describe("buildRun", () => {
 
   it("includes European sea and strait facts with a Europe focus", () => {
     const run = buildRun(
-      { scope: "europe", count: 100, seed: 11 },
+      { scope: "continent", continent: "europe", count: 100, seed: 11 },
       countries,
       regions,
       facts,
@@ -255,7 +259,7 @@ describe("buildRun", () => {
       (question) =>
         question.category === "strait" && question.countryCode === "EU",
     );
-    expect(sea?.focus.kind).toBe("europe");
-    expect(strait?.focus.kind).toBe("europe");
+    expect(sea?.focus.kind).toBe("continent");
+    expect(strait?.focus.kind).toBe("continent");
   });
 });

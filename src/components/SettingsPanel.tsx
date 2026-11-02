@@ -168,7 +168,7 @@ export default function SettingsPanel({ onClose }: Props) {
             </li>
           </ul>
           <p className="mt-2 text-[10px] text-ink-muted">
-            Prototyp M3 · Angaben ohne Gewähr · Keine Accounts, keine
+            Prototyp M4 · Angaben ohne Gewähr · Keine Accounts, keine
             Werbung, kein Tracking.
           </p>
         </div>

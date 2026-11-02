@@ -1,0 +1,3656 @@
+{
+  "retrieved_at": "2026-11-02T18:30:06.466Z",
+  "sources": {
+    "wikidata": "https://query.wikidata.org/",
+    "world_bank": "https://api.worldbank.org/v2/",
+    "natural_earth": "https://www.naturalearthdata.com/"
+  },
+  "countries": {
+    "ID": {
+      "wikidata": "Q252",
+      "name": "Indonesien",
+      "capital": "Jakarta",
+      "population": 281190067,
+      "population_year": 2023,
+      "area_km2": 1916906.8,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Carstensz-Pyramide",
+        "elevation_m": 4884,
+        "point": [
+          137.183333333,
+          -4.083333333
+        ]
+      },
+      "ne_population": 270625568,
+      "ne_population_year": 2019
+    },
+    "MY": {
+      "wikidata": "Q833",
+      "name": "Malaysia",
+      "capital": "Kuala Lumpur",
+      "population": 35126298,
+      "population_year": 2023,
+      "area_km2": 330241,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Kinabalu",
+        "elevation_m": 4095,
+        "point": [
+          116.558611111,
+          6.075
+        ]
+      },
+      "ne_population": 31949777,
+      "ne_population_year": 2019
+    },
+    "CL": {
+      "wikidata": "Q298",
+      "name": "Chile",
+      "capital": "Santiago de Chile",
+      "population": 19658835,
+      "population_year": 2023,
+      "area_km2": 757244.88,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Nevado Ojos del Salado",
+        "elevation_m": 6893,
+        "point": [
+          -68.541388888,
+          -27.109722222
+        ]
+      },
+      "ne_population": 18952038,
+      "ne_population_year": 2019
+    },
+    "BO": {
+      "wikidata": "Q750",
+      "name": "Bolivien",
+      "capital": "Sucre",
+      "population": 12244159,
+      "population_year": 2023,
+      "area_km2": 1098580,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Sajama",
+        "elevation_m": 6542,
+        "point": [
+          -68.883055555,
+          -18.108055555
+        ]
+      },
+      "ne_population": 11513100,
+      "ne_population_year": 2019
+    },
+    "PE": {
+      "wikidata": "Q419",
+      "name": "Peru",
+      "capital": "Lima",
+      "population": 33845617,
+      "population_year": 2023,
+      "area_km2": 1285215.6,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Huascarán",
+        "elevation_m": 6768,
+        "point": [
+          -77.6,
+          -9.116666666
+        ]
+      },
+      "ne_population": 32510453,
+      "ne_population_year": 2019
+    },
+    "AR": {
+      "wikidata": "Q414",
+      "name": "Argentinien",
+      "capital": "Buenos Aires",
+      "population": 45538401,
+      "population_year": 2023,
+      "area_km2": 2780400,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Q39739",
+        "elevation_m": 6962,
+        "point": [
+          -70.011666666,
+          -32.653055555
+        ]
+      },
+      "ne_population": 44938712,
+      "ne_population_year": 2019
+    },
+    "CY": {
+      "wikidata": "Q229",
+      "name": "Zypern",
+      "capital": "Nikosia",
+      "population": 1344976,
+      "population_year": 2023,
+      "area_km2": 9250,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Olympos",
+        "elevation_m": 1952,
+        "point": [
+          32.863888888,
+          34.936666666
+        ]
+      },
+      "ne_population": 1198575,
+      "ne_population_year": 2019
+    },
+    "IN": {
+      "wikidata": "Q668",
+      "name": "Indien",
+      "capital": "Neu-Delhi",
+      "population": 1438069596,
+      "population_year": 2023,
+      "area_km2": 3287263,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Kangchendzönga",
+        "elevation_m": 8586,
+        "point": [
+          88.147353055,
+          27.703003055
+        ]
+      },
+      "ne_population": 1366417754,
+      "ne_population_year": 2019
+    },
+    "CN": {
+      "wikidata": "Q148",
+      "name": "Volksrepublik China",
+      "capital": "Peking",
+      "population": 1410710000,
+      "population_year": 2023,
+      "area_km2": 9562910,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mount Everest",
+        "elevation_m": 8848.86,
+        "point": [
+          86.925,
+          27.988055555
+        ]
+      },
+      "ne_population": 1397715000,
+      "ne_population_year": 2019
+    },
+    "IL": {
+      "wikidata": "Q801",
+      "name": "Israel",
+      "capital": "Jerusalem",
+      "population": 9849000,
+      "population_year": 2023,
+      "area_km2": 22070,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Har Meron",
+        "elevation_m": 1208,
+        "point": [
+          35.412222222,
+          32.9975
+        ]
+      },
+      "ne_population": 9053300,
+      "ne_population_year": 2019
+    },
+    "LB": {
+      "wikidata": "Q822",
+      "name": "Libanon",
+      "capital": "Beirut",
+      "population": 5773493,
+      "population_year": 2023,
+      "area_km2": 10452,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Al-Qurnat as-Sauda",
+        "elevation_m": 3088,
+        "point": [
+          36.116666666,
+          34.3
+        ]
+      },
+      "ne_population": 6855713,
+      "ne_population_year": 2019
+    },
+    "ET": {
+      "wikidata": "Q115",
+      "name": "Äthiopien",
+      "capital": "Addis Abeba",
+      "population": 128691692,
+      "population_year": 2023,
+      "area_km2": 1129818.8,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Ras Daschän",
+        "elevation_m": 4533,
+        "point": [
+          38.3725,
+          13.236666666
+        ]
+      },
+      "ne_population": 112078730,
+      "ne_population_year": 2019
+    },
+    "SS": {
+      "wikidata": "Q958",
+      "name": "Südsudan",
+      "capital": "Juba",
+      "population": 11483374,
+      "population_year": 2023,
+      "area_km2": 646883,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Kinyeti",
+        "elevation_m": 3187,
+        "point": [
+          32.908888888,
+          3.9475
+        ]
+      },
+      "ne_population": 11062113,
+      "ne_population_year": 2019
+    },
+    "SO": {
+      "wikidata": "Q1045",
+      "name": "Somalia",
+      "capital": "Mogadischu",
+      "population": 18358615,
+      "population_year": 2023,
+      "area_km2": 637657,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Shimbiris",
+        "elevation_m": 2460,
+        "point": [
+          47.245,
+          10.735833333
+        ]
+      },
+      "ne_population": 10192317.3,
+      "ne_population_year": 2019
+    },
+    "KE": {
+      "wikidata": "Q114",
+      "name": "Kenia",
+      "capital": "Nairobi",
+      "population": 55339003,
+      "population_year": 2023,
+      "area_km2": 591969,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mount-Kenya-Massiv",
+        "elevation_m": 5199,
+        "point": [
+          37.2,
+          -0.1
+        ]
+      },
+      "ne_population": 52573973,
+      "ne_population_year": 2019
+    },
+    "MW": {
+      "wikidata": "Q1020",
+      "name": "Malawi",
+      "capital": "Lilongwe",
+      "population": 21104482,
+      "population_year": 2023,
+      "area_km2": 118484,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mulanje Massiv",
+        "elevation_m": 3002,
+        "point": [
+          35.65,
+          -15.9
+        ]
+      },
+      "ne_population": 18628747,
+      "ne_population_year": 2019
+    },
+    "TZ": {
+      "wikidata": "Q924",
+      "name": "Tansania",
+      "capital": "Dodoma",
+      "population": 66617606,
+      "population_year": 2023,
+      "area_km2": 945500,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Kibo",
+        "elevation_m": 5895,
+        "point": [
+          37.35903056,
+          -3.06505278
+        ]
+      },
+      "ne_population": 58005463,
+      "ne_population_year": 2019
+    },
+    "SY": {
+      "wikidata": "Q858",
+      "name": "Syrien",
+      "capital": "Damaskus",
+      "population": 23594623,
+      "population_year": 2023,
+      "area_km2": 185180,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Hermon",
+        "elevation_m": 2813.95,
+        "point": [
+          35.85,
+          33.4
+        ]
+      },
+      "ne_population": 17070135,
+      "ne_population_year": 2019
+    },
+    "SOL": {
+      "wikidata": "Q34754",
+      "name": "Somaliland",
+      "capital": "Hargeysa",
+      "population": null,
+      "population_year": null,
+      "area_km2": null,
+      "area_year": null,
+      "highest_point": {
+        "name": "Shimbiris",
+        "elevation_m": 2460,
+        "point": [
+          47.245,
+          10.735833333
+        ]
+      },
+      "ne_population": 5096159,
+      "ne_population_year": 2014
+    },
+    "FR": {
+      "wikidata": "Q142",
+      "name": "Frankreich",
+      "capital": "Paris",
+      "population": 68372286,
+      "population_year": 2023,
+      "area_km2": 606410,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mont Blanc",
+        "elevation_m": 4805.59,
+        "point": [
+          6.865,
+          45.832777777
+        ]
+      },
+      "ne_population": 67059887,
+      "ne_population_year": 2019
+    },
+    "SR": {
+      "wikidata": "Q730",
+      "name": "Suriname",
+      "capital": "Paramaribo",
+      "population": 628886,
+      "population_year": 2023,
+      "area_km2": 163820,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Julianatop",
+        "elevation_m": 1280,
+        "point": [
+          -56.535555555,
+          3.682777777
+        ]
+      },
+      "ne_population": 581363,
+      "ne_population_year": 2019
+    },
+    "GY": {
+      "wikidata": "Q734",
+      "name": "Guyana",
+      "capital": "Georgetown",
+      "population": 826353,
+      "population_year": 2023,
+      "area_km2": 214970,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Roraima-Tepui",
+        "elevation_m": 2810,
+        "point": [
+          -60.764166666,
+          5.141944444
+        ]
+      },
+      "ne_population": 782766,
+      "ne_population_year": 2019
+    },
+    "KR": {
+      "wikidata": "Q884",
+      "name": "Südkorea",
+      "capital": "Seoul",
+      "population": 51712619,
+      "population_year": 2023,
+      "area_km2": 100450,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Hallasan",
+        "elevation_m": 1947.06,
+        "point": [
+          126.516666666,
+          33.35
+        ]
+      },
+      "ne_population": 51709098,
+      "ne_population_year": 2019
+    },
+    "KP": {
+      "wikidata": "Q423",
+      "name": "Nordkorea",
+      "capital": "Pjöngjang",
+      "population": 26418204,
+      "population_year": 2023,
+      "area_km2": 120540,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Paektusan",
+        "elevation_m": 2744,
+        "point": [
+          126.83,
+          40.94
+        ]
+      },
+      "ne_population": 25666161,
+      "ne_population_year": 2019
+    },
+    "MA": {
+      "wikidata": "Q1028",
+      "name": "Marokko",
+      "capital": "Rabat",
+      "population": 37712505,
+      "population_year": 2023,
+      "area_km2": 446550,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Tubqal",
+        "elevation_m": 4167,
+        "point": [
+          -7.916111111,
+          31.061944444
+        ]
+      },
+      "ne_population": 36471769,
+      "ne_population_year": 2019
+    },
+    "CR": {
+      "wikidata": "Q800",
+      "name": "Costa Rica",
+      "capital": "San José",
+      "population": 5105525,
+      "population_year": 2023,
+      "area_km2": 51100,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Cerro Chirripó",
+        "elevation_m": 3820,
+        "point": [
+          -83.488666666,
+          9.484083333
+        ]
+      },
+      "ne_population": 5047561,
+      "ne_population_year": 2019
+    },
+    "NI": {
+      "wikidata": "Q811",
+      "name": "Nicaragua",
+      "capital": "Managua",
+      "population": 6823613,
+      "population_year": 2023,
+      "area_km2": 130370,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Cerro Mogotón",
+        "elevation_m": 2107,
+        "point": [
+          -86.3986118,
+          13.7630361
+        ]
+      },
+      "ne_population": 6545502,
+      "ne_population_year": 2019
+    },
+    "CG": {
+      "wikidata": "Q971",
+      "name": "Republik Kongo",
+      "capital": "Brazzaville",
+      "population": 6182885,
+      "population_year": 2023,
+      "area_km2": 342000,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mont Nabebe",
+        "elevation_m": 1020,
+        "point": [
+          13.89694,
+          1.94806
+        ]
+      },
+      "ne_population": 5380508,
+      "ne_population_year": 2019
+    },
+    "CD": {
+      "wikidata": "Q974",
+      "name": "Demokratische Republik Kongo",
+      "capital": "Kinshasa",
+      "population": 105789731,
+      "population_year": 2023,
+      "area_km2": 2345410,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mount Stanley",
+        "elevation_m": 5109,
+        "point": [
+          29.871666666,
+          0.385833333
+        ]
+      },
+      "ne_population": 86790567,
+      "ne_population_year": 2019
+    },
+    "BT": {
+      "wikidata": "Q917",
+      "name": "Bhutan",
+      "capital": "Thimphu",
+      "population": 786385,
+      "population_year": 2023,
+      "area_km2": 38390,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Gangkhar Puensum",
+        "elevation_m": 7570,
+        "point": [
+          90.455,
+          28.046944444
+        ]
+      },
+      "ne_population": 763092,
+      "ne_population_year": 2019
+    },
+    "UA": {
+      "wikidata": "Q212",
+      "name": "Ukraine",
+      "capital": "Kiew",
+      "population": 37732836,
+      "population_year": 2023,
+      "area_km2": 603550,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Howerla",
+        "elevation_m": 2061,
+        "point": [
+          24.5,
+          48.160277777
+        ]
+      },
+      "ne_population": 44385155,
+      "ne_population_year": 2019
+    },
+    "BY": {
+      "wikidata": "Q184",
+      "name": "Belarus",
+      "capital": "Minsk",
+      "population": 9178298,
+      "population_year": 2023,
+      "area_km2": 207629,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Dsjarschynskaja Hara",
+        "elevation_m": 345,
+        "point": [
+          27.065833333,
+          53.848611111
+        ]
+      },
+      "ne_population": 9466856,
+      "ne_population_year": 2019
+    },
+    "NA": {
+      "wikidata": "Q1030",
+      "name": "Namibia",
+      "capital": "Windhoek",
+      "population": 2963095,
+      "population_year": 2023,
+      "area_km2": 824292,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Brandbergmassiv",
+        "elevation_m": 2573,
+        "point": [
+          14.5775,
+          -21.1495
+        ]
+      },
+      "ne_population": 2494530,
+      "ne_population_year": 2019
+    },
+    "ZA": {
+      "wikidata": "Q258",
+      "name": "Südafrika",
+      "capital": "Bloemfontein",
+      "population": 63212384,
+      "population_year": 2023,
+      "area_km2": 1219090,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mafadi",
+        "elevation_m": 3450,
+        "point": [
+          29.35832,
+          -29.20286
+        ]
+      },
+      "ne_population": 58558270,
+      "ne_population_year": 2019
+    },
+    "OM": {
+      "wikidata": "Q842",
+      "name": "Oman",
+      "capital": "Maskat",
+      "population": 5049269,
+      "population_year": 2023,
+      "area_km2": 309500,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Dschabal Schams",
+        "elevation_m": 3018,
+        "point": [
+          57.2637937,
+          23.2373882
+        ]
+      },
+      "ne_population": 4974986,
+      "ne_population_year": 2019
+    },
+    "UZ": {
+      "wikidata": "Q265",
+      "name": "Usbekistan",
+      "capital": "Taschkent",
+      "population": 35652307,
+      "population_year": 2023,
+      "area_km2": 448920,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Hasrat Sulton",
+        "elevation_m": 4643,
+        "point": [
+          68.172222222,
+          38.948333333
+        ]
+      },
+      "ne_population": 33580650,
+      "ne_population_year": 2019
+    },
+    "TJ": {
+      "wikidata": "Q863",
+      "name": "Tadschikistan",
+      "capital": "Duschanbe",
+      "population": 10389799,
+      "population_year": 2023,
+      "area_km2": 141379,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Pik Kommunisma",
+        "elevation_m": 7495,
+        "point": [
+          72.015347,
+          38.942732
+        ]
+      },
+      "ne_population": 9321018,
+      "ne_population_year": 2019
+    },
+    "LT": {
+      "wikidata": "Q37",
+      "name": "Litauen",
+      "capital": "Vilnius",
+      "population": 2871585,
+      "population_year": 2023,
+      "area_km2": 65290,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Aukštojas",
+        "elevation_m": 293.84,
+        "point": [
+          25.634444444,
+          54.529444444
+        ]
+      },
+      "ne_population": 2786844,
+      "ne_population_year": 2019
+    },
+    "BR": {
+      "wikidata": "Q155",
+      "name": "Brasilien",
+      "capital": "Brasília",
+      "population": 211140729,
+      "population_year": 2023,
+      "area_km2": 8510420,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Pico da Neblina",
+        "elevation_m": 2994,
+        "point": [
+          -66.005358333,
+          0.805494444
+        ]
+      },
+      "ne_population": 211049527,
+      "ne_population_year": 2019
+    },
+    "UY": {
+      "wikidata": "Q77",
+      "name": "Uruguay",
+      "capital": "Montevideo",
+      "population": 3388081,
+      "population_year": 2023,
+      "area_km2": 176220,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Cerro Catedral",
+        "elevation_m": 513.7,
+        "point": [
+          -54.673611111,
+          -34.380833333
+        ]
+      },
+      "ne_population": 3461734,
+      "ne_population_year": 2019
+    },
+    "MN": {
+      "wikidata": "Q711",
+      "name": "Mongolei",
+      "capital": "Ulaanbaatar",
+      "population": 3481145,
+      "population_year": 2023,
+      "area_km2": 1564115.75,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Chüiten-Gipfel",
+        "elevation_m": 4374,
+        "point": [
+          87.819166666,
+          49.145833333
+        ]
+      },
+      "ne_population": 3225167,
+      "ne_population_year": 2019
+    },
+    "RU": {
+      "wikidata": "Q159",
+      "name": "Russland",
+      "capital": "Moskau",
+      "population": 143826130,
+      "population_year": 2023,
+      "area_km2": 17125190,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Elbrus",
+        "elevation_m": 5642,
+        "point": [
+          42.437875,
+          43.35254
+        ]
+      },
+      "ne_population": 144373535,
+      "ne_population_year": 2019
+    },
+    "CZ": {
+      "wikidata": "Q213",
+      "name": "Tschechien",
+      "capital": "Prag",
+      "population": 10864042,
+      "population_year": 2023,
+      "area_km2": 78871.43,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Schneekoppe",
+        "elevation_m": 1603.3,
+        "point": [
+          15.740277777,
+          50.736111111
+        ]
+      },
+      "ne_population": 10669709,
+      "ne_population_year": 2019
+    },
+    "DE": {
+      "wikidata": "Q183",
+      "name": "Deutschland",
+      "capital": "Berlin",
+      "population": 83287273,
+      "population_year": 2023,
+      "area_km2": 357680,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Zugspitze",
+        "elevation_m": 2962.06,
+        "point": [
+          10.986314,
+          47.421217
+        ]
+      },
+      "ne_population": 83132799,
+      "ne_population_year": 2019
+    },
+    "EE": {
+      "wikidata": "Q191",
+      "name": "Estland",
+      "capital": "Tallinn",
+      "population": 1370286,
+      "population_year": 2023,
+      "area_km2": 45340,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Suur Munamägi",
+        "elevation_m": 317.4,
+        "point": [
+          27.060047,
+          57.714045
+        ]
+      },
+      "ne_population": 1326590,
+      "ne_population_year": 2019
+    },
+    "LV": {
+      "wikidata": "Q211",
+      "name": "Lettland",
+      "capital": "Riga",
+      "population": 1883710,
+      "population_year": 2023,
+      "area_km2": 64590,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Gaiziņkalns",
+        "elevation_m": 311.94,
+        "point": [
+          25.959356944,
+          56.870040555
+        ]
+      },
+      "ne_population": 1912789,
+      "ne_population_year": 2019
+    },
+    "NO": {
+      "wikidata": "Q20",
+      "name": "Norwegen",
+      "capital": "Oslo",
+      "population": 5519601,
+      "population_year": 2023,
+      "area_km2": 624500,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Galdhøpiggen",
+        "elevation_m": 2468.854,
+        "point": [
+          8.3,
+          61.633333333
+        ]
+      },
+      "ne_population": 5347896,
+      "ne_population_year": 2019
+    },
+    "SE": {
+      "wikidata": "Q34",
+      "name": "Schweden",
+      "capital": "Stockholm",
+      "population": 10536632,
+      "population_year": 2023,
+      "area_km2": 528660,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Kebnekaise",
+        "elevation_m": 2096.8,
+        "point": [
+          18.55,
+          67.883333333
+        ]
+      },
+      "ne_population": 10285453,
+      "ne_population_year": 2019
+    },
+    "FI": {
+      "wikidata": "Q33",
+      "name": "Finnland",
+      "capital": "Helsinki",
+      "population": 5583911,
+      "population_year": 2023,
+      "area_km2": 338480,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Haltitunturi",
+        "elevation_m": 1361.4,
+        "point": [
+          21.285555555,
+          69.312777777
+        ]
+      },
+      "ne_population": 5520314,
+      "ne_population_year": 2019
+    },
+    "VN": {
+      "wikidata": "Q881",
+      "name": "Vietnam",
+      "capital": "Hanoi",
+      "population": 100352192,
+      "population_year": 2023,
+      "area_km2": 331338.31,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Fansipan",
+        "elevation_m": 3143,
+        "point": [
+          103.7753148,
+          22.3033319
+        ]
+      },
+      "ne_population": 96462106,
+      "ne_population_year": 2019
+    },
+    "KH": {
+      "wikidata": "Q424",
+      "name": "Kambodscha",
+      "capital": "Phnom Penh",
+      "population": 17423880,
+      "population_year": 2023,
+      "area_km2": 181035,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Phnom Aural",
+        "elevation_m": 1813,
+        "point": [
+          104.170555555,
+          12.031944444
+        ]
+      },
+      "ne_population": 16486542,
+      "ne_population_year": 2019
+    },
+    "LU": {
+      "wikidata": "Q32",
+      "name": "Luxemburg",
+      "capital": "Luxemburg",
+      "population": 666430,
+      "population_year": 2023,
+      "area_km2": 2590,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Kneiff",
+        "elevation_m": 560,
+        "point": [
+          6.036944444,
+          50.157316666
+        ]
+      },
+      "ne_population": 619896,
+      "ne_population_year": 2019
+    },
+    "AE": {
+      "wikidata": "Q878",
+      "name": "Vereinigte Arabische Emirate",
+      "capital": "Abu Dhabi",
+      "population": 10483751,
+      "population_year": 2023,
+      "area_km2": 98647.9,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Dschabal Jais",
+        "elevation_m": 1911,
+        "point": [
+          56.18441,
+          25.9531
+        ]
+      },
+      "ne_population": 9770529,
+      "ne_population_year": 2019
+    },
+    "BE": {
+      "wikidata": "Q31",
+      "name": "Belgien",
+      "capital": "Brüssel",
+      "population": 11779946,
+      "population_year": 2023,
+      "area_km2": 30689,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Botrange",
+        "elevation_m": 694.24,
+        "point": [
+          6.093056,
+          50.501667
+        ]
+      },
+      "ne_population": 11484055,
+      "ne_population_year": 2019
+    },
+    "GE": {
+      "wikidata": "Q230",
+      "name": "Georgien",
+      "capital": "Tiflis",
+      "population": 3715483,
+      "population_year": 2023,
+      "area_km2": 69700,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Schchara",
+        "elevation_m": 5193.2,
+        "point": [
+          43.111666666,
+          42.999444444
+        ]
+      },
+      "ne_population": 3720382,
+      "ne_population_year": 2019
+    },
+    "MK": {
+      "wikidata": "Q221",
+      "name": "Nordmazedonien",
+      "capital": "Skopje",
+      "population": 1827816,
+      "population_year": 2023,
+      "area_km2": 25710,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Korab",
+        "elevation_m": 2764,
+        "point": [
+          20.5467,
+          41.7903
+        ]
+      },
+      "ne_population": 2083459,
+      "ne_population_year": 2019
+    },
+    "AL": {
+      "wikidata": "Q222",
+      "name": "Albanien",
+      "capital": "Tirana",
+      "population": 2411658,
+      "population_year": 2023,
+      "area_km2": 28750,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Korab",
+        "elevation_m": 2764,
+        "point": [
+          20.5467,
+          41.7903
+        ]
+      },
+      "ne_population": 2854191,
+      "ne_population_year": 2019
+    },
+    "AZ": {
+      "wikidata": "Q227",
+      "name": "Aserbaidschan",
+      "capital": "Baku",
+      "population": 10153958,
+      "population_year": 2023,
+      "area_km2": 86600,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Bazardüzü",
+        "elevation_m": 2706,
+        "point": [
+          47.83674,
+          41.23429
+        ]
+      },
+      "ne_population": 10023318,
+      "ne_population_year": 2019
+    },
+    "XK": {
+      "wikidata": "Q1246",
+      "name": "Kosovo",
+      "capital": "Pristina",
+      "population": null,
+      "population_year": null,
+      "area_km2": null,
+      "area_year": null,
+      "highest_point": {
+        "name": "Gjeravica",
+        "elevation_m": 2656,
+        "point": [
+          20.140833333,
+          42.532777777
+        ]
+      },
+      "ne_population": 1794248,
+      "ne_population_year": 2019
+    },
+    "TR": {
+      "wikidata": "Q43",
+      "name": "Türkei",
+      "capital": "Ankara",
+      "population": 85325965,
+      "population_year": 2023,
+      "area_km2": 785350,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Ararat",
+        "elevation_m": 5137,
+        "point": [
+          44.298333333,
+          39.701944444
+        ]
+      },
+      "ne_population": 83429615,
+      "ne_population_year": 2019
+    },
+    "ES": {
+      "wikidata": "Q29",
+      "name": "Spanien",
+      "capital": "Madrid",
+      "population": 48352528,
+      "population_year": 2023,
+      "area_km2": 505975.98,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Teide",
+        "elevation_m": 3715,
+        "point": [
+          -16.643611111,
+          28.272638888
+        ]
+      },
+      "ne_population": 47076781,
+      "ne_population_year": 2019
+    },
+    "LA": {
+      "wikidata": "Q819",
+      "name": "Laos",
+      "capital": "Vientiane",
+      "population": 7664993,
+      "population_year": 2023,
+      "area_km2": 236800,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Phu Bia",
+        "elevation_m": 2819,
+        "point": [
+          103.133333333,
+          18.983333333
+        ]
+      },
+      "ne_population": 7169455,
+      "ne_population_year": 2019
+    },
+    "KG": {
+      "wikidata": "Q813",
+      "name": "Kirgisistan",
+      "capital": "Bischkek",
+      "population": 7099750,
+      "population_year": 2023,
+      "area_km2": 199950,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Pik Pobedy",
+        "elevation_m": 7439,
+        "point": [
+          80.128713,
+          42.034662
+        ]
+      },
+      "ne_population": 6456900,
+      "ne_population_year": 2019
+    },
+    "AM": {
+      "wikidata": "Q399",
+      "name": "Armenien",
+      "capital": "Jerewan",
+      "population": 2964300,
+      "population_year": 2023,
+      "area_km2": 29740,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Aragaz",
+        "elevation_m": 4090,
+        "point": [
+          44.195277777,
+          40.523055555
+        ]
+      },
+      "ne_population": 2957731,
+      "ne_population_year": 2019
+    },
+    "DK": {
+      "wikidata": "Q35",
+      "name": "Dänemark",
+      "capital": "Kopenhagen",
+      "population": 5946952,
+      "population_year": 2023,
+      "area_km2": 42920,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Møllehøj",
+        "elevation_m": 170.86,
+        "point": [
+          9.82633,
+          55.97746
+        ]
+      },
+      "ne_population": 5818553,
+      "ne_population_year": 2019
+    },
+    "LY": {
+      "wikidata": "Q1016",
+      "name": "Libyen",
+      "capital": "Tripolis",
+      "population": 7305659,
+      "population_year": 2023,
+      "area_km2": 1759540,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Bikku Bitti",
+        "elevation_m": 2267,
+        "point": [
+          19.206592,
+          22.0036734
+        ]
+      },
+      "ne_population": 6777452,
+      "ne_population_year": 2019
+    },
+    "TN": {
+      "wikidata": "Q948",
+      "name": "Tunesien",
+      "capital": "Tunis",
+      "population": 12200431,
+      "population_year": 2023,
+      "area_km2": 163610,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Djebel Chambi",
+        "elevation_m": 1544,
+        "point": [
+          8.683055555,
+          35.206666666
+        ]
+      },
+      "ne_population": 11694719,
+      "ne_population_year": 2019
+    },
+    "RO": {
+      "wikidata": "Q218",
+      "name": "Rumänien",
+      "capital": "Bukarest",
+      "population": 19061062,
+      "population_year": 2023,
+      "area_km2": 238400,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Moldoveanu",
+        "elevation_m": 2544,
+        "point": [
+          24.736211111,
+          45.599438888
+        ]
+      },
+      "ne_population": 19356544,
+      "ne_population_year": 2019
+    },
+    "HU": {
+      "wikidata": "Q28",
+      "name": "Ungarn",
+      "capital": "Budapest",
+      "population": 9592186,
+      "population_year": 2023,
+      "area_km2": 93030,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Kékes",
+        "elevation_m": 1014,
+        "point": [
+          20.012777777,
+          47.872222222
+        ]
+      },
+      "ne_population": 9769949,
+      "ne_population_year": 2019
+    },
+    "SK": {
+      "wikidata": "Q214",
+      "name": "Slowakei",
+      "capital": "Bratislava",
+      "population": 5426740,
+      "population_year": 2023,
+      "area_km2": 49030,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Gerlsdorfer Spitze",
+        "elevation_m": 2654.4,
+        "point": [
+          20.133888888,
+          49.164166666
+        ]
+      },
+      "ne_population": 5454073,
+      "ne_population_year": 2019
+    },
+    "PL": {
+      "wikidata": "Q36",
+      "name": "Polen",
+      "capital": "Warschau",
+      "population": 36687353,
+      "population_year": 2023,
+      "area_km2": 313930,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Rysy",
+        "elevation_m": 2501,
+        "point": [
+          20.088055555,
+          49.179444444
+        ]
+      },
+      "ne_population": 37970874,
+      "ne_population_year": 2019
+    },
+    "IE": {
+      "wikidata": "Q27",
+      "name": "Irland",
+      "capital": "Dublin",
+      "population": 5311538,
+      "population_year": 2023,
+      "area_km2": 70280,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Carrantuohill",
+        "elevation_m": 1038.6,
+        "point": [
+          -9.742777777,
+          51.998888888
+        ]
+      },
+      "ne_population": 4941444,
+      "ne_population_year": 2019
+    },
+    "GB": {
+      "wikidata": "Q145",
+      "name": "Vereinigtes Königreich",
+      "capital": "London",
+      "population": 68526000,
+      "population_year": 2023,
+      "area_km2": 243610,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Ben Nevis",
+        "elevation_m": 1344.527,
+        "point": [
+          -5.003675,
+          56.796891
+        ]
+      },
+      "ne_population": 66834405,
+      "ne_population_year": 2019
+    },
+    "GR": {
+      "wikidata": "Q41",
+      "name": "Griechenland",
+      "capital": "Athen",
+      "population": 10407351,
+      "population_year": 2023,
+      "area_km2": 131960,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Berg Olymp",
+        "elevation_m": 2917.727,
+        "point": [
+          22.35,
+          40.083333333
+        ]
+      },
+      "ne_population": 10716322,
+      "ne_population_year": 2019
+    },
+    "ZM": {
+      "wikidata": "Q953",
+      "name": "Sambia",
+      "capital": "Lusaka",
+      "population": 20723965,
+      "population_year": 2023,
+      "area_km2": 752612,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mafinga Central",
+        "elevation_m": 2339,
+        "point": [
+          33.3524,
+          -9.95269
+        ]
+      },
+      "ne_population": 17861030,
+      "ne_population_year": 2019
+    },
+    "SL": {
+      "wikidata": "Q1044",
+      "name": "Sierra Leone",
+      "capital": "Freetown",
+      "population": 8460512,
+      "population_year": 2023,
+      "area_km2": 72300,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Bintumani",
+        "elevation_m": 1945,
+        "point": [
+          -11.116666666,
+          9.225
+        ]
+      },
+      "ne_population": 7813215,
+      "ne_population_year": 2019
+    },
+    "GN": {
+      "wikidata": "Q1006",
+      "name": "Guinea",
+      "capital": "Conakry",
+      "population": 14405468,
+      "population_year": 2023,
+      "area_km2": 245857,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mont Nimba",
+        "elevation_m": 1752,
+        "point": [
+          -8.408058694,
+          7.622588194
+        ]
+      },
+      "ne_population": 12771246,
+      "ne_population_year": 2019
+    },
+    "LR": {
+      "wikidata": "Q1014",
+      "name": "Liberia",
+      "capital": "Monrovia",
+      "population": 5493031,
+      "population_year": 2023,
+      "area_km2": 111370,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mount Wuteve",
+        "elevation_m": 1440,
+        "point": [
+          -9.925,
+          8.145833333
+        ]
+      },
+      "ne_population": 4937374,
+      "ne_population_year": 2019
+    },
+    "CF": {
+      "wikidata": "Q929",
+      "name": "Zentralafrikanische Republik",
+      "capital": "Bangui",
+      "population": 5152421,
+      "population_year": 2023,
+      "area_km2": 622980,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Ngaoui",
+        "elevation_m": 1410,
+        "point": [
+          14.95,
+          6.74
+        ]
+      },
+      "ne_population": 4745185,
+      "ne_population_year": 2019
+    },
+    "SD": {
+      "wikidata": "Q1049",
+      "name": "Sudan",
+      "capital": "Chartum",
+      "population": 50042791,
+      "population_year": 2023,
+      "area_km2": 1878000,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Deriba Caldera",
+        "elevation_m": 3042,
+        "point": [
+          24.258888888,
+          12.951388888
+        ]
+      },
+      "ne_population": 42813238,
+      "ne_population_year": 2019
+    },
+    "DJ": {
+      "wikidata": "Q977",
+      "name": "Dschibuti",
+      "capital": "Dschibuti",
+      "population": 1152944,
+      "population_year": 2023,
+      "area_km2": 23200,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mousa Alli",
+        "elevation_m": 2028,
+        "point": [
+          42.405,
+          12.470833333
+        ]
+      },
+      "ne_population": 973560,
+      "ne_population_year": 2019
+    },
+    "ER": {
+      "wikidata": "Q986",
+      "name": "Eritrea",
+      "capital": "Asmara",
+      "population": 3470390,
+      "population_year": 2023,
+      "area_km2": 121630,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Soira",
+        "elevation_m": 3013,
+        "point": [
+          39.533333333,
+          14.75
+        ]
+      },
+      "ne_population": 6081196,
+      "ne_population_year": 2020
+    },
+    "AT": {
+      "wikidata": "Q40",
+      "name": "Österreich",
+      "capital": "Wien",
+      "population": 9131761,
+      "population_year": 2023,
+      "area_km2": 83879,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Großglockner",
+        "elevation_m": 3798,
+        "point": [
+          12.69385,
+          47.074528
+        ]
+      },
+      "ne_population": 8877067,
+      "ne_population_year": 2019
+    },
+    "IQ": {
+      "wikidata": "Q796",
+      "name": "Irak",
+      "capital": "Bagdad",
+      "population": 45074049,
+      "population_year": 2023,
+      "area_km2": 435050,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Cheekha Dar",
+        "elevation_m": 3611,
+        "point": [
+          44.91861,
+          36.77528
+        ]
+      },
+      "ne_population": 39309783,
+      "ne_population_year": 2019
+    },
+    "IT": {
+      "wikidata": "Q38",
+      "name": "Italien",
+      "capital": "Rom",
+      "population": 58984216,
+      "population_year": 2023,
+      "area_km2": 302070,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mont Blanc",
+        "elevation_m": 4805.59,
+        "point": [
+          6.865,
+          45.832777777
+        ]
+      },
+      "ne_population": 60297396,
+      "ne_population_year": 2019
+    },
+    "CH": {
+      "wikidata": "Q39",
+      "name": "Schweiz",
+      "capital": "Bern",
+      "population": 8888822,
+      "population_year": 2023,
+      "area_km2": 41290.7,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Dufourspitze",
+        "elevation_m": 4634,
+        "point": [
+          7.866757,
+          45.9369238
+        ]
+      },
+      "ne_population": 8574832,
+      "ne_population_year": 2019
+    },
+    "IR": {
+      "wikidata": "Q794",
+      "name": "Iran",
+      "capital": "Teheran",
+      "population": 90608707,
+      "population_year": 2023,
+      "area_km2": 1745150,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Damavand",
+        "elevation_m": 5610,
+        "point": [
+          52.109166666,
+          35.955277777
+        ]
+      },
+      "ne_population": 82913906,
+      "ne_population_year": 2019
+    },
+    "NL": {
+      "wikidata": "Q55",
+      "name": "Niederlande",
+      "capital": "Amsterdam",
+      "population": 17877117,
+      "population_year": 2023,
+      "area_km2": 41540,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mount Scenery",
+        "elevation_m": 870,
+        "point": [
+          -63.239166666,
+          17.635
+        ]
+      },
+      "ne_population": 17332850,
+      "ne_population_year": 2019
+    },
+    "LI": {
+      "wikidata": "Q347",
+      "name": "Liechtenstein",
+      "capital": "Vaduz",
+      "population": 39846,
+      "population_year": 2023,
+      "area_km2": 160,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Grauspitz",
+        "elevation_m": 2599,
+        "point": [
+          9.58128,
+          47.05272
+        ]
+      },
+      "ne_population": 38019,
+      "ne_population_year": 2019
+    },
+    "CI": {
+      "wikidata": "Q1008",
+      "name": "Elfenbeinküste",
+      "capital": "Yamoussoukro",
+      "population": 31165654,
+      "population_year": 2023,
+      "area_km2": 322460,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mont Nimba",
+        "elevation_m": 1752,
+        "point": [
+          -8.408058694,
+          7.622588194
+        ]
+      },
+      "ne_population": 25716544,
+      "ne_population_year": 2019
+    },
+    "RS": {
+      "wikidata": "Q403",
+      "name": "Serbien",
+      "capital": "Belgrad",
+      "population": 6623183,
+      "population_year": 2023,
+      "area_km2": 88490,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Rudoka",
+        "elevation_m": 2658,
+        "point": [
+          20.7765464,
+          41.9184989
+        ]
+      },
+      "ne_population": 6944975,
+      "ne_population_year": 2019
+    },
+    "ML": {
+      "wikidata": "Q912",
+      "name": "Mali",
+      "capital": "Bamako",
+      "population": 23769127,
+      "population_year": 2023,
+      "area_km2": 1240190,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Hombori Tondo",
+        "elevation_m": 1153,
+        "point": [
+          -1.668888888,
+          15.257222222
+        ]
+      },
+      "ne_population": 19658031,
+      "ne_population_year": 2019
+    },
+    "SN": {
+      "wikidata": "Q1041",
+      "name": "Senegal",
+      "capital": "Dakar",
+      "population": 18077573,
+      "population_year": 2023,
+      "area_km2": 196710,
+      "area_year": 2023,
+      "highest_point": null,
+      "ne_population": 16296364,
+      "ne_population_year": 2019
+    },
+    "NG": {
+      "wikidata": "Q1033",
+      "name": "Nigeria",
+      "capital": "Abuja",
+      "population": 227882945,
+      "population_year": 2023,
+      "area_km2": 923770,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Chappal Waddi",
+        "elevation_m": 2419,
+        "point": [
+          11.715,
+          7.036111111
+        ]
+      },
+      "ne_population": 200963599,
+      "ne_population_year": 2019
+    },
+    "BJ": {
+      "wikidata": "Q962",
+      "name": "Benin",
+      "capital": "Porto-Novo",
+      "population": 14111034,
+      "population_year": 2023,
+      "area_km2": 114760,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mont Sokbaro",
+        "elevation_m": 658,
+        "point": [
+          1.415555555,
+          9.328055555
+        ]
+      },
+      "ne_population": 11801151,
+      "ne_population_year": 2019
+    },
+    "AO": {
+      "wikidata": "Q916",
+      "name": "Angola",
+      "capital": "Luanda",
+      "population": 36749906,
+      "population_year": 2023,
+      "area_km2": 1246700,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Môco",
+        "elevation_m": 2619,
+        "point": [
+          15.183333333,
+          -12.466666666
+        ]
+      },
+      "ne_population": 31825295,
+      "ne_population_year": 2019
+    },
+    "HR": {
+      "wikidata": "Q224",
+      "name": "Kroatien",
+      "capital": "Zagreb",
+      "population": 3859686,
+      "population_year": 2023,
+      "area_km2": 88070,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Dinara",
+        "elevation_m": 1831,
+        "point": [
+          16.3829092,
+          44.0624764
+        ]
+      },
+      "ne_population": 4067500,
+      "ne_population_year": 2019
+    },
+    "SI": {
+      "wikidata": "Q215",
+      "name": "Slowenien",
+      "capital": "Ljubljana",
+      "population": 2120461,
+      "population_year": 2023,
+      "area_km2": 20480,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Triglav",
+        "elevation_m": 2864,
+        "point": [
+          13.836667,
+          46.378333
+        ]
+      },
+      "ne_population": 2087946,
+      "ne_population_year": 2019
+    },
+    "QA": {
+      "wikidata": "Q846",
+      "name": "Katar",
+      "capital": "Doha",
+      "population": 2656032,
+      "population_year": 2023,
+      "area_km2": 11490,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Qurain Abu l-Baul",
+        "elevation_m": 103,
+        "point": [
+          51.184444444,
+          24.946111111
+        ]
+      },
+      "ne_population": 2832067,
+      "ne_population_year": 2019
+    },
+    "SA": {
+      "wikidata": "Q851",
+      "name": "Saudi-Arabien",
+      "capital": "Riad",
+      "population": 33702731,
+      "population_year": 2023,
+      "area_km2": 2149690,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Dschabal Sauda",
+        "elevation_m": 3207,
+        "point": [
+          42.368055555,
+          18.267222222
+        ]
+      },
+      "ne_population": 34268528,
+      "ne_population_year": 2019
+    },
+    "BW": {
+      "wikidata": "Q963",
+      "name": "Botswana",
+      "capital": "Gaborone",
+      "population": 2480244,
+      "population_year": 2023,
+      "area_km2": 581730,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Otse Hill",
+        "elevation_m": 1491,
+        "point": [
+          25.725833333,
+          -25.018333333
+        ]
+      },
+      "ne_population": 2303697,
+      "ne_population_year": 2019
+    },
+    "ZW": {
+      "wikidata": "Q954",
+      "name": "Simbabwe",
+      "capital": "Harare",
+      "population": 16340822,
+      "population_year": 2023,
+      "area_km2": 390760,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Inyangani",
+        "elevation_m": 2592,
+        "point": [
+          32.850555555,
+          -18.311111111
+        ]
+      },
+      "ne_population": 14645468,
+      "ne_population_year": 2019
+    },
+    "PK": {
+      "wikidata": "Q843",
+      "name": "Pakistan",
+      "capital": "Islamabad",
+      "population": 247504495,
+      "population_year": 2023,
+      "area_km2": 796100,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "K2",
+        "elevation_m": 8611,
+        "point": [
+          76.513333333,
+          35.881111111
+        ]
+      },
+      "ne_population": 216565318,
+      "ne_population_year": 2019
+    },
+    "BG": {
+      "wikidata": "Q219",
+      "name": "Bulgarien",
+      "capital": "Sofia",
+      "population": 6446596,
+      "population_year": 2023,
+      "area_km2": 110996.758,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Musala",
+        "elevation_m": 2925.4,
+        "point": [
+          23.585278,
+          42.179167
+        ]
+      },
+      "ne_population": 6975761,
+      "ne_population_year": 2019
+    },
+    "TH": {
+      "wikidata": "Q869",
+      "name": "Thailand",
+      "capital": "Bangkok",
+      "population": 71702435,
+      "population_year": 2023,
+      "area_km2": 513115.021,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Doi Inthanon",
+        "elevation_m": 2565,
+        "point": [
+          98.486666666,
+          18.592222222
+        ]
+      },
+      "ne_population": 69625582,
+      "ne_population_year": 2019
+    },
+    "SM": {
+      "wikidata": "Q238",
+      "name": "San Marino",
+      "capital": "San Marino",
+      "population": 33860,
+      "population_year": 2023,
+      "area_km2": 61.2,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Titano",
+        "elevation_m": 739,
+        "point": [
+          12.452222222,
+          43.928333333
+        ]
+      },
+      "ne_population": 33860,
+      "ne_population_year": 2019
+    },
+    "HT": {
+      "wikidata": "Q790",
+      "name": "Haiti",
+      "capital": "Port-au-Prince",
+      "population": 11637398,
+      "population_year": 2023,
+      "area_km2": 27750,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Pic la Selle",
+        "elevation_m": 2674,
+        "point": [
+          -71.983333333,
+          18.366666666
+        ]
+      },
+      "ne_population": 11263077,
+      "ne_population_year": 2019
+    },
+    "DO": {
+      "wikidata": "Q786",
+      "name": "Dominikanische Republik",
+      "capital": "Santo Domingo",
+      "population": 11331265,
+      "population_year": 2023,
+      "area_km2": 146839.46,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Pico Duarte",
+        "elevation_m": 3101,
+        "point": [
+          -71.005277777,
+          19.033055555
+        ]
+      },
+      "ne_population": 10738958,
+      "ne_population_year": 2019
+    },
+    "TD": {
+      "wikidata": "Q657",
+      "name": "Tschad",
+      "capital": "N’Djamena",
+      "population": 19319064,
+      "population_year": 2023,
+      "area_km2": 1284000,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Emi Koussi",
+        "elevation_m": 3445,
+        "point": [
+          18.551111111,
+          19.789444444
+        ]
+      },
+      "ne_population": 15946876,
+      "ne_population_year": 2019
+    },
+    "KW": {
+      "wikidata": "Q817",
+      "name": "Kuwait",
+      "capital": "Kuweit-Stadt",
+      "population": 4853420,
+      "population_year": 2023,
+      "area_km2": 17820,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mutla Ridge",
+        "elevation_m": 140,
+        "point": [
+          47.633333333,
+          29.383333333
+        ]
+      },
+      "ne_population": 4207083,
+      "ne_population_year": 2019
+    },
+    "SV": {
+      "wikidata": "Q792",
+      "name": "El Salvador",
+      "capital": "San Salvador",
+      "population": 6309624,
+      "population_year": 2023,
+      "area_km2": 21040,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "El Pital",
+        "elevation_m": 2730,
+        "point": [
+          -89.116666666,
+          14.383333333
+        ]
+      },
+      "ne_population": 6453553,
+      "ne_population_year": 2019
+    },
+    "GT": {
+      "wikidata": "Q774",
+      "name": "Guatemala",
+      "capital": "Guatemala-Stadt",
+      "population": 18124838,
+      "population_year": 2023,
+      "area_km2": 108889,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Tajumulco",
+        "elevation_m": 4203,
+        "point": [
+          -91.9,
+          15.033333333
+        ]
+      },
+      "ne_population": 16604026,
+      "ne_population_year": 2019
+    },
+    "TL": {
+      "wikidata": "Q574",
+      "name": "Osttimor",
+      "capital": "Dili",
+      "population": 1384286,
+      "population_year": 2023,
+      "area_km2": 14870,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Tatamailau",
+        "elevation_m": 2963,
+        "point": [
+          125.493333333,
+          -8.906666666
+        ]
+      },
+      "ne_population": 1293119,
+      "ne_population_year": 2019
+    },
+    "BN": {
+      "wikidata": "Q921",
+      "name": "Brunei",
+      "capital": "Bandar Seri Begawan",
+      "population": 458949,
+      "population_year": 2023,
+      "area_km2": 5770,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Bukit Pagon",
+        "elevation_m": 1850,
+        "point": [
+          115.333333333,
+          4.3
+        ]
+      },
+      "ne_population": 433285,
+      "ne_population_year": 2019
+    },
+    "MC": {
+      "wikidata": "Q235",
+      "name": "Monaco",
+      "capital": "Monaco",
+      "population": 38956,
+      "population_year": 2023,
+      "area_km2": 74.9,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Chemin des Révoires",
+        "elevation_m": 162,
+        "point": [
+          7.4125,
+          43.732777777
+        ]
+      },
+      "ne_population": 38964,
+      "ne_population_year": 2019
+    },
+    "DZ": {
+      "wikidata": "Q262",
+      "name": "Algerien",
+      "capital": "Algier",
+      "population": 46164219,
+      "population_year": 2023,
+      "area_km2": 2381740,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Tahat",
+        "elevation_m": 2908,
+        "point": [
+          5.533611111,
+          23.288888888
+        ]
+      },
+      "ne_population": 43053054,
+      "ne_population_year": 2019
+    },
+    "MZ": {
+      "wikidata": "Q1029",
+      "name": "Mosambik",
+      "capital": "Maputo",
+      "population": 33635160,
+      "population_year": 2023,
+      "area_km2": 799380,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Monte Binga",
+        "elevation_m": 2436,
+        "point": [
+          33.060555555,
+          -19.774166666
+        ]
+      },
+      "ne_population": 30366036,
+      "ne_population_year": 2019
+    },
+    "SZ": {
+      "wikidata": "Q1050",
+      "name": "Eswatini",
+      "capital": "Lobamba",
+      "population": 1230506,
+      "population_year": 2023,
+      "area_km2": 17364,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Emlembe",
+        "elevation_m": 1862,
+        "point": [
+          31.133333333,
+          -25.916666666
+        ]
+      },
+      "ne_population": 1148130,
+      "ne_population_year": 2019
+    },
+    "BI": {
+      "wikidata": "Q967",
+      "name": "Burundi",
+      "capital": "Gitega",
+      "population": 13689450,
+      "population_year": 2023,
+      "area_km2": 27834,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mont Heha",
+        "elevation_m": 2684,
+        "point": [
+          29.499166666,
+          -3.603333333
+        ]
+      },
+      "ne_population": 11530580,
+      "ne_population_year": 2019
+    },
+    "RW": {
+      "wikidata": "Q1037",
+      "name": "Ruanda",
+      "capital": "Kigali",
+      "population": 13954471,
+      "population_year": 2023,
+      "area_km2": 26340,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Karisimbi",
+        "elevation_m": 4507,
+        "point": [
+          29.45,
+          -1.5
+        ]
+      },
+      "ne_population": 12626950,
+      "ne_population_year": 2019
+    },
+    "MM": {
+      "wikidata": "Q836",
+      "name": "Myanmar",
+      "capital": "Naypyidaw",
+      "population": 54133798,
+      "population_year": 2023,
+      "area_km2": 676577.738,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Hkakabo Razi",
+        "elevation_m": 5881,
+        "point": [
+          97.466666666,
+          28.333055555
+        ]
+      },
+      "ne_population": 54045420,
+      "ne_population_year": 2019
+    },
+    "BD": {
+      "wikidata": "Q902",
+      "name": "Bangladesch",
+      "capital": "Dhaka",
+      "population": 171466990,
+      "population_year": 2023,
+      "area_km2": 147570,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mowdok Mual",
+        "elevation_m": 1054,
+        "point": [
+          92.60968,
+          21.78657
+        ]
+      },
+      "ne_population": 163046161,
+      "ne_population_year": 2019
+    },
+    "AD": {
+      "wikidata": "Q228",
+      "name": "Andorra",
+      "capital": "Andorra la Vella",
+      "population": 80856,
+      "population_year": 2023,
+      "area_km2": 468,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Comapedrosa",
+        "elevation_m": 2942,
+        "point": [
+          1.443654504,
+          42.591805701
+        ]
+      },
+      "ne_population": 77142,
+      "ne_population_year": 2019
+    },
+    "AF": {
+      "wikidata": "Q889",
+      "name": "Afghanistan",
+      "capital": "Kabul",
+      "population": 41454761,
+      "population_year": 2023,
+      "area_km2": 652870,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Noshak",
+        "elevation_m": 7492,
+        "point": [
+          71.828333333,
+          36.431666666
+        ]
+      },
+      "ne_population": 38041754,
+      "ne_population_year": 2019
+    },
+    "ME": {
+      "wikidata": "Q236",
+      "name": "Montenegro",
+      "capital": "Podgorica",
+      "population": 623529,
+      "population_year": 2023,
+      "area_km2": 13888,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Zla Kolata",
+        "elevation_m": 2534,
+        "point": [
+          19.89605,
+          42.484918
+        ]
+      },
+      "ne_population": 622137,
+      "ne_population_year": 2019
+    },
+    "BA": {
+      "wikidata": "Q225",
+      "name": "Bosnien und Herzegowina",
+      "capital": "Sarajevo",
+      "population": 3185073,
+      "population_year": 2023,
+      "area_km2": 51210,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Maglić",
+        "elevation_m": 2386,
+        "point": [
+          18.73306,
+          43.28111
+        ]
+      },
+      "ne_population": 3301000,
+      "ne_population_year": 2019
+    },
+    "UG": {
+      "wikidata": "Q1036",
+      "name": "Uganda",
+      "capital": "Kampala",
+      "population": 48656601,
+      "population_year": 2023,
+      "area_km2": 241551,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mount Stanley",
+        "elevation_m": 5109,
+        "point": [
+          29.871666666,
+          0.385833333
+        ]
+      },
+      "ne_population": 44269594,
+      "ne_population_year": 2019
+    },
+    "HN": {
+      "wikidata": "Q783",
+      "name": "Honduras",
+      "capital": "Tegucigalpa",
+      "population": 10644851,
+      "population_year": 2023,
+      "area_km2": 112492,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Cerro Las Minas",
+        "elevation_m": 2849,
+        "point": [
+          -88.68,
+          14.534166666
+        ]
+      },
+      "ne_population": 9746117,
+      "ne_population_year": 2019
+    },
+    "EC": {
+      "wikidata": "Q736",
+      "name": "Ecuador",
+      "capital": "Quito",
+      "population": 17980083,
+      "population_year": 2023,
+      "area_km2": 256370,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Chimborazo",
+        "elevation_m": 6263.47,
+        "point": [
+          -78.8175,
+          -1.469166666
+        ]
+      },
+      "ne_population": 17373662,
+      "ne_population_year": 2019
+    },
+    "CO": {
+      "wikidata": "Q739",
+      "name": "Kolumbien",
+      "capital": "Bogotá",
+      "population": 52321152,
+      "population_year": 2023,
+      "area_km2": 1140619.1,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Pico Simón Bolívar",
+        "elevation_m": 5775,
+        "point": [
+          -73.691388888,
+          10.834444444
+        ]
+      },
+      "ne_population": 50339443,
+      "ne_population_year": 2019
+    },
+    "PY": {
+      "wikidata": "Q733",
+      "name": "Paraguay",
+      "capital": "Asunción",
+      "population": 6844146,
+      "population_year": 2023,
+      "area_km2": 406752,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Cerro Tres Kandú",
+        "elevation_m": 842,
+        "point": [
+          -56.16,
+          -25.901666666
+        ]
+      },
+      "ne_population": 7044636,
+      "ne_population_year": 2019
+    },
+    "PT": {
+      "wikidata": "Q45",
+      "name": "Portugal",
+      "capital": "Lissabon",
+      "population": 10578174,
+      "population_year": 2023,
+      "area_km2": 92230,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Ponta do Pico",
+        "elevation_m": 2351,
+        "point": [
+          -28.399166666,
+          38.468611111
+        ]
+      },
+      "ne_population": 10269417,
+      "ne_population_year": 2019
+    },
+    "MD": {
+      "wikidata": "Q217",
+      "name": "Moldau",
+      "capital": "Kischinau",
+      "population": 2457783,
+      "population_year": 2023,
+      "area_km2": 33850,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Dealul Bălănești",
+        "elevation_m": 430,
+        "point": [
+          28.091666666,
+          47.217666666
+        ]
+      },
+      "ne_population": 2657637,
+      "ne_population_year": 2019
+    },
+    "TM": {
+      "wikidata": "Q874",
+      "name": "Turkmenistan",
+      "capital": "Aşgabat",
+      "population": 7364438,
+      "population_year": 2023,
+      "area_km2": 491209,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Airibaba",
+        "elevation_m": 3139,
+        "point": [
+          66.566666666,
+          37.833333333
+        ]
+      },
+      "ne_population": 5942089,
+      "ne_population_year": 2019
+    },
+    "JO": {
+      "wikidata": "Q810",
+      "name": "Jordanien",
+      "capital": "Amman",
+      "population": 11439213,
+      "population_year": 2023,
+      "area_km2": 89318,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Dschabal Umm ad-Dami",
+        "elevation_m": 1854,
+        "point": [
+          35.429166666,
+          29.308333333
+        ]
+      },
+      "ne_population": 10101694,
+      "ne_population_year": 2019
+    },
+    "NP": {
+      "wikidata": "Q837",
+      "name": "Nepal",
+      "capital": "Kathmandu",
+      "population": 29694614,
+      "population_year": 2023,
+      "area_km2": 147181,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mount Everest",
+        "elevation_m": 8848.86,
+        "point": [
+          86.925,
+          27.988055555
+        ]
+      },
+      "ne_population": 28608710,
+      "ne_population_year": 2019
+    },
+    "LS": {
+      "wikidata": "Q1013",
+      "name": "Lesotho",
+      "capital": "Maseru",
+      "population": 2311472,
+      "population_year": 2023,
+      "area_km2": 30360,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Thabana Ntlenyana",
+        "elevation_m": 3482,
+        "point": [
+          29.266666666,
+          -29.466666666
+        ]
+      },
+      "ne_population": 2125268,
+      "ne_population_year": 2019
+    },
+    "CM": {
+      "wikidata": "Q1009",
+      "name": "Kamerun",
+      "capital": "Yaoundé",
+      "population": 28372687,
+      "population_year": 2023,
+      "area_km2": 475442,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Kamerunberg",
+        "elevation_m": 4095,
+        "point": [
+          9.1725,
+          4.216666666
+        ]
+      },
+      "ne_population": 25876380,
+      "ne_population_year": 2019
+    },
+    "GA": {
+      "wikidata": "Q1000",
+      "name": "Gabun",
+      "capital": "Libreville",
+      "population": 2484789,
+      "population_year": 2023,
+      "area_km2": 267670,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mont Bengoué",
+        "elevation_m": 1070,
+        "point": [
+          13.685628,
+          0.955434
+        ]
+      },
+      "ne_population": 2172579,
+      "ne_population_year": 2019
+    },
+    "NE": {
+      "wikidata": "Q1032",
+      "name": "Niger",
+      "capital": "Niamey",
+      "population": 26159867,
+      "population_year": 2023,
+      "area_km2": 1267000,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Idoukal-n-Taghès",
+        "elevation_m": 2022,
+        "point": [
+          8.720277777,
+          17.839166666
+        ]
+      },
+      "ne_population": 23310715,
+      "ne_population_year": 2019
+    },
+    "BF": {
+      "wikidata": "Q965",
+      "name": "Burkina Faso",
+      "capital": "Ouagadougou",
+      "population": 23025776,
+      "population_year": 2023,
+      "area_km2": 274200,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Tena Kourou",
+        "elevation_m": 749,
+        "point": [
+          -5.416666666,
+          10.75
+        ]
+      },
+      "ne_population": 20321378,
+      "ne_population_year": 2019
+    },
+    "TG": {
+      "wikidata": "Q945",
+      "name": "Togo",
+      "capital": "Lomé",
+      "population": 8223850,
+      "population_year": 2023,
+      "area_km2": 56785,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mont Agou",
+        "elevation_m": 986,
+        "point": [
+          0.754600679,
+          6.870536413
+        ]
+      },
+      "ne_population": 8082366,
+      "ne_population_year": 2019
+    },
+    "GH": {
+      "wikidata": "Q117",
+      "name": "Ghana",
+      "capital": "Accra",
+      "population": 33787914,
+      "population_year": 2023,
+      "area_km2": 238539,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Afadjato",
+        "elevation_m": 885,
+        "point": [
+          0.355,
+          7.144444444
+        ]
+      },
+      "ne_population": 30417856,
+      "ne_population_year": 2019
+    },
+    "GW": {
+      "wikidata": "Q1007",
+      "name": "Guinea-Bissau",
+      "capital": "Bissau",
+      "population": 2153339,
+      "population_year": 2023,
+      "area_km2": 36125,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Monte Torin",
+        "elevation_m": 262,
+        "point": [
+          -13.708055555,
+          12.675
+        ]
+      },
+      "ne_population": 1920922,
+      "ne_population_year": 2019
+    },
+    "US": {
+      "wikidata": "Q30",
+      "name": "Vereinigte Staaten",
+      "capital": "Washington, D.C.",
+      "population": 336755052,
+      "population_year": 2023,
+      "area_km2": 9831510,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Denali",
+        "elevation_m": 6190,
+        "point": [
+          -151.006261111,
+          63.069102777
+        ]
+      },
+      "ne_population": 328239523,
+      "ne_population_year": 2019
+    },
+    "CA": {
+      "wikidata": "Q16",
+      "name": "Kanada",
+      "capital": "Ottawa",
+      "population": 40049088,
+      "population_year": 2023,
+      "area_km2": 15634410,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mount Logan",
+        "elevation_m": 5959,
+        "point": [
+          -140.405277777,
+          60.567222222
+        ]
+      },
+      "ne_population": 37589262,
+      "ne_population_year": 2019
+    },
+    "MX": {
+      "wikidata": "Q96",
+      "name": "Mexiko",
+      "capital": "Mexiko-Stadt",
+      "population": 129739759,
+      "population_year": 2023,
+      "area_km2": 1957193.9,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Citlaltépetl",
+        "elevation_m": 5636,
+        "point": [
+          -97.27,
+          19.03
+        ]
+      },
+      "ne_population": 127575529,
+      "ne_population_year": 2019
+    },
+    "BZ": {
+      "wikidata": "Q242",
+      "name": "Belize",
+      "capital": "Belmopan",
+      "population": 411106,
+      "population_year": 2023,
+      "area_km2": 22966,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Doyle’s Delight",
+        "elevation_m": 1124,
+        "point": [
+          -89.05,
+          16.5
+        ]
+      },
+      "ne_population": 390353,
+      "ne_population_year": 2019
+    },
+    "PA": {
+      "wikidata": "Q804",
+      "name": "Panama",
+      "capital": "Panama-Stadt",
+      "population": 4458759,
+      "population_year": 2023,
+      "area_km2": 75320,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Volcán Barú",
+        "elevation_m": 3475,
+        "point": [
+          -82.543,
+          8.808
+        ]
+      },
+      "ne_population": 4246439,
+      "ne_population_year": 2019
+    },
+    "VE": {
+      "wikidata": "Q717",
+      "name": "Venezuela",
+      "capital": "Caracas",
+      "population": 28300854,
+      "population_year": 2023,
+      "area_km2": 912050,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Pico Bolívar",
+        "elevation_m": 4978,
+        "point": [
+          -71.0465,
+          8.540861111
+        ]
+      },
+      "ne_population": 28515829,
+      "ne_population_year": 2019
+    },
+    "PG": {
+      "wikidata": "Q691",
+      "name": "Papua-Neuguinea",
+      "capital": "Port Moresby",
+      "population": 10389635,
+      "population_year": 2023,
+      "area_km2": 462840,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mount Wilhelm",
+        "elevation_m": 4509,
+        "point": [
+          145.0295844,
+          -5.7799986
+        ]
+      },
+      "ne_population": 8776109,
+      "ne_population_year": 2019
+    },
+    "EG": {
+      "wikidata": "Q79",
+      "name": "Ägypten",
+      "capital": "Kairo",
+      "population": 114535772,
+      "population_year": 2023,
+      "area_km2": 1001450,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Dschabal Katrin",
+        "elevation_m": 2629,
+        "point": [
+          33.955277777,
+          28.510833333
+        ]
+      },
+      "ne_population": 100388073,
+      "ne_population_year": 2019
+    },
+    "YE": {
+      "wikidata": "Q805",
+      "name": "Jemen",
+      "capital": "Aden",
+      "population": 39390799,
+      "population_year": 2023,
+      "area_km2": 527968,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Dschabal an-Nabi Schuʿaib",
+        "elevation_m": 3666,
+        "point": [
+          43.975833333,
+          15.279166666
+        ]
+      },
+      "ne_population": 29161922,
+      "ne_population_year": 2019
+    },
+    "MR": {
+      "wikidata": "Q1025",
+      "name": "Mauretanien",
+      "capital": "Nouakchott",
+      "population": 5022441,
+      "population_year": 2023,
+      "area_km2": 1030700,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Kediet Ijill",
+        "elevation_m": 915,
+        "point": [
+          -12.574722222,
+          22.653888888
+        ]
+      },
+      "ne_population": 4525696,
+      "ne_population_year": 2019
+    },
+    "GQ": {
+      "wikidata": "Q983",
+      "name": "Äquatorialguinea",
+      "capital": "Ciudad de la Paz",
+      "population": 1847549,
+      "population_year": 2023,
+      "area_km2": 28051.5,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Pico Basilé",
+        "elevation_m": 3011,
+        "point": [
+          8.766666666,
+          3.583333333
+        ]
+      },
+      "ne_population": 1355986,
+      "ne_population_year": 2019
+    },
+    "GM": {
+      "wikidata": "Q1005",
+      "name": "Gambia",
+      "capital": "Banjul",
+      "population": 2697845,
+      "population_year": 2023,
+      "area_km2": 11300,
+      "area_year": 2023,
+      "highest_point": null,
+      "ne_population": 2347706,
+      "ne_population_year": 2019
+    },
+    "VA": {
+      "wikidata": "Q237",
+      "name": "Vatikanstadt",
+      "capital": "Vatikanstadt",
+      "population": null,
+      "population_year": null,
+      "area_km2": null,
+      "area_year": null,
+      "highest_point": {
+        "name": "Vatikanischer Hügel",
+        "elevation_m": 75,
+        "point": [
+          12.450277777,
+          41.903611111
+        ]
+      },
+      "ne_population": 825,
+      "ne_population_year": 2019
+    },
+    "CYN": {
+      "wikidata": "Q23681",
+      "name": "Türkische Republik Nordzypern",
+      "capital": "Nord-Nikosia",
+      "population": null,
+      "population_year": null,
+      "area_km2": null,
+      "area_year": null,
+      "highest_point": null,
+      "ne_population": 326000,
+      "ne_population_year": 2017
+    },
+    "AU": {
+      "wikidata": "Q408",
+      "name": "Australien",
+      "capital": "Canberra",
+      "population": 26659922,
+      "population_year": 2023,
+      "area_km2": 7741220,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mawson Peak",
+        "elevation_m": 2745,
+        "point": [
+          73.517777777,
+          -53.104444444
+        ]
+      },
+      "ne_population": 25364307,
+      "ne_population_year": 2019
+    },
+    "FJ": {
+      "wikidata": "Q712",
+      "name": "Fidschi",
+      "capital": "Suva",
+      "population": 924145,
+      "population_year": 2023,
+      "area_km2": 18270,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Tomanivi",
+        "elevation_m": 1324,
+        "point": [
+          178.016666666,
+          -17.633055555
+        ]
+      },
+      "ne_population": 889953,
+      "ne_population_year": 2019
+    },
+    "NZ": {
+      "wikidata": "Q664",
+      "name": "Neuseeland",
+      "capital": "Wellington",
+      "population": 5200000,
+      "population_year": 2023,
+      "area_km2": 267710,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mount Cook",
+        "elevation_m": 3724,
+        "point": [
+          170.141944444,
+          -43.595
+        ]
+      },
+      "ne_population": 4917000,
+      "ne_population_year": 2019
+    },
+    "MG": {
+      "wikidata": "Q1019",
+      "name": "Madagaskar",
+      "capital": "Antananarivo",
+      "population": 31195932,
+      "population_year": 2023,
+      "area_km2": 587295,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Maromokotro",
+        "elevation_m": 2876,
+        "point": [
+          48.965833333,
+          -14.022777777
+        ]
+      },
+      "ne_population": 26969307,
+      "ne_population_year": 2019
+    },
+    "PH": {
+      "wikidata": "Q928",
+      "name": "Philippinen",
+      "capital": "Manila",
+      "population": 114891199,
+      "population_year": 2023,
+      "area_km2": 300000,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Apo",
+        "elevation_m": 2954,
+        "point": [
+          125.270833333,
+          6.9875
+        ]
+      },
+      "ne_population": 108116615,
+      "ne_population_year": 2019
+    },
+    "LK": {
+      "wikidata": "Q854",
+      "name": "Sri Lanka",
+      "capital": "Sri Jayewardenepura Kotte",
+      "population": 22037000,
+      "population_year": 2023,
+      "area_km2": 65610,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Pidurutalagala",
+        "elevation_m": 2524,
+        "point": [
+          80.773888888,
+          7.000833333
+        ]
+      },
+      "ne_population": 21803000,
+      "ne_population_year": 2019
+    },
+    "BS": {
+      "wikidata": "Q778",
+      "name": "Bahamas",
+      "capital": "Nassau",
+      "population": 399440,
+      "population_year": 2023,
+      "area_km2": 13878,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mount Alvernia",
+        "elevation_m": 63,
+        "point": [
+          -75.408333333,
+          24.294166666
+        ]
+      },
+      "ne_population": 389482,
+      "ne_population_year": 2019
+    },
+    "TW": {
+      "wikidata": "Q865",
+      "name": "Taiwan",
+      "capital": "Taipeh",
+      "population": null,
+      "population_year": null,
+      "area_km2": null,
+      "area_year": null,
+      "highest_point": {
+        "name": "Yu Shan",
+        "elevation_m": 3952,
+        "point": [
+          120.957266666,
+          23.47
+        ]
+      },
+      "ne_population": 23568378,
+      "ne_population_year": 2020
+    },
+    "JP": {
+      "wikidata": "Q17",
+      "name": "Japan",
+      "capital": "Tokio",
+      "population": 124516650,
+      "population_year": 2023,
+      "area_km2": 377969.3,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Fuji",
+        "elevation_m": 3777.24,
+        "point": [
+          138.7275,
+          35.360555555
+        ]
+      },
+      "ne_population": 126264931,
+      "ne_population_year": 2019
+    },
+    "IS": {
+      "wikidata": "Q189",
+      "name": "Island",
+      "capital": "Reykjavík",
+      "population": 385663,
+      "population_year": 2023,
+      "area_km2": 103000,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Hvannadalshnúkur",
+        "elevation_m": 2110,
+        "point": [
+          -16.678257886,
+          64.013767128
+        ]
+      },
+      "ne_population": 361313,
+      "ne_population_year": 2019
+    },
+    "KI": {
+      "wikidata": "Q710",
+      "name": "Kiribati",
+      "capital": "South Tarawa",
+      "population": 132530,
+      "population_year": 2023,
+      "area_km2": 811,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Banaba",
+        "elevation_m": 81,
+        "point": [
+          169.536944444,
+          -0.859444444
+        ]
+      },
+      "ne_population": 117606,
+      "ne_population_year": 2019
+    },
+    "MH": {
+      "wikidata": "Q709",
+      "name": "Marshallinseln",
+      "capital": "Majuro",
+      "population": 38827,
+      "population_year": 2023,
+      "area_km2": 181,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Likiep",
+        "elevation_m": 10,
+        "point": [
+          169.14345,
+          9.88498
+        ]
+      },
+      "ne_population": 58791,
+      "ne_population_year": 2019
+    },
+    "TT": {
+      "wikidata": "Q754",
+      "name": "Trinidad und Tobago",
+      "capital": "Port of Spain",
+      "population": 1367510,
+      "population_year": 2023,
+      "area_km2": 5128,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Cerro del Aripo",
+        "elevation_m": 940,
+        "point": [
+          -61.25,
+          10.716666666
+        ]
+      },
+      "ne_population": 1394973,
+      "ne_population_year": 2019
+    },
+    "GD": {
+      "wikidata": "Q769",
+      "name": "Grenada",
+      "capital": "St. George’s",
+      "population": 117081,
+      "population_year": 2023,
+      "area_km2": 344,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mount Saint Catherine",
+        "elevation_m": 840,
+        "point": [
+          -61.675277777,
+          12.162222222
+        ]
+      },
+      "ne_population": 112003,
+      "ne_population_year": 2019
+    },
+    "VC": {
+      "wikidata": "Q757",
+      "name": "St. Vincent und die Grenadinen",
+      "capital": "Kingstown",
+      "population": 101323,
+      "population_year": 2023,
+      "area_km2": 389,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Soufrière",
+        "elevation_m": 1220,
+        "point": [
+          -61.183333333,
+          13.333333333
+        ]
+      },
+      "ne_population": 110589,
+      "ne_population_year": 2019
+    },
+    "BB": {
+      "wikidata": "Q244",
+      "name": "Barbados",
+      "capital": "Bridgetown",
+      "population": 282336,
+      "population_year": 2023,
+      "area_km2": 430,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mount Hillaby",
+        "elevation_m": 340,
+        "point": [
+          -59.583333333,
+          13.211111111
+        ]
+      },
+      "ne_population": 287025,
+      "ne_population_year": 2019
+    },
+    "LC": {
+      "wikidata": "Q760",
+      "name": "St. Lucia",
+      "capital": "Castries",
+      "population": 179285,
+      "population_year": 2023,
+      "area_km2": 616,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mount Gimie",
+        "elevation_m": 952.4,
+        "point": [
+          -61.011095,
+          13.86345
+        ]
+      },
+      "ne_population": 182790,
+      "ne_population_year": 2019
+    },
+    "DM": {
+      "wikidata": "Q784",
+      "name": "Dominica",
+      "capital": "Roseau",
+      "population": 66510,
+      "population_year": 2023,
+      "area_km2": 751,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Morne Diablotins",
+        "elevation_m": 1447,
+        "point": [
+          -61.397222222,
+          15.503333333
+        ]
+      },
+      "ne_population": 71808,
+      "ne_population_year": 2019
+    },
+    "AG": {
+      "wikidata": "Q781",
+      "name": "Antigua und Barbuda",
+      "capital": "Q36262",
+      "population": 93316,
+      "population_year": 2023,
+      "area_km2": 440.298,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mount Obama",
+        "elevation_m": 402,
+        "point": [
+          -61.85,
+          17.05
+        ]
+      },
+      "ne_population": 97118,
+      "ne_population_year": 2019
+    },
+    "KN": {
+      "wikidata": "Q763",
+      "name": "St. Kitts und Nevis",
+      "capital": "Basseterre",
+      "population": 46758,
+      "population_year": 2023,
+      "area_km2": 261,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mount Liamuiga",
+        "elevation_m": 1156,
+        "point": [
+          -62.8,
+          17.366666666
+        ]
+      },
+      "ne_population": 52834,
+      "ne_population_year": 2019
+    },
+    "JM": {
+      "wikidata": "Q766",
+      "name": "Jamaika",
+      "capital": "Kingston",
+      "population": 2839786,
+      "population_year": 2023,
+      "area_km2": 10991,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Blue Mountain Peak",
+        "elevation_m": 2256,
+        "point": [
+          -76.579166666,
+          18.046666666
+        ]
+      },
+      "ne_population": 2948279,
+      "ne_population_year": 2019
+    },
+    "KM": {
+      "wikidata": "Q970",
+      "name": "Komoren",
+      "capital": "Moroni",
+      "population": 850387,
+      "population_year": 2023,
+      "area_km2": 1861,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Karthala",
+        "elevation_m": 2361,
+        "point": [
+          43.35306,
+          -11.76028
+        ]
+      },
+      "ne_population": 850886,
+      "ne_population_year": 2019
+    },
+    "ST": {
+      "wikidata": "Q1039",
+      "name": "São Tomé und Príncipe",
+      "capital": "São Tomé",
+      "population": 230871,
+      "population_year": 2023,
+      "area_km2": 960,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Pico de São Tomé",
+        "elevation_m": 2024,
+        "point": [
+          6.533333333,
+          0.266666666
+        ]
+      },
+      "ne_population": 215056,
+      "ne_population_year": 2019
+    },
+    "CV": {
+      "wikidata": "Q1011",
+      "name": "Kap Verde",
+      "capital": "Praia",
+      "population": 522331,
+      "population_year": 2023,
+      "area_km2": 4030,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Pico do Fogo",
+        "elevation_m": 2829,
+        "point": [
+          -24.340369444,
+          14.949269444
+        ]
+      },
+      "ne_population": 549935,
+      "ne_population_year": 2019
+    },
+    "MT": {
+      "wikidata": "Q233",
+      "name": "Malta",
+      "capital": "Valletta",
+      "population": 552747,
+      "population_year": 2023,
+      "area_km2": 315.15,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Ta’ Dmejrek",
+        "elevation_m": 253,
+        "point": [
+          14.396388888,
+          35.845833333
+        ]
+      },
+      "ne_population": 502653,
+      "ne_population_year": 2019
+    },
+    "SG": {
+      "wikidata": "Q334",
+      "name": "Singapur",
+      "capital": "Singapur",
+      "population": 5917648,
+      "population_year": 2023,
+      "area_km2": 734.4,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Bukit Timah",
+        "elevation_m": 163.63,
+        "point": [
+          103.776375,
+          1.354680555
+        ]
+      },
+      "ne_population": 5703569,
+      "ne_population_year": 2019
+    },
+    "TO": {
+      "wikidata": "Q678",
+      "name": "Tonga",
+      "capital": "Nukuʻalofa",
+      "population": 104597,
+      "population_year": 2023,
+      "area_km2": 749,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Kao",
+        "elevation_m": 1030,
+        "point": [
+          -175.016666666,
+          -19.666666666
+        ]
+      },
+      "ne_population": 104494,
+      "ne_population_year": 2019
+    },
+    "WS": {
+      "wikidata": "Q683",
+      "name": "Samoa",
+      "capital": "Apia",
+      "population": 216663,
+      "population_year": 2023,
+      "area_km2": 2840,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Silisili",
+        "elevation_m": 1858,
+        "point": [
+          -172.485833333,
+          -13.618333333
+        ]
+      },
+      "ne_population": 197097,
+      "ne_population_year": 2019
+    },
+    "SB": {
+      "wikidata": "Q685",
+      "name": "Salomonen",
+      "capital": "Honiara",
+      "population": 800005,
+      "population_year": 2023,
+      "area_km2": 28896,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mount Popomanaseu",
+        "elevation_m": 2335,
+        "point": [
+          160.060713,
+          -9.70374
+        ]
+      },
+      "ne_population": 669823,
+      "ne_population_year": 2019
+    },
+    "TV": {
+      "wikidata": "Q672",
+      "name": "Tuvalu",
+      "capital": "Funafuti",
+      "population": 9816,
+      "population_year": 2023,
+      "area_km2": 26,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Niulakita",
+        "elevation_m": 4.6,
+        "point": [
+          179.5,
+          -10.75
+        ]
+      },
+      "ne_population": 11646,
+      "ne_population_year": 2019
+    },
+    "NR": {
+      "wikidata": "Q697",
+      "name": "Naoero",
+      "capital": "Yaren",
+      "population": 11875,
+      "population_year": 2023,
+      "area_km2": 21,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Command Ridge",
+        "elevation_m": 71,
+        "point": [
+          166.916924,
+          -0.530552
+        ]
+      },
+      "ne_population": 12581,
+      "ne_population_year": 2019
+    },
+    "FM": {
+      "wikidata": "Q702",
+      "name": "Föderierte Staaten von Mikronesien",
+      "capital": "Palikir",
+      "population": 112630,
+      "population_year": 2023,
+      "area_km2": 701,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Dolohmwar",
+        "elevation_m": 791,
+        "point": [
+          158.236666666,
+          6.855277777
+        ]
+      },
+      "ne_population": 113815,
+      "ne_population_year": 2019
+    },
+    "VU": {
+      "wikidata": "Q686",
+      "name": "Vanuatu",
+      "capital": "Port Vila",
+      "population": 320409,
+      "population_year": 2023,
+      "area_km2": 12189,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Tabwemasana",
+        "elevation_m": 1879,
+        "point": [
+          166.75,
+          -15.35
+        ]
+      },
+      "ne_population": 299882,
+      "ne_population_year": 2019
+    },
+    "PW": {
+      "wikidata": "Q695",
+      "name": "Palau",
+      "capital": "Ngerulmud",
+      "population": 17727,
+      "population_year": 2023,
+      "area_km2": 459,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mount Ngerchelchuus",
+        "elevation_m": 242,
+        "point": [
+          134.569444444,
+          7.565277777
+        ]
+      },
+      "ne_population": 18008,
+      "ne_population_year": 2019
+    },
+    "BH": {
+      "wikidata": "Q398",
+      "name": "Bahrain",
+      "capital": "Manama",
+      "population": 1577059,
+      "population_year": 2023,
+      "area_km2": 800,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Dschabal ad-Duchan",
+        "elevation_m": 134,
+        "point": [
+          50.543055555,
+          26.038888888
+        ]
+      },
+      "ne_population": 1641172,
+      "ne_population_year": 2019
+    }
+  }
+}

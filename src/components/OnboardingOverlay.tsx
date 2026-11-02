@@ -3,18 +3,18 @@ import { useState } from "react";
 const STEPS = [
   {
     icon: "🌍",
-    title: "Europa entdecken",
-    text: "Tippe auf ein Land, um seinen Steckbrief, seine Regionen und alle Fakten zu sehen.",
+    title: "Die Welt entdecken",
+    text: "Tippe auf ein Land, um seinen Steckbrief, seine Regionen und alle Fakten zu sehen. Wechsle oben zwischen den Kontinenten.",
   },
   {
     icon: "🧭",
     title: "Fragen lösen",
-    text: "Multiple Choice, Symbole auf die Karte ziehen, Länder und Bundesländer antippen. Nach der Antwort wird das Ziel auf der Karte gezeigt.",
+    text: "Multiple Choice, Symbole auf die Karte ziehen, Länder und Regionen antippen. Nach der Antwort wird das Ziel auf der Karte gezeigt.",
   },
   {
     icon: "📖",
     title: "Atlas & Mastery",
-    text: "Lerne im Länder-Atlas alle Fakten, sammle Sterne und meistere Europa Frage für Frage.",
+    text: "Lerne im Länder-Atlas alle Fakten, sammle Sterne und meistere die Welt Frage für Frage.",
   },
 ];
 

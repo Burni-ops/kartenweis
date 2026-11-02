@@ -18,6 +18,16 @@ function isInsideFocus(country: Country, point: [number, number]): boolean {
   );
 }
 
+function regionInFocus(region: Region, country: Country): boolean {
+  const [minLon, minLat, maxLon, maxLat] = country.focus_bbox;
+  return !(
+    region.bbox[2] < minLon ||
+    region.bbox[0] > maxLon ||
+    region.bbox[3] < minLat ||
+    region.bbox[1] > maxLat
+  );
+}
+
 function unique(values: string[]): string[] {
   return [...new Set(values)];
 }
@@ -32,6 +42,15 @@ function distractors(
   const picked = sample(candidates, count - 1, rng);
   return shuffle([answer, ...picked], rng);
 }
+
+const CONTINENT_DE: Record<string, string> = {
+  europe: "Europa",
+  asia: "Asien",
+  africa: "Afrika",
+  "north-america": "Nordamerika",
+  "south-america": "Südamerika",
+  oceania: "Ozeanien",
+};
 
 function focusForCountry(country: Country): MapFocus {
   return { kind: "country", code: country.code };
@@ -56,14 +75,14 @@ export function capitalQuestion(
     interaction,
     prompt:
       interaction === "mc"
-        ? `Wie heißt die Hauptstadt von ${country.name.de}?`
-        : `Wo liegt die Hauptstadt von ${country.name.de}?`,
+        ? `Wie heißt die Hauptstadt ${country.name_von}?`
+        : `Wo liegt die Hauptstadt ${country.name_von}?`,
     options:
       interaction === "mc"
         ? distractors(capital.name_de, capitalNames, rng)
         : [],
     answer: { label: capital.name_de, point: capital.point },
-    fact: `${capital.name_de} ist die Hauptstadt von ${country.name.de}.`,
+    fact: `${capital.name_de} ist die Hauptstadt ${country.name_von}.`,
     source: `https://www.wikidata.org/wiki/${country.wikidata ?? ""}`,
     difficulty: 1,
     focus: focusForCountry(country),
@@ -96,8 +115,8 @@ function peakQuestion(
     interaction,
     prompt:
       interaction === "mc"
-        ? `Wie heißt der höchste Berg von ${country.name.de}?`
-        : `Wo liegt der höchste Berg von ${country.name.de}?`,
+        ? `Wie heißt der höchste Berg ${country.name_von}?`
+        : `Wo liegt der höchste Berg ${country.name_von}?`,
     options:
       interaction === "mc"
         ? distractors(peak.name, peakNames, rng)
@@ -105,8 +124,8 @@ function peakQuestion(
     answer: { label: peak.name, point: peak.point },
     fact:
       peak.elevation_m !== null
-        ? `${peak.name} ist mit ${Math.round(peak.elevation_m).toLocaleString("de-DE")} m der höchste Berg von ${country.name.de}.`
-        : `${peak.name} ist der höchste Berg von ${country.name.de}.`,
+        ? `${peak.name} ist mit ${Math.round(peak.elevation_m).toLocaleString("de-DE")} m der höchste Berg ${country.name_von}.`
+        : `${peak.name} ist der höchste Berg ${country.name_von}.`,
     source: `https://www.wikidata.org/wiki/${country.wikidata ?? ""}`,
     difficulty: 2,
     focus: focusForCountry(country),
@@ -122,21 +141,32 @@ function countryLocateQuestion(country: Country): Question {
     prompt: `Wo liegt ${country.name.de}?`,
     options: [],
     answer: { label: country.name.de, countryCode: country.code },
-    fact: `${country.name.de} liegt in Europa. Die Hauptstadt ist ${country.capital?.name_de ?? "—"}.`,
+    fact: `${country.name.de} liegt in ${CONTINENT_DE[country.continent] ?? "der Welt"}. Die Hauptstadt ist ${country.capital?.name_de ?? "—"}.`,
     source: `https://www.wikidata.org/wiki/${country.wikidata ?? ""}`,
     difficulty: 2,
-    focus: { kind: "europe" },
+    focus: { kind: "continent", id: country.continent },
   };
 }
 
-function regionQuestion(region: Region): Question {
-  const countryGenitive =
-    region.country === "CH"
-      ? "der Schweiz"
-      : region.country === "AT"
-        ? "Österreichs"
-        : "Deutschlands";
-  const regionType = region.country === "CH" ? "Kanton" : "Bundesland";
+const FEMININE_REGION_TYPES = new Set([
+  "Region",
+  "Autonome Gemeinschaft",
+  "Autonome Region",
+  "Autonome Stadt",
+  "Woiwodschaft",
+  "Provinz",
+  "Republik",
+  "Präfektur",
+  "Gemeinde",
+  "Division",
+  "Insel",
+  "Wilaya",
+  "Oblast",
+]);
+
+function regionQuestion(region: Region, country: Country): Question {
+  const type = region.type || "Region";
+  const article = FEMININE_REGION_TYPES.has(type) ? "eine" : "ein";
 
   return {
     factId: `region:${region.code}`,
@@ -146,7 +176,7 @@ function regionQuestion(region: Region): Question {
     prompt: `Wo liegt ${region.name_de}?`,
     options: [],
     answer: { label: region.name_de, regionCode: region.code },
-    fact: `${region.name_de} ist ein ${regionType} ${countryGenitive}.`,
+    fact: `${region.name_de} ist ${article} ${type} ${country.name_von}.`,
     source: `https://www.wikidata.org/wiki/${region.wikidata ?? ""}`,
     difficulty: 2,
     focus: { kind: "country", code: region.country },
@@ -176,10 +206,11 @@ function curatedQuestion(
     fact: fact.fact,
     source: fact.source,
     difficulty: fact.difficulty,
-    focus:
-      fact.focus === "europe"
-        ? { kind: "europe" }
-        : { kind: "country", code: fact.country },
+    focus: fact.focus
+      ? fact.focus === "world"
+        ? { kind: "world" }
+        : { kind: "continent", id: fact.focus }
+      : { kind: "country", code: fact.country },
   };
 }
 
@@ -204,8 +235,14 @@ export function buildRun(
   const scopeCountries =
     config.scope === "country"
       ? countries.filter((country) => country.code === config.countryCode)
-      : countries;
+      : config.scope === "continent"
+        ? countries.filter((country) => country.continent === config.continent)
+        : countries;
   const scopeCodes = new Set(scopeCountries.map((country) => country.code));
+  const countryByCode = new Map(
+    countries.map((country) => [country.code, country]),
+  );
+  const globalScope = config.scope !== "country";
 
   const byFact = new Map<string, Question[]>();
   const add = (question: Question) => {
@@ -227,21 +264,29 @@ export function buildRun(
       add(peakQuestion(country, countries, "drag", rng));
       add(peakQuestion(country, countries, "mc", rng));
     }
-    if (config.scope === "europe") {
-      add(countryLocateQuestion(country));
+    if (globalScope) {
+      const [west, south, east, north] = country.focus_bbox;
+      const wideEnough =
+        east - west >= 1.5 && north - south >= 1.0;
+      if (country.area_km2 >= 2000 && wideEnough) {
+        add(countryLocateQuestion(country));
+      }
     }
   }
 
   for (const region of regions) {
-    if (scopeCodes.has(region.country)) {
-      add(regionQuestion(region));
-    }
+    if (!scopeCodes.has(region.country)) continue;
+    const country = countryByCode.get(region.country);
+    if (!country) continue;
+    if (!regionInFocus(region, country)) continue;
+    add(regionQuestion(region, country));
   }
 
   for (const fact of facts) {
     const inScope =
       scopeCodes.has(fact.country) ||
-      (config.scope === "europe" && fact.country === "EU");
+      (fact.country === "EU" &&
+        (config.scope === "world" || config.continent === "europe"));
     if (!inScope) continue;
     for (const interaction of fact.interactions) {
       const question = curatedQuestion(fact, interaction, rng);
@@ -260,11 +305,11 @@ export function buildRun(
 
   const capFor = (interaction: Interaction): number => {
     if (interaction === "tap-region") {
-      return config.scope === "europe" ? 2 : 3;
+      return globalScope ? 2 : 3;
     }
     if (interaction === "tap-country") return 2;
     if (interaction === "drag") {
-      return config.scope === "europe" ? 4 : 3;
+      return globalScope ? 4 : 3;
     }
     return Number.POSITIVE_INFINITY;
   };
@@ -316,7 +361,7 @@ export function buildRun(
     selected.push(chooseVariant(chosen, desired));
   };
 
-  if (config.scope === "europe") {
+  if (globalScope) {
     takeMatching(
       (entry) =>
         entry.variants.some(

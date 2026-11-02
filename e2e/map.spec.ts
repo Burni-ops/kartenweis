@@ -22,7 +22,7 @@ test("loads the Europe map and selects Germany and Bavaria", async ({
 }) => {
   await page.goto("/");
 
-  await expect(page.getByText("Europa entdecken")).toBeVisible({
+  await expect(page.getByText("Länder entdecken")).toBeVisible({
     timeout: 20_000,
   });
 
@@ -56,7 +56,7 @@ test("starts a Europe run and gives feedback on the first question", async ({
   page,
 }) => {
   await page.goto("/");
-  await expect(page.getByText("Europa entdecken")).toBeVisible({
+  await expect(page.getByText("Länder entdecken")).toBeVisible({
     timeout: 20_000,
   });
 
@@ -99,7 +99,7 @@ test("starts a Europe run and gives feedback on the first question", async ({
 
 test("reveals a sea or strait answer on the map", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByText("Europa entdecken")).toBeVisible({
+  await expect(page.getByText("Länder entdecken")).toBeVisible({
     timeout: 20_000,
   });
 
@@ -158,7 +158,7 @@ test("opens the atlas, selects a river and reveals it on the map", async ({
   page,
 }) => {
   await page.goto("/");
-  await expect(page.getByText("Europa entdecken")).toBeVisible({
+  await expect(page.getByText("Länder entdecken")).toBeVisible({
     timeout: 20_000,
   });
 
@@ -198,9 +198,46 @@ test("opens the atlas, selects a river and reveals it on the map", async ({
   await expect(page.locator(".reveal-label")).toContainText("Rhein");
 });
 
+test("switches continents and starts a world run", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.getByText("Länder entdecken")).toBeVisible({
+    timeout: 20_000,
+  });
+
+  await page.getByRole("button", { name: /Asien/ }).click();
+  await expect(page.getByText(/Asien · 47 Länder/)).toBeVisible();
+
+  await page
+    .getByRole("button", { name: "Welt-Run starten", exact: true })
+    .click();
+  await expect(page.getByText(/Frage 1 \/ \d+/)).toBeVisible();
+
+  const run = await page.evaluate(() => {
+    const app = (
+      window as unknown as {
+        __app?: {
+          run?: {
+            config: { scope: string; count: number };
+            questions: Array<{ countryCode: string }>;
+          };
+        };
+      }
+    ).__app;
+    return app?.run
+      ? {
+          scope: app.run.config.scope,
+          count: app.run.questions.length,
+        }
+      : null;
+  });
+
+  expect(run?.scope).toBe("world");
+  expect(run?.count).toBeGreaterThanOrEqual(10);
+});
+
 test("opens settings and credits", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByText("Europa entdecken")).toBeVisible({
+  await expect(page.getByText("Länder entdecken")).toBeVisible({
     timeout: 20_000,
   });
 
@@ -214,7 +251,7 @@ test("opens settings and credits", async ({ page }) => {
 
 test("opens the collection and the daily challenge", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByText("Europa entdecken")).toBeVisible({
+  await expect(page.getByText("Länder entdecken")).toBeVisible({
     timeout: 20_000,
   });
 

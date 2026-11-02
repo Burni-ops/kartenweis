@@ -21,6 +21,7 @@
     "src",
     "tools",
     "e2e",
+    "types",
     "vite.config.ts",
     "vitest.config.ts",
     "playwright.config.ts"

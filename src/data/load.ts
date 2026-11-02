@@ -27,11 +27,13 @@ export function loadJson<T>(url: string): Promise<T> {
 export const loadCountries = () =>
   loadJson<CountriesDataset>("/data/countries.json");
 
-export const loadEuropeMap = () =>
-  loadJson<FeatureCollection<Geometry>>("/data/maps/europe.geojson");
+export const loadWorldMap = () =>
+  loadJson<FeatureCollection<Geometry>>("/data/maps/world.geojson");
 
-export const loadDachRegions = () =>
-  loadJson<RegionFeatureCollection>("/data/maps/dach-regions.geojson");
+export const loadEuropeMap = loadWorldMap;
+
+export const loadRegions = () =>
+  loadJson<RegionFeatureCollection>("/data/maps/world-regions.geojson");
 
 export const loadFacts = async () => {
   const [curated, generated] = await Promise.all([

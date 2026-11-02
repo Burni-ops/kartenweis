@@ -54,6 +54,10 @@ export interface Country {
   region_plural: string | null;
   regions_map: string | null;
   map: string;
+  /** Correct German phrases, e.g. "von den Niederlanden". */
+  name_von: string;
+  name_in: string;
+  name_acc: string;
 }
 
 export interface CountriesDataset {

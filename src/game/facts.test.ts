@@ -15,7 +15,7 @@ const countries = (
 const regions = (
   JSON.parse(
     fs.readFileSync(
-      path.join(root, "public/data/maps/dach-regions.geojson"),
+      path.join(root, "public/data/maps/world-regions.geojson"),
       "utf8",
     ),
   ) as { features: Array<{ properties: Region }> }
@@ -38,7 +38,7 @@ const facts = [
 describe("real data + question engine", () => {
   it("can build every fact and includes sea and strait questions", () => {
     const run = buildRun(
-      { scope: "europe", count: 1000, seed: 1 },
+      { scope: "continent", continent: "europe", count: 1000, seed: 1 },
       countries,
       regions,
       facts,
@@ -52,12 +52,17 @@ describe("real data + question engine", () => {
     expect(
       run
         .filter((question) => question.interaction === "mc")
-        .every((question) => question.options.length === 4),
+        .every(
+          (question) =>
+            question.options.length === 4 ||
+            question.options.length === 2,
+        ),
     ).toBe(true);
     expect(
       run.some(
         (question) =>
-          question.focus.kind === "europe" &&
+          question.focus.kind === "continent" &&
+          question.focus.id === "europe" &&
           question.countryCode === "EU",
       ),
     ).toBe(true);

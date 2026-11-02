@@ -3,7 +3,7 @@ import { evaluateAchievements, type AchievementContext } from "./achievements";
 import type { RunSummary } from "./types";
 
 const baseSummary: RunSummary = {
-  config: { scope: "europe", count: 10, seed: 1 },
+  config: { scope: "continent", continent: "europe", count: 10, seed: 1 },
   score: 1000,
   correctCount: 10,
   total: 10,

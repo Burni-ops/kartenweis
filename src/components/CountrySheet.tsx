@@ -1,4 +1,5 @@
 import type { Country, Region } from "../data/types";
+import { CONTINENT_NAMES } from "../data/continents";
 import type { MasterySummary } from "../game/atlas";
 
 const numberFormat = new Intl.NumberFormat("de-DE");
@@ -16,9 +17,11 @@ type Props = {
   onSelectRegion: (region: Region | null) => void;
   onClose: () => void;
   onStartRun: (countryCode: string) => void;
-  onStartEurope: () => void;
+  onStartContinent: () => void;
+  onStartWorld: () => void;
   onStartDaily: () => void;
   onOpenAtlas: (country: Country) => void;
+  continentName: string;
 };
 
 function Stat({ label, value }: { label: string; value: string }) {
@@ -41,9 +44,11 @@ export default function CountrySheet({
   onSelectRegion,
   onClose,
   onStartRun,
-  onStartEurope,
+  onStartContinent,
+  onStartWorld,
   onStartDaily,
   onOpenAtlas,
+  continentName,
 }: Props) {
   if (!country) {
     return (
@@ -54,31 +59,38 @@ export default function CountrySheet({
           </div>
           <div>
             <h2 className="text-base font-extrabold tracking-tight">
-              Europa entdecken
+              Länder entdecken
             </h2>
             <p className="mt-1 text-sm leading-relaxed text-ink-muted">
-              Tippe auf ein Land. Bei Deutschland, Österreich und der Schweiz
-              kannst du anschließend die Bundesländer bzw. Kantone erkunden.
+              Tippe auf ein Land. Für viele Länder kannst du anschließend
+              Regionen, Städte, Flüsse, Seen, Meere und Nachbarn erkunden.
             </p>
           </div>
         </div>
         <button
           type="button"
-          onClick={onStartEurope}
+          onClick={onStartContinent}
           className="mt-4 w-full rounded-2xl bg-teal px-4 py-3 text-sm font-extrabold text-white shadow-sm transition hover:bg-teal/90 active:scale-[0.99]"
         >
-          Europa-Run starten · 10 Fragen
+          {continentName}-Run starten · 10 Fragen
+        </button>
+        <button
+          type="button"
+          onClick={onStartWorld}
+          className="mt-2 w-full rounded-2xl border border-teal/30 bg-teal-soft/50 px-4 py-2.5 text-sm font-bold text-teal transition hover:bg-teal-soft"
+        >
+          🌍 Welt-Run starten · 10 Fragen
         </button>
         <button
           type="button"
           onClick={onStartDaily}
           disabled={dailyDone}
-          className="mt-2 w-full rounded-2xl border border-teal/30 bg-teal-soft/50 px-4 py-2.5 text-sm font-bold text-teal transition hover:bg-teal-soft disabled:cursor-default disabled:opacity-60"
+          className="mt-2 w-full rounded-2xl border border-line bg-white/70 px-4 py-2.5 text-sm font-bold text-ink transition hover:border-teal hover:text-teal disabled:cursor-default disabled:opacity-60"
         >
           📅 {dailyDone ? "Tages-Challenge erledigt" : "Tages-Challenge starten"}
         </button>
         <p className="mt-3 text-center text-[10px] text-ink-muted">
-          Karten: Natural Earth (Public Domain) · Prototyp M3
+          Karten: Natural Earth (Public Domain) · Prototyp M4
         </p>
       </div>
     );
@@ -104,7 +116,7 @@ export default function CountrySheet({
         </div>
         <div className="min-w-0 flex-1">
           <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-teal">
-            Europa
+            {CONTINENT_NAMES[country.continent]}
           </div>
           <h2 className="truncate text-xl font-extrabold tracking-tight">
             {country.name.de}
@@ -235,7 +247,7 @@ export default function CountrySheet({
       </div>
 
       <p className="mt-2 text-center text-[10px] text-ink-muted">
-        Prototyp M3 · Karten: Natural Earth (Public Domain) ·{" "}
+        Prototyp M4 · Karten: Natural Earth (Public Domain) ·{" "}
         {country.population_year
           ? `Einwohner ${country.population_year}`
           : "Einwohner ca."}

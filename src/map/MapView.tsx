@@ -24,6 +24,10 @@ import type {
 } from "../game/types";
 import type { AtlasFeature } from "../game/atlas";
 import { resolveGeometryReveal } from "../game/reveal";
+import {
+  CONTINENT_BBOX,
+  type ContinentScope,
+} from "../data/continents";
 import maplibreWorkerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url";
 
 const PALETTE = [
@@ -61,8 +65,9 @@ setWorkerUrl(maplibreWorkerUrl);
 
 type Props = {
   countries: Country[];
-  europe: FeatureCollection<Geometry>;
+  world: FeatureCollection<Geometry>;
   regions: RegionFeatureCollection;
+  activeContinent: ContinentScope;
   selectedCountry: Country | null;
   selectedRegion: Region | null;
   onSelectCountry: (country: Country | null) => void;
@@ -80,8 +85,9 @@ type Props = {
 
 export default function MapView({
   countries,
-  europe,
+  world,
   regions,
+  activeContinent,
   selectedCountry,
   selectedRegion,
   onSelectCountry,
@@ -265,7 +271,7 @@ export default function MapView({
 
     map.addSource("countries", {
       type: "geojson",
-      data: europe,
+      data: world,
       promoteId: "code",
     });
 
@@ -633,7 +639,7 @@ export default function MapView({
     });
 
     setLayersReady(true);
-  }, [countries, europe, regions, ready]);
+  }, [countries, world, regions, ready]);
 
   // Browse: focus the selected country.
   useEffect(() => {
@@ -666,9 +672,27 @@ export default function MapView({
         maxZoom: 7.5,
       });
     } else {
-      map.easeTo({ center: [12, 51], zoom: 3.4, duration: 700 });
+      const box = CONTINENT_BBOX[activeContinent];
+      map.fitBounds(
+        [
+          [box[0], box[1]],
+          [box[2], box[3]],
+        ],
+        {
+          padding: { top: 70, bottom: 40, left: 30, right: 30 },
+          duration: 700,
+          maxZoom: activeContinent === "world" ? 2.6 : 4.2,
+        },
+      );
     }
-  }, [selectedCountry, ready, layersReady, runQuestion, atlasCountry]);
+  }, [
+    selectedCountry,
+    ready,
+    layersReady,
+    runQuestion,
+    atlasCountry,
+    activeContinent,
+  ]);
 
   // Region visibility for browse and atlas (run mode controls it separately).
   useEffect(() => {
@@ -759,11 +783,15 @@ export default function MapView({
 
     const focus = runQuestion.focus;
 
-    if (focus.kind === "europe") {
+    if (focus.kind === "world" || focus.kind === "continent") {
+      const box =
+        focus.kind === "world"
+          ? CONTINENT_BBOX.world
+          : CONTINENT_BBOX[focus.id];
       map.fitBounds(
         [
-          [-25, 34],
-          [45, 71],
+          [box[0], box[1]],
+          [box[2], box[3]],
         ],
         {
           padding: {
@@ -773,7 +801,7 @@ export default function MapView({
             right: 30,
           },
           duration: 700,
-          maxZoom: 4.2,
+          maxZoom: focus.kind === "world" ? 2.6 : 4.2,
         },
       );
       return;

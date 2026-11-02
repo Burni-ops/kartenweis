@@ -11,9 +11,9 @@ import SettingsPanel from "../components/SettingsPanel";
 import OnboardingOverlay from "../components/OnboardingOverlay";
 import {
   loadCountries,
-  loadDachRegions,
-  loadEuropeMap,
+  loadWorldMap,
   loadFacts,
+  loadRegions,
   loadReveals,
 } from "../data/load";
 import { buildRun } from "../game/questions";
@@ -35,6 +35,11 @@ import type {
   Region,
   RegionFeatureCollection,
 } from "../data/types";
+import {
+  CONTINENT_ICONS,
+  CONTINENT_NAMES,
+  type ContinentScope,
+} from "../data/continents";
 import type {
   AnswerFeedback,
   Fact,
@@ -49,7 +54,7 @@ type Mode = "browse" | "run" | "result" | "atlas";
 
 export default function App() {
   const [dataset, setDataset] = useState<CountriesDataset | null>(null);
-  const [europe, setEurope] = useState<FeatureCollection<Geometry> | null>(
+  const [world, setWorld] = useState<FeatureCollection<Geometry> | null>(
     null,
   );
   const [regionsGeo, setRegionsGeo] =
@@ -73,6 +78,8 @@ export default function App() {
   });
   const [collectionOpen, setCollectionOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [activeContinent, setActiveContinent] =
+    useState<ContinentScope>("europe");
 
   const recordAnswer = useProgress((state) => state.recordAnswer);
   const recordRun = useProgress((state) => state.recordRun);
@@ -106,15 +113,15 @@ export default function App() {
 
     Promise.all([
       loadCountries(),
-      loadEuropeMap(),
-      loadDachRegions(),
+      loadWorldMap(),
+      loadRegions(),
       loadFacts(),
       loadReveals(),
     ])
       .then(([countries, map, regions, factList, revealMap]) => {
         if (cancelled) return;
         setDataset(countries);
-        setEurope(map);
+        setWorld(map);
         setRegionsGeo(regions);
         setFacts(factList);
         setReveals(revealMap);
@@ -202,6 +209,12 @@ export default function App() {
     setSelectedRegion(null);
   }, []);
 
+  const handleSelectContinent = useCallback((scope: ContinentScope) => {
+    setActiveContinent(scope);
+    setSelectedCountry(null);
+    setSelectedRegion(null);
+  }, []);
+
   const handleSelectRegion = useCallback((region: Region | null) => {
     setSelectedRegion(region);
   }, []);
@@ -250,10 +263,25 @@ export default function App() {
   );
 
   const startRun = useCallback(
-    (scope: "europe" | "country", countryCode?: string) => {
+    (
+      scope: "world" | "continent" | "country",
+      options?: { continent?: ContinentScope; countryCode?: string },
+    ) => {
+      if (scope === "continent" && options?.continent === "world") {
+        beginRun({
+          scope: "world",
+          count: 10,
+          seed: Math.floor(Math.random() * 0xffffffff),
+        });
+        return;
+      }
       beginRun({
         scope,
-        countryCode,
+        continent:
+          scope === "continent"
+            ? (options?.continent as Exclude<ContinentScope, "world">)
+            : undefined,
+        countryCode: options?.countryCode,
         count: 10,
         seed: Math.floor(Math.random() * 0xffffffff),
       });
@@ -261,13 +289,17 @@ export default function App() {
     [beginRun],
   );
 
-  const handleStartEurope = useCallback(() => {
-    startRun("europe");
+  const handleStartContinent = useCallback(() => {
+    startRun("continent", { continent: activeContinent });
+  }, [startRun, activeContinent]);
+
+  const handleStartWorld = useCallback(() => {
+    startRun("world");
   }, [startRun]);
 
   const handleStartCountry = useCallback(
     (countryCode: string) => {
-      startRun("country", countryCode);
+      startRun("country", { countryCode });
     },
     [startRun],
   );
@@ -275,7 +307,7 @@ export default function App() {
   const handleStartDaily = useCallback(() => {
     if (dailyDone) return;
     beginRun({
-      scope: "europe",
+      scope: "world",
       count: 10,
       seed: dailySeed(),
       daily: true,
@@ -405,7 +437,10 @@ export default function App() {
 
   const handleRestart = useCallback(() => {
     if (!summary) return;
-    startRun(summary.config.scope, summary.config.countryCode);
+    startRun(summary.config.scope, {
+      continent: summary.config.continent,
+      countryCode: summary.config.countryCode,
+    });
   }, [summary, startRun]);
 
   const handleExitRun = useCallback(() => {
@@ -449,7 +484,7 @@ export default function App() {
     );
   }
 
-  if (!dataset || !europe || !regionsGeo || !facts || !reveals) {
+  if (!dataset || !world || !regionsGeo || !facts || !reveals) {
     return (
       <main className="map-shell grid place-items-center bg-paper">
         <div className="glass flex items-center gap-3 rounded-2xl px-5 py-4 text-sm font-semibold">
@@ -465,8 +500,9 @@ export default function App() {
       <div className="relative min-h-0 flex-1">
         <MapView
           countries={dataset.countries}
-          europe={europe}
+          world={world}
           regions={regionsGeo}
+          activeContinent={activeContinent}
           selectedCountry={selectedCountry}
           selectedRegion={selectedRegion}
           onSelectCountry={handleSelectCountry}
@@ -484,62 +520,107 @@ export default function App() {
 
         {mode === "browse" && (
           <header className="pointer-events-none absolute inset-x-0 top-0 z-20 p-3 sm:p-5">
-            <div className="glass pointer-events-auto mx-auto flex w-full max-w-2xl items-center gap-3 rounded-2xl px-3.5 py-2.5">
-              <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-teal text-xl text-white shadow-sm">
-                🗺️
-              </div>
-              <div className="min-w-0">
-                <div className="truncate text-sm font-extrabold leading-tight tracking-tight">
-                  Spasmitflaggen
+            <div className="glass pointer-events-auto mx-auto flex w-full max-w-2xl flex-col gap-2 rounded-2xl px-3.5 py-2.5">
+              <div className="flex items-center gap-3">
+                <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-teal text-xl text-white shadow-sm">
+                  🗺️
                 </div>
-                <div className="text-[11px] font-medium text-ink-muted">
-                  Europa · {dataset.countries.length} Länder · M3
+                <div className="min-w-0">
+                  <div className="truncate text-sm font-extrabold leading-tight tracking-tight">
+                    Spasmitflaggen
+                  </div>
+                  <div className="text-[11px] font-medium text-ink-muted">
+                    {CONTINENT_NAMES[activeContinent]} ·{" "}
+                    {activeContinent === "world"
+                      ? dataset.countries.length
+                      : dataset.countries.filter(
+                          (country) =>
+                            country.continent === activeContinent,
+                        ).length}{" "}
+                    Länder · M4
+                  </div>
+                </div>
+                <div className="ml-auto flex shrink-0 items-center gap-1.5">
+                  <button
+                    type="button"
+                    onClick={handleStartContinent}
+                    className="rounded-full bg-teal px-3 py-1.5 text-xs font-extrabold text-white shadow-sm transition hover:bg-teal/90 active:scale-[0.98]"
+                  >
+                    ▶{" "}
+                    <span className="hidden sm:inline">
+                      {CONTINENT_NAMES[activeContinent]}-
+                    </span>
+                    Run
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleStartWorld}
+                    aria-label="Welt-Run starten"
+                    title="Welt-Run starten"
+                    className="grid h-8 w-8 place-items-center rounded-full bg-teal-soft text-sm text-teal transition hover:bg-teal-soft/70"
+                  >
+                    🌍
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleStartDaily}
+                    disabled={dailyDone}
+                    aria-label={
+                      dailyDone
+                        ? "Tages-Challenge erledigt"
+                        : "Tages-Challenge starten"
+                    }
+                    title={
+                      dailyDone
+                        ? "Tages-Challenge erledigt"
+                        : "Tages-Challenge starten"
+                    }
+                    className="grid h-8 w-8 place-items-center rounded-full bg-teal-soft text-sm text-teal transition hover:bg-teal-soft/70 disabled:opacity-50"
+                  >
+                    📅
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleOpenCollection}
+                    aria-label="Sammlung öffnen"
+                    title="Sammlung öffnen"
+                    className="grid h-8 w-8 place-items-center rounded-full bg-paper-deep text-sm text-ink-muted transition hover:bg-line hover:text-ink"
+                  >
+                    🏆
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setSettingsOpen(true)}
+                    aria-label="Einstellungen öffnen"
+                    title="Einstellungen öffnen"
+                    className="hidden h-9 w-9 place-items-center rounded-full bg-paper-deep text-sm text-ink-muted transition hover:bg-line hover:text-ink sm:grid"
+                  >
+                    ⚙️
+                  </button>
                 </div>
               </div>
-              <div className="ml-auto flex shrink-0 items-center gap-1.5">
-                <button
-                  type="button"
-                  onClick={handleStartEurope}
-                  className="rounded-full bg-teal px-3 py-1.5 text-xs font-extrabold text-white shadow-sm transition hover:bg-teal/90 active:scale-[0.98]"
-                >
-                  ▶ <span className="hidden sm:inline">Europa-</span>Run
-                </button>
-                <button
-                  type="button"
-                  onClick={handleStartDaily}
-                  disabled={dailyDone}
-                  aria-label={
-                    dailyDone
-                      ? "Tages-Challenge erledigt"
-                      : "Tages-Challenge starten"
-                  }
-                  title={
-                    dailyDone
-                      ? "Tages-Challenge erledigt"
-                      : "Tages-Challenge starten"
-                  }
-                  className="grid h-8 w-8 place-items-center rounded-full bg-teal-soft text-sm text-teal transition hover:bg-teal-soft/70 disabled:opacity-50"
-                >
-                  📅
-                </button>
-                <button
-                  type="button"
-                  onClick={handleOpenCollection}
-                  aria-label="Sammlung öffnen"
-                  title="Sammlung öffnen"
-                  className="grid h-8 w-8 place-items-center rounded-full bg-paper-deep text-sm text-ink-muted transition hover:bg-line hover:text-ink"
-                >
-                  🏆
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setSettingsOpen(true)}
-                  aria-label="Einstellungen öffnen"
-                  title="Einstellungen öffnen"
-                  className="hidden h-9 w-9 place-items-center rounded-full bg-paper-deep text-sm text-ink-muted transition hover:bg-line hover:text-ink sm:grid"
-                >
-                  ⚙️
-                </button>
+              <div className="chip-scroll -mx-1 flex gap-1.5 overflow-x-auto px-1 pb-0.5">
+                {(
+                  [
+                    "world",
+                    ...dataset.continents.map(
+                      (continent) => continent.id as Exclude<ContinentScope, "world">,
+                    ),
+                  ] as ContinentScope[]
+                ).map((scope) => (
+                  <button
+                    key={scope}
+                    type="button"
+                    onClick={() => handleSelectContinent(scope)}
+                    className={`shrink-0 rounded-full border px-2.5 py-1 text-[11px] font-bold transition ${
+                      activeContinent === scope
+                        ? "border-teal bg-teal text-white"
+                        : "border-line bg-white/80 text-ink"
+                    }`}
+                  >
+                    {CONTINENT_ICONS[scope]} {CONTINENT_NAMES[scope]}
+                  </button>
+                ))}
               </div>
             </div>
           </header>
@@ -563,9 +644,11 @@ export default function App() {
             onSelectRegion={handleSelectRegion}
             onClose={handleClose}
             onStartRun={handleStartCountry}
-            onStartEurope={handleStartEurope}
+            onStartContinent={handleStartContinent}
+            onStartWorld={handleStartWorld}
             onStartDaily={handleStartDaily}
             onOpenAtlas={handleOpenAtlas}
+            continentName={CONTINENT_NAMES[activeContinent]}
           />
         </div>
       )}

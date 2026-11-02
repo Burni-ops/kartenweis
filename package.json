@@ -14,6 +14,8 @@
     "validate": "tsx tools/validate-data.ts",
     "check": "tsc --noEmit && npm run validate && npm run test",
     "data": "tsx tools/build-data.ts && node tools/build-reveals.mjs && tsx tools/build-generated-facts.ts",
+    "data:reference": "node tools/research-wikidata-world.mjs && node tools/build-reference-world.mjs",
+    "data:flags": "node tools/download-flags.mjs",
     "data:reveals": "node tools/build-reveals.mjs"
   },
   "keywords": [
@@ -29,6 +31,7 @@
     "@turf/bbox": "^7.4.0",
     "@turf/boolean-intersects": "^7.4.0",
     "@turf/helpers": "^7.4.0",
+    "@turf/intersect": "^7.4.0",
     "@turf/length": "^7.4.0",
     "framer-motion": "^14.9.0",
     "howler": "^2.2.4",

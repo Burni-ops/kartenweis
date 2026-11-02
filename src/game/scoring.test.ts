@@ -85,7 +85,7 @@ describe("evaluateAnswer", () => {
       interaction: "tap-country",
       options: [],
       answer: { label: "Deutschland", countryCode: "DE" },
-      focus: { kind: "europe" },
+      focus: { kind: "continent", id: "europe" },
     };
     expect(
       evaluateAnswer(

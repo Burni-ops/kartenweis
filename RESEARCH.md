@@ -26,15 +26,15 @@ setWorkerUrl(workerUrl);
 
 Zusätzlich in `vite.config.ts`: `worker.format = "es"` und `optimizeDeps.exclude = ["maplibre-gl"]`.
 
-**Build-Größen (M0):**
+**Build-Größen (M4):**
 
-- App-JS: 1,30 MB (360 kB gzip)
-- CSS: 92 kB (15 kB gzip)
+- App-JS: 1,38 MB (381 kB gzip)
+- CSS: 105 kB (17 kB gzip)
 - MapLibre-Worker: 519 kB
-- PWA-Precache: 56 Dateien, ca. 2,9 MB
-- Startdaten: `countries.json` 36 kB, Europa-GeoJSON 269 kB, DACH-Regionen 47 kB
+- PWA-Precache: 206 Dateien, ca. 13,1 MB
+- Startdaten: `countries.json` ca. 150 kB, `world.geojson` 1,29 MB, `world-regions.geojson` 4,26 MB, generierte Fakten 0,53 MB, generierte Reveals 1,73 MB
 
-**Fazit:** Der Stack funktioniert. Die MapLibre-Bundle-Größe ist für ein Web-Spiel akzeptabel; für M1 sollten Karte und Quiz-Screen per dynamischem Import getrennt werden.
+**Fazit:** Der Stack funktioniert. Die Weltkarte bleibt mit 10-%-Vereinfachung und selektiven Regionen handhabbar; die PWA precacht Karte, Regionen und Fakten für Offline-Nutzung.
 
 ## 2. Kartendaten
 
@@ -42,29 +42,28 @@ Natural Earth 1:10m (Public Domain) liefert:
 
 | Layer | Nutzung | Beobachtung |
 |---|---|---|
-| `ne_10m_admin_0_countries` | Länderpolygone, Namen, Einwohner (2019) | 258 Features; 45 nach Europa-Filter (inkl. Kosovo, ohne 6 Dependencies) |
-| `ne_10m_admin_1_states_provinces` | Bundesländer/Kantone | 4.596 Features; 51 für DACH (16 DE, 9 AT, 26 CH) |
-| `ne_10m_populated_places` | Hauptstädte, Städte | Hauptstadt über `ADM0CAP = 1`; Kosovo über `ADM0_A3` auffindbar |
-| `ne_10m_rivers_lake_centerlines` | Flüsse | noch nicht eingebunden |
-| `ne_10m_lakes` | Seen | noch nicht eingebunden |
-| `ne_10m_geography_marine_polys` | Meere, Meerengen | für Kartenlayer und Faktenprüfung vorgesehen |
+| `ne_10m_admin_0_countries` | Länderpolygone, Namen, Einwohner (2019) | 258 Features; 193 nach Filter (inkl. Kosovo, Nordzypern, Somaliland; ohne 6 Dependencies) |
+| `ne_10m_admin_1_states_provinces` | Bundesländer/Kantone/Provinzen | 4.596 Features; 4.038 Regionen für 187 Länder (DACH und FR/IT/ES/PL/NL handgeprüft) |
+| `ne_10m_populated_places` | Hauptstädte, Städte | Hauptstadt über `ADM0CAP = 1`; größte Stadt über `POP_MIN` (Stadtgebiet) |
+| `ne_10m_rivers_lake_centerlines` | Flüsse | 132 generierte Flussfakten + Linien-Reveals |
+| `ne_10m_lakes` | Seen | 81 generierte Seenfakten + Polygon-Reveals |
+| `ne_10m_geography_marine_polys` | Meere, Meerengen | 143 Meere- und 24 Meerengen-Fakten, Polygone auf den Länderfokus zugeschnitten |
 
-**Vereinfachung:** mapshaper mit `-simplify 10% keep-shapes` reduziert Europa auf 269 kB und DACH-Regionen auf 47 kB. Das ist für den Prototyp ausreichend; für Detailansichten kann später auf 20–30 % gegangen werden.
+**Vereinfachung:** mapshaper mit `-simplify 10% keep-shapes` reduziert die Weltkarte auf 1,29 MB und die Regionen auf 4,26 MB. Das ist für den Prototyp ausreichend; für Detailansichten kann später auf 20–30 % gegangen werden.
 
-**Wichtige Eigenheit:** Frankreich, Norwegen und Kosovo haben in Natural Earth `ISO_A2 = -99`. `ISO_A2_EH` bzw. eine kleine Fallback-Tabelle löst das (`FR`, `NO`, `XK`).
+**Wichtige Eigenheit:** Frankreich, Norwegen und Kosovo haben in Natural Earth `ISO_A2 = -99`. `ISO_A2_EH` bzw. eine kleine Fallback-Tabelle löst das (`FR`, `NO`, `XK`); Nordzypern und Somaliland bekommen eigene Codes (`XN`, `XS`).
 
-**Karten-Fokus:** Für Länder mit Überseegebieten (Frankreich, Norwegen, Portugal, Spanien) wird eine `focus_bbox` berechnet: Polygone, die weiter als 1.200 km vom Label-Punkt entfernt sind, werden beim Zoomen ignoriert. Dadurch landet man bei Frankreich auf dem Festland statt in Französisch-Guayana.
+**Karten-Fokus:** Für Länder mit Überseegebieten wird eine `focus_bbox` berechnet: Polygone, die weiter als 1.500 km vom Label-Punkt entfernt sind oder weniger als 1 % der größten Landfläche haben, werden beim Zoomen ignoriert. Datumsgrenzen-Fälle (Neuseeland, Fidschi, Kiribati) fallen auf ein Fenster um den Label-Punkt zurück.
 
 ## 3. Fakten-Daten
 
 ### Wikidata
 
-Abfrage über die 45 Wikidata-IDs aus `countries.json` (SPARQL, `VALUES`-Liste):
+Abfrage über die 193 Wikidata-IDs aus der Länderliste (SPARQL, `VALUES`-Liste):
 
-- **45/45** Länder mit Hauptstadt (`P36`)
-- **45/45** mit Fläche (`P2046`)
-- **45/45** mit Einwohnerzahl (`P1082`)
-- **45/45** mit höchstem Punkt (`P610`) inkl. Höhe (`P2044`) und Koordinate (`P625`)
+- **193/193** Länder mit Hauptstadt (`P36`)
+- **190/193** mit höchstem Punkt (`P610`) inkl. Höhe (`P2044`) und Koordinate (`P625`)
+- Fläche und Einwohner kommen bevorzugt von der Weltbank; Natural-Earth-Werte dienen als Fallback.
 
 **Caveats:**
 
@@ -80,7 +79,7 @@ API funktioniert ohne Key:
 - `SP.POP.TOTL` (Einwohner, 2023)
 - `AG.SRF.TOTL.K2` (Fläche, 2023)
 
-Beispiele: Deutschland 83.287.273 Einwohner / 357.680 km²; Frankreich 68.372.286 / 606.410 km² (inkl. Übersee).
+Beispiele: Deutschland 83.287.273 Einwohner / 357.680 km²; Frankreich 68.372.286 / 606.410 km² (inkl. Übersee). Für 193 Länder werden die Abfragen in 10er-Blöcken mit Retry und Natural-Earth-Fallback ausgeführt.
 
 **Empfehlung:** World Bank für Einwohner/Fläche verwenden (aktueller und konsistenter als Natural Earth 2019). Natural Earth bleibt für Geometrie und Kartenanker.
 
@@ -133,7 +132,7 @@ Beispiele: Deutschland 83.287.273 Einwohner / 357.680 km²; Frankreich 68.372.28
 2. **Fakten-Pipeline** um Wikidata-Join erweitern: pro Land Hauptstadt, höchster Punkt, Fläche, Einwohner; kuratierte Overrides für Festland/Übersee.
 3. **QuestionEngine** zuerst mit 4 Typen: MC, Drag, Tap-Land, Tap-Region.
 4. **Fakten für 10 Länder** kuratieren: DE, AT, CH, FR, IT, ES, GB, PL, NL, SE.
-5. **DACH-Regionen** als vollständigen Fragentyp umsetzen (Region antippen, Feedback, „Welches Bundesland ist markiert?“).
+5. **Regionen** als vollständigen Fragentyp umsetzen (DACH + FR/IT/ES/PL/NL).
 6. **Save/Mastery** von Anfang an mitdenken, auch wenn zunächst nur lokal.
 
 ## 8. Offene Punkte

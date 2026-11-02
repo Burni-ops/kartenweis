@@ -34,7 +34,7 @@ const CATEGORY_LABEL: Record<string, string> = {
   strait: "Meerenge",
   landmark: "Wahrzeichen",
   neighbor: "Nachbar",
-  region: "Bundesland / Kanton",
+  region: "Region",
   extreme: "Extrem",
 };
 
@@ -111,7 +111,7 @@ export default function QuestionCard({
                 ? "Ziehe das Symbol an die richtige Stelle auf der Karte."
                 : question.interaction === "tap-country"
                   ? "Tippe das Land auf der Karte an."
-                  : "Tippe das Bundesland bzw. den Kanton auf der Karte an."}
+                  : "Tippe die Region auf der Karte an."}
             </p>
             <p className="mt-1 text-xs text-ink-muted">
               Du kannst die Karte vorher zoomen und verschieben.
