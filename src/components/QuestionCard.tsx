@@ -45,6 +45,7 @@ type Props = {
   onNext: () => void;
   onSkip: () => void;
   isLast: boolean;
+  showRevealHint: boolean;
 };
 
 export default function QuestionCard({
@@ -54,6 +55,7 @@ export default function QuestionCard({
   onNext,
   onSkip,
   isLast,
+  showRevealHint,
 }: Props) {
   const isMapQuestion = question.interaction !== "mc";
 
@@ -157,6 +159,13 @@ export default function QuestionCard({
                 {feedback.fact}
               </p>
             </div>
+
+            {showRevealHint && (
+              <div className="mt-2 flex items-center gap-1.5 text-[11px] font-semibold text-teal">
+                <span>🗺️</span>
+                Auf der Karte markiert: {feedback.answerLabel}
+              </div>
+            )}
 
             <button
               type="button"

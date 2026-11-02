@@ -3,7 +3,7 @@ import type {
   CountriesDataset,
   RegionFeatureCollection,
 } from "./types";
-import type { Fact } from "../game/types";
+import type { Fact, RevealMap } from "../game/types";
 
 const cache = new Map<string, Promise<unknown>>();
 
@@ -34,3 +34,6 @@ export const loadDachRegions = () =>
   loadJson<RegionFeatureCollection>("/data/maps/dach-regions.geojson");
 
 export const loadFacts = () => loadJson<Fact[]>("/data/facts/europe.json");
+
+export const loadReveals = () =>
+  loadJson<RevealMap>("/data/reveals/europe.json");

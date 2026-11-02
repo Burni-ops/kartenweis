@@ -19,8 +19,10 @@ import type {
 import type {
   AnswerFeedback,
   Question,
+  RevealMap,
   UserAnswer,
 } from "../game/types";
+import { resolveGeometryReveal } from "../game/reveal";
 import maplibreWorkerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url";
 
 const PALETTE = [
@@ -67,6 +69,7 @@ type Props = {
   runQuestion?: Question | null;
   runFeedback?: AnswerFeedback | null;
   onRunAnswer?: (answer: UserAnswer) => void;
+  reveals: RevealMap;
 };
 
 export default function MapView({
@@ -80,6 +83,7 @@ export default function MapView({
   runQuestion = null,
   runFeedback = null,
   onRunAnswer,
+  reveals,
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
@@ -90,6 +94,7 @@ export default function MapView({
   const answerCountryRef = useRef<string[]>([]);
   const answerRegionRef = useRef<string[]>([]);
   const runMarkersRef = useRef<Marker[]>([]);
+  const revealMarkersRef = useRef<Marker[]>([]);
   const dragPointerRef = useRef<number | null>(null);
 
   const callbacksRef = useRef({
@@ -154,6 +159,8 @@ export default function MapView({
     return () => {
       for (const marker of runMarkersRef.current) marker.remove();
       runMarkersRef.current = [];
+      for (const marker of revealMarkersRef.current) marker.remove();
+      revealMarkersRef.current = [];
       map.remove();
       mapRef.current = null;
       setReady(false);
@@ -350,6 +357,65 @@ export default function MapView({
         "line-color": CORRECT_COLOR,
         "line-width": 2,
         "line-dasharray": [2, 2],
+      },
+    });
+
+    const emptyCollection: FeatureCollection<Geometry> = {
+      type: "FeatureCollection",
+      features: [],
+    };
+    map.addSource("reveal-fill", {
+      type: "geojson",
+      data: emptyCollection,
+    });
+    map.addSource("reveal-line", {
+      type: "geojson",
+      data: emptyCollection,
+    });
+    map.addSource("reveal-point", {
+      type: "geojson",
+      data: emptyCollection,
+    });
+
+    map.addLayer({
+      id: "reveal-fill",
+      type: "fill",
+      source: "reveal-fill",
+      paint: {
+        "fill-color": "#0f8b8d",
+        "fill-opacity": 0.24,
+      },
+    });
+    map.addLayer({
+      id: "reveal-line-glow",
+      type: "line",
+      source: "reveal-line",
+      paint: {
+        "line-color": "#0f8b8d",
+        "line-width": 10,
+        "line-opacity": 0.18,
+        "line-blur": 2,
+      },
+    });
+    map.addLayer({
+      id: "reveal-line",
+      type: "line",
+      source: "reveal-line",
+      paint: {
+        "line-color": "#0f8b8d",
+        "line-width": 3.5,
+        "line-opacity": 0.95,
+      },
+    });
+    map.addLayer({
+      id: "reveal-point",
+      type: "circle",
+      source: "reveal-point",
+      paint: {
+        "circle-radius": 9,
+        "circle-color": "#0f8b8d",
+        "circle-stroke-color": "#ffffff",
+        "circle-stroke-width": 2,
       },
     });
 
@@ -724,6 +790,138 @@ export default function MapView({
       });
     }
   }, [runQuestion, runFeedback, ready, layersReady]);
+
+  // Reveal the answer on the map after feedback: point, river/lake/sea geometry,
+  // region or country. Keeps the highlight visible until "Weiter".
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !ready || !layersReady) return;
+
+    for (const marker of revealMarkersRef.current) marker.remove();
+    revealMarkersRef.current = [];
+
+    const empty: FeatureCollection<Geometry> = {
+      type: "FeatureCollection",
+      features: [],
+    };
+    for (const id of ["reveal-point", "reveal-line", "reveal-fill"]) {
+      (map.getSource(id) as GeoJSONSource | undefined)?.setData(empty);
+    }
+
+    if (!runQuestion || !runFeedback) return;
+
+    const addLabel = (point: LonLat, label: string) => {
+      const element = document.createElement("div");
+      element.className = "reveal-label";
+      const dot = document.createElement("span");
+      dot.className = "reveal-dot";
+      const text = document.createElement("span");
+      text.textContent = label;
+      element.append(dot, text);
+      revealMarkersRef.current.push(
+        new Marker({ element, anchor: "bottom" })
+          .setLngLat(point)
+          .addTo(map),
+      );
+    };
+
+    const addPulse = (point: LonLat) => {
+      const element = document.createElement("div");
+      element.className = "reveal-pulse";
+      revealMarkersRef.current.push(
+        new Marker({ element, anchor: "center" })
+          .setLngLat(point)
+          .addTo(map),
+      );
+    };
+
+    const fit = (bbox: BBox, maxZoom: number) => {
+      map.fitBounds(bbox, {
+        padding: { top: 100, bottom: 30, left: 40, right: 40 },
+        duration: 900,
+        maxZoom,
+      });
+    };
+
+    if (runQuestion.answer.regionCode) {
+      const region = regions.features.find(
+        (feature) =>
+          feature.properties?.code === runQuestion.answer.regionCode,
+      );
+      if (region) {
+        addLabel(region.properties.center, region.properties.name_de);
+        addPulse(region.properties.center);
+        fit(region.properties.bbox as BBox, 8.5);
+      }
+      return;
+    }
+
+    if (runQuestion.answer.countryCode) {
+      const country = countries.find(
+        (item) => item.code === runQuestion.answer.countryCode,
+      );
+      if (country) {
+        addLabel(country.center, country.name.de);
+        addPulse(country.center);
+        fit(country.focus_bbox as BBox, 7.5);
+      }
+      return;
+    }
+
+    const reveal = resolveGeometryReveal(runQuestion, reveals);
+    if (!reveal) return;
+
+    const point = reveal.point;
+    if (reveal.kind === "point" && !point) return;
+
+    const geometry: Geometry | undefined =
+      reveal.kind === "point"
+        ? { type: "Point", coordinates: point as [number, number] }
+        : reveal.geometry;
+    if (!geometry) return;
+
+    const collection: FeatureCollection<Geometry> = {
+      type: "FeatureCollection",
+      features: [{ type: "Feature", properties: {}, geometry }],
+    };
+
+    if (reveal.kind === "point") {
+      (map.getSource("reveal-point") as GeoJSONSource | undefined)?.setData(
+        collection,
+      );
+    } else {
+      (map.getSource("reveal-line") as GeoJSONSource | undefined)?.setData(
+        collection,
+      );
+      if (reveal.kind === "polygon") {
+        (map.getSource("reveal-fill") as GeoJSONSource | undefined)?.setData(
+          collection,
+        );
+      }
+    }
+
+    const labelPoint =
+      reveal.labelPoint ??
+      reveal.point ??
+      ([
+        (reveal.bbox[0] + reveal.bbox[2]) / 2,
+        (reveal.bbox[1] + reveal.bbox[3]) / 2,
+      ] as LonLat);
+
+    addLabel(labelPoint, reveal.label);
+    if (reveal.kind === "point") {
+      addPulse(reveal.point ?? labelPoint);
+    }
+    fit(reveal.bbox as BBox, reveal.kind === "point" ? 8.5 : 7.5);
+  }, [
+    runQuestion,
+    runFeedback,
+    ready,
+    layersReady,
+    reveals,
+    countries,
+    regions,
+  ]);
 
   const startDrag = (event: React.PointerEvent<HTMLButtonElement>) => {
     event.preventDefault();

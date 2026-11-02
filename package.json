@@ -13,7 +13,8 @@
     "e2e": "playwright test",
     "validate": "tsx tools/validate-data.ts",
     "check": "tsc --noEmit && npm run validate && npm run test",
-    "data": "tsx tools/build-data.ts"
+    "data": "tsx tools/build-data.ts && node tools/build-reveals.mjs",
+    "data:reveals": "node tools/build-reveals.mjs"
   },
   "keywords": [
     "geography",

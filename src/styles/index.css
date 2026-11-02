@@ -166,6 +166,50 @@ button {
   background: #d64545;
 }
 
+.reveal-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border: 2px solid #ffffff;
+  border-radius: 9999px;
+  background: #0f8b8d;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.2;
+  white-space: nowrap;
+  box-shadow: 0 6px 18px rgb(15 139 141 / 35%);
+}
+
+.reveal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgb(255 255 255 / 25%);
+}
+
+.reveal-pulse {
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: rgb(15 139 141 / 80%);
+  animation: reveal-pulse 1.6s ease-out infinite;
+}
+
+@keyframes reveal-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgb(15 139 141 / 55%);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgb(15 139 141 / 0%);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgb(15 139 141 / 0%);
+  }
+}
+
 @keyframes sheet-enter {
   from {
     opacity: 0;

@@ -101,6 +101,7 @@ Geografie-Lernspiele sind oft entweder trocken (Karte + Beschriftung) oder reine
 - **Präzision (Drag):** Perfekt / Sehr gut / Knapp / Daneben — abhängig von der Distanz in km, skaliert mit der Landesgröße.
 - **Tempo:** kleiner Bonus, aber kein Zeitdruck im Standardmodus.
 - **Feedback:** 1,5–2 Sekunden Overlay mit richtiger Antwort, Distanz („Du warst 87 km daneben“), Mini-Fakt und Karten-Zoom.
+- **Interaktive Karten-Auflösung:** Nach jeder Antwort wird das Ziel sichtbar: Punkt (Stadt/Berg/Wahrzeichen), Linie (Fluss), Fläche (See/Meer/Meerenge), Region oder Land. Die Karte zoomt kurz zum Objekt, zeigt ein Label und lässt die Markierung bis „Weiter“ stehen.
 - **Kein Leben-Verlust im Standard-Run.** Fehler kosten nur Punkte und Streak, nicht den Run.
 - **Endlosmodus:** 3 Leben, steigende Schwierigkeit, Highscore.
 
@@ -649,6 +650,7 @@ spasmitflaggen/
 ### M1 — Vertical Slice (Spielgefühl prüfen)
 
 - Run mit 10 Fragen: Multiple Choice + Drag-to-Map + Tap-the-Country + **Tap-the-Region (DACH)** + **Meere & Meerengen**.
+- **Interaktive Auflösung:** Flüsse, Seen, Meere, Meerengen, Berge und Regionen werden nach der Antwort auf der Karte markiert.
 - 10 europäische Länder mit geprüften Fakten.
 - Punkte, Streak, Feedback, Ergebnis, Speichern.
 - **Abnahme:** Ein kompletter Run ist von Anfang bis Ende spielbar, ohne tote Enden; Fakten haben Quellen; Bundesland-Fragen funktionieren auf der Deutschlandkarte.

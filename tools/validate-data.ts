@@ -29,8 +29,9 @@ function warn(message: string) {
 const countryFile = path.join(DATA, "countries.json");
 const europeFile = path.join(DATA, "maps", "europe.geojson");
 const regionsFile = path.join(DATA, "maps", "dach-regions.geojson");
+const revealsFile = path.join(DATA, "reveals", "europe.json");
 
-for (const file of [countryFile, europeFile, regionsFile]) {
+for (const file of [countryFile, europeFile, regionsFile, revealsFile]) {
   if (!fs.existsSync(file)) {
     fail(`Missing file: ${path.relative(ROOT, file)}`);
   }
@@ -225,6 +226,41 @@ if (errors.length === 0) {
     }
 
     console.log(`Validated ${facts.length} facts in public/data/facts/europe.json.`);
+
+    const reveals = readJson(revealsFile);
+    for (const [id, reveal] of Object.entries<any>(reveals)) {
+      if (!factIds.has(id)) {
+        fail(`Reveal references unknown fact: ${id}`);
+      }
+      if (!reveal.label) {
+        fail(`${id}: reveal without label`);
+      }
+      if (!Array.isArray(reveal.bbox) || reveal.bbox.length !== 4) {
+        fail(`${id}: reveal without valid bbox`);
+      }
+      if (reveal.kind === "point" && !Array.isArray(reveal.point)) {
+        fail(`${id}: point reveal without point`);
+      }
+      if (
+        (reveal.kind === "line" || reveal.kind === "polygon") &&
+        !reveal.geometry
+      ) {
+        fail(`${id}: geometry reveal without geometry`);
+      }
+    }
+
+    for (const fact of facts) {
+      if (
+        ["river", "lake", "sea", "strait"].includes(fact.category) &&
+        !reveals[fact.id]
+      ) {
+        fail(`${fact.id}: missing map reveal for ${fact.category}`);
+      }
+    }
+
+    console.log(
+      `Validated ${Object.keys(reveals).length} map reveals in public/data/reveals/europe.json.`,
+    );
   }
 
   console.log(

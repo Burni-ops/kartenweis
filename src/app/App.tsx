@@ -10,10 +10,12 @@ import {
   loadDachRegions,
   loadEuropeMap,
   loadFacts,
+  loadReveals,
 } from "../data/load";
 import { buildRun } from "../game/questions";
 import { mulberry32 } from "../game/random";
 import { evaluateAnswer } from "../game/scoring";
+import { questionHasReveal } from "../game/reveal";
 import { masteryMap, useProgress } from "../store/progress";
 import type {
   CountriesDataset,
@@ -24,6 +26,7 @@ import type {
 import type {
   AnswerFeedback,
   Fact,
+  RevealMap,
   RunConfig,
   RunState,
   RunSummary,
@@ -40,6 +43,7 @@ export default function App() {
   const [regionsGeo, setRegionsGeo] =
     useState<RegionFeatureCollection | null>(null);
   const [facts, setFacts] = useState<Fact[] | null>(null);
+  const [reveals, setReveals] = useState<RevealMap | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
@@ -70,13 +74,15 @@ export default function App() {
       loadEuropeMap(),
       loadDachRegions(),
       loadFacts(),
+      loadReveals(),
     ])
-      .then(([countries, map, regions, factList]) => {
+      .then(([countries, map, regions, factList, revealMap]) => {
         if (cancelled) return;
         setDataset(countries);
         setEurope(map);
         setRegionsGeo(regions);
         setFacts(factList);
+        setReveals(revealMap);
       })
       .catch((reason: unknown) => {
         if (cancelled) return;
@@ -104,6 +110,10 @@ export default function App() {
 
   const activeQuestion =
     mode === "run" && run ? (run.questions[run.index] ?? null) : null;
+  const showRevealHint =
+    activeQuestion && reveals
+      ? questionHasReveal(activeQuestion, reveals)
+      : false;
 
   const handleSelectCountry = useCallback((country: Country | null) => {
     setSelectedCountry(country);
@@ -287,7 +297,7 @@ export default function App() {
     );
   }
 
-  if (!dataset || !europe || !regionsGeo || !facts) {
+  if (!dataset || !europe || !regionsGeo || !facts || !reveals) {
     return (
       <main className="map-shell grid place-items-center bg-paper">
         <div className="glass flex items-center gap-3 rounded-2xl px-5 py-4 text-sm font-semibold">
@@ -312,6 +322,7 @@ export default function App() {
           runQuestion={activeQuestion}
           runFeedback={mode === "run" ? feedback : null}
           onRunAnswer={handleRunAnswer}
+          reveals={reveals}
         />
 
         {mode === "browse" && (
@@ -379,6 +390,7 @@ export default function App() {
             onNext={handleNext}
             onSkip={handleSkip}
             isLast={run.index + 1 >= run.questions.length}
+            showRevealHint={showRevealHint}
           />
         </div>
       )}

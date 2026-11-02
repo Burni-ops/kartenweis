@@ -1,4 +1,5 @@
-import type { LonLat } from "../data/types";
+import type { Geometry } from "geojson";
+import type { BBox, LonLat } from "../data/types";
 import type { Precision } from "./geo";
 
 export type Interaction = "mc" | "drag" | "tap-country" | "tap-region";
@@ -63,6 +64,19 @@ export interface RunConfig {
   count: number;
   seed: number;
 }
+
+export type RevealKind = "point" | "line" | "polygon";
+
+export interface Reveal {
+  kind: RevealKind;
+  geometry?: Geometry;
+  point?: LonLat;
+  bbox: BBox;
+  labelPoint?: LonLat | null;
+  label: string;
+}
+
+export type RevealMap = Record<string, Reveal>;
 
 export type UserAnswer =
   | { kind: "mc"; value: string }

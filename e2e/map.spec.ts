@@ -79,3 +79,60 @@ test("starts a Europe run and gives feedback on the first question", async ({
   await expect(page.getByText(/Richtig!|Leider falsch/)).toBeVisible();
   await expect(page.getByRole("button", { name: "Weiter" })).toBeVisible();
 });
+
+test("reveals a sea or strait answer on the map", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.getByText("Europa entdecken")).toBeVisible({
+    timeout: 20_000,
+  });
+
+  await page.getByRole("button", { name: /Europa-Run starten/ }).click();
+  await expect(page.getByText(/Frage 1 \/ \d+/)).toBeVisible();
+
+  const target = await page.evaluate(() => {
+    const app = (
+      window as unknown as {
+        __app?: {
+          run?: {
+            questions: Array<{
+              category: string;
+              answer: { label: string };
+            }>;
+          };
+        };
+      }
+    ).__app;
+    if (!app?.run) return null;
+    const index = app.run.questions.findIndex(
+      (question) =>
+        question.category === "sea" || question.category === "strait",
+    );
+    return index >= 0
+      ? { index, answer: app.run.questions[index].answer.label }
+      : null;
+  });
+
+  expect(target).not.toBeNull();
+
+  for (let index = 0; index < (target?.index ?? 0); index += 1) {
+    const skip = page.getByRole("button", { name: "Ich weiß es nicht" });
+    if (await skip.count()) {
+      await skip.click();
+    } else {
+      const option = page
+        .locator(".sheet button")
+        .filter({ hasNotText: "Ich weiß es nicht" })
+        .first();
+      if (await option.count()) await option.click();
+    }
+    await page.getByRole("button", { name: /Weiter|Ergebnis ansehen/ }).click();
+    await page.waitForTimeout(800);
+  }
+
+  await page
+    .getByRole("button", { name: target!.answer, exact: true })
+    .click();
+
+  await expect(page.locator(".reveal-label")).toBeVisible();
+  await expect(page.locator(".reveal-label")).toContainText(target!.answer);
+});

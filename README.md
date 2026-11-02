@@ -2,11 +2,11 @@
 
 Geografie-Spiel für den Browser — später Android. Länder werden nicht über Flaggen, sondern über ihre Orte, Landschaften und Rekorde entdeckt.
 
-**Aktueller Stand: M1 (Vertical Slice).** Die Europa-Karte läuft im Browser, Länder und DACH-Regionen lassen sich antippen. Der Quiz-Modus ist spielbar: Multiple Choice, Drag-to-Map, Land antippen, Bundesland/Kanton antippen sowie Fragen zu Meeren und Meerengen. Fortschritt und Mastery werden lokal gespeichert.
+**Aktueller Stand: M1 (Vertical Slice).** Die Europa-Karte läuft im Browser, Länder und DACH-Regionen lassen sich antippen. Der Quiz-Modus ist spielbar: Multiple Choice, Drag-to-Map, Land antippen, Bundesland/Kanton antippen sowie Fragen zu Meeren und Meerengen. Nach der Auflösung wird das Ziel auf der Karte markiert — Flüsse als Linie, Seen und Meere als Fläche, Berge und Städte als Punkt. Fortschritt und Mastery werden lokal gespeichert.
 
 ![Europa-Karte mit ausgewähltem Deutschland](docs/m0-map.png)
 
-Weitere Eindrücke: [Quiz-Run](docs/m1-run.png) · [Feedback](docs/m1-feedback.png) · [Meerengen-Frage](docs/m1-strait.png)
+Weitere Eindrücke: [Quiz-Run](docs/m1-run.png) · [Feedback](docs/m1-feedback.png) · [Meerengen-Frage](docs/m1-strait.png) · [Fluss-Auflösung](docs/m2-reveal-river.png) · [See-Auflösung](docs/m2-reveal-lake.png)
 
 ## Schnellstart
 
