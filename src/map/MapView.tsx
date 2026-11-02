@@ -717,7 +717,7 @@ export default function MapView({
 
     if (!runQuestion || !runFeedback) return;
 
-    if (runQuestion.interaction === "tap-country") {
+    if (runQuestion.answer.countryCode) {
       const target = runQuestion.answer.countryCode;
       if (target) {
         map.setFeatureState(
@@ -726,7 +726,10 @@ export default function MapView({
         );
         answerCountryRef.current.push(target);
       }
-      const user = runFeedback.userLabel;
+      const user =
+        runQuestion.interaction === "tap-country"
+          ? runFeedback.userLabel
+          : null;
       if (user && user !== target) {
         map.setFeatureState(
           { source: "countries", id: user },
