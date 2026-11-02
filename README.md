@@ -2,11 +2,11 @@
 
 Geografie-Spiel für den Browser — später Android. Länder werden nicht über Flaggen, sondern über ihre Orte, Landschaften und Rekorde entdeckt.
 
-**Aktueller Stand: M1 (Vertical Slice).** Die Europa-Karte läuft im Browser, Länder und DACH-Regionen lassen sich antippen. Der Quiz-Modus ist spielbar: Multiple Choice, Drag-to-Map, Land antippen, Bundesland/Kanton antippen sowie Fragen zu Meeren und Meerengen. Nach der Auflösung wird das Ziel auf der Karte markiert — Flüsse als Linie, Seen und Meere als Fläche, Berge und Städte als Punkt. Fortschritt und Mastery werden lokal gespeichert.
+**Aktueller Stand: M2 (Atlas & Fortschritt).** Die Europa-Karte läuft im Browser, Länder und DACH-Regionen lassen sich antippen. Der Quiz-Modus ist spielbar: Multiple Choice, Drag-to-Map, Land antippen, Bundesland/Kanton antippen sowie Fragen zu Meeren und Meerengen. Nach der Auflösung wird das Ziel auf der Karte markiert — Flüsse als Linie, Seen und Meere als Fläche, Berge und Städte als Punkt. Der Länder-Atlas zeigt alle Fakten, Orte, Gewässer und Regionen; Mastery, Erfolge und die Tages-Challenge sind aktiv.
 
 ![Europa-Karte mit ausgewähltem Deutschland](docs/m0-map.png)
 
-Weitere Eindrücke: [Quiz-Run](docs/m1-run.png) · [Feedback](docs/m1-feedback.png) · [Meerengen-Frage](docs/m1-strait.png) · [Fluss-Auflösung](docs/m2-reveal-river.png) · [See-Auflösung](docs/m2-reveal-lake.png)
+Weitere Eindrücke: [Quiz-Run](docs/m1-run.png) · [Feedback](docs/m1-feedback.png) · [Meerengen-Frage](docs/m1-strait.png) · [Fluss-Auflösung](docs/m2-reveal-river.png) · [See-Auflösung](docs/m2-reveal-lake.png) · [Länder-Atlas](docs/m2-atlas.png) · [Sammlung](docs/m2-collection.png) · [Tages-Challenge](docs/m2-daily.png)
 
 ## Schnellstart
 
@@ -69,11 +69,11 @@ e2e/            Playwright-Tests
 docs/           Screenshots
 ```
 
-## Nächste Schritte (M2)
+## Nächste Schritte (M3)
 
-- Länder-Atlas mit interaktiver Karte und Fakten-Details
-- Mastery-Anzeige, Länder-Sterne und Erfolge
-- Tages-Challenge
-- Weitere Länder und Fakten (Europa komplett)
+- Europa komplett: alle Länder mit Kernfakten
+- Regionen für weitere europäische Länder (Frankreich, Italien, Spanien, Polen …)
+- Onboarding, Sound, Animationen, Einstellungen und Credits
+- Content-QA und Playtest
 
 Der vollständige Plan steht in [`PLAN.md`](PLAN.md).

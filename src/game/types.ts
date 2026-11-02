@@ -63,6 +63,7 @@ export interface RunConfig {
   countryCode?: string;
   count: number;
   seed: number;
+  daily?: boolean;
 }
 
 export type RevealKind = "point" | "line" | "polygon";

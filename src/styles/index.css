@@ -198,6 +198,33 @@ button {
   animation: reveal-pulse 1.6s ease-out infinite;
 }
 
+.atlas-marker {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 2px solid #0f8b8d;
+  border-radius: 9999px;
+  background: #ffffff;
+  font-size: 14px;
+  line-height: 1;
+  box-shadow: 0 4px 12px rgb(27 42 65 / 22%);
+  cursor: pointer;
+  transition:
+    transform 150ms ease,
+    background 150ms ease;
+}
+
+.atlas-marker:hover {
+  transform: scale(1.12);
+}
+
+.atlas-marker.active {
+  border-color: #ffffff;
+  background: #e4572e;
+  transform: scale(1.18);
+}
+
 @keyframes reveal-pulse {
   0% {
     box-shadow: 0 0 0 0 rgb(15 139 141 / 55%);

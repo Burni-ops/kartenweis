@@ -22,6 +22,7 @@ import type {
   RevealMap,
   UserAnswer,
 } from "../game/types";
+import type { AtlasFeature } from "../game/atlas";
 import { resolveGeometryReveal } from "../game/reveal";
 import maplibreWorkerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url";
 
@@ -70,6 +71,11 @@ type Props = {
   runFeedback?: AnswerFeedback | null;
   onRunAnswer?: (answer: UserAnswer) => void;
   reveals: RevealMap;
+  atlasCountry?: Country | null;
+  atlasFeatures?: AtlasFeature[];
+  atlasSelectedFeature?: AtlasFeature | null;
+  onSelectAtlasFeature?: (id: string | null) => void;
+  atlasLayers?: { points: boolean; water: boolean; regions: boolean };
 };
 
 export default function MapView({
@@ -84,6 +90,11 @@ export default function MapView({
   runFeedback = null,
   onRunAnswer,
   reveals,
+  atlasCountry = null,
+  atlasFeatures = [],
+  atlasSelectedFeature = null,
+  onSelectAtlasFeature,
+  atlasLayers = { points: true, water: true, regions: true },
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
@@ -95,12 +106,17 @@ export default function MapView({
   const answerRegionRef = useRef<string[]>([]);
   const runMarkersRef = useRef<Marker[]>([]);
   const revealMarkersRef = useRef<Marker[]>([]);
+  const atlasMarkersRef = useRef<Marker[]>([]);
+  const atlasSelectedRegionRef = useRef<string | null>(null);
+  const atlasSelectedCountryRef = useRef<string | null>(null);
   const dragPointerRef = useRef<number | null>(null);
 
   const callbacksRef = useRef({
     onSelectCountry,
     onSelectRegion,
     onRunAnswer,
+    onSelectAtlasFeature,
+    atlasCountry,
   });
   const runRef = useRef({ question: runQuestion, feedback: runFeedback });
 
@@ -112,8 +128,20 @@ export default function MapView({
   );
 
   useEffect(() => {
-    callbacksRef.current = { onSelectCountry, onSelectRegion, onRunAnswer };
-  }, [onSelectCountry, onSelectRegion, onRunAnswer]);
+    callbacksRef.current = {
+      onSelectCountry,
+      onSelectRegion,
+      onRunAnswer,
+      onSelectAtlasFeature,
+      atlasCountry,
+    };
+  }, [
+    onSelectCountry,
+    onSelectRegion,
+    onRunAnswer,
+    onSelectAtlasFeature,
+    atlasCountry,
+  ]);
 
   useEffect(() => {
     runRef.current = { question: runQuestion, feedback: runFeedback };
@@ -161,6 +189,10 @@ export default function MapView({
       runMarkersRef.current = [];
       for (const marker of revealMarkersRef.current) marker.remove();
       revealMarkersRef.current = [];
+      for (const marker of atlasMarkersRef.current) marker.remove();
+      atlasMarkersRef.current = [];
+      atlasSelectedRegionRef.current = null;
+      atlasSelectedCountryRef.current = null;
       map.remove();
       mapRef.current = null;
       setReady(false);
@@ -419,6 +451,49 @@ export default function MapView({
       },
     });
 
+    map.addSource("atlas-water", {
+      type: "geojson",
+      data: emptyCollection,
+      promoteId: "id",
+    });
+    map.addLayer({
+      id: "atlas-water-fill",
+      type: "fill",
+      source: "atlas-water",
+      layout: { visibility: "none" },
+      paint: {
+        "fill-color": "#0f8b8d",
+        "fill-opacity": 0.12,
+      },
+    });
+    map.addLayer({
+      id: "atlas-water-line",
+      type: "line",
+      source: "atlas-water",
+      layout: { visibility: "none" },
+      paint: {
+        "line-color": "#0f8b8d",
+        "line-width": 1.8,
+        "line-opacity": 0.55,
+      },
+    });
+
+    const selectAtlasFeature = (event: MapLayerMouseEvent) => {
+      const id = event.features?.[0]?.properties?.id as string | undefined;
+      if (id) callbacksRef.current.onSelectAtlasFeature?.(id);
+    };
+    map.on("click", "atlas-water-fill", selectAtlasFeature);
+    map.on("click", "atlas-water-line", selectAtlasFeature);
+    map.on("mousemove", "atlas-water-fill", () => {
+      map.getCanvas().style.cursor = "pointer";
+    });
+    map.on("mousemove", "atlas-water-line", () => {
+      map.getCanvas().style.cursor = "pointer";
+    });
+    map.on("mouseleave", "atlas-water-line", () => {
+      map.getCanvas().style.cursor = "";
+    });
+
     const clearHover = () => {
       if (hoveredRef.current) {
         map.setFeatureState(
@@ -514,6 +589,8 @@ export default function MapView({
         return;
       }
 
+      if (callbacksRef.current.atlasCountry) return;
+
       callbacksRef.current.onSelectCountry(
         countries.find((country) => country.code === code) ?? null,
       );
@@ -534,6 +611,11 @@ export default function MapView({
         return;
       }
 
+      if (callbacksRef.current.atlasCountry) {
+        callbacksRef.current.onSelectAtlasFeature?.(`region:${code}`);
+        return;
+      }
+
       const region = regions.features.find(
         (feature) => feature.properties?.code === code,
       );
@@ -543,7 +625,7 @@ export default function MapView({
     });
 
     map.on("click", (event) => {
-      if (runRef.current.question) return;
+      if (runRef.current.question || callbacksRef.current.atlasCountry) return;
       const hits = map.queryRenderedFeatures(event.point, {
         layers: ["countries-fill", "regions-fill"],
       });
@@ -567,15 +649,10 @@ export default function MapView({
     if (selectedCountry) {
       map.setFeatureState(
         { source: "countries", id: selectedCountry.code },
-        { selected: true },
+        { selected: !atlasCountry },
       );
     }
     selectedCountryRef.current = selectedCountry?.code ?? null;
-
-    applyRegionFilter(
-      map,
-      selectedCountry?.has_regions ? selectedCountry.code : null,
-    );
 
     if (selectedCountry) {
       map.fitBounds(selectedCountry.focus_bbox as BBox, {
@@ -591,7 +668,31 @@ export default function MapView({
     } else {
       map.easeTo({ center: [12, 51], zoom: 3.4, duration: 700 });
     }
-  }, [selectedCountry, ready, layersReady, runQuestion]);
+  }, [selectedCountry, ready, layersReady, runQuestion, atlasCountry]);
+
+  // Region visibility for browse and atlas (run mode controls it separately).
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !ready || !layersReady || runQuestion) return;
+    if (atlasCountry) {
+      applyRegionFilter(
+        map,
+        atlasLayers.regions ? atlasCountry.code : null,
+      );
+    } else {
+      applyRegionFilter(
+        map,
+        selectedCountry?.has_regions ? selectedCountry.code : null,
+      );
+    }
+  }, [
+    atlasCountry,
+    atlasLayers.regions,
+    selectedCountry,
+    runQuestion,
+    ready,
+    layersReady,
+  ]);
 
   // Browse: highlight the selected region.
   useEffect(() => {
@@ -922,6 +1023,274 @@ export default function MapView({
     ready,
     layersReady,
     reveals,
+    countries,
+    regions,
+  ]);
+
+  // Atlas: keep the country fill neutral; the panel and markers are the focus.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !ready || !layersReady || !atlasCountry) return;
+    map.setFeatureState(
+      { source: "countries", id: atlasCountry.code },
+      { selected: false, answer: null },
+    );
+  }, [atlasCountry, ready, layersReady]);
+
+  // Atlas: show water geometries (rivers, lakes, seas, straits) as subtle layers.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !ready || !layersReady) return;
+
+    const features = atlasFeatures
+      .filter((feature) => Boolean(feature.geometry))
+      .map((feature) => ({
+        type: "Feature" as const,
+        properties: { id: feature.id },
+        geometry: feature.geometry!,
+      }));
+
+    (map.getSource("atlas-water") as GeoJSONSource | undefined)?.setData({
+      type: "FeatureCollection",
+      features,
+    });
+
+    const visible = Boolean(atlasCountry) && atlasLayers.water;
+    for (const layer of ["atlas-water-fill", "atlas-water-line"]) {
+      if (map.getLayer(layer)) {
+        map.setLayoutProperty(
+          layer,
+          "visibility",
+          visible ? "visible" : "none",
+        );
+      }
+    }
+  }, [
+    atlasCountry,
+    atlasFeatures,
+    atlasLayers.water,
+    ready,
+    layersReady,
+  ]);
+
+  // Atlas: point markers for capitals, peaks, landmarks, rivers, lakes, seas.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !ready || !layersReady) return;
+
+    for (const marker of atlasMarkersRef.current) marker.remove();
+    atlasMarkersRef.current = [];
+
+    if (!atlasCountry || !atlasLayers.points) return;
+
+    for (const feature of atlasFeatures) {
+      if (feature.kind === "region" || feature.kind === "country") continue;
+      const point =
+        feature.point ?? feature.labelPoint ?? feature.center;
+      if (!point) continue;
+
+      const element = document.createElement("button");
+      element.type = "button";
+      element.className = `atlas-marker ${
+        atlasSelectedFeature?.id === feature.id ? "active" : ""
+      }`;
+      element.title = feature.label;
+      element.setAttribute("aria-label", feature.label);
+      element.textContent = DRAG_ICONS[feature.category] ?? "📍";
+      element.addEventListener("click", (event) => {
+        event.stopPropagation();
+        callbacksRef.current.onSelectAtlasFeature?.(feature.id);
+      });
+
+      atlasMarkersRef.current.push(
+        new Marker({ element, anchor: "center" })
+          .setLngLat(point)
+          .addTo(map),
+      );
+    }
+  }, [
+    atlasCountry,
+    atlasFeatures,
+    atlasLayers.points,
+    atlasSelectedFeature,
+    ready,
+    layersReady,
+  ]);
+
+  // Atlas: highlight the selected fact on the map.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !ready || !layersReady || runQuestion) return;
+
+    for (const marker of revealMarkersRef.current) marker.remove();
+    revealMarkersRef.current = [];
+    for (const id of ["reveal-point", "reveal-line", "reveal-fill"]) {
+      (map.getSource(id) as GeoJSONSource | undefined)?.setData({
+        type: "FeatureCollection",
+        features: [],
+      });
+    }
+    if (atlasSelectedRegionRef.current) {
+      map.setFeatureState(
+        { source: "regions", id: atlasSelectedRegionRef.current },
+        { selected: false },
+      );
+      atlasSelectedRegionRef.current = null;
+    }
+    if (atlasSelectedCountryRef.current) {
+      map.setFeatureState(
+        { source: "countries", id: atlasSelectedCountryRef.current },
+        { answer: null },
+      );
+      atlasSelectedCountryRef.current = null;
+    }
+
+    if (!atlasCountry) return;
+
+    const addLabel = (
+      point: LonLat,
+      label: string,
+      pulse = false,
+    ) => {
+      const element = document.createElement("div");
+      element.className = "reveal-label";
+      const dot = document.createElement("span");
+      dot.className = "reveal-dot";
+      const text = document.createElement("span");
+      text.textContent = label;
+      element.append(dot, text);
+      revealMarkersRef.current.push(
+        new Marker({ element, anchor: "bottom" })
+          .setLngLat(point)
+          .addTo(map),
+      );
+      if (pulse) {
+        const pulseElement = document.createElement("div");
+        pulseElement.className = "reveal-pulse";
+        revealMarkersRef.current.push(
+          new Marker({ element: pulseElement, anchor: "center" })
+            .setLngLat(point)
+            .addTo(map),
+        );
+      }
+    };
+
+    if (!atlasSelectedFeature) {
+      map.fitBounds(atlasCountry.focus_bbox as BBox, {
+        padding: { top: 100, bottom: 30, left: 40, right: 40 },
+        duration: 700,
+        maxZoom: 7.5,
+      });
+      return;
+    }
+
+    const feature = atlasSelectedFeature;
+
+    if (feature.kind === "region" && feature.regionCode) {
+      const region = regions.features.find(
+        (item) => item.properties?.code === feature.regionCode,
+      );
+      if (region) {
+        map.setFeatureState(
+          { source: "regions", id: feature.regionCode },
+          { selected: true },
+        );
+        atlasSelectedRegionRef.current = feature.regionCode;
+        addLabel(region.properties.center, feature.label, true);
+        map.fitBounds(region.properties.bbox as BBox, {
+          padding: { top: 100, bottom: 30, left: 40, right: 40 },
+          duration: 700,
+          maxZoom: 8.5,
+        });
+      }
+      return;
+    }
+
+    if (feature.kind === "country" && feature.countryCode) {
+      const country = countries.find(
+        (item) => item.code === feature.countryCode,
+      );
+      if (country) {
+        map.setFeatureState(
+          { source: "countries", id: country.code },
+          { answer: "correct" },
+        );
+        atlasSelectedCountryRef.current = country.code;
+        addLabel(country.center, feature.label, true);
+        map.fitBounds(country.focus_bbox as BBox, {
+          padding: { top: 100, bottom: 30, left: 40, right: 40 },
+          duration: 700,
+          maxZoom: 7.5,
+        });
+      }
+      return;
+    }
+
+    const point = feature.point ?? feature.labelPoint ?? feature.center;
+    const bbox =
+      feature.bbox ??
+      (point
+        ? ([
+            point[0] - 0.3,
+            point[1] - 0.24,
+            point[0] + 0.3,
+            point[1] + 0.24,
+          ] as BBox)
+        : null);
+    if (!bbox) return;
+
+    if (feature.kind === "point" && point) {
+      const collection = {
+        type: "FeatureCollection" as const,
+        features: [
+          {
+            type: "Feature" as const,
+            properties: {},
+            geometry: { type: "Point" as const, coordinates: point },
+          },
+        ],
+      };
+      (map.getSource("reveal-point") as GeoJSONSource | undefined)?.setData(
+        collection,
+      );
+    } else if (feature.geometry) {
+      const collection = {
+        type: "FeatureCollection" as const,
+        features: [
+          {
+            type: "Feature" as const,
+            properties: {},
+            geometry: feature.geometry,
+          },
+        ],
+      };
+      (map.getSource("reveal-line") as GeoJSONSource | undefined)?.setData(
+        collection,
+      );
+      if (feature.kind === "polygon") {
+        (map.getSource("reveal-fill") as GeoJSONSource | undefined)?.setData(
+          collection,
+        );
+      }
+    }
+
+    const labelPoint = point ?? [
+      (bbox[0] + bbox[2]) / 2,
+      (bbox[1] + bbox[3]) / 2,
+    ] as LonLat;
+    addLabel(labelPoint, feature.label, feature.kind === "point");
+    map.fitBounds(bbox, {
+      padding: { top: 100, bottom: 30, left: 40, right: 40 },
+      duration: 700,
+      maxZoom: feature.kind === "point" ? 8.5 : 7.5,
+    });
+  }, [
+    atlasCountry,
+    atlasSelectedFeature,
+    atlasFeatures,
+    runQuestion,
+    ready,
+    layersReady,
     countries,
     regions,
   ]);

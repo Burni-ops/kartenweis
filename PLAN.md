@@ -657,10 +657,10 @@ spasmitflaggen/
 
 ### M2 — Atlas & Fortschritt
 
-- Länder-Atlas für 5 Länder (Deutschland, Frankreich, Italien, Spanien, Vereinigtes Königreich).
-- Atlas-Layer für Bundesländer/Kantone/Regionen (DACH) mit Namen und Verwaltungssitz.
-- Mastery, Länder-Sterne, Erfolge, Tages-Seed.
-- **Abnahme:** Atlas zeigt alle v1-Kategorien; Fortschritt bleibt nach Neustart erhalten.
+- Länder-Atlas für alle 45 Länder (tiefe Fakten für 10, Basisdaten für alle).
+- Atlas-Layer für Orte, Gewässer (Flüsse, Seen, Meere, Meerengen) und Regionen.
+- Mastery pro Land und Fakt, Erfolge, Sammlung und Tages-Challenge.
+- **Abnahme:** Atlas zeigt die v1-Kategorien; Fortschritt bleibt nach Neustart erhalten; Tages-Challenge ist einmal pro Tag spielbar.
 
 ### M3 — Europa komplett & Politur
 

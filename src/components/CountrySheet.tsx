@@ -1,4 +1,5 @@
 import type { Country, Region } from "../data/types";
+import type { MasterySummary } from "../game/atlas";
 
 const numberFormat = new Intl.NumberFormat("de-DE");
 const compactFormat = new Intl.NumberFormat("de-DE", {
@@ -10,10 +11,14 @@ type Props = {
   country: Country | null;
   regions: Region[];
   selectedRegion: Region | null;
+  mastery?: MasterySummary | null;
+  dailyDone: boolean;
   onSelectRegion: (region: Region | null) => void;
   onClose: () => void;
   onStartRun: (countryCode: string) => void;
   onStartEurope: () => void;
+  onStartDaily: () => void;
+  onOpenAtlas: (country: Country) => void;
 };
 
 function Stat({ label, value }: { label: string; value: string }) {
@@ -31,10 +36,14 @@ export default function CountrySheet({
   country,
   regions,
   selectedRegion,
+  mastery,
+  dailyDone,
   onSelectRegion,
   onClose,
   onStartRun,
   onStartEurope,
+  onStartDaily,
+  onOpenAtlas,
 }: Props) {
   if (!country) {
     return (
@@ -60,8 +69,16 @@ export default function CountrySheet({
         >
           Europa-Run starten · 10 Fragen
         </button>
+        <button
+          type="button"
+          onClick={onStartDaily}
+          disabled={dailyDone}
+          className="mt-2 w-full rounded-2xl border border-teal/30 bg-teal-soft/50 px-4 py-2.5 text-sm font-bold text-teal transition hover:bg-teal-soft disabled:cursor-default disabled:opacity-60"
+        >
+          📅 {dailyDone ? "Tages-Challenge erledigt" : "Tages-Challenge starten"}
+        </button>
         <p className="mt-3 text-center text-[10px] text-ink-muted">
-          Karten: Natural Earth (Public Domain) · Prototyp M1
+          Karten: Natural Earth (Public Domain) · Prototyp M2
         </p>
       </div>
     );
@@ -127,6 +144,29 @@ export default function CountrySheet({
         />
       </div>
 
+      {mastery && (
+        <div className="mt-2 rounded-2xl bg-teal-soft/50 px-3 py-2">
+          <div className="flex items-center justify-between text-[11px] font-bold">
+            <span className="text-teal">Fortschritt</span>
+            <span className="text-ink">
+              {mastery.learned}/{mastery.total} Fakten · {mastery.percent}%
+            </span>
+          </div>
+          <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-white/70">
+            <div
+              className="h-full rounded-full bg-teal transition-[width]"
+              style={{ width: `${mastery.percent}%` }}
+            />
+          </div>
+          <div className="mt-1 text-xs text-gold">
+            {"★".repeat(mastery.stars)}
+            <span className="text-line">
+              {"★".repeat(3 - mastery.stars)}
+            </span>
+          </div>
+        </div>
+      )}
+
       {country.has_regions && regions.length > 0 && (
         <div className="mt-4">
           <div className="mb-2 flex items-center justify-between">
@@ -187,16 +227,15 @@ export default function CountrySheet({
         </button>
         <button
           type="button"
-          disabled
-          className="rounded-2xl border border-line bg-white/70 px-4 py-2.5 text-sm font-bold text-ink-muted opacity-60"
-          title="Kommt in M2"
+          onClick={() => onOpenAtlas(country)}
+          className="rounded-2xl border border-line bg-white/70 px-4 py-2.5 text-sm font-bold text-ink transition hover:border-teal hover:text-teal"
         >
-          Atlas
+          📖 Atlas
         </button>
       </div>
 
       <p className="mt-2 text-center text-[10px] text-ink-muted">
-        Prototyp M1 · Karten: Natural Earth (Public Domain) ·{" "}
+        Prototyp M2 · Karten: Natural Earth (Public Domain) ·{" "}
         {country.population_year
           ? `Einwohner ${country.population_year}`
           : "Einwohner ca."}

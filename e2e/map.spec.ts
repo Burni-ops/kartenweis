@@ -136,3 +136,73 @@ test("reveals a sea or strait answer on the map", async ({ page }) => {
   await expect(page.locator(".reveal-label")).toBeVisible();
   await expect(page.locator(".reveal-label")).toContainText(target!.answer);
 });
+
+test("opens the atlas, selects a river and reveals it on the map", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await expect(page.getByText("Europa entdecken")).toBeVisible({
+    timeout: 20_000,
+  });
+
+  await page.waitForFunction(
+    () =>
+      Boolean(
+        (window as unknown as { __map?: { loaded(): boolean } }).__map?.loaded(),
+      ),
+  );
+  const point = await page.evaluate(() => {
+    const map = (
+      window as unknown as {
+        __map: {
+          project(coordinate: [number, number]): { x: number; y: number };
+        };
+      }
+    ).__map;
+    return map.project([10.45, 51.16]);
+  });
+  await page.mouse.click(point.x, point.y);
+  await expect(
+    page.getByRole("heading", { name: "Deutschland" }),
+  ).toBeVisible();
+
+  await page.getByRole("button", { name: /Atlas/ }).click();
+  await expect(page.getByText("Länder-Atlas")).toBeVisible();
+
+  await page.getByRole("button", { name: "🌊 Flüsse", exact: true }).click();
+  const riverCard = page
+    .locator(".sheet button")
+    .filter({ hasText: "Rhein" })
+    .first();
+  await expect(riverCard).toBeVisible();
+  await riverCard.click();
+
+  await expect(page.locator(".reveal-label")).toBeVisible();
+  await expect(page.locator(".reveal-label")).toContainText("Rhein");
+});
+
+test("opens the collection and the daily challenge", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.getByText("Europa entdecken")).toBeVisible({
+    timeout: 20_000,
+  });
+
+  await page.getByRole("button", { name: "Sammlung öffnen" }).click();
+  await expect(page.getByText("Fortschritt & Erfolge")).toBeVisible();
+  await page.getByRole("button", { name: "Sammlung schließen" }).click();
+
+  await page
+    .getByRole("button", { name: "📅 Tages-Challenge starten", exact: true })
+    .click();
+  await expect(page.getByText(/Frage 1 \/ \d+/)).toBeVisible();
+
+  const daily = await page.evaluate(() => {
+    const app = (
+      window as unknown as {
+        __app?: { run?: { config: { daily?: boolean } } };
+      }
+    ).__app;
+    return Boolean(app?.run?.config.daily);
+  });
+  expect(daily).toBe(true);
+});

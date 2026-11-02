@@ -5,6 +5,8 @@ import CountrySheet from "../components/CountrySheet";
 import QuestionCard from "../components/QuestionCard";
 import ResultCard from "../components/ResultCard";
 import RunHud from "../components/RunHud";
+import AtlasPanel from "../components/AtlasPanel";
+import CollectionPanel from "../components/CollectionPanel";
 import {
   loadCountries,
   loadDachRegions,
@@ -16,6 +18,12 @@ import { buildRun } from "../game/questions";
 import { mulberry32 } from "../game/random";
 import { evaluateAnswer } from "../game/scoring";
 import { questionHasReveal } from "../game/reveal";
+import {
+  buildAtlasFeatures,
+  factIdsForCountry,
+  masteryForIds,
+} from "../game/atlas";
+import { dailySeed, todayKey } from "../game/daily";
 import { masteryMap, useProgress } from "../store/progress";
 import type {
   CountriesDataset,
@@ -33,7 +41,7 @@ import type {
   UserAnswer,
 } from "../game/types";
 
-type Mode = "browse" | "run" | "result";
+type Mode = "browse" | "run" | "result" | "atlas";
 
 export default function App() {
   const [dataset, setDataset] = useState<CountriesDataset | null>(null);
@@ -52,9 +60,23 @@ export default function App() {
   const [run, setRun] = useState<RunState | null>(null);
   const [feedback, setFeedback] = useState<AnswerFeedback | null>(null);
   const [summary, setSummary] = useState<RunSummary | null>(null);
+  const [atlasCountry, setAtlasCountry] = useState<Country | null>(null);
+  const [atlasSelectedId, setAtlasSelectedId] = useState<string | null>(null);
+  const [atlasLayers, setAtlasLayers] = useState({
+    points: true,
+    water: true,
+    regions: true,
+  });
+  const [collectionOpen, setCollectionOpen] = useState(false);
 
   const recordAnswer = useProgress((state) => state.recordAnswer);
   const recordRun = useProgress((state) => state.recordRun);
+  const recordCountryVisit = useProgress(
+    (state) => state.recordCountryVisit,
+  );
+  const recordDaily = useProgress((state) => state.recordDaily);
+  const progressFacts = useProgress((state) => state.facts);
+  const daily = useProgress((state) => state.daily);
 
   useEffect(() => {
     if (!import.meta.env.DEV) return;
@@ -115,6 +137,46 @@ export default function App() {
       ? questionHasReveal(activeQuestion, reveals)
       : false;
 
+  const today = todayKey();
+  const dailyDone = daily.lastPlayed === today;
+
+  const atlasFeatures = useMemo(
+    () =>
+      atlasCountry && facts && reveals
+        ? buildAtlasFeatures(atlasCountry, facts, reveals, regions)
+        : [],
+    [atlasCountry, facts, reveals, regions],
+  );
+
+  const atlasSelectedFeature = useMemo(
+    () =>
+      atlasFeatures.find((feature) => feature.id === atlasSelectedId) ??
+      null,
+    [atlasFeatures, atlasSelectedId],
+  );
+
+  const atlasMastery = useMemo(
+    () =>
+      atlasCountry && facts
+        ? masteryForIds(
+            factIdsForCountry(atlasCountry, facts, regions),
+            progressFacts,
+          )
+        : null,
+    [atlasCountry, facts, regions, progressFacts],
+  );
+
+  const selectedCountryMastery = useMemo(
+    () =>
+      selectedCountry && facts
+        ? masteryForIds(
+            factIdsForCountry(selectedCountry, facts, regions),
+            progressFacts,
+          )
+        : null,
+    [selectedCountry, facts, regions, progressFacts],
+  );
+
   const handleSelectCountry = useCallback((country: Country | null) => {
     setSelectedCountry(country);
     setSelectedRegion(null);
@@ -129,16 +191,10 @@ export default function App() {
     setSelectedRegion(null);
   }, []);
 
-  const startRun = useCallback(
-    (scope: "europe" | "country", countryCode?: string) => {
+  const beginRun = useCallback(
+    (config: RunConfig) => {
       if (!dataset || !facts) return;
 
-      const config: RunConfig = {
-        scope,
-        countryCode,
-        count: 10,
-        seed: Math.floor(Math.random() * 0xffffffff),
-      };
       const questions = buildRun(
         config,
         dataset.countries,
@@ -152,6 +208,9 @@ export default function App() {
 
       setSelectedCountry(null);
       setSelectedRegion(null);
+      setAtlasCountry(null);
+      setAtlasSelectedId(null);
+      setCollectionOpen(false);
       setRun({
         config,
         questions,
@@ -169,6 +228,18 @@ export default function App() {
     [dataset, facts, regions],
   );
 
+  const startRun = useCallback(
+    (scope: "europe" | "country", countryCode?: string) => {
+      beginRun({
+        scope,
+        countryCode,
+        count: 10,
+        seed: Math.floor(Math.random() * 0xffffffff),
+      });
+    },
+    [beginRun],
+  );
+
   const handleStartEurope = useCallback(() => {
     startRun("europe");
   }, [startRun]);
@@ -180,6 +251,54 @@ export default function App() {
     [startRun],
   );
 
+  const handleStartDaily = useCallback(() => {
+    if (dailyDone) return;
+    beginRun({
+      scope: "europe",
+      count: 10,
+      seed: dailySeed(),
+      daily: true,
+    });
+  }, [beginRun, dailyDone]);
+
+  const handleOpenAtlas = useCallback(
+    (country: Country) => {
+      setSelectedCountry(country);
+      setSelectedRegion(null);
+      setAtlasCountry(country);
+      setAtlasSelectedId(null);
+      setAtlasLayers({ points: true, water: true, regions: true });
+      setCollectionOpen(false);
+      setMode("atlas");
+      recordCountryVisit(country.code);
+    },
+    [recordCountryVisit],
+  );
+
+  const handleCloseAtlas = useCallback(() => {
+    setMode("browse");
+    setAtlasCountry(null);
+    setAtlasSelectedId(null);
+  }, []);
+
+  const handleToggleAtlasLayer = useCallback(
+    (key: keyof typeof atlasLayers) => {
+      setAtlasLayers((previous) => ({
+        ...previous,
+        [key]: !previous[key],
+      }));
+    },
+    [atlasLayers],
+  );
+
+  const handleOpenCollection = useCallback(() => {
+    setCollectionOpen(true);
+  }, []);
+
+  const handleCloseCollection = useCallback(() => {
+    setCollectionOpen(false);
+  }, []);
+
   const handleRunAnswer = useCallback(
     (answer: UserAnswer) => {
       if (!run || feedback) return;
@@ -187,7 +306,10 @@ export default function App() {
       if (!question) return;
 
       const evaluation = evaluateAnswer(question, answer, run.streak);
-      recordAnswer(question.factId, evaluation.correct);
+      recordAnswer(question.factId, evaluation.correct, {
+        category: question.category,
+        country: question.countryCode,
+      });
       setFeedback(evaluation.feedback);
       setRun((previous) => {
         if (!previous) return previous;
@@ -212,7 +334,10 @@ export default function App() {
     const question = run.questions[run.index];
     if (!question) return;
 
-    recordAnswer(question.factId, false);
+    recordAnswer(question.factId, false, {
+      category: question.category,
+      country: question.countryCode,
+    });
     setFeedback({
       correct: false,
       points: 0,
@@ -246,10 +371,13 @@ export default function App() {
       finishedAt: Date.now(),
     };
     recordRun(result);
+    if (run.config.daily) {
+      recordDaily(todayKey());
+    }
     setSummary(result);
     setFeedback(null);
     setMode("result");
-  }, [run, recordRun]);
+  }, [run, recordRun, recordDaily]);
 
   const handleRestart = useCallback(() => {
     if (!summary) return;
@@ -323,6 +451,11 @@ export default function App() {
           runFeedback={mode === "run" ? feedback : null}
           onRunAnswer={handleRunAnswer}
           reveals={reveals}
+          atlasCountry={atlasCountry}
+          atlasFeatures={atlasFeatures}
+          atlasSelectedFeature={atlasSelectedFeature}
+          onSelectAtlasFeature={setAtlasSelectedId}
+          atlasLayers={atlasLayers}
         />
 
         {mode === "browse" && (
@@ -336,16 +469,43 @@ export default function App() {
                   Spasmitflaggen
                 </div>
                 <div className="text-[11px] font-medium text-ink-muted">
-                  Europa · {dataset.countries.length} Länder · M1
+                  Europa · {dataset.countries.length} Länder · M2
                 </div>
               </div>
-              <div className="ml-auto flex shrink-0 items-center gap-2">
+              <div className="ml-auto flex shrink-0 items-center gap-1.5">
                 <button
                   type="button"
                   onClick={handleStartEurope}
                   className="rounded-full bg-teal px-3 py-1.5 text-xs font-extrabold text-white shadow-sm transition hover:bg-teal/90 active:scale-[0.98]"
                 >
                   ▶ <span className="hidden sm:inline">Europa-</span>Run
+                </button>
+                <button
+                  type="button"
+                  onClick={handleStartDaily}
+                  disabled={dailyDone}
+                  aria-label={
+                    dailyDone
+                      ? "Tages-Challenge erledigt"
+                      : "Tages-Challenge starten"
+                  }
+                  title={
+                    dailyDone
+                      ? "Tages-Challenge erledigt"
+                      : "Tages-Challenge starten"
+                  }
+                  className="grid h-8 w-8 place-items-center rounded-full bg-teal-soft text-sm text-teal transition hover:bg-teal-soft/70 disabled:opacity-50"
+                >
+                  📅
+                </button>
+                <button
+                  type="button"
+                  onClick={handleOpenCollection}
+                  aria-label="Sammlung öffnen"
+                  title="Sammlung öffnen"
+                  className="grid h-8 w-8 place-items-center rounded-full bg-paper-deep text-sm text-ink-muted transition hover:bg-line hover:text-ink"
+                >
+                  🏆
                 </button>
                 <button
                   type="button"
@@ -373,12 +533,30 @@ export default function App() {
               (region) => region.country === selectedCountry?.code,
             )}
             selectedRegion={selectedRegion}
+            mastery={selectedCountryMastery}
+            dailyDone={dailyDone}
             onSelectRegion={handleSelectRegion}
             onClose={handleClose}
             onStartRun={handleStartCountry}
             onStartEurope={handleStartEurope}
+            onStartDaily={handleStartDaily}
+            onOpenAtlas={handleOpenAtlas}
           />
         </div>
+      )}
+
+      {mode === "atlas" && atlasCountry && atlasMastery && (
+        <AtlasPanel
+          country={atlasCountry}
+          features={atlasFeatures}
+          mastery={atlasMastery}
+          progress={progressFacts}
+          selectedId={atlasSelectedId}
+          onSelect={setAtlasSelectedId}
+          onClose={handleCloseAtlas}
+          layers={atlasLayers}
+          onToggleLayer={handleToggleAtlasLayer}
+        />
       )}
 
       {mode === "run" && run && activeQuestion && (
@@ -400,6 +578,15 @@ export default function App() {
           summary={summary}
           onRestart={handleRestart}
           onExit={handleExitResult}
+        />
+      )}
+
+      {collectionOpen && (
+        <CollectionPanel
+          countries={dataset.countries}
+          facts={facts}
+          regions={regions}
+          onClose={handleCloseCollection}
         />
       )}
     </main>
