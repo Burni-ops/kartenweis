@@ -38,6 +38,9 @@ const readJson = (file: string): Json => JSON.parse(fs.readFileSync(file, "utf8"
 const countries = readJson(path.join(RAW, "ne_10m_admin_0_countries.geojson"));
 const places = readJson(path.join(RAW, "ne_10m_populated_places.geojson"));
 
+const referenceFile = path.join(ROOT, "data", "reference", "europe.json");
+const reference = fs.existsSync(referenceFile) ? readJson(referenceFile) : null;
+
 /** Territories/dependencies that are not part of the country list. */
 const EXCLUDED = new Set(["GIB", "JEY", "GGY", "IMN", "ALD", "FRO"]);
 
@@ -156,10 +159,19 @@ const europe = countries.features
     const center = [round(p.LABEL_X), round(p.LABEL_Y)];
     const focus = focusBBox(feature, center as [number, number]);
     const rawAreaKm2 = area(feature as any) / 1_000_000;
-    const areaKm2 =
+    const geometryAreaKm2 =
       rawAreaKm2 < 10
         ? Number(rawAreaKm2.toFixed(2))
         : Math.round(rawAreaKm2);
+    const ref = reference?.countries?.[code] ?? null;
+    const areaKm2 =
+      typeof ref?.area_km2 === "number"
+        ? ref.area_km2 < 10
+          ? Number(ref.area_km2.toFixed(2))
+          : Math.round(ref.area_km2)
+        : geometryAreaKm2;
+    const population = ref?.population ?? p.POP_EST ?? null;
+    const populationYear = ref?.population_year ?? p.POP_YEAR ?? null;
     const capital =
       capitals.get(code) ?? capitalsByIso3.get(p.ADM0_A3) ?? null;
 
@@ -172,15 +184,17 @@ const europe = countries.features
       },
       continent: "europe",
       capital,
-      population: p.POP_EST ?? null,
-      population_year: p.POP_YEAR ?? null,
+      population,
+      population_year: populationYear,
       area_km2: areaKm2,
+      area_year: ref?.area_year ?? null,
+      highest_point: ref?.highest_point ?? null,
       bbox: box,
       focus_bbox: focus,
       center,
       flag: flagEmoji(code),
       flag_url: `/flags/${code.toLowerCase()}.svg`,
-      wikidata: p.WIKIDATAID ?? null,
+      wikidata: ref?.wikidata ?? p.WIKIDATAID ?? null,
       mapcolor: p.MAPCOLOR9 ?? 1,
       has_regions: ["DE", "AT", "CH"].includes(code),
       region_label:

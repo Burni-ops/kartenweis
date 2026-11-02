@@ -47,6 +47,7 @@ Natural Earth 1:10m (Public Domain) liefert:
 | `ne_10m_populated_places` | Hauptstädte, Städte | Hauptstadt über `ADM0CAP = 1`; Kosovo über `ADM0_A3` auffindbar |
 | `ne_10m_rivers_lake_centerlines` | Flüsse | noch nicht eingebunden |
 | `ne_10m_lakes` | Seen | noch nicht eingebunden |
+| `ne_10m_geography_marine_polys` | Meere, Meerengen | für Kartenlayer und Faktenprüfung vorgesehen |
 
 **Vereinfachung:** mapshaper mit `-simplify 10% keep-shapes` reduziert Europa auf 269 kB und DACH-Regionen auf 47 kB. Das ist für den Prototyp ausreichend; für Detailansichten kann später auf 20–30 % gegangen werden.
 
@@ -109,6 +110,7 @@ Beispiele: Deutschland 83.287.273 Einwohner / 357.680 km²; Frankreich 68.372.28
 | **Nachbarn** | Anzahl, längste/kürzeste Grenze, „grenzt nicht an“ | MC, Tap-Land | NE, Wikidata | ✅ |
 | **Bundesländer & Regionen** | Wo liegt Bayern? Welches Bundesland ist markiert? | **Tap-Region**, MC | NE Admin-1, Wikidata | ✅ DACH |
 | **Seen & Küsten** | größter See, tiefster See, längste Küste, größte Insel | MC, Drag | NE Lakes, Wikidata | P1 |
+| **Meere & Meerengen** | Europa und Afrika, Nordsee, Ostsee, Gibraltar, Bosporus, Öresund, Ärmelkanal | MC (später Karte) | NE Marine, kuratiert | ✅ |
 | **Natur & Extreme** | Wüste, Strand, heiß/kalt, Gletscher | MC | kuratiert | P1 |
 | **Verkehr** | Autobahn, Flughafen, Brücke | MC | kuratiert | P2 |
 | **Flagge** | Farben, Symbolik | MC | Wikipedia | P2 |

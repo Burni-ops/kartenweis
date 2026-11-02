@@ -57,6 +57,8 @@ button {
 }
 
 .sheet {
+  max-height: 70dvh;
+  overflow-y: auto;
   background: color-mix(in srgb, white 94%, transparent);
   border: 1px solid color-mix(in srgb, white 70%, transparent);
   box-shadow:
@@ -113,6 +115,55 @@ button {
 
 .sheet-enter {
   animation: sheet-enter 260ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.drag-pin {
+  display: flex;
+  width: 64px;
+  height: 64px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  border: 2px solid var(--color-teal);
+  border-radius: 9999px;
+  background: #ffffff;
+  color: var(--color-ink);
+  box-shadow: 0 12px 30px rgb(27 42 65 / 22%);
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.drag-pin:active {
+  cursor: grabbing;
+}
+
+.drag-pin-floating {
+  border-color: var(--color-coral);
+  transform: scale(1.08);
+  box-shadow: 0 16px 36px rgb(27 42 65 / 28%);
+}
+
+.run-marker {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 2px solid #ffffff;
+  border-radius: 9999px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgb(27 42 65 / 35%);
+}
+
+.run-marker-correct {
+  background: #2e9e6b;
+}
+
+.run-marker-wrong {
+  background: #d64545;
 }
 
 @keyframes sheet-enter {

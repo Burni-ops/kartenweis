@@ -34,3 +34,48 @@ test("loads the Europe map and selects Germany and Bavaria", async ({
   await page.getByRole("button", { name: "Bayern", exact: true }).click();
   await expect(page.getByText("69.894 km²")).toBeVisible();
 });
+
+test("starts a Europe run and gives feedback on the first question", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await expect(page.getByText("Europa entdecken")).toBeVisible({
+    timeout: 20_000,
+  });
+
+  await page.getByRole("button", { name: /Europa-Run starten/ }).click();
+  await expect(page.getByText(/Frage 1 \/ \d+/)).toBeVisible();
+
+  const question = await page.evaluate(() => {
+    const app = (
+      window as unknown as {
+        __app?: {
+          run?: {
+            questions: Array<{
+              interaction: string;
+              answer: { label: string };
+            }>;
+            index: number;
+          };
+        };
+      }
+    ).__app;
+    if (!app?.run) return null;
+    return app.run.questions[app.run.index];
+  });
+
+  expect(question).not.toBeNull();
+
+  if (question?.interaction === "mc") {
+    await page
+      .getByRole("button", { name: question.answer.label, exact: true })
+      .click();
+  } else {
+    await page
+      .getByRole("button", { name: "Ich weiß es nicht" })
+      .click();
+  }
+
+  await expect(page.getByText(/Richtig!|Leider falsch/)).toBeVisible();
+  await expect(page.getByRole("button", { name: "Weiter" })).toBeVisible();
+});

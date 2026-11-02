@@ -3,6 +3,7 @@ import type {
   CountriesDataset,
   RegionFeatureCollection,
 } from "./types";
+import type { Fact } from "../game/types";
 
 const cache = new Map<string, Promise<unknown>>();
 
@@ -31,3 +32,5 @@ export const loadEuropeMap = () =>
 
 export const loadDachRegions = () =>
   loadJson<RegionFeatureCollection>("/data/maps/dach-regions.geojson");
+
+export const loadFacts = () => loadJson<Fact[]>("/data/facts/europe.json");

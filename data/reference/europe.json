@@ -1,0 +1,774 @@
+{
+  "retrieved_at": "2026-11-02T16:36:09.771Z",
+  "sources": {
+    "wikidata": "https://query.wikidata.org/",
+    "world_bank": "https://api.worldbank.org/v2/"
+  },
+  "countries": {
+    "AL": {
+      "wikidata": "Q222",
+      "name": "Albanien",
+      "capital": "Tirana",
+      "population": 2411658,
+      "population_year": 2023,
+      "area_km2": 28750,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Korab",
+        "elevation_m": 2764,
+        "point": [
+          20.5467,
+          41.7903
+        ]
+      }
+    },
+    "AD": {
+      "wikidata": "Q228",
+      "name": "Andorra",
+      "capital": "Andorra la Vella",
+      "population": 80856,
+      "population_year": 2023,
+      "area_km2": 468,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Comapedrosa",
+        "elevation_m": 2942,
+        "point": [
+          1.443654504,
+          42.591805701
+        ]
+      }
+    },
+    "BY": {
+      "wikidata": "Q184",
+      "name": "Belarus",
+      "capital": "Minsk",
+      "population": 9178298,
+      "population_year": 2023,
+      "area_km2": 207629,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Dsjarschynskaja Hara",
+        "elevation_m": 345,
+        "point": [
+          27.065833333,
+          53.848611111
+        ]
+      }
+    },
+    "BE": {
+      "wikidata": "Q31",
+      "name": "Belgien",
+      "capital": "Brüssel",
+      "population": 11779946,
+      "population_year": 2023,
+      "area_km2": 30689,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Botrange",
+        "elevation_m": 694.24,
+        "point": [
+          6.093056,
+          50.501667
+        ]
+      }
+    },
+    "BA": {
+      "wikidata": "Q225",
+      "name": "Bosnien und Herzegowina",
+      "capital": "Sarajevo",
+      "population": 3185073,
+      "population_year": 2023,
+      "area_km2": 51210,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Maglić",
+        "elevation_m": 2386,
+        "point": [
+          18.73306,
+          43.28111
+        ]
+      }
+    },
+    "BG": {
+      "wikidata": "Q219",
+      "name": "Bulgarien",
+      "capital": "Sofia",
+      "population": 6446596,
+      "population_year": 2023,
+      "area_km2": 110996.758,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Musala",
+        "elevation_m": 2925.4,
+        "point": [
+          23.585278,
+          42.179167
+        ]
+      }
+    },
+    "DK": {
+      "wikidata": "Q35",
+      "name": "Dänemark",
+      "capital": "Kopenhagen",
+      "population": 5946952,
+      "population_year": 2023,
+      "area_km2": 42920,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Møllehøj",
+        "elevation_m": 170.86,
+        "point": [
+          9.82633,
+          55.97746
+        ]
+      }
+    },
+    "DE": {
+      "wikidata": "Q183",
+      "name": "Deutschland",
+      "capital": "Berlin",
+      "population": 83287273,
+      "population_year": 2023,
+      "area_km2": 357680,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Zugspitze",
+        "elevation_m": 2962.06,
+        "point": [
+          10.986314,
+          47.421217
+        ]
+      }
+    },
+    "EE": {
+      "wikidata": "Q191",
+      "name": "Estland",
+      "capital": "Tallinn",
+      "population": 1370286,
+      "population_year": 2023,
+      "area_km2": 45340,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Suur Munamägi",
+        "elevation_m": 317.4,
+        "point": [
+          27.060047,
+          57.714045
+        ]
+      }
+    },
+    "FI": {
+      "wikidata": "Q33",
+      "name": "Finnland",
+      "capital": "Helsinki",
+      "population": 5583911,
+      "population_year": 2023,
+      "area_km2": 338480,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Haltitunturi",
+        "elevation_m": 1361.4,
+        "point": [
+          21.285555555,
+          69.312777777
+        ]
+      }
+    },
+    "FR": {
+      "wikidata": "Q142",
+      "name": "Frankreich",
+      "capital": "Paris",
+      "population": 68372286,
+      "population_year": 2023,
+      "area_km2": 606410,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mont Blanc",
+        "elevation_m": 4805.59,
+        "point": [
+          6.865,
+          45.832777777
+        ]
+      }
+    },
+    "GR": {
+      "wikidata": "Q41",
+      "name": "Griechenland",
+      "capital": "Athen",
+      "population": 10407351,
+      "population_year": 2023,
+      "area_km2": 131960,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Berg Olymp",
+        "elevation_m": 2917.727,
+        "point": [
+          22.35,
+          40.083333333
+        ]
+      }
+    },
+    "IE": {
+      "wikidata": "Q27",
+      "name": "Irland",
+      "capital": "Dublin",
+      "population": 5311538,
+      "population_year": 2023,
+      "area_km2": 70280,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Carrantuohill",
+        "elevation_m": 1038.6,
+        "point": [
+          -9.742777777,
+          51.998888888
+        ]
+      }
+    },
+    "IS": {
+      "wikidata": "Q189",
+      "name": "Island",
+      "capital": "Reykjavík",
+      "population": 385663,
+      "population_year": 2023,
+      "area_km2": 103000,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Hvannadalshnúkur",
+        "elevation_m": 2110,
+        "point": [
+          -16.678257886,
+          64.013767128
+        ]
+      }
+    },
+    "IT": {
+      "wikidata": "Q38",
+      "name": "Italien",
+      "capital": "Rom",
+      "population": 58984216,
+      "population_year": 2023,
+      "area_km2": 302070,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mont Blanc",
+        "elevation_m": 4805.59,
+        "point": [
+          6.865,
+          45.832777777
+        ]
+      }
+    },
+    "XK": {
+      "wikidata": "Q1246",
+      "name": "Kosovo",
+      "capital": "Pristina",
+      "population": null,
+      "population_year": null,
+      "area_km2": null,
+      "area_year": null,
+      "highest_point": {
+        "name": "Gjeravica",
+        "elevation_m": 2656,
+        "point": [
+          20.140833333,
+          42.532777777
+        ]
+      }
+    },
+    "HR": {
+      "wikidata": "Q224",
+      "name": "Kroatien",
+      "capital": "Zagreb",
+      "population": 3859686,
+      "population_year": 2023,
+      "area_km2": 88070,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Dinara",
+        "elevation_m": 1831,
+        "point": [
+          16.3829092,
+          44.0624764
+        ]
+      }
+    },
+    "LV": {
+      "wikidata": "Q211",
+      "name": "Lettland",
+      "capital": "Riga",
+      "population": 1883710,
+      "population_year": 2023,
+      "area_km2": 64590,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Gaiziņkalns",
+        "elevation_m": 311.94,
+        "point": [
+          25.959356944,
+          56.870040555
+        ]
+      }
+    },
+    "LI": {
+      "wikidata": "Q347",
+      "name": "Liechtenstein",
+      "capital": "Vaduz",
+      "population": 39846,
+      "population_year": 2023,
+      "area_km2": 160,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Grauspitz",
+        "elevation_m": 2599,
+        "point": [
+          9.58128,
+          47.05272
+        ]
+      }
+    },
+    "LT": {
+      "wikidata": "Q37",
+      "name": "Litauen",
+      "capital": "Vilnius",
+      "population": 2871585,
+      "population_year": 2023,
+      "area_km2": 65290,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Aukštojas",
+        "elevation_m": 293.84,
+        "point": [
+          25.634444444,
+          54.529444444
+        ]
+      }
+    },
+    "LU": {
+      "wikidata": "Q32",
+      "name": "Luxemburg",
+      "capital": "Luxemburg",
+      "population": 666430,
+      "population_year": 2023,
+      "area_km2": 2590,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Kneiff",
+        "elevation_m": 560,
+        "point": [
+          6.036944444,
+          50.157316666
+        ]
+      }
+    },
+    "MT": {
+      "wikidata": "Q233",
+      "name": "Malta",
+      "capital": "Valletta",
+      "population": 552747,
+      "population_year": 2023,
+      "area_km2": 315.15,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Ta’ Dmejrek",
+        "elevation_m": 253,
+        "point": [
+          14.396388888,
+          35.845833333
+        ]
+      }
+    },
+    "MC": {
+      "wikidata": "Q235",
+      "name": "Monaco",
+      "capital": "Monaco",
+      "population": 38956,
+      "population_year": 2023,
+      "area_km2": 74.9,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Chemin des Révoires",
+        "elevation_m": 162,
+        "point": [
+          7.4125,
+          43.732777777
+        ]
+      }
+    },
+    "ME": {
+      "wikidata": "Q236",
+      "name": "Montenegro",
+      "capital": "Podgorica",
+      "population": 623529,
+      "population_year": 2023,
+      "area_km2": 13888,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Zla Kolata",
+        "elevation_m": 2534,
+        "point": [
+          19.89605,
+          42.484918
+        ]
+      }
+    },
+    "NL": {
+      "wikidata": "Q55",
+      "name": "Niederlande",
+      "capital": "Amsterdam",
+      "population": 17877117,
+      "population_year": 2023,
+      "area_km2": 41540,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mount Scenery",
+        "elevation_m": 870,
+        "point": [
+          -63.239166666,
+          17.635
+        ]
+      }
+    },
+    "MK": {
+      "wikidata": "Q221",
+      "name": "Nordmazedonien",
+      "capital": "Skopje",
+      "population": 1827816,
+      "population_year": 2023,
+      "area_km2": 25710,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Korab",
+        "elevation_m": 2764,
+        "point": [
+          20.5467,
+          41.7903
+        ]
+      }
+    },
+    "NO": {
+      "wikidata": "Q20",
+      "name": "Norwegen",
+      "capital": "Oslo",
+      "population": 5519601,
+      "population_year": 2023,
+      "area_km2": 624500,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Galdhøpiggen",
+        "elevation_m": 2468.854,
+        "point": [
+          8.3,
+          61.633333333
+        ]
+      }
+    },
+    "AT": {
+      "wikidata": "Q40",
+      "name": "Österreich",
+      "capital": "Wien",
+      "population": 9131761,
+      "population_year": 2023,
+      "area_km2": 83879,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Großglockner",
+        "elevation_m": 3798,
+        "point": [
+          12.69385,
+          47.074528
+        ]
+      }
+    },
+    "PL": {
+      "wikidata": "Q36",
+      "name": "Polen",
+      "capital": "Warschau",
+      "population": 36687353,
+      "population_year": 2023,
+      "area_km2": 313930,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Rysy",
+        "elevation_m": 2501,
+        "point": [
+          20.088055555,
+          49.179444444
+        ]
+      }
+    },
+    "PT": {
+      "wikidata": "Q45",
+      "name": "Portugal",
+      "capital": "Lissabon",
+      "population": 10578174,
+      "population_year": 2023,
+      "area_km2": 92230,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Ponta do Pico",
+        "elevation_m": 2351,
+        "point": [
+          -28.399166666,
+          38.468611111
+        ]
+      }
+    },
+    "MD": {
+      "wikidata": "Q217",
+      "name": "Moldau",
+      "capital": "Kischinau",
+      "population": 2457783,
+      "population_year": 2023,
+      "area_km2": 33850,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Dealul Bălănești",
+        "elevation_m": 430,
+        "point": [
+          28.091666666,
+          47.217666666
+        ]
+      }
+    },
+    "RO": {
+      "wikidata": "Q218",
+      "name": "Rumänien",
+      "capital": "Bukarest",
+      "population": 19061062,
+      "population_year": 2023,
+      "area_km2": 238400,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Moldoveanu",
+        "elevation_m": 2544,
+        "point": [
+          24.736211111,
+          45.599438888
+        ]
+      }
+    },
+    "RU": {
+      "wikidata": "Q159",
+      "name": "Russland",
+      "capital": "Moskau",
+      "population": 143826130,
+      "population_year": 2023,
+      "area_km2": 17125190,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Elbrus",
+        "elevation_m": 5642,
+        "point": [
+          42.437875,
+          43.35254
+        ]
+      }
+    },
+    "SM": {
+      "wikidata": "Q238",
+      "name": "San Marino",
+      "capital": "San Marino",
+      "population": 33860,
+      "population_year": 2023,
+      "area_km2": 61.2,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Titano",
+        "elevation_m": 739,
+        "point": [
+          12.452222222,
+          43.928333333
+        ]
+      }
+    },
+    "SE": {
+      "wikidata": "Q34",
+      "name": "Schweden",
+      "capital": "Stockholm",
+      "population": 10536632,
+      "population_year": 2023,
+      "area_km2": 528660,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Kebnekaise",
+        "elevation_m": 2096.8,
+        "point": [
+          18.55,
+          67.883333333
+        ]
+      }
+    },
+    "CH": {
+      "wikidata": "Q39",
+      "name": "Schweiz",
+      "capital": "Bern",
+      "population": 8888822,
+      "population_year": 2023,
+      "area_km2": 41290.7,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Dufourspitze",
+        "elevation_m": 4634,
+        "point": [
+          7.866757,
+          45.9369238
+        ]
+      }
+    },
+    "RS": {
+      "wikidata": "Q403",
+      "name": "Serbien",
+      "capital": "Belgrad",
+      "population": 6623183,
+      "population_year": 2023,
+      "area_km2": 88490,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Rudoka",
+        "elevation_m": 2658,
+        "point": [
+          20.7765464,
+          41.9184989
+        ]
+      }
+    },
+    "SK": {
+      "wikidata": "Q214",
+      "name": "Slowakei",
+      "capital": "Bratislava",
+      "population": 5426740,
+      "population_year": 2023,
+      "area_km2": 49030,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Gerlsdorfer Spitze",
+        "elevation_m": 2654.4,
+        "point": [
+          20.133888888,
+          49.164166666
+        ]
+      }
+    },
+    "SI": {
+      "wikidata": "Q215",
+      "name": "Slowenien",
+      "capital": "Ljubljana",
+      "population": 2120461,
+      "population_year": 2023,
+      "area_km2": 20480,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Triglav",
+        "elevation_m": 2864,
+        "point": [
+          13.836667,
+          46.378333
+        ]
+      }
+    },
+    "ES": {
+      "wikidata": "Q29",
+      "name": "Spanien",
+      "capital": "Madrid",
+      "population": 48352528,
+      "population_year": 2023,
+      "area_km2": 505975.98,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Teide",
+        "elevation_m": 3715,
+        "point": [
+          -16.643611111,
+          28.272638888
+        ]
+      }
+    },
+    "CZ": {
+      "wikidata": "Q213",
+      "name": "Tschechien",
+      "capital": "Prag",
+      "population": 10864042,
+      "population_year": 2023,
+      "area_km2": 78871.43,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Schneekoppe",
+        "elevation_m": 1603.3,
+        "point": [
+          15.740277777,
+          50.736111111
+        ]
+      }
+    },
+    "UA": {
+      "wikidata": "Q212",
+      "name": "Ukraine",
+      "capital": "Kiew",
+      "population": null,
+      "population_year": null,
+      "area_km2": null,
+      "area_year": null,
+      "highest_point": {
+        "name": "Howerla",
+        "elevation_m": 2061,
+        "point": [
+          24.5,
+          48.160277777
+        ]
+      }
+    },
+    "HU": {
+      "wikidata": "Q28",
+      "name": "Ungarn",
+      "capital": "Budapest",
+      "population": null,
+      "population_year": null,
+      "area_km2": null,
+      "area_year": null,
+      "highest_point": {
+        "name": "Kékes",
+        "elevation_m": 1014,
+        "point": [
+          20.012777777,
+          47.872222222
+        ]
+      }
+    },
+    "VA": {
+      "wikidata": "Q237",
+      "name": "Vatikanstadt",
+      "capital": "Vatikanstadt",
+      "population": null,
+      "population_year": null,
+      "area_km2": null,
+      "area_year": null,
+      "highest_point": {
+        "name": "Vatikanischer Hügel",
+        "elevation_m": 75,
+        "point": [
+          12.450277777,
+          41.903611111
+        ]
+      }
+    },
+    "GB": {
+      "wikidata": "Q145",
+      "name": "Vereinigtes Königreich",
+      "capital": "London",
+      "population": null,
+      "population_year": null,
+      "area_km2": null,
+      "area_year": null,
+      "highest_point": {
+        "name": "Ben Nevis",
+        "elevation_m": 1344.527,
+        "point": [
+          -5.003675,
+          56.796891
+        ]
+      }
+    }
+  }
+}

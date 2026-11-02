@@ -87,6 +87,8 @@ Geografie-Lernspiele sind oft entweder trocken (Karte + Beschriftung) oder reine
 - **Extreme:** „Wo liegt der tiefste Punkt Deutschlands?“ → Neuendorf-Sachsenbande.
 - **Nachbarn:** „Welches Land grenzt nicht an Österreich?“ → Schweiz / Italien / **Frankreich** / Ungarn.
 - **Bundesländer & Regionen:** „Wo liegt Bayern?“ → auf der Deutschlandkarte antippen; „Welches Bundesland ist markiert?“ → 4 Namen.
+- **Meere:** „Welches Meer liegt zwischen Europa und Afrika?“ → Mittelmeer; „An welches Meer grenzt Polen?“ → Ostsee.
+- **Meerengen:** „Welche Meerenge trennt Spanien von Marokko?“ → Straße von Gibraltar; „Welche Meerenge liegt in Istanbul?“ → Bosporus.
 - **Verkehr:** „Wie lang ist die A7 ungefähr?“ → ca. 960 km.
 - **Vergleich:** „Welcher Berg ist höher: Zugspitze oder Großglockner?“
 
@@ -160,6 +162,7 @@ Der Atlas ist nicht nur Nachschlagewerk, sondern **die Belohnung für den Quiz**
 | C | **Flüsse** | längster Flussabschnitt, Quelle/Mündung, Nebenflüsse | Natural Earth, Wikidata, Wikipedia | **P0** |
 | D | **Berge & Gebirge** | höchster Berg, höchster Vulkan, bekannteste Gebirge, tiefster Punkt | Natural Earth Peaks, Wikidata | **P0** |
 | E | **Seen, Küsten & Inseln** | größter See, tiefster See, längste Küste, größte Insel | Natural Earth Lakes, Wikidata | **P1** |
+| M | **Meere & Meerengen** | „Welches Meer liegt zwischen Europa und Afrika?“, „Welche Meerenge trennt Spanien von Marokko?“ | Natural Earth Marine, kuratiert | **P0/P1** |
 | F | **Sehenswürdigkeiten** | Wahrzeichen, UNESCO-Stätten, Naturwunder | kuratiert + Wikipedia | **P0/P1** |
 | G | **Natur & Extreme** | größte Wüste, längster Strand, heißester/kältester Ort | kuratiert | **P1** |
 | H | **Nachbarn & Grenzen** | Anzahl Nachbarn, längste/kürzeste Grenze, „grenzt nicht an“ | Natural Earth, Wikidata | **P0** |
@@ -168,7 +171,7 @@ Der Atlas ist nicht nur Nachschlagewerk, sondern **die Belohnung für den Quiz**
 | K | **Flagge** | Farben, Symbolik | Wikipedia/Wikidata | **P2** (Bonus) |
 | L | **Geschichte & Kultur** | Unabhängigkeit, berühmte Persönlichkeit | Wikipedia | **P3** (optional) |
 
-**Vorschlag für v1:** A, B, C, D, F, H vollständig; J für DACH (Deutschland, Österreich, Schweiz) als neuer Tap-Fragetyp; E und G als „Extras“ pro Land; I, K, L später.
+**Vorschlag für v1:** A, B, C, D, F, H vollständig; J für DACH (Deutschland, Österreich, Schweiz) als neuer Tap-Fragetyp; M für Meere & Meerengen; E und G als „Extras“ pro Land; I, K, L später.
 
 ### 5.2 Frage-Generator
 
@@ -263,6 +266,7 @@ Fakt (z. B. „Zugspitze, 2962 m, DE, Kategorie Berge“)
 | Relief | sanfte Höhenschattierung (Natural Earth) | ✓ (dezent) | ✓ |
 | Flüsse | Linienzüge, wichtige Namen | ✓ | ✓ |
 | Seen | Flächen | ✓ | ✓ |
+| Meere & Meerengen | Meeresflächen, Meerengen-Linien und Namen | ✓ | ✓ |
 | Berge | Gipfel-Marker + Höhe | ✓ | ✓ |
 | Städte | Punkte + Namen, Hauptstadt besonders | ✓ | ✓ |
 | Sehenswürdigkeiten | Icon-Marker | ✓ | ✓ |
@@ -597,7 +601,7 @@ spasmitflaggen/
 
 | Quelle | Nutzung | Lizenz | Hinweis |
 |---|---|---|---|
-| **Natural Earth 1:10m** | Länder, Grenzen, **Admin-1-Regionen**, Flüsse, Seen, Städte, Gipfel, Relief | Public Domain | Hauptquelle für Karten |
+| **Natural Earth 1:10m** | Länder, Grenzen, **Admin-1-Regionen**, Flüsse, Seen, **Meeresflächen**, Städte, Gipfel, Relief | Public Domain | Hauptquelle für Karten |
 | **Wikidata** | Fakten, Koordinaten, Höhen, Einwohner | CC0 | SPARQL; Stand speichern |
 | **Wikipedia** | Verifikation, Sehenswürdigkeiten | CC BY-SA | Attribution; keine Textübernahme |
 | **UN / World Bank** | Einwohner, Fläche | CC BY 4.0 / UN-Terms | Jahr angeben, prüfen |
@@ -620,8 +624,8 @@ spasmitflaggen/
 
 | Phase | Inhalt | Ziel |
 |---|---|---|
-| **P1** | Europa: alle Länder antippbar, 10 Länder mit tiefen Fakten, DACH-Regionen | Vertical Slice |
-| **P2** | Europa komplett: alle Länder mit Kernfakten (A–D, F, H, J für DACH) | Spielbare Vollversion Europa |
+| **P1** | Europa: alle Länder antippbar, 10 Länder mit tiefen Fakten, DACH-Regionen, Meere & Meerengen | Vertical Slice |
+| **P2** | Europa komplett: alle Länder mit Kernfakten (A–D, F, H, M für DACH) | Spielbare Vollversion Europa |
 | **P3** | Europa vertiefen: Seen, Extreme, Infrastruktur, Regionen für alle Länder | Content-Politur |
 | **P4** | Asien, Afrika, Nord-/Südamerika, Ozeanien | Weltumspannend |
 | **P5** | Englisch, Tages-Leaderboard, weitere Fragetypen | Ausbau |
@@ -644,7 +648,7 @@ spasmitflaggen/
 
 ### M1 — Vertical Slice (Spielgefühl prüfen)
 
-- Run mit 10 Fragen: Multiple Choice + Drag-to-Map + Tap-the-Country + **Tap-the-Region (DACH)**.
+- Run mit 10 Fragen: Multiple Choice + Drag-to-Map + Tap-the-Country + **Tap-the-Region (DACH)** + **Meere & Meerengen**.
 - 10 europäische Länder mit geprüften Fakten.
 - Punkte, Streak, Feedback, Ergebnis, Speichern.
 - **Abnahme:** Ein kompletter Run ist von Anfang bis Ende spielbar, ohne tote Enden; Fakten haben Quellen; Bundesland-Fragen funktionieren auf der Deutschlandkarte.
@@ -710,6 +714,7 @@ spasmitflaggen/
 - Europa als Vertical Slice, 10 Länder tief.
 - Deutsch zuerst, EN-fähig.
 - MC + Drag-to-Map + Tap-the-Country + Tap-the-Region (DACH zuerst).
+- Meere & Meerengen als eigene Kategorien in v1.
 - 10-Fragen-Run + separater Endlosmodus.
 - Hybrid-Karte (politisch im Quiz, Relief im Atlas).
 - Drei Schwierigkeitsstufen, adaptiv.

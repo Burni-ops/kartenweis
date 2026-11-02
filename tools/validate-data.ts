@@ -155,6 +155,78 @@ if (errors.length === 0) {
     }
   }
 
+  const factsFile = path.join(DATA, "facts", "europe.json");
+  if (fs.existsSync(factsFile)) {
+    const facts = readJson(factsFile);
+    const factIds = new Set<string>();
+    const categories = new Set([
+      "country",
+      "capital",
+      "city",
+      "river",
+      "mountain",
+      "lake",
+      "sea",
+      "strait",
+      "landmark",
+      "neighbor",
+      "region",
+      "extreme",
+    ]);
+
+    for (const fact of facts) {
+      if (!fact.id || factIds.has(fact.id)) {
+        fail(`Invalid or duplicate fact id: ${fact.id}`);
+        continue;
+      }
+      factIds.add(fact.id);
+      if (fact.country !== "EU" && !countries.has(fact.country)) {
+        fail(`${fact.id}: unknown country ${fact.country}`);
+      }
+      if (!categories.has(fact.category)) {
+        fail(`${fact.id}: unknown category ${fact.category}`);
+      }
+      if (!Array.isArray(fact.interactions) || fact.interactions.length === 0) {
+        fail(`${fact.id}: missing interactions`);
+      }
+      if (
+        fact.interactions?.includes("mc") &&
+        (!Array.isArray(fact.options) ||
+          fact.options.length !== 4 ||
+          new Set(fact.options).size !== 4 ||
+          !fact.options.includes(fact.answer?.label))
+      ) {
+        fail(`${fact.id}: MC options must be four unique values including the answer`);
+      }
+      if (
+        fact.interactions?.includes("drag") &&
+        !Array.isArray(fact.answer?.point)
+      ) {
+        fail(`${fact.id}: drag interaction without answer point`);
+      }
+      if (
+        fact.interactions?.includes("tap-region") &&
+        !fact.answer?.regionCode
+      ) {
+        fail(`${fact.id}: tap-region interaction without regionCode`);
+      }
+      if (
+        fact.interactions?.includes("tap-country") &&
+        !fact.answer?.countryCode
+      ) {
+        fail(`${fact.id}: tap-country interaction without countryCode`);
+      }
+      if (fact.focus === "europe" && fact.country !== "EU") {
+        warn(`${fact.id}: Europe focus on a country-specific fact`);
+      }
+      if (!fact.source) {
+        fail(`${fact.id}: missing source`);
+      }
+    }
+
+    console.log(`Validated ${facts.length} facts in public/data/facts/europe.json.`);
+  }
+
   console.log(
     `Validated ${countries.size} countries, ${mapCodes.size} map shapes and ${regionCodes.size} DACH regions.`,
   );

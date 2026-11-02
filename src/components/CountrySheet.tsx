@@ -12,6 +12,8 @@ type Props = {
   selectedRegion: Region | null;
   onSelectRegion: (region: Region | null) => void;
   onClose: () => void;
+  onStartRun: (countryCode: string) => void;
+  onStartEurope: () => void;
 };
 
 function Stat({ label, value }: { label: string; value: string }) {
@@ -31,6 +33,8 @@ export default function CountrySheet({
   selectedRegion,
   onSelectRegion,
   onClose,
+  onStartRun,
+  onStartEurope,
 }: Props) {
   if (!country) {
     return (
@@ -49,8 +53,15 @@ export default function CountrySheet({
             </p>
           </div>
         </div>
-        <p className="mt-3 text-xs text-ink-muted">
-          Karten: Natural Earth (Public Domain) · Prototyp M0
+        <button
+          type="button"
+          onClick={onStartEurope}
+          className="mt-4 w-full rounded-2xl bg-teal px-4 py-3 text-sm font-extrabold text-white shadow-sm transition hover:bg-teal/90 active:scale-[0.99]"
+        >
+          Europa-Run starten · 10 Fragen
+        </button>
+        <p className="mt-3 text-center text-[10px] text-ink-muted">
+          Karten: Natural Earth (Public Domain) · Prototyp M1
         </p>
       </div>
     );
@@ -169,9 +180,8 @@ export default function CountrySheet({
       <div className="mt-4 flex gap-2">
         <button
           type="button"
-          disabled
-          className="flex-1 rounded-2xl bg-teal px-4 py-2.5 text-sm font-bold text-white opacity-60"
-          title="Kommt in M1"
+          onClick={() => onStartRun(country.code)}
+          className="flex-1 rounded-2xl bg-teal px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-teal/90 active:scale-[0.99]"
         >
           Quiz starten
         </button>
@@ -186,7 +196,7 @@ export default function CountrySheet({
       </div>
 
       <p className="mt-2 text-center text-[10px] text-ink-muted">
-        Prototyp M0 · Karten: Natural Earth (Public Domain) ·{" "}
+        Prototyp M1 · Karten: Natural Earth (Public Domain) ·{" "}
         {country.population_year
           ? `Einwohner ${country.population_year}`
           : "Einwohner ca."}

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-02T16:28:08.997Z",
+  "generated_at": "2026-11-02T16:36:48.779Z",
   "source": "Natural Earth 1:10m (public domain)",
   "continents": [
     {
@@ -31,9 +31,18 @@
         "population": 895350,
         "population_year": 2019
       },
-      "population": 2854191,
-      "population_year": 2019,
-      "area_km2": 28298,
+      "population": 2411658,
+      "population_year": 2023,
+      "area_km2": 28750,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Korab",
+        "elevation_m": 2764,
+        "point": [
+          20.5467,
+          41.7903
+        ]
+      },
       "bbox": [
         19.272,
         39.637,
@@ -78,9 +87,18 @@
         "population": 53998,
         "population_year": 2019
       },
-      "population": 77142,
-      "population_year": 2019,
-      "area_km2": 451,
+      "population": 80856,
+      "population_year": 2023,
+      "area_km2": 468,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Comapedrosa",
+        "elevation_m": 2942,
+        "point": [
+          1.443654504,
+          42.591805701
+        ]
+      },
       "bbox": [
         1.4065,
         42.4287,
@@ -125,9 +143,18 @@
         "population": 1805000,
         "population_year": 2019
       },
-      "population": 9466856,
-      "population_year": 2019,
-      "area_km2": 206632,
+      "population": 9178298,
+      "population_year": 2023,
+      "area_km2": 207629,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Dsjarschynskaja Hara",
+        "elevation_m": 345,
+        "point": [
+          27.065833333,
+          53.848611111
+        ]
+      },
       "bbox": [
         23.1656,
         51.2352,
@@ -172,9 +199,18 @@
         "population": 1743000,
         "population_year": 2019
       },
-      "population": 11484055,
-      "population_year": 2019,
-      "area_km2": 30561,
+      "population": 11779946,
+      "population_year": 2023,
+      "area_km2": 30689,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Botrange",
+        "elevation_m": 694.24,
+        "point": [
+          6.093056,
+          50.501667
+        ]
+      },
       "bbox": [
         2.5218,
         49.4952,
@@ -219,9 +255,18 @@
         "population": 696731,
         "population_year": 2019
       },
-      "population": 3301000,
-      "population_year": 2019,
-      "area_km2": 51722,
+      "population": 3185073,
+      "population_year": 2023,
+      "area_km2": 51210,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Maglić",
+        "elevation_m": 2386,
+        "point": [
+          18.73306,
+          43.28111
+        ]
+      },
       "bbox": [
         15.7161,
         42.5592,
@@ -266,9 +311,18 @@
         "population": 1185000,
         "population_year": 2019
       },
-      "population": 6975761,
-      "population_year": 2019,
-      "area_km2": 112568,
+      "population": 6446596,
+      "population_year": 2023,
+      "area_km2": 110997,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Musala",
+        "elevation_m": 2925.4,
+        "point": [
+          23.585278,
+          42.179167
+        ]
+      },
       "bbox": [
         22.345,
         41.2381,
@@ -313,9 +367,18 @@
         "population": 1085000,
         "population_year": 2019
       },
-      "population": 5818553,
-      "population_year": 2019,
-      "area_km2": 42494,
+      "population": 5946952,
+      "population_year": 2023,
+      "area_km2": 42920,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Møllehøj",
+        "elevation_m": 170.86,
+        "point": [
+          9.82633,
+          55.97746
+        ]
+      },
       "bbox": [
         8.094,
         54.5686,
@@ -360,9 +423,18 @@
         "population": 3406000,
         "population_year": 2019
       },
-      "population": 83132799,
-      "population_year": 2019,
-      "area_km2": 356379,
+      "population": 83287273,
+      "population_year": 2023,
+      "area_km2": 357680,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Zugspitze",
+        "elevation_m": 2962.06,
+        "point": [
+          10.986314,
+          47.421217
+        ]
+      },
       "bbox": [
         5.8525,
         47.2711,
@@ -407,9 +479,18 @@
         "population": 394024,
         "population_year": 2019
       },
-      "population": 1326590,
-      "population_year": 2019,
-      "area_km2": 45576,
+      "population": 1370286,
+      "population_year": 2023,
+      "area_km2": 45340,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Suur Munamägi",
+        "elevation_m": 317.4,
+        "point": [
+          27.060047,
+          57.714045
+        ]
+      },
       "bbox": [
         21.8324,
         57.5158,
@@ -454,9 +535,18 @@
         "population": 1115000,
         "population_year": 2019
       },
-      "population": 5520314,
-      "population_year": 2019,
-      "area_km2": 330938,
+      "population": 5583911,
+      "population_year": 2023,
+      "area_km2": 338480,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Haltitunturi",
+        "elevation_m": 1361.4,
+        "point": [
+          21.285555555,
+          69.312777777
+        ]
+      },
       "bbox": [
         20.6232,
         59.8112,
@@ -501,9 +591,18 @@
         "population": 9904000,
         "population_year": 2019
       },
-      "population": 67059887,
-      "population_year": 2019,
-      "area_km2": 635737,
+      "population": 68372286,
+      "population_year": 2023,
+      "area_km2": 606410,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mont Blanc",
+        "elevation_m": 4805.59,
+        "point": [
+          6.865,
+          45.832777777
+        ]
+      },
       "bbox": [
         -61.7978,
         -21.3708,
@@ -548,9 +647,18 @@
         "population": 3242000,
         "population_year": 2019
       },
-      "population": 10716322,
-      "population_year": 2019,
-      "area_km2": 131244,
+      "population": 10407351,
+      "population_year": 2023,
+      "area_km2": 131960,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Berg Olymp",
+        "elevation_m": 2917.727,
+        "point": [
+          22.35,
+          40.083333333
+        ]
+      },
       "bbox": [
         19.6265,
         34.815,
@@ -595,9 +703,18 @@
         "population": 1059000,
         "population_year": 2019
       },
-      "population": 4941444,
-      "population_year": 2019,
-      "area_km2": 69160,
+      "population": 5311538,
+      "population_year": 2023,
+      "area_km2": 70280,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Carrantuohill",
+        "elevation_m": 1038.6,
+        "point": [
+          -9.742777777,
+          51.998888888
+        ]
+      },
       "bbox": [
         -10.4782,
         51.4457,
@@ -642,9 +759,18 @@
         "population": 166212,
         "population_year": 2019
       },
-      "population": 361313,
-      "population_year": 2019,
-      "area_km2": 101723,
+      "population": 385663,
+      "population_year": 2023,
+      "area_km2": 103000,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Hvannadalshnúkur",
+        "elevation_m": 2110,
+        "point": [
+          -16.678257886,
+          64.013767128
+        ]
+      },
       "bbox": [
         -24.5399,
         63.3967,
@@ -689,9 +815,18 @@
         "population": 3339000,
         "population_year": 2019
       },
-      "population": 60297396,
-      "population_year": 2019,
-      "area_km2": 300678,
+      "population": 58984216,
+      "population_year": 2023,
+      "area_km2": 302070,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mont Blanc",
+        "elevation_m": 4805.59,
+        "point": [
+          6.865,
+          45.832777777
+        ]
+      },
       "bbox": [
         6.6027,
         35.4892,
@@ -739,6 +874,15 @@
       "population": 1794248,
       "population_year": 2019,
       "area_km2": 10895,
+      "area_year": null,
+      "highest_point": {
+        "name": "Gjeravica",
+        "elevation_m": 2656,
+        "point": [
+          20.140833333,
+          42.532777777
+        ]
+      },
       "bbox": [
         20.0248,
         41.844,
@@ -783,9 +927,18 @@
         "population": 722526,
         "population_year": 2019
       },
-      "population": 4067500,
-      "population_year": 2019,
-      "area_km2": 54900,
+      "population": 3859686,
+      "population_year": 2023,
+      "area_km2": 88070,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Dinara",
+        "elevation_m": 1831,
+        "point": [
+          16.3829092,
+          44.0624764
+        ]
+      },
       "bbox": [
         13.5015,
         42.4163,
@@ -830,9 +983,18 @@
         "population": 742572,
         "population_year": 2019
       },
-      "population": 1912789,
-      "population_year": 2019,
-      "area_km2": 64259,
+      "population": 1883710,
+      "population_year": 2023,
+      "area_km2": 64590,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Gaiziņkalns",
+        "elevation_m": 311.94,
+        "point": [
+          25.959356944,
+          56.870040555
+        ]
+      },
       "bbox": [
         20.9686,
         55.667,
@@ -877,9 +1039,18 @@
         "population": 36281,
         "population_year": 2019
       },
-      "population": 38019,
-      "population_year": 2019,
-      "area_km2": 137,
+      "population": 39846,
+      "population_year": 2023,
+      "area_km2": 160,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Grauspitz",
+        "elevation_m": 2599,
+        "point": [
+          9.58128,
+          47.05272
+        ]
+      },
       "bbox": [
         9.4759,
         47.0524,
@@ -924,9 +1095,18 @@
         "population": 542366,
         "population_year": 2019
       },
-      "population": 2786844,
-      "population_year": 2019,
-      "area_km2": 64641,
+      "population": 2871585,
+      "population_year": 2023,
+      "area_km2": 65290,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Aukštojas",
+        "elevation_m": 293.84,
+        "point": [
+          25.634444444,
+          54.529444444
+        ]
+      },
       "bbox": [
         20.9246,
         53.8868,
@@ -971,9 +1151,18 @@
         "population": 107260,
         "population_year": 2019
       },
-      "population": 619896,
-      "population_year": 2019,
-      "area_km2": 2600,
+      "population": 666430,
+      "population_year": 2023,
+      "area_km2": 2590,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Kneiff",
+        "elevation_m": 560,
+        "point": [
+          6.036944444,
+          50.157316666
+        ]
+      },
       "bbox": [
         5.7149,
         49.4413,
@@ -1018,9 +1207,18 @@
         "population": 368250,
         "population_year": 2019
       },
-      "population": 502653,
-      "population_year": 2019,
-      "area_km2": 326,
+      "population": 552747,
+      "population_year": 2023,
+      "area_km2": 315,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Ta’ Dmejrek",
+        "elevation_m": 253,
+        "point": [
+          14.396388888,
+          35.845833333
+        ]
+      },
       "bbox": [
         14.1836,
         35.8012,
@@ -1065,9 +1263,18 @@
         "population": 36371,
         "population_year": 2019
       },
-      "population": 38964,
-      "population_year": 2019,
-      "area_km2": 19,
+      "population": 38956,
+      "population_year": 2023,
+      "area_km2": 75,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Chemin des Révoires",
+        "elevation_m": 162,
+        "point": [
+          7.4125,
+          43.732777777
+        ]
+      },
       "bbox": [
         7.3658,
         43.718,
@@ -1112,9 +1319,18 @@
         "population": 145850,
         "population_year": 2019
       },
-      "population": 622137,
-      "population_year": 2019,
-      "area_km2": 13704,
+      "population": 623529,
+      "population_year": 2023,
+      "area_km2": 13888,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Zla Kolata",
+        "elevation_m": 2534,
+        "point": [
+          19.89605,
+          42.484918
+        ]
+      },
       "bbox": [
         18.4335,
         41.8524,
@@ -1159,9 +1375,18 @@
         "population": 1031000,
         "population_year": 2019
       },
-      "population": 17332850,
-      "population_year": 2019,
-      "area_km2": 37253,
+      "population": 17877117,
+      "population_year": 2023,
+      "area_km2": 41540,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Mount Scenery",
+        "elevation_m": 870,
+        "point": [
+          -63.239166666,
+          17.635
+        ]
+      },
       "bbox": [
         -68.4174,
         12.022,
@@ -1206,9 +1431,18 @@
         "population": 494087,
         "population_year": 2019
       },
-      "population": 2083459,
-      "population_year": 2019,
-      "area_km2": 25349,
+      "population": 1827816,
+      "population_year": 2023,
+      "area_km2": 25710,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Korab",
+        "elevation_m": 2764,
+        "point": [
+          20.5467,
+          41.7903
+        ]
+      },
       "bbox": [
         20.4442,
         40.8494,
@@ -1253,9 +1487,18 @@
         "population": 835000,
         "population_year": 2019
       },
-      "population": 5347896,
-      "population_year": 2019,
-      "area_km2": 379542,
+      "population": 5519601,
+      "population_year": 2023,
+      "area_km2": 624500,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Galdhøpiggen",
+        "elevation_m": 2468.854,
+        "point": [
+          8.3,
+          61.633333333
+        ]
+      },
       "bbox": [
         -9.1174,
         -54.4625,
@@ -1300,9 +1543,18 @@
         "population": 2400000,
         "population_year": 2019
       },
-      "population": 8877067,
-      "population_year": 2019,
-      "area_km2": 83756,
+      "population": 9131761,
+      "population_year": 2023,
+      "area_km2": 83879,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Großglockner",
+        "elevation_m": 3798,
+        "point": [
+          12.69385,
+          47.074528
+        ]
+      },
       "bbox": [
         9.5212,
         46.3786,
@@ -1347,9 +1599,18 @@
         "population": 1707000,
         "population_year": 2019
       },
-      "population": 37970874,
-      "population_year": 2019,
-      "area_km2": 312218,
+      "population": 36687353,
+      "population_year": 2023,
+      "area_km2": 313930,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Rysy",
+        "elevation_m": 2501,
+        "point": [
+          20.088055555,
+          49.179444444
+        ]
+      },
       "bbox": [
         14.1239,
         48.994,
@@ -1394,9 +1655,18 @@
         "population": 2812000,
         "population_year": 2019
       },
-      "population": 10269417,
-      "population_year": 2019,
-      "area_km2": 91303,
+      "population": 10578174,
+      "population_year": 2023,
+      "area_km2": 92230,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Ponta do Pico",
+        "elevation_m": 2351,
+        "point": [
+          -28.399166666,
+          38.468611111
+        ]
+      },
       "bbox": [
         -31.2849,
         30.0292,
@@ -1441,9 +1711,18 @@
         "population": 688134,
         "population_year": 2019
       },
-      "population": 2657637,
-      "population_year": 2019,
-      "area_km2": 33116,
+      "population": 2457783,
+      "population_year": 2023,
+      "area_km2": 33850,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Dealul Bălănești",
+        "elevation_m": 430,
+        "point": [
+          28.091666666,
+          47.217666666
+        ]
+      },
       "bbox": [
         26.6179,
         45.4618,
@@ -1488,9 +1767,18 @@
         "population": 1942000,
         "population_year": 2019
       },
-      "population": 19356544,
-      "population_year": 2019,
-      "area_km2": 235806,
+      "population": 19061062,
+      "population_year": 2023,
+      "area_km2": 238400,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Moldoveanu",
+        "elevation_m": 2544,
+        "point": [
+          24.736211111,
+          45.599438888
+        ]
+      },
       "bbox": [
         20.2428,
         43.6501,
@@ -1535,9 +1823,18 @@
         "population": 10452000,
         "population_year": 2019
       },
-      "population": 144373535,
-      "population_year": 2019,
-      "area_km2": 16886303,
+      "population": 143826130,
+      "population_year": 2023,
+      "area_km2": 17125190,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Elbrus",
+        "elevation_m": 5642,
+        "point": [
+          42.437875,
+          43.35254
+        ]
+      },
       "bbox": [
         -180,
         41.1927,
@@ -1583,8 +1880,17 @@
         "population_year": 2019
       },
       "population": 33860,
-      "population_year": 2019,
-      "area_km2": 60,
+      "population_year": 2023,
+      "area_km2": 61,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Titano",
+        "elevation_m": 739,
+        "point": [
+          12.452222222,
+          43.928333333
+        ]
+      },
       "bbox": [
         12.3856,
         43.8921,
@@ -1629,9 +1935,18 @@
         "population": 1264000,
         "population_year": 2019
       },
-      "population": 10285453,
-      "population_year": 2019,
-      "area_km2": 443493,
+      "population": 10536632,
+      "population_year": 2023,
+      "area_km2": 528660,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Kebnekaise",
+        "elevation_m": 2096.8,
+        "point": [
+          18.55,
+          67.883333333
+        ]
+      },
       "bbox": [
         11.1082,
         55.3427,
@@ -1676,9 +1991,18 @@
         "population": 275329,
         "population_year": 2019
       },
-      "population": 8574832,
-      "population_year": 2019,
-      "area_km2": 41326,
+      "population": 8888822,
+      "population_year": 2023,
+      "area_km2": 41291,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Dufourspitze",
+        "elevation_m": 4634,
+        "point": [
+          7.866757,
+          45.9369238
+        ]
+      },
       "bbox": [
         5.9548,
         45.8207,
@@ -1723,9 +2047,18 @@
         "population": 1099000,
         "population_year": 2019
       },
-      "population": 6944975,
-      "population_year": 2019,
-      "area_km2": 77470,
+      "population": 6623183,
+      "population_year": 2023,
+      "area_km2": 88490,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Rudoka",
+        "elevation_m": 2658,
+        "point": [
+          20.7765464,
+          41.9184989
+        ]
+      },
       "bbox": [
         18.845,
         42.2349,
@@ -1770,9 +2103,18 @@
         "population": 423737,
         "population_year": 2019
       },
-      "population": 5454073,
-      "population_year": 2019,
-      "area_km2": 48308,
+      "population": 5426740,
+      "population_year": 2023,
+      "area_km2": 49030,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Gerlsdorfer Spitze",
+        "elevation_m": 2654.4,
+        "point": [
+          20.133888888,
+          49.164166666
+        ]
+      },
       "bbox": [
         16.8445,
         47.75,
@@ -1817,9 +2159,18 @@
         "population": 314807,
         "population_year": 2019
       },
-      "population": 2087946,
-      "population_year": 2019,
-      "area_km2": 20277,
+      "population": 2120461,
+      "population_year": 2023,
+      "area_km2": 20480,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Triglav",
+        "elevation_m": 2864,
+        "point": [
+          13.836667,
+          46.378333
+        ]
+      },
       "bbox": [
         13.3653,
         45.4236,
@@ -1864,9 +2215,18 @@
         "population": 5567000,
         "population_year": 2019
       },
-      "population": 47076781,
-      "population_year": 2019,
-      "area_km2": 506328,
+      "population": 48352528,
+      "population_year": 2023,
+      "area_km2": 505976,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Teide",
+        "elevation_m": 3715,
+        "point": [
+          -16.643611111,
+          28.272638888
+        ]
+      },
       "bbox": [
         -18.1672,
         27.6422,
@@ -1911,9 +2271,18 @@
         "population": 1162000,
         "population_year": 2019
       },
-      "population": 10669709,
-      "population_year": 2019,
-      "area_km2": 78497,
+      "population": 10864042,
+      "population_year": 2023,
+      "area_km2": 78871,
+      "area_year": 2023,
+      "highest_point": {
+        "name": "Schneekoppe",
+        "elevation_m": 1603.3,
+        "point": [
+          15.740277777,
+          50.736111111
+        ]
+      },
       "bbox": [
         12.0761,
         48.5579,
@@ -1961,6 +2330,15 @@
       "population": 44385155,
       "population_year": 2019,
       "area_km2": 570180,
+      "area_year": null,
+      "highest_point": {
+        "name": "Howerla",
+        "elevation_m": 2061,
+        "point": [
+          24.5,
+          48.160277777
+        ]
+      },
       "bbox": [
         22.1328,
         45.2136,
@@ -2008,6 +2386,15 @@
       "population": 9769949,
       "population_year": 2019,
       "area_km2": 92947,
+      "area_year": null,
+      "highest_point": {
+        "name": "Kékes",
+        "elevation_m": 1014,
+        "point": [
+          20.012777777,
+          47.872222222
+        ]
+      },
       "bbox": [
         16.094,
         45.7413,
@@ -2055,6 +2442,15 @@
       "population": 825,
       "population_year": 2019,
       "area_km2": 0.01,
+      "area_year": null,
+      "highest_point": {
+        "name": "Vatikanischer Hügel",
+        "elevation_m": 75,
+        "point": [
+          12.450277777,
+          41.903611111
+        ]
+      },
       "bbox": [
         12.4527,
         41.9028,
@@ -2102,6 +2498,15 @@
       "population": 66834405,
       "population_year": 2019,
       "area_km2": 242737,
+      "area_year": null,
+      "highest_point": {
+        "name": "Ben Nevis",
+        "elevation_m": 1344.527,
+        "point": [
+          -5.003675,
+          56.796891
+        ]
+      },
       "bbox": [
         -13.6913,
         49.9096,

@@ -2,9 +2,11 @@
 
 Geografie-Spiel für den Browser — später Android. Länder werden nicht über Flaggen, sondern über ihre Orte, Landschaften und Rekorde entdeckt.
 
-**Aktueller Stand: M0 (Fundament).** Die Europa-Karte läuft im Browser, Länder lassen sich antippen, DACH-Regionen (Bundesländer/Kantone) werden angezeigt und hervorgehoben. Der Quiz-Modus folgt in M1.
+**Aktueller Stand: M1 (Vertical Slice).** Die Europa-Karte läuft im Browser, Länder und DACH-Regionen lassen sich antippen. Der Quiz-Modus ist spielbar: Multiple Choice, Drag-to-Map, Land antippen, Bundesland/Kanton antippen sowie Fragen zu Meeren und Meerengen. Fortschritt und Mastery werden lokal gespeichert.
 
 ![Europa-Karte mit ausgewähltem Deutschland](docs/m0-map.png)
+
+Weitere Eindrücke: [Quiz-Run](docs/m1-run.png) · [Feedback](docs/m1-feedback.png) · [Meerengen-Frage](docs/m1-strait.png)
 
 ## Schnellstart
 
@@ -43,7 +45,8 @@ Die Karten und Basisdaten werden aus **Natural Earth 1:10m** (Public Domain) erz
 - Länderpolygone (Europa, 45 Länder inkl. Kosovo)
 - Admin-1-Regionen für Deutschland, Österreich und die Schweiz
 - Hauptstädte aus dem Natural-Earth-Layer „Populated Places“
-- Einwohner und Fläche aus den Natural-Earth-Attributen bzw. der Geometrie
+- Einwohner und Fläche aus World-Bank-/Wikidata-Referenzdaten (2023)
+- 58 kuratierte Fakten für 10 Länder, inkl. Meere und Meerengen
 
 Die Pipeline liegt in `tools/build-data.ts` und wird mit `npm run data` ausgeführt. Rohdaten liegen in `data/raw/` (nicht im Repo), die erzeugten Dateien in `public/data/`.
 
@@ -66,11 +69,11 @@ e2e/            Playwright-Tests
 docs/           Screenshots
 ```
 
-## Nächste Schritte (M1)
+## Nächste Schritte (M2)
 
-- QuestionEngine: Multiple Choice, Drag-to-Map, Tap-the-Country, **Tap-the-Region (Bundesland/Kanton)**
-- Run-Screen mit 10 Fragen, Punkte, Streak, Feedback
-- Erste 10 Länder mit geprüften Fakten
-- Speichern von Fortschritt und Mastery
+- Länder-Atlas mit interaktiver Karte und Fakten-Details
+- Mastery-Anzeige, Länder-Sterne und Erfolge
+- Tages-Challenge
+- Weitere Länder und Fakten (Europa komplett)
 
 Der vollständige Plan steht in [`PLAN.md`](PLAN.md).

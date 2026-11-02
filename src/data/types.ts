@@ -25,6 +25,12 @@ export interface Capital {
   population_year: number | null;
 }
 
+export interface HighestPoint {
+  name: string;
+  elevation_m: number | null;
+  point: LonLat | null;
+}
+
 export interface Country {
   code: string;
   iso3: string;
@@ -34,6 +40,8 @@ export interface Country {
   population: number | null;
   population_year: number | null;
   area_km2: number;
+  area_year: number | null;
+  highest_point: HighestPoint | null;
   bbox: BBox;
   focus_bbox: BBox;
   center: LonLat;
