@@ -1,0 +1,2132 @@
+{
+  "version": 1,
+  "generated_at": "2026-11-02T16:28:08.997Z",
+  "source": "Natural Earth 1:10m (public domain)",
+  "continents": [
+    {
+      "id": "europe",
+      "name": {
+        "de": "Europa",
+        "en": "Europe"
+      },
+      "country_count": 45
+    }
+  ],
+  "countries": [
+    {
+      "code": "AL",
+      "iso3": "ALB",
+      "name": {
+        "de": "Albanien",
+        "en": "Albania"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Tirana",
+        "name_en": "Tirana",
+        "point": [
+          19.818883,
+          41.327541
+        ],
+        "population": 895350,
+        "population_year": 2019
+      },
+      "population": 2854191,
+      "population_year": 2019,
+      "area_km2": 28298,
+      "bbox": [
+        19.272,
+        39.637,
+        21.0367,
+        42.6548
+      ],
+      "focus_bbox": [
+        19.272,
+        39.637,
+        21.0367,
+        42.6548
+      ],
+      "center": [
+        20.1138,
+        40.6549
+      ],
+      "flag": "🇦🇱",
+      "flag_url": "/flags/al.svg",
+      "wikidata": "Q222",
+      "mapcolor": 1,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "AD",
+      "iso3": "AND",
+      "name": {
+        "de": "Andorra",
+        "en": "Andorra"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Andorra la Vella",
+        "name_en": "Andorra la Vella",
+        "point": [
+          1.516486,
+          42.500001
+        ],
+        "population": 53998,
+        "population_year": 2019
+      },
+      "population": 77142,
+      "population_year": 2019,
+      "area_km2": 451,
+      "bbox": [
+        1.4065,
+        42.4287,
+        1.7651,
+        42.6494
+      ],
+      "focus_bbox": [
+        1.4065,
+        42.4287,
+        1.7651,
+        42.6494
+      ],
+      "center": [
+        1.5394,
+        42.5476
+      ],
+      "flag": "🇦🇩",
+      "flag_url": "/flags/ad.svg",
+      "wikidata": "Q228",
+      "mapcolor": 1,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "BY",
+      "iso3": "BLR",
+      "name": {
+        "de": "Belarus",
+        "en": "Belarus"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Minsk",
+        "name_en": "Minsk",
+        "point": [
+          27.564681,
+          53.901923
+        ],
+        "population": 1805000,
+        "population_year": 2019
+      },
+      "population": 9466856,
+      "population_year": 2019,
+      "area_km2": 206632,
+      "bbox": [
+        23.1656,
+        51.2352,
+        32.7195,
+        56.1568
+      ],
+      "focus_bbox": [
+        23.1656,
+        51.2352,
+        32.7195,
+        56.1568
+      ],
+      "center": [
+        28.4177,
+        53.8219
+      ],
+      "flag": "🇧🇾",
+      "flag_url": "/flags/by.svg",
+      "wikidata": "Q184",
+      "mapcolor": 5,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "BE",
+      "iso3": "BEL",
+      "name": {
+        "de": "Belgien",
+        "en": "Belgium"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Brüssel",
+        "name_en": "Brussels",
+        "point": [
+          4.331371,
+          50.835263
+        ],
+        "population": 1743000,
+        "population_year": 2019
+      },
+      "population": 11484055,
+      "population_year": 2019,
+      "area_km2": 30561,
+      "bbox": [
+        2.5218,
+        49.4952,
+        6.3745,
+        51.4962
+      ],
+      "focus_bbox": [
+        2.5218,
+        49.4952,
+        6.3745,
+        51.4962
+      ],
+      "center": [
+        4.8004,
+        50.7854
+      ],
+      "flag": "🇧🇪",
+      "flag_url": "/flags/be.svg",
+      "wikidata": "Q31",
+      "mapcolor": 1,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "BA",
+      "iso3": "BIH",
+      "name": {
+        "de": "Bosnien und Herzegowina",
+        "en": "Bosnia and Herzegovina"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Sarajevo",
+        "name_en": "Sarajevo",
+        "point": [
+          18.383002,
+          43.850022
+        ],
+        "population": 696731,
+        "population_year": 2019
+      },
+      "population": 3301000,
+      "population_year": 2019,
+      "area_km2": 51722,
+      "bbox": [
+        15.7161,
+        42.5592,
+        19.6189,
+        45.2845
+      ],
+      "focus_bbox": [
+        15.7161,
+        42.5592,
+        19.6189,
+        45.2845
+      ],
+      "center": [
+        18.0684,
+        44.0911
+      ],
+      "flag": "🇧🇦",
+      "flag_url": "/flags/ba.svg",
+      "wikidata": "Q225",
+      "mapcolor": 1,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "BG",
+      "iso3": "BGR",
+      "name": {
+        "de": "Bulgarien",
+        "en": "Bulgaria"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Sofia",
+        "name_en": "Sofia",
+        "point": [
+          23.314708,
+          42.685295
+        ],
+        "population": 1185000,
+        "population_year": 2019
+      },
+      "population": 6975761,
+      "population_year": 2019,
+      "area_km2": 112568,
+      "bbox": [
+        22.345,
+        41.2381,
+        28.6035,
+        44.2284
+      ],
+      "focus_bbox": [
+        22.345,
+        41.2381,
+        28.6035,
+        44.2284
+      ],
+      "center": [
+        25.1571,
+        42.5088
+      ],
+      "flag": "🇧🇬",
+      "flag_url": "/flags/bg.svg",
+      "wikidata": "Q219",
+      "mapcolor": 1,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "DK",
+      "iso3": "DNK",
+      "name": {
+        "de": "Dänemark",
+        "en": "Denmark"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Kopenhagen",
+        "name_en": "Copenhagen",
+        "point": [
+          12.56154,
+          55.68051
+        ],
+        "population": 1085000,
+        "population_year": 2019
+      },
+      "population": 5818553,
+      "population_year": 2019,
+      "area_km2": 42494,
+      "bbox": [
+        8.094,
+        54.5686,
+        15.1514,
+        57.7512
+      ],
+      "focus_bbox": [
+        8.094,
+        54.5686,
+        15.1514,
+        57.7512
+      ],
+      "center": [
+        9.0182,
+        55.967
+      ],
+      "flag": "🇩🇰",
+      "flag_url": "/flags/dk.svg",
+      "wikidata": "Q35",
+      "mapcolor": 3,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "DE",
+      "iso3": "DEU",
+      "name": {
+        "de": "Deutschland",
+        "en": "Germany"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Berlin",
+        "name_en": "Berlin",
+        "point": [
+          13.399603,
+          52.523765
+        ],
+        "population": 3406000,
+        "population_year": 2019
+      },
+      "population": 83132799,
+      "population_year": 2019,
+      "area_km2": 356379,
+      "bbox": [
+        5.8525,
+        47.2711,
+        15.0221,
+        55.0653
+      ],
+      "focus_bbox": [
+        5.8525,
+        47.2711,
+        15.0221,
+        54.9059
+      ],
+      "center": [
+        9.6783,
+        50.9617
+      ],
+      "flag": "🇩🇪",
+      "flag_url": "/flags/de.svg",
+      "wikidata": "Q183",
+      "mapcolor": 5,
+      "has_regions": true,
+      "region_label": "Bundesland",
+      "region_plural": "Bundesländer",
+      "regions_map": "/data/maps/dach-regions.geojson",
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "EE",
+      "iso3": "EST",
+      "name": {
+        "de": "Estland",
+        "en": "Estonia"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Tallinn",
+        "name_en": "Tallinn",
+        "point": [
+          24.728041,
+          59.433877
+        ],
+        "population": 394024,
+        "population_year": 2019
+      },
+      "population": 1326590,
+      "population_year": 2019,
+      "area_km2": 45576,
+      "bbox": [
+        21.8324,
+        57.5158,
+        28.1865,
+        59.6709
+      ],
+      "focus_bbox": [
+        21.8324,
+        57.5158,
+        28.1865,
+        59.6709
+      ],
+      "center": [
+        25.8671,
+        58.7249
+      ],
+      "flag": "🇪🇪",
+      "flag_url": "/flags/ee.svg",
+      "wikidata": "Q191",
+      "mapcolor": 1,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "FI",
+      "iso3": "FIN",
+      "name": {
+        "de": "Finnland",
+        "en": "Finland"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Helsinki",
+        "name_en": "Helsinki",
+        "point": [
+          24.932181,
+          60.177509
+        ],
+        "population": 1115000,
+        "population_year": 2019
+      },
+      "population": 5520314,
+      "population_year": 2019,
+      "area_km2": 330938,
+      "bbox": [
+        20.6232,
+        59.8112,
+        31.5695,
+        70.0753
+      ],
+      "focus_bbox": [
+        20.6232,
+        59.8112,
+        31.5695,
+        70.0753
+      ],
+      "center": [
+        27.2764,
+        63.2524
+      ],
+      "flag": "🇫🇮",
+      "flag_url": "/flags/fi.svg",
+      "wikidata": "Q33",
+      "mapcolor": 4,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "FR",
+      "iso3": "FRA",
+      "name": {
+        "de": "Frankreich",
+        "en": "France"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Paris",
+        "name_en": "Paris",
+        "point": [
+          2.33139,
+          48.868639
+        ],
+        "population": 9904000,
+        "population_year": 2019
+      },
+      "population": 67059887,
+      "population_year": 2019,
+      "area_km2": 635737,
+      "bbox": [
+        -61.7978,
+        -21.3708,
+        55.8545,
+        51.0875
+      ],
+      "focus_bbox": [
+        -4.7849,
+        41.3659,
+        9.5596,
+        51.0875
+      ],
+      "center": [
+        2.5523,
+        46.6961
+      ],
+      "flag": "🇫🇷",
+      "flag_url": "/flags/fr.svg",
+      "wikidata": "Q142",
+      "mapcolor": 9,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "GR",
+      "iso3": "GRC",
+      "name": {
+        "de": "Griechenland",
+        "en": "Greece"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Athen",
+        "name_en": "Athens",
+        "point": [
+          23.731375,
+          37.985272
+        ],
+        "population": 3242000,
+        "population_year": 2019
+      },
+      "population": 10716322,
+      "population_year": 2019,
+      "area_km2": 131244,
+      "bbox": [
+        19.6265,
+        34.815,
+        28.2398,
+        41.7505
+      ],
+      "focus_bbox": [
+        19.6265,
+        34.9316,
+        28.2398,
+        41.7505
+      ],
+      "center": [
+        21.7257,
+        39.4928
+      ],
+      "flag": "🇬🇷",
+      "flag_url": "/flags/gr.svg",
+      "wikidata": "Q41",
+      "mapcolor": 2,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "IE",
+      "iso3": "IRL",
+      "name": {
+        "de": "Irland",
+        "en": "Ireland"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Dublin",
+        "name_en": "Dublin",
+        "point": [
+          -6.250852,
+          53.335007
+        ],
+        "population": 1059000,
+        "population_year": 2019
+      },
+      "population": 4941444,
+      "population_year": 2019,
+      "area_km2": 69160,
+      "bbox": [
+        -10.4782,
+        51.4457,
+        -5.9935,
+        55.3864
+      ],
+      "focus_bbox": [
+        -10.4782,
+        51.4457,
+        -5.9935,
+        55.3864
+      ],
+      "center": [
+        -7.7986,
+        53.0787
+      ],
+      "flag": "🇮🇪",
+      "flag_url": "/flags/ie.svg",
+      "wikidata": "Q27",
+      "mapcolor": 2,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "IS",
+      "iso3": "ISL",
+      "name": {
+        "de": "Island",
+        "en": "Iceland"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Reykjavík",
+        "name_en": "Reykjavík",
+        "point": [
+          -21.950015,
+          64.150024
+        ],
+        "population": 166212,
+        "population_year": 2019
+      },
+      "population": 361313,
+      "population_year": 2019,
+      "area_km2": 101723,
+      "bbox": [
+        -24.5399,
+        63.3967,
+        -13.5029,
+        66.5642
+      ],
+      "focus_bbox": [
+        -24.5399,
+        63.3967,
+        -13.5029,
+        66.5366
+      ],
+      "center": [
+        -18.6737,
+        64.7793
+      ],
+      "flag": "🇮🇸",
+      "flag_url": "/flags/is.svg",
+      "wikidata": "Q189",
+      "mapcolor": 4,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "IT",
+      "iso3": "ITA",
+      "name": {
+        "de": "Italien",
+        "en": "Italy"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Rom",
+        "name_en": "Rome",
+        "point": [
+          12.481313,
+          41.897902
+        ],
+        "population": 3339000,
+        "population_year": 2019
+      },
+      "population": 60297396,
+      "population_year": 2019,
+      "area_km2": 300678,
+      "bbox": [
+        6.6027,
+        35.4892,
+        18.5174,
+        47.0852
+      ],
+      "focus_bbox": [
+        6.6027,
+        36.6549,
+        18.5174,
+        47.0852
+      ],
+      "center": [
+        11.0769,
+        44.7325
+      ],
+      "flag": "🇮🇹",
+      "flag_url": "/flags/it.svg",
+      "wikidata": "Q38",
+      "mapcolor": 8,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "XK",
+      "iso3": "KOS",
+      "name": {
+        "de": "Kosovo",
+        "en": "Kosovo"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Pristina",
+        "name_en": "Pristina",
+        "point": [
+          21.165984,
+          42.66671
+        ],
+        "population": 465186,
+        "population_year": 2019
+      },
+      "population": 1794248,
+      "population_year": 2019,
+      "area_km2": 10895,
+      "bbox": [
+        20.0248,
+        41.844,
+        21.7728,
+        43.2631
+      ],
+      "focus_bbox": [
+        20.0248,
+        41.844,
+        21.7728,
+        43.2631
+      ],
+      "center": [
+        20.8607,
+        42.5936
+      ],
+      "flag": "🇽🇰",
+      "flag_url": "/flags/xk.svg",
+      "wikidata": "Q1246",
+      "mapcolor": 3,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "HR",
+      "iso3": "HRV",
+      "name": {
+        "de": "Kroatien",
+        "en": "Croatia"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Zagreb",
+        "name_en": "Zagreb",
+        "point": [
+          15.999995,
+          45.800007
+        ],
+        "population": 722526,
+        "population_year": 2019
+      },
+      "population": 4067500,
+      "population_year": 2019,
+      "area_km2": 54900,
+      "bbox": [
+        13.5015,
+        42.4163,
+        19.4078,
+        46.547
+      ],
+      "focus_bbox": [
+        13.5015,
+        42.4163,
+        19.4078,
+        46.547
+      ],
+      "center": [
+        16.3724,
+        45.8058
+      ],
+      "flag": "🇭🇷",
+      "flag_url": "/flags/hr.svg",
+      "wikidata": "Q224",
+      "mapcolor": 5,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "LV",
+      "iso3": "LVA",
+      "name": {
+        "de": "Lettland",
+        "en": "Latvia"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Riga",
+        "name_en": "Riga",
+        "point": [
+          24.099965,
+          56.950024
+        ],
+        "population": 742572,
+        "population_year": 2019
+      },
+      "population": 1912789,
+      "population_year": 2019,
+      "area_km2": 64259,
+      "bbox": [
+        20.9686,
+        55.667,
+        28.2173,
+        58.0751
+      ],
+      "focus_bbox": [
+        20.9686,
+        55.667,
+        28.2173,
+        58.0751
+      ],
+      "center": [
+        25.4587,
+        57.0669
+      ],
+      "flag": "🇱🇻",
+      "flag_url": "/flags/lv.svg",
+      "wikidata": "Q211",
+      "mapcolor": 6,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "LI",
+      "iso3": "LIE",
+      "name": {
+        "de": "Liechtenstein",
+        "en": "Liechtenstein"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Vaduz",
+        "name_en": "Vaduz",
+        "point": [
+          9.51667,
+          47.133724
+        ],
+        "population": 36281,
+        "population_year": 2019
+      },
+      "population": 38019,
+      "population_year": 2019,
+      "area_km2": 137,
+      "bbox": [
+        9.4759,
+        47.0524,
+        9.6157,
+        47.2628
+      ],
+      "focus_bbox": [
+        9.4759,
+        47.0524,
+        9.6157,
+        47.2628
+      ],
+      "center": [
+        9.5594,
+        47.1114
+      ],
+      "flag": "🇱🇮",
+      "flag_url": "/flags/li.svg",
+      "wikidata": "Q347",
+      "mapcolor": 2,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "LT",
+      "iso3": "LTU",
+      "name": {
+        "de": "Litauen",
+        "en": "Lithuania"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Vilnius",
+        "name_en": "Vilnius",
+        "point": [
+          25.316635,
+          54.683366
+        ],
+        "population": 542366,
+        "population_year": 2019
+      },
+      "population": 2786844,
+      "population_year": 2019,
+      "area_km2": 64641,
+      "bbox": [
+        20.9246,
+        53.8868,
+        26.8007,
+        56.4426
+      ],
+      "focus_bbox": [
+        20.9246,
+        53.8868,
+        26.8007,
+        56.4426
+      ],
+      "center": [
+        24.0899,
+        55.1037
+      ],
+      "flag": "🇱🇹",
+      "flag_url": "/flags/lt.svg",
+      "wikidata": "Q37",
+      "mapcolor": 3,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "LU",
+      "iso3": "LUX",
+      "name": {
+        "de": "Luxemburg",
+        "en": "Luxembourg"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Luxemburg",
+        "name_en": "Luxembourg",
+        "point": [
+          6.130003,
+          49.61166
+        ],
+        "population": 107260,
+        "population_year": 2019
+      },
+      "population": 619896,
+      "population_year": 2019,
+      "area_km2": 2600,
+      "bbox": [
+        5.7149,
+        49.4413,
+        6.5026,
+        50.175
+      ],
+      "focus_bbox": [
+        5.7149,
+        49.4413,
+        6.5026,
+        50.175
+      ],
+      "center": [
+        6.0776,
+        49.7337
+      ],
+      "flag": "🇱🇺",
+      "flag_url": "/flags/lu.svg",
+      "wikidata": "Q32",
+      "mapcolor": 3,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "MT",
+      "iso3": "MLT",
+      "name": {
+        "de": "Malta",
+        "en": "Malta"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Valletta",
+        "name_en": "Valletta",
+        "point": [
+          14.514711,
+          35.899733
+        ],
+        "population": 368250,
+        "population_year": 2019
+      },
+      "population": 502653,
+      "population_year": 2019,
+      "area_km2": 326,
+      "bbox": [
+        14.1836,
+        35.8012,
+        14.5671,
+        36.0756
+      ],
+      "focus_bbox": [
+        14.1836,
+        35.8012,
+        14.5671,
+        36.0756
+      ],
+      "center": [
+        14.433,
+        35.8929
+      ],
+      "flag": "🇲🇹",
+      "flag_url": "/flags/mt.svg",
+      "wikidata": "Q233",
+      "mapcolor": 1,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "MC",
+      "iso3": "MCO",
+      "name": {
+        "de": "Monaco",
+        "en": "Monaco"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Monaco",
+        "name_en": "Monaco",
+        "point": [
+          7.406913,
+          43.739646
+        ],
+        "population": 36371,
+        "population_year": 2019
+      },
+      "population": 38964,
+      "population_year": 2019,
+      "area_km2": 19,
+      "bbox": [
+        7.3658,
+        43.718,
+        7.4375,
+        43.7635
+      ],
+      "focus_bbox": [
+        7.3658,
+        43.718,
+        7.4375,
+        43.7635
+      ],
+      "center": [
+        7.3983,
+        43.7397
+      ],
+      "flag": "🇲🇨",
+      "flag_url": "/flags/mc.svg",
+      "wikidata": "Q235",
+      "mapcolor": 2,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "ME",
+      "iso3": "MNE",
+      "name": {
+        "de": "Montenegro",
+        "en": "Montenegro"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Podgorica",
+        "name_en": "Podgorica",
+        "point": [
+          19.266307,
+          42.465973
+        ],
+        "population": 145850,
+        "population_year": 2019
+      },
+      "population": 622137,
+      "population_year": 2019,
+      "area_km2": 13704,
+      "bbox": [
+        18.4335,
+        41.8524,
+        20.3552,
+        43.5479
+      ],
+      "focus_bbox": [
+        18.4335,
+        41.8524,
+        20.3552,
+        43.5479
+      ],
+      "center": [
+        19.1437,
+        42.8031
+      ],
+      "flag": "🇲🇪",
+      "flag_url": "/flags/me.svg",
+      "wikidata": "Q236",
+      "mapcolor": 4,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "NL",
+      "iso3": "NLD",
+      "name": {
+        "de": "Niederlande",
+        "en": "Netherlands"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Amsterdam",
+        "name_en": "Amsterdam",
+        "point": [
+          4.914694,
+          52.351915
+        ],
+        "population": 1031000,
+        "population_year": 2019
+      },
+      "population": 17332850,
+      "population_year": 2019,
+      "area_km2": 37253,
+      "bbox": [
+        -68.4174,
+        12.022,
+        7.1985,
+        53.5581
+      ],
+      "focus_bbox": [
+        3.3494,
+        50.7475,
+        7.1985,
+        53.5141
+      ],
+      "center": [
+        5.6114,
+        52.4222
+      ],
+      "flag": "🇳🇱",
+      "flag_url": "/flags/nl.svg",
+      "wikidata": "Q55",
+      "mapcolor": 2,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "MK",
+      "iso3": "MKD",
+      "name": {
+        "de": "Nordmazedonien",
+        "en": "North Macedonia"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Skopje",
+        "name_en": "Skopje",
+        "point": [
+          21.433462,
+          42.000006
+        ],
+        "population": 494087,
+        "population_year": 2019
+      },
+      "population": 2083459,
+      "population_year": 2019,
+      "area_km2": 25349,
+      "bbox": [
+        20.4442,
+        40.8494,
+        23.0096,
+        42.3703
+      ],
+      "focus_bbox": [
+        20.4442,
+        40.8494,
+        23.0096,
+        42.3703
+      ],
+      "center": [
+        21.5558,
+        41.5582
+      ],
+      "flag": "🇲🇰",
+      "flag_url": "/flags/mk.svg",
+      "wikidata": "Q221",
+      "mapcolor": 7,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "NO",
+      "iso3": "NOR",
+      "name": {
+        "de": "Norwegen",
+        "en": "Norway"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Oslo",
+        "name_en": "Oslo",
+        "point": [
+          10.748033,
+          59.918636
+        ],
+        "population": 835000,
+        "population_year": 2019
+      },
+      "population": 5347896,
+      "population_year": 2019,
+      "area_km2": 379542,
+      "bbox": [
+        -9.1174,
+        -54.4625,
+        33.6404,
+        80.7701
+      ],
+      "focus_bbox": [
+        4.9268,
+        57.9931,
+        31.077,
+        71.1271
+      ],
+      "center": [
+        9.68,
+        61.3571
+      ],
+      "flag": "🇳🇴",
+      "flag_url": "/flags/no.svg",
+      "wikidata": "Q20",
+      "mapcolor": 8,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "AT",
+      "iso3": "AUT",
+      "name": {
+        "de": "Österreich",
+        "en": "Austria"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Wien",
+        "name_en": "Vienna",
+        "point": [
+          16.364693,
+          48.201961
+        ],
+        "population": 2400000,
+        "population_year": 2019
+      },
+      "population": 8877067,
+      "population_year": 2019,
+      "area_km2": 83756,
+      "bbox": [
+        9.5212,
+        46.3786,
+        17.1483,
+        49.0098
+      ],
+      "focus_bbox": [
+        9.5212,
+        46.3786,
+        17.1483,
+        49.0098
+      ],
+      "center": [
+        14.1305,
+        47.5189
+      ],
+      "flag": "🇦🇹",
+      "flag_url": "/flags/at.svg",
+      "wikidata": "Q40",
+      "mapcolor": 3,
+      "has_regions": true,
+      "region_label": "Bundesland",
+      "region_plural": "Bundesländer",
+      "regions_map": "/data/maps/dach-regions.geojson",
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "PL",
+      "iso3": "POL",
+      "name": {
+        "de": "Polen",
+        "en": "Poland"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Warschau",
+        "name_en": "Warsaw",
+        "point": [
+          20.998054,
+          52.251947
+        ],
+        "population": 1707000,
+        "population_year": 2019
+      },
+      "population": 37970874,
+      "population_year": 2019,
+      "area_km2": 312218,
+      "bbox": [
+        14.1239,
+        48.994,
+        24.1432,
+        54.8383
+      ],
+      "focus_bbox": [
+        14.1239,
+        48.994,
+        24.1432,
+        54.8383
+      ],
+      "center": [
+        19.4905,
+        51.9903
+      ],
+      "flag": "🇵🇱",
+      "flag_url": "/flags/pl.svg",
+      "wikidata": "Q36",
+      "mapcolor": 1,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "PT",
+      "iso3": "PRT",
+      "name": {
+        "de": "Portugal",
+        "en": "Portugal"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Lissabon",
+        "name_en": "Lisbon",
+        "point": [
+          -9.146812,
+          38.724669
+        ],
+        "population": 2812000,
+        "population_year": 2019
+      },
+      "population": 10269417,
+      "population_year": 2019,
+      "area_km2": 91303,
+      "bbox": [
+        -31.2849,
+        30.0292,
+        -6.2059,
+        42.1536
+      ],
+      "focus_bbox": [
+        -17.2521,
+        32.6416,
+        -6.2059,
+        42.1536
+      ],
+      "center": [
+        -8.2718,
+        39.6067
+      ],
+      "flag": "🇵🇹",
+      "flag_url": "/flags/pt.svg",
+      "wikidata": "Q45",
+      "mapcolor": 1,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "MD",
+      "iso3": "MDA",
+      "name": {
+        "de": "Republik Moldau",
+        "en": "Moldova"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Chișinău",
+        "name_en": "Chișinău",
+        "point": [
+          28.857711,
+          47.005024
+        ],
+        "population": 688134,
+        "population_year": 2019
+      },
+      "population": 2657637,
+      "population_year": 2019,
+      "area_km2": 33116,
+      "bbox": [
+        26.6179,
+        45.4618,
+        30.1316,
+        48.486
+      ],
+      "focus_bbox": [
+        26.6179,
+        45.4618,
+        30.1316,
+        48.486
+      ],
+      "center": [
+        28.4879,
+        47.435
+      ],
+      "flag": "🇲🇩",
+      "flag_url": "/flags/md.svg",
+      "wikidata": "Q217",
+      "mapcolor": 4,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "RO",
+      "iso3": "ROU",
+      "name": {
+        "de": "Rumänien",
+        "en": "Romania"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Bukarest",
+        "name_en": "Bucharest",
+        "point": [
+          26.098001,
+          44.435318
+        ],
+        "population": 1942000,
+        "population_year": 2019
+      },
+      "population": 19356544,
+      "population_year": 2019,
+      "area_km2": 235806,
+      "bbox": [
+        20.2428,
+        43.6501,
+        29.6996,
+        48.2748
+      ],
+      "focus_bbox": [
+        20.2428,
+        43.6501,
+        29.6996,
+        48.2748
+      ],
+      "center": [
+        24.9726,
+        45.7332
+      ],
+      "flag": "🇷🇴",
+      "flag_url": "/flags/ro.svg",
+      "wikidata": "Q218",
+      "mapcolor": 3,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "RU",
+      "iso3": "RUS",
+      "name": {
+        "de": "Russland",
+        "en": "Russia"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Moskau",
+        "name_en": "Moscow",
+        "point": [
+          37.613577,
+          55.75411
+        ],
+        "population": 10452000,
+        "population_year": 2019
+      },
+      "population": 144373535,
+      "population_year": 2019,
+      "area_km2": 16886303,
+      "bbox": [
+        -180,
+        41.1927,
+        180,
+        81.8587
+      ],
+      "focus_bbox": [
+        -180,
+        41.1927,
+        180,
+        81.8587
+      ],
+      "center": [
+        44.6865,
+        58.2494
+      ],
+      "flag": "🇷🇺",
+      "flag_url": "/flags/ru.svg",
+      "wikidata": "Q159",
+      "mapcolor": 7,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "SM",
+      "iso3": "SMR",
+      "name": {
+        "de": "San Marino",
+        "en": "San Marino"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "San Marino",
+        "name_en": "San Marino",
+        "point": [
+          12.44177,
+          43.936096
+        ],
+        "population": 29579,
+        "population_year": 2019
+      },
+      "population": 33860,
+      "population_year": 2019,
+      "area_km2": 60,
+      "bbox": [
+        12.3856,
+        43.8921,
+        12.4924,
+        43.9826
+      ],
+      "focus_bbox": [
+        12.3856,
+        43.8921,
+        12.4924,
+        43.9826
+      ],
+      "center": [
+        12.4412,
+        43.9339
+      ],
+      "flag": "🇸🇲",
+      "flag_url": "/flags/sm.svg",
+      "wikidata": "Q238",
+      "mapcolor": 1,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "SE",
+      "iso3": "SWE",
+      "name": {
+        "de": "Schweden",
+        "en": "Sweden"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Stockholm",
+        "name_en": "Stockholm",
+        "point": [
+          18.095389,
+          59.352706
+        ],
+        "population": 1264000,
+        "population_year": 2019
+      },
+      "population": 10285453,
+      "population_year": 2019,
+      "area_km2": 443493,
+      "bbox": [
+        11.1082,
+        55.3427,
+        24.1634,
+        69.0364
+      ],
+      "focus_bbox": [
+        11.1082,
+        55.3427,
+        24.1634,
+        69.0364
+      ],
+      "center": [
+        19.0171,
+        65.8592
+      ],
+      "flag": "🇸🇪",
+      "flag_url": "/flags/se.svg",
+      "wikidata": "Q34",
+      "mapcolor": 2,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "CH",
+      "iso3": "CHE",
+      "name": {
+        "de": "Schweiz",
+        "en": "Switzerland"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Bern",
+        "name_en": "Bern",
+        "point": [
+          7.466976,
+          46.916683
+        ],
+        "population": 275329,
+        "population_year": 2019
+      },
+      "population": 8574832,
+      "population_year": 2019,
+      "area_km2": 41326,
+      "bbox": [
+        5.9548,
+        45.8207,
+        10.4666,
+        47.8012
+      ],
+      "focus_bbox": [
+        5.9548,
+        45.8207,
+        10.4666,
+        47.8012
+      ],
+      "center": [
+        7.464,
+        46.7191
+      ],
+      "flag": "🇨🇭",
+      "flag_url": "/flags/ch.svg",
+      "wikidata": "Q39",
+      "mapcolor": 7,
+      "has_regions": true,
+      "region_label": "Kanton",
+      "region_plural": "Kantone",
+      "regions_map": "/data/maps/dach-regions.geojson",
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "RS",
+      "iso3": "SRB",
+      "name": {
+        "de": "Serbien",
+        "en": "Serbia"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Belgrad",
+        "name_en": "Belgrade",
+        "point": [
+          20.466045,
+          44.820591
+        ],
+        "population": 1099000,
+        "population_year": 2019
+      },
+      "population": 6944975,
+      "population_year": 2019,
+      "area_km2": 77470,
+      "bbox": [
+        18.845,
+        42.2349,
+        22.9846,
+        46.1739
+      ],
+      "focus_bbox": [
+        18.845,
+        42.2349,
+        22.9846,
+        46.1739
+      ],
+      "center": [
+        20.788,
+        44.1899
+      ],
+      "flag": "🇷🇸",
+      "flag_url": "/flags/rs.svg",
+      "wikidata": "Q403",
+      "mapcolor": 2,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "SK",
+      "iso3": "SVK",
+      "name": {
+        "de": "Slowakei",
+        "en": "Slovakia"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Bratislava",
+        "name_en": "Bratislava",
+        "point": [
+          17.116981,
+          48.150018
+        ],
+        "population": 423737,
+        "population_year": 2019
+      },
+      "population": 5454073,
+      "population_year": 2019,
+      "area_km2": 48308,
+      "bbox": [
+        16.8445,
+        47.75,
+        22.5396,
+        49.6018
+      ],
+      "focus_bbox": [
+        16.8445,
+        47.75,
+        22.5396,
+        49.6018
+      ],
+      "center": [
+        19.0499,
+        48.734
+      ],
+      "flag": "🇸🇰",
+      "flag_url": "/flags/sk.svg",
+      "wikidata": "Q214",
+      "mapcolor": 4,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "SI",
+      "iso3": "SVN",
+      "name": {
+        "de": "Slowenien",
+        "en": "Slovenia"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Ljubljana",
+        "name_en": "Ljubljana",
+        "point": [
+          14.514969,
+          46.055288
+        ],
+        "population": 314807,
+        "population_year": 2019
+      },
+      "population": 2087946,
+      "population_year": 2019,
+      "area_km2": 20277,
+      "bbox": [
+        13.3653,
+        45.4236,
+        16.5153,
+        46.864
+      ],
+      "focus_bbox": [
+        13.3653,
+        45.4236,
+        16.5153,
+        46.864
+      ],
+      "center": [
+        14.9153,
+        46.0608
+      ],
+      "flag": "🇸🇮",
+      "flag_url": "/flags/si.svg",
+      "wikidata": "Q215",
+      "mapcolor": 2,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "ES",
+      "iso3": "ESP",
+      "name": {
+        "de": "Spanien",
+        "en": "Spain"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Madrid",
+        "name_en": "Madrid",
+        "point": [
+          -3.685298,
+          40.401972
+        ],
+        "population": 5567000,
+        "population_year": 2019
+      },
+      "population": 47076781,
+      "population_year": 2019,
+      "area_km2": 506328,
+      "bbox": [
+        -18.1672,
+        27.6422,
+        4.3371,
+        43.7934
+      ],
+      "focus_bbox": [
+        -9.292,
+        36.0065,
+        4.3371,
+        43.7934
+      ],
+      "center": [
+        -3.4647,
+        40.091
+      ],
+      "flag": "🇪🇸",
+      "flag_url": "/flags/es.svg",
+      "wikidata": "Q29",
+      "mapcolor": 5,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "CZ",
+      "iso3": "CZE",
+      "name": {
+        "de": "Tschechien",
+        "en": "Czech Republic"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Prag",
+        "name_en": "Prague",
+        "point": [
+          14.464034,
+          50.085283
+        ],
+        "population": 1162000,
+        "population_year": 2019
+      },
+      "population": 10669709,
+      "population_year": 2019,
+      "area_km2": 78497,
+      "bbox": [
+        12.0761,
+        48.5579,
+        18.8374,
+        51.04
+      ],
+      "focus_bbox": [
+        12.0761,
+        48.5579,
+        18.8374,
+        51.04
+      ],
+      "center": [
+        15.3776,
+        49.8824
+      ],
+      "flag": "🇨🇿",
+      "flag_url": "/flags/cz.svg",
+      "wikidata": "Q213",
+      "mapcolor": 2,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "UA",
+      "iso3": "UKR",
+      "name": {
+        "de": "Ukraine",
+        "en": "Ukraine"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Kiew",
+        "name_en": "Kyiv",
+        "point": [
+          30.514682,
+          50.435313
+        ],
+        "population": 2709000,
+        "population_year": 2019
+      },
+      "population": 44385155,
+      "population_year": 2019,
+      "area_km2": 570180,
+      "bbox": [
+        22.1328,
+        45.2136,
+        40.1595,
+        52.3689
+      ],
+      "focus_bbox": [
+        22.1328,
+        45.2136,
+        40.1595,
+        52.3689
+      ],
+      "center": [
+        32.1409,
+        49.7247
+      ],
+      "flag": "🇺🇦",
+      "flag_url": "/flags/ua.svg",
+      "wikidata": "Q212",
+      "mapcolor": 6,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "HU",
+      "iso3": "HUN",
+      "name": {
+        "de": "Ungarn",
+        "en": "Hungary"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Budapest",
+        "name_en": "Budapest",
+        "point": [
+          19.081375,
+          47.501952
+        ],
+        "population": 1679000,
+        "population_year": 2019
+      },
+      "population": 9769949,
+      "population_year": 2019,
+      "area_km2": 92947,
+      "bbox": [
+        16.094,
+        45.7413,
+        22.8776,
+        48.5692
+      ],
+      "focus_bbox": [
+        16.094,
+        45.7413,
+        22.8776,
+        48.5692
+      ],
+      "center": [
+        19.4479,
+        47.0868
+      ],
+      "flag": "🇭🇺",
+      "flag_url": "/flags/hu.svg",
+      "wikidata": "Q28",
+      "mapcolor": 1,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "VA",
+      "iso3": "VAT",
+      "name": {
+        "de": "Vatikanstadt",
+        "en": "Vatican City"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "Vatikanstadt",
+        "name_en": "Vatican City",
+        "point": [
+          12.453387,
+          41.903282
+        ],
+        "population": 832,
+        "population_year": 2019
+      },
+      "population": 825,
+      "population_year": 2019,
+      "area_km2": 0.01,
+      "bbox": [
+        12.4527,
+        41.9028,
+        12.454,
+        41.9039
+      ],
+      "focus_bbox": [
+        12.4527,
+        41.9028,
+        12.454,
+        41.9039
+      ],
+      "center": [
+        12.4534,
+        41.9033
+      ],
+      "flag": "🇻🇦",
+      "flag_url": "/flags/va.svg",
+      "wikidata": "Q237",
+      "mapcolor": 4,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    },
+    {
+      "code": "GB",
+      "iso3": "GBR",
+      "name": {
+        "de": "Vereinigtes Königreich",
+        "en": "United Kingdom"
+      },
+      "continent": "europe",
+      "capital": {
+        "name_de": "London",
+        "name_en": "London",
+        "point": [
+          -0.118668,
+          51.501941
+        ],
+        "population": 8567000,
+        "population_year": 2019
+      },
+      "population": 66834405,
+      "population_year": 2019,
+      "area_km2": 242737,
+      "bbox": [
+        -13.6913,
+        49.9096,
+        1.7712,
+        60.8479
+      ],
+      "focus_bbox": [
+        -8.1738,
+        49.9591,
+        1.7712,
+        60.6431
+      ],
+      "center": [
+        -2.1163,
+        54.4027
+      ],
+      "flag": "🇬🇧",
+      "flag_url": "/flags/gb.svg",
+      "wikidata": "Q145",
+      "mapcolor": 6,
+      "has_regions": false,
+      "region_label": null,
+      "region_plural": null,
+      "regions_map": null,
+      "map": "/data/maps/europe.geojson"
+    }
+  ]
+}

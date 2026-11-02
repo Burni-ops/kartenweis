@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f6f1e7;
+  --color-paper-deep: #ece3d4;
+  --color-ink: #1b2a41;
+  --color-ink-muted: #5b6b7c;
+  --color-teal: #0f8b8d;
+  --color-teal-soft: #d7efee;
+  --color-coral: #e4572e;
+  --color-gold: #f2a541;
+  --color-line: #d8cfbf;
+  --color-sea: #cfe8f3;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+  font-family: var(--font-sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+button {
+  font: inherit;
+}
+
+.map-shell {
+  position: relative;
+  height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.glass {
+  background: color-mix(in srgb, white 82%, transparent);
+  border: 1px solid color-mix(in srgb, white 60%, transparent);
+  box-shadow:
+    0 10px 30px rgb(27 42 65 / 12%),
+    0 2px 6px rgb(27 42 65 / 8%);
+  backdrop-filter: blur(14px);
+}
+
+.sheet {
+  background: color-mix(in srgb, white 94%, transparent);
+  border: 1px solid color-mix(in srgb, white 70%, transparent);
+  box-shadow:
+    0 -18px 50px rgb(27 42 65 / 18%),
+    0 -2px 10px rgb(27 42 65 / 8%);
+  backdrop-filter: blur(18px);
+  padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+}
+
+.chip-scroll {
+  scrollbar-width: none;
+}
+
+.chip-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.maplibregl-ctrl-group {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgb(27 42 65 / 14%);
+}
+
+.maplibregl-ctrl-group button {
+  width: 38px;
+  height: 38px;
+}
+
+.maplibregl-ctrl-attrib {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .maplibregl-ctrl-bottom-right,
+  .maplibregl-ctrl-bottom-left {
+    display: none;
+  }
+}
+
+.map-fade-in {
+  animation: map-fade-in 600ms ease-out both;
+}
+
+@keyframes map-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(1.015);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.sheet-enter {
+  animation: sheet-enter 260ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes sheet-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
