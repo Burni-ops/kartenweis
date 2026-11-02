@@ -16,7 +16,9 @@
     "data": "tsx tools/build-data.ts && node tools/build-reveals.mjs && tsx tools/build-generated-facts.ts",
     "data:reference": "node tools/research-wikidata-world.mjs && node tools/build-reference-world.mjs",
     "data:flags": "node tools/download-flags.mjs",
-    "data:reveals": "node tools/build-reveals.mjs"
+    "data:reveals": "node tools/build-reveals.mjs",
+    "android:sync": "npm run build && npx cap sync android",
+    "android:build": "npm run android:sync && cd android && gradlew assembleDebug"
   },
   "keywords": [
     "geography",
@@ -27,6 +29,11 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@capacitor/android": "^7.6.10",
+    "@capacitor/app": "^7.1.2",
+    "@capacitor/cli": "^7.6.10",
+    "@capacitor/core": "^7.6.10",
+    "@capacitor/status-bar": "^7.0.6",
     "@turf/area": "^7.4.0",
     "@turf/bbox": "^7.4.0",
     "@turf/boolean-intersects": "^7.4.0",

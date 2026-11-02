@@ -31,6 +31,24 @@ npm run dev
 | `npm run test` | Unit-Tests (Vitest) |
 | `npm run e2e` | Browser-Tests (Playwright, systemweites Chrome) |
 | `npm run check` | TypeScript + Datenvalidierung + Unit-Tests |
+| `npm run android:sync` | Web-Build erzeugen und nach `android/` synchronisieren |
+| `npm run android:build` | Debug-APK über Gradle bauen (JDK 21 + Android SDK nötig) |
+
+## Android
+
+Die Web-App läuft über **Capacitor 7** in einer Android-WebView. Der native Projektordner liegt in `android/`.
+
+Voraussetzungen:
+
+- JDK 21 (`JAVA_HOME`)
+- Android SDK mit Platform 35 und Build-Tools 35 (`ANDROID_HOME`)
+
+```bash
+npm run android:sync
+npm run android:build
+```
+
+Das Debug-APK liegt danach unter `android/app/build/outputs/apk/debug/app-debug.apk`. Die Zurück-Taste schließt zuerst Dialoge, den Atlas, den Run oder die Länderauswahl, bevor sie die App verlässt. Safe Areas sind über `env(safe-area-inset-*)` berücksichtigt.
 
 ## Stack
 

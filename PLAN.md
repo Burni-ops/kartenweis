@@ -680,7 +680,10 @@ spasmitflaggen/
 
 ### M5 — Android
 
-- Capacitor einrichten, Android-Studio-Build, Safe Areas, Zurück-Taste, Performance, Signing, Icon/Splash.
+- Capacitor 7 eingerichtet, `android/`-Projekt erzeugt, Status-Bar und Android-Zurück-Taste integriert.
+- Debug-APK baut erfolgreich (`android/app/build/outputs/apk/debug/app-debug.apk`, ca. 8,9 MB).
+- Safe Areas über `env(safe-area-inset-*)`; Web-Build wird per `npm run android:sync` kopiert.
+- **Offen:** Lauf auf echtem Gerät/Emulator messen (kein Gerät in der Build-Umgebung). Signing, Store-Icon/Splash und Release-Build folgen vor einer Veröffentlichung.
 - **Abnahme:** APK läuft auf einem mittleren Gerät mit ≥ 30 FPS, offline, ohne Berechtigungen.
 
 ### M6 — Ausbau

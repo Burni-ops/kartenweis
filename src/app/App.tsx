@@ -1,5 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import type { FeatureCollection, Geometry } from "geojson";
+import { Capacitor } from "@capacitor/core";
+import { App as CapacitorApp } from "@capacitor/app";
+import { StatusBar, Style } from "@capacitor/status-bar";
 import MapView from "../map/MapView";
 import CountrySheet from "../components/CountrySheet";
 import QuestionCard from "../components/QuestionCard";
@@ -146,6 +149,56 @@ export default function App() {
       reducedMotion,
     );
   }, [reducedMotion]);
+
+  useEffect(() => {
+    if (!Capacitor.isNativePlatform()) return;
+    void StatusBar.setStyle({ style: Style.Dark }).catch(() => undefined);
+
+    const listener = CapacitorApp.addListener("backButton", () => {
+      if (settingsOpen) {
+        setSettingsOpen(false);
+        return;
+      }
+      if (collectionOpen) {
+        setCollectionOpen(false);
+        return;
+      }
+      if (atlasCountry) {
+        setMode("browse");
+        setAtlasCountry(null);
+        setAtlasSelectedId(null);
+        return;
+      }
+      if (mode === "run" || mode === "result") {
+        setMode("browse");
+        setRun(null);
+        setFeedback(null);
+        setSummary(null);
+        return;
+      }
+      if (selectedCountry) {
+        setSelectedCountry(null);
+        setSelectedRegion(null);
+        return;
+      }
+      if (activeContinent !== "europe") {
+        setActiveContinent("europe");
+        return;
+      }
+      void CapacitorApp.exitApp();
+    });
+
+    return () => {
+      void listener.then((handle) => handle.remove());
+    };
+  }, [
+    mode,
+    settingsOpen,
+    collectionOpen,
+    atlasCountry,
+    selectedCountry,
+    activeContinent,
+  ]);
 
   const regions = useMemo(
     () =>
