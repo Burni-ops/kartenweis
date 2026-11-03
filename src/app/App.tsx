@@ -32,6 +32,12 @@ import { dailySeed, todayKey } from "../game/daily";
 import { masteryMap, useProgress } from "../store/progress";
 import { useSettings } from "../store/settings";
 import { playClick, playCorrect, playWrong } from "../audio/sfx";
+import { APP_VERSION } from "../config";
+import {
+  checkForUpdate,
+  openRelease,
+  type UpdateInfo,
+} from "../game/updates";
 import type {
   CountriesDataset,
   Country,
@@ -83,6 +89,7 @@ export default function App() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [activeContinent, setActiveContinent] =
     useState<ContinentScope>("europe");
+  const [updateInfo, setUpdateInfo] = useState<UpdateInfo | null>(null);
 
   const recordAnswer = useProgress((state) => state.recordAnswer);
   const recordRun = useProgress((state) => state.recordRun);
@@ -149,6 +156,16 @@ export default function App() {
       reducedMotion,
     );
   }, [reducedMotion]);
+
+  useEffect(() => {
+    let cancelled = false;
+    void checkForUpdate().then((info) => {
+      if (!cancelled) setUpdateInfo(info);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     if (!Capacitor.isNativePlatform()) return;
@@ -590,7 +607,7 @@ export default function App() {
                           (country) =>
                             country.continent === activeContinent,
                         ).length}{" "}
-                    Länder · v0.1
+                    Länder · v{APP_VERSION}
                   </div>
                 </div>
                 <div className="ml-auto flex shrink-0 items-center gap-1.5">
@@ -675,6 +692,18 @@ export default function App() {
                   </button>
                 ))}
               </div>
+              {updateInfo && (
+                <button
+                  type="button"
+                  onClick={() => void openRelease(updateInfo.url)}
+                  className="flex items-center justify-between gap-2 rounded-xl bg-teal-soft/70 px-3 py-1.5 text-[11px] font-bold text-teal transition hover:bg-teal-soft"
+                >
+                  <span>⬆️ Update v{updateInfo.version} verfügbar</span>
+                  <span className="rounded-full bg-white/70 px-2 py-0.5">
+                    Release ansehen
+                  </span>
+                </button>
+              )}
             </div>
           </header>
         )}

@@ -1,0 +1,14 @@
+node_modules
+dist
+coverage
+.git
+.github
+android
+tools/jdk17
+tools/jdk21
+tools/android-sdk
+data/raw
+test-results
+playwright-report
+docs
+*.log

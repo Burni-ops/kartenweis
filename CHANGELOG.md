@@ -18,3 +18,6 @@ Alle nennenswerten Änderungen an Kartenweis.
 - Offline-fähige PWA
 - Capacitor-Android-Projekt mit Zurück-Tasten-Handling
 - GitHub-Actions für CI, Pages und Releases
+- Desktop-Installation als PWA
+- Dockerfile, nginx-Konfiguration und GHCR-Image für Homeserver
+- Update-Prüfung gegen GitHub-Releases mit Hinweis-Banner und Einstellungs-Button

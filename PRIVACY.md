@@ -24,6 +24,8 @@ Diese Daten werden ausschließlich lokal auf deinem Gerät gespeichert:
 
 Beim ersten Laden werden Karten-, Fakten- und Flaggen-Daten von der Webseite geladen, von der du Kartenweis öffnest. Die Android-App bündelt diese Daten lokal. Es werden keine personenbezogenen Daten an Dritte gesendet.
 
+Beim Start prüft Kartenweis optional die neueste GitHub-Release-Version. Dabei wird lediglich die öffentliche GitHub-API (`api.github.com`) abgefragt; es werden keine Fortschritts- oder Gerätedaten übertragen. Bei einem privaten Repository wird die Prüfung übersprungen.
+
 ## Löschen
 
 Der Fortschritt kann in der App unter **Sammlung → Fortschritt löschen** zurückgesetzt werden. Beim Löschen der App-Daten bzw. der Browser-Website-Daten werden alle lokal gespeicherten Informationen entfernt.

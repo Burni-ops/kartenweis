@@ -15,6 +15,24 @@ Danach unter **GitHub → Actions → Release** den Lauf beobachten. Unter **Rel
 - `kartenweis-<version>-debug.apk` — installierbares Test-APK
 - optional `kartenweis-<version>-release.apk` — signiertes Release-APK
 
+Zusätzlich veröffentlicht die Action **Docker Image** bei jedem Push auf `main` und bei Tags ein Multi-Arch-Image:
+
+```text
+ghcr.io/burni-ops/kartenweis:latest
+ghcr.io/burni-ops/kartenweis:<version>
+```
+
+Das Image kann direkt auf einem Homeserver gestartet werden:
+
+```bash
+docker run -d --name kartenweis -p 8080:80 --restart unless-stopped \
+  ghcr.io/burni-ops/kartenweis:latest
+```
+
+## Desktop
+
+Ein separates Desktop-Binary ist nicht nötig: Kartenweis ist eine installierbare PWA. Unter Chrome/Edge reicht **App installieren**. Der Service Worker aktualisiert die Web-App; die Update-Prüfung zeigt zusätzlich neue GitHub-Releases an.
+
 ## Signiertes Release-APK (optional)
 
 Ohne Signatur baut der Workflow ein Debug-APK. Für ein echtes Release-APK diese Repository-Secrets anlegen:

@@ -235,6 +235,32 @@ test("switches continents and starts a world run", async ({ page }) => {
   expect(run?.count).toBeGreaterThanOrEqual(10);
 });
 
+test("shows an update banner when GitHub has a newer release", async ({
+  page,
+}) => {
+  await page.route(
+    "https://api.github.com/repos/Burni-ops/kartenweis/releases/latest",
+    (route) =>
+      route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify({
+          tag_name: "v99.0.0",
+          html_url: "https://github.com/Burni-ops/kartenweis/releases/tag/v99.0.0",
+          name: "Kartenweis 99",
+        }),
+      }),
+  );
+
+  await page.goto("/");
+  await expect(page.getByText("Länder entdecken")).toBeVisible({
+    timeout: 20_000,
+  });
+  await expect(
+    page.getByText(/Update v99\.0\.0 verfügbar/),
+  ).toBeVisible({ timeout: 10_000 });
+});
+
 test("opens settings and credits", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByText("Länder entdecken")).toBeVisible({

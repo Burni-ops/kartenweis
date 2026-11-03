@@ -58,6 +58,8 @@ npm run preview
 | `npm run data:flags` | Länderflaggen von flagcdn laden |
 | `npm run android:sync` | Web-Build erzeugen und nach `android/` synchronisieren |
 | `npm run android:build` | Debug-APK über Gradle bauen |
+| `npm run docker:build` | Docker-Image lokal bauen |
+| `npm run docker:up` | Docker-Compose-Stack starten |
 
 ## Android
 
@@ -80,6 +82,58 @@ android/app/build/outputs/apk/debug/app-debug.apk
 ```
 
 Die Zurück-Taste schließt zuerst Dialoge, den Atlas, den Run oder die Länderauswahl, bevor sie die App verlässt. Safe Areas werden über `env(safe-area-inset-*)` berücksichtigt.
+
+## Desktop (PWA)
+
+Kartenweis wird als **PWA** auf dem Desktop installiert — dafür ist kein separates Electron-/Tauri-Bundle nötig. In Chrome oder Edge:
+
+1. Kartenweis im Browser öffnen (lokal, GitHub Pages oder eigene Domain).
+2. In der Adressleiste **Installieren** bzw. **App installieren** wählen.
+3. Die App startet danach als eigenes Fenster, offline und mit eigenem Icon.
+
+Updates kommen über den Service Worker (Web) bzw. als neues APK (Android). Beim Start prüft die App zusätzlich die neueste GitHub-Release und zeigt bei Bedarf einen Update-Hinweis.
+
+## Docker / Homeserver
+
+Für den Betrieb auf einem Homeserver liegt ein Multi-Stage-Dockerfile mit nginx bei.
+
+```bash
+docker compose up -d --build
+```
+
+Danach ist Kartenweis unter <http://localhost:8080> erreichbar. Das Image wird zusätzlich über GitHub Actions nach GHCR veröffentlicht:
+
+```bash
+docker pull ghcr.io/burni-ops/kartenweis:latest
+```
+
+Für eine eigene Domain empfiehlt sich ein Reverse Proxy (Caddy, Traefik, nginx) mit HTTPS. Die App benötigt keine Datenbank und keine Server-Runtime.
+
+## Update-Prüfung
+
+Beim Start fragt Kartenweis die neueste GitHub-Release ab und zeigt einen Hinweis, wenn eine neuere Version verfügbar ist. Die Prüfung ist auf sechs Stunden gecacht und funktioniert nur, wenn das Repository öffentlich ist (die GitHub-API liefert bei privaten Repositories `404`).
+
+Für private Repositories oder eigene Update-Feeds kann beim Build eine URL gesetzt werden:
+
+```bash
+VITE_UPDATE_FEED=https://example.com/kartenweis/latest.json npm run build
+```
+
+Format der Datei:
+
+```json
+{
+  "version": "0.2.0",
+  "url": "https://github.com/Burni-ops/kartenweis/releases/tag/v0.2.0",
+  "notes": "Neue Fakten und Karten-Verbesserungen."
+}
+```
+
+Der Repository-Name für die GitHub-Prüfung lässt sich ebenfalls überschreiben:
+
+```bash
+VITE_GITHUB_REPO=Burni-ops/kartenweis npm run build
+```
 
 ## GitHub-Releases
 
@@ -139,9 +193,10 @@ public/
   flags/        SVG-Flaggen
 tools/          Datenaufbau, Referenzdaten und -validierung
 android/        Capacitor-Android-Projekt
+deploy/         nginx-Konfiguration für Docker
 e2e/            Playwright-Tests
 docs/           Screenshots und Release-Dokumentation
-.github/        CI-, Pages- und Release-Workflows
+.github/        CI-, Pages-, Docker- und Release-Workflows
 ```
 
 ## Roadmap

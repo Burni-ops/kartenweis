@@ -1,4 +1,11 @@
+import { useEffect, useState } from "react";
 import { useSettings, type Difficulty } from "../store/settings";
+import { APP_VERSION } from "../config";
+import {
+  checkForUpdate,
+  openRelease,
+  type UpdateInfo,
+} from "../game/updates";
 
 type Props = {
   onClose: () => void;
@@ -55,6 +62,32 @@ export default function SettingsPanel({ onClose }: Props) {
     (state) => state.setReducedMotion,
   );
   const setDifficulty = useSettings((state) => state.setDifficulty);
+  const [update, setUpdate] = useState<UpdateInfo | null>(null);
+  const [checking, setChecking] = useState(false);
+  const [checkMessage, setCheckMessage] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    void checkForUpdate().then((info) => {
+      if (!cancelled) setUpdate(info);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const handleCheck = async () => {
+    setChecking(true);
+    setCheckMessage(null);
+    const info = await checkForUpdate(true);
+    setUpdate(info);
+    setCheckMessage(
+      info
+        ? `Version ${info.version} ist verfügbar.`
+        : "Kartenweis ist aktuell.",
+    );
+    setChecking(false);
+  };
 
   return (
     <div className="absolute inset-0 z-50 grid place-items-center bg-ink/35 p-3 backdrop-blur-sm sm:p-6">
@@ -137,6 +170,42 @@ export default function SettingsPanel({ onClose }: Props) {
         </div>
 
         <div className="mt-4 rounded-2xl border border-line/70 bg-white/60 px-3.5 py-3">
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <div className="text-sm font-bold">Version</div>
+              <div className="text-xs text-ink-muted">
+                Kartenweis v{APP_VERSION}
+              </div>
+            </div>
+            <button
+              type="button"
+              onClick={() => void handleCheck()}
+              disabled={checking}
+              className="rounded-full border border-teal/30 bg-teal-soft/50 px-3 py-1.5 text-[11px] font-bold text-teal transition hover:bg-teal-soft disabled:opacity-60"
+            >
+              {checking ? "Prüfe …" : "Auf Updates prüfen"}
+            </button>
+          </div>
+          {update ? (
+            <button
+              type="button"
+              onClick={() => void openRelease(update.url)}
+              className="mt-2 w-full rounded-xl bg-teal px-3 py-2 text-left text-xs font-bold text-white transition hover:bg-teal/90"
+            >
+              ⬆️ Update v{update.version} verfügbar — Release ansehen
+            </button>
+          ) : (
+            checkMessage && (
+              <p className="mt-2 text-xs text-ink-muted">{checkMessage}</p>
+            )
+          )}
+          <p className="mt-1.5 text-[10px] text-ink-muted">
+            Die Prüfung fragt beim Start die neueste GitHub-Release ab. Bei
+            privaten Repositories wird sie übersprungen.
+          </p>
+        </div>
+
+        <div className="mt-4 rounded-2xl border border-line/70 bg-white/60 px-3.5 py-3">
           <div className="text-xs font-bold uppercase tracking-[0.12em] text-ink-muted">
             Credits & Quellen
           </div>
@@ -168,7 +237,7 @@ export default function SettingsPanel({ onClose }: Props) {
             </li>
           </ul>
           <p className="mt-2 text-[10px] text-ink-muted">
-            Kartenweis v0.1 · Angaben ohne Gewähr · Keine Accounts, keine
+            Kartenweis v{APP_VERSION} · Angaben ohne Gewähr · Keine Accounts, keine
             Werbung, kein Tracking.
           </p>
         </div>

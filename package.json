@@ -18,7 +18,9 @@
     "data:flags": "node tools/download-flags.mjs",
     "data:reveals": "node tools/build-reveals.mjs",
     "android:sync": "npm run build && npx cap sync android",
-    "android:build": "npm run android:sync && cd android && gradlew assembleDebug"
+    "android:build": "npm run android:sync && cd android && gradlew assembleDebug",
+    "docker:build": "docker build -t kartenweis:local .",
+    "docker:up": "docker compose up -d --build"
   },
   "keywords": [
     "geografie",
@@ -36,6 +38,7 @@
   "dependencies": {
     "@capacitor/android": "^7.6.10",
     "@capacitor/app": "^7.1.2",
+    "@capacitor/browser": "^7.0.5",
     "@capacitor/cli": "^7.6.10",
     "@capacitor/core": "^7.6.10",
     "@capacitor/status-bar": "^7.0.6",
