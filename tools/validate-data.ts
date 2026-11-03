@@ -216,6 +216,8 @@ if (errors.length === 0) {
       "mountain_range",
       "island",
       "peninsula",
+      "animal",
+      "volcano",
     ]);
 
     for (const fact of facts) {

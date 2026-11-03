@@ -93,6 +93,18 @@ export const ACHIEVEMENTS: AchievementDef[] = [
     icon: "⛰️",
   },
   {
+    id: "animals-5",
+    title: "Tierfreund",
+    description: "Meistere 5 Tierwelt-Fakten.",
+    icon: "🐾",
+  },
+  {
+    id: "volcanoes-3",
+    title: "Vulkanologe",
+    description: "Meistere 3 Vulkan-Fakten.",
+    icon: "🌋",
+  },
+  {
     id: "atlas-10",
     title: "Atlas-Fan",
     description: "Besuche 10 Länder im Atlas.",
@@ -176,6 +188,12 @@ export function evaluateAchievements(
   }
   if (masteredByCategory(context.facts, ["mountain_range"]) >= 5) {
     ids.push("ranges-5");
+  }
+  if (masteredByCategory(context.facts, ["animal"]) >= 5) {
+    ids.push("animals-5");
+  }
+  if (masteredByCategory(context.facts, ["volcano"]) >= 3) {
+    ids.push("volcanoes-3");
   }
   if (Object.keys(context.visitedCountries).length >= 10) {
     ids.push("atlas-10");

@@ -10,10 +10,10 @@ Kartenweis ist ein Geografie-Lernspiel für Browser und Android. Statt Flaggen a
 
 - **193 Länder** auf sechs Kontinenten
 - **4.038 Regionen** für 187 Länder
-- **1.748 Fakten** (58 kuratiert + 1.690 generiert)
-- **838 Karten-Reveals** für Flüsse, Seen, Meere, Meerengen, Städte, Gipfel, Wüsten, Gebirge und Inseln
+- **2.109 Fakten** (58 kuratiert + 2.051 generiert)
+- **1.074 Karten-Reveals** für Flüsse, Seen, Meere, Meerengen, Städte, Gipfel, Wüsten, Gebirge und Inseln
 - Quiz-Modus mit Multiple Choice, Drag-to-Map, Land- und Region-Antippen
-- Kategorien: Hauptstädte, Regionen, Städte, Berge, Flüsse, Seen, Meere, Meerengen, Nachbarn, Währungen, Amtssprachen, Bevölkerung, Fläche, Wüsten, Gebirge, Inseln
+- Kategorien: Hauptstädte, Regionen, Städte, Berge, Flüsse, Seen, Meere, Meerengen, Nachbarn, Währungen, Amtssprachen, Bevölkerung, Fläche, Wüsten, Gebirge, Inseln, Tierwelt, Vulkane
 - **Endlos-Runs** für Welt, Kontinente und einzelne Länder
 - Länder-Atlas, Mastery, Erfolge, Tages-Challenge, Onboarding, Sound und Einstellungen
 - Offline-fähige PWA und Android-App über Capacitor
@@ -228,7 +228,7 @@ docs/           Screenshots und Release-Dokumentation
 - [x] M1: Vertical Slice mit Quiz und Reveals
 - [x] M2: Atlas, Mastery, Erfolge, Daily
 - [x] M3: Europa komplett, Onboarding, Sound, Einstellungen
-- [x] M4: Welt, 193 Länder, 4.038 Regionen, 1.748 Fakten
+- [x] M4: Welt, 193 Länder, 4.038 Regionen, 2.109 Fakten
 - [x] M5: Capacitor-Android-Build
 - [x] M6: Windows-Installer, Endlos-Runs, PWA-Update und Docker
 - [ ] Playtest auf echten Geräten und Content-QA

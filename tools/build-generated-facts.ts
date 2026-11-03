@@ -28,6 +28,14 @@ const extrasFile = path.join(ROOT, "data/reference/world-extras.json");
 const extras = fs.existsSync(extrasFile) ? readJson(
   "data/reference/world-extras.json",
 ) : null;
+const animalsFile = path.join(ROOT, "data/reference/animals.json");
+const animalsData = fs.existsSync(animalsFile)
+  ? readJson("data/reference/animals.json")
+  : { countries: {} };
+const volcanoesFile = path.join(ROOT, "data/reference/volcanoes.json");
+const volcanoesData = fs.existsSync(volcanoesFile)
+  ? readJson("data/reference/volcanoes.json")
+  : [];
 const landformFile = path.join(
   ROOT,
   "data/raw/ne_10m_geography_regions_polys.geojson",
@@ -267,7 +275,10 @@ const CONTINENT_BBOX: Record<string, [number, number, number, number]> = {
 
 const riverName = (feature: any) => {
   const name = feature.properties?.name ?? feature.properties?.name_en;
-  return RIVER_DE[name] ?? name;
+  if (!name) return null;
+  return String(RIVER_DE[name] ?? name)
+    .replace(/\s+/g, " ")
+    .trim();
 };
 
 const LAKE_NAME_OVERRIDE: Record<string, string> = {
@@ -301,11 +312,19 @@ const marineName = (feature: any) =>
   feature.properties?.name ??
   null;
 
-const landformName = (feature: any) =>
-  feature.properties?.NAME_DE ??
-  feature.properties?.NAME ??
-  feature.properties?.NAME_EN ??
-  null;
+const landformName = (feature: any) => {
+  const raw =
+    feature.properties?.NAME_DE ??
+    feature.properties?.NAME ??
+    feature.properties?.NAME_EN ??
+    null;
+  if (!raw) return null;
+  const trimmed = String(raw).replace(/\s+/g, " ").trim();
+  if (trimmed.length > 3 && trimmed === trimmed.toUpperCase()) {
+    return trimmed.charAt(0) + trimmed.slice(1).toLowerCase();
+  }
+  return trimmed;
+};
 
 const LANDFORM_CATEGORIES = {
   desert: "Desert",
@@ -330,12 +349,77 @@ for (const [category, featurecla] of Object.entries(LANDFORM_CATEGORIES)) {
   );
 }
 
+/** Iconic animals that are clearly not native to the listed continent. */
+const ANIMAL_POOL: Array<{ name: string; continent: string }> = [
+  { name: "Känguru", continent: "oceania" },
+  { name: "Koala", continent: "oceania" },
+  { name: "Emu", continent: "oceania" },
+  { name: "Schnabeltier", continent: "oceania" },
+  { name: "Kiwi", continent: "oceania" },
+  { name: "Tuatara", continent: "oceania" },
+  { name: "Kakapo", continent: "oceania" },
+  { name: "Paradiesvogel", continent: "oceania" },
+  { name: "Jaguar", continent: "south-america" },
+  { name: "Tukan", continent: "south-america" },
+  { name: "Faultier", continent: "south-america" },
+  { name: "Lama", continent: "south-america" },
+  { name: "Andenkondor", continent: "south-america" },
+  { name: "Wasserschwein", continent: "south-america" },
+  { name: "Nandu", continent: "south-america" },
+  { name: "Magellanpinguin", continent: "south-america" },
+  { name: "Grizzlybär", continent: "north-america" },
+  { name: "Kojote", continent: "north-america" },
+  { name: "Weißkopfseeadler", continent: "north-america" },
+  { name: "Giraffe", continent: "africa" },
+  { name: "Flusspferd", continent: "africa" },
+  { name: "Gorilla", continent: "africa" },
+  { name: "Schimpanse", continent: "africa" },
+  { name: "Okapi", continent: "africa" },
+  { name: "Fennek", continent: "africa" },
+  { name: "Orang-Utan", continent: "asia" },
+  { name: "Komodowaran", continent: "asia" },
+  { name: "Großer Panda", continent: "asia" },
+  { name: "Tiger", continent: "asia" },
+  { name: "Schneeleopard", continent: "asia" },
+  { name: "Saiga", continent: "asia" },
+  { name: "Przewalski-Pferd", continent: "asia" },
+  { name: "Takin", continent: "asia" },
+  { name: "Philippinenadler", continent: "asia" },
+  { name: "Nasenaffe", continent: "asia" },
+];
+
+const volcanoesByCountry = new Map<string, any[]>();
+for (const volcano of volcanoesData) {
+  const bucket = volcanoesByCountry.get(volcano.country);
+  if (bucket) bucket.push(volcano);
+  else volcanoesByCountry.set(volcano.country, [volcano]);
+}
+const volcanoPool: string[] = unique(
+  volcanoesData.map((volcano: any) => volcano.name).filter(Boolean),
+) as string[];
+
 const countryFeatureByCode = new Map<string, any>();
 for (const feature of world.features) {
   const code = feature.properties.code;
   if (countryByCode.has(code) && !countryFeatureByCode.has(code)) {
     countryFeatureByCode.set(code, feature);
   }
+}
+
+function isInsideFocus(country: any, point: [number, number]): boolean {
+  const [minLon, minLat, maxLon, maxLat] = country.focus_bbox;
+  return (
+    point[0] >= minLon &&
+    point[0] <= maxLon &&
+    point[1] >= minLat &&
+    point[1] <= maxLat
+  );
+}
+
+function joinDe(values: string[]): string {
+  if (values.length <= 1) return values[0] ?? "";
+  if (values.length === 2) return `${values[0]} und ${values[1]}`;
+  return `${values.slice(0, -1).join(", ")} und ${values[values.length - 1]}`;
 }
 
 function intersects(a: any, b: any): boolean {
@@ -859,15 +943,15 @@ for (const country of countries) {
       }
     }
     const override = RIVER_OVERRIDES[code];
-    const correct = override
+    const rankedRivers = override
       ? uniqueHits.has(override)
-        ? override
-        : undefined
-      : [...uniqueHits.entries()].sort(
-          (a, b) => length(b[1]) - length(a[1]),
-        )[0]?.[0];
+        ? [override]
+        : []
+      : [...uniqueHits.entries()]
+          .sort((a, b) => length(b[1]) - length(a[1]))
+          .map(([name]) => name);
 
-    if (correct) {
+    for (const [index, correct] of rankedRivers.slice(0, 2).entries()) {
       const continentPool =
         riverPoolByContinent.get(continent) ?? [];
       const pool = unique([
@@ -875,44 +959,44 @@ for (const country of countries) {
         ...continentPool,
       ]).filter((name) => !uniqueHits.has(name));
       const options = distractors(correct, pool, rng);
-      if (options.length === 4) {
-        const factId = `gen-river-${code}`;
-        const riverFeature = uniqueHits.get(correct);
-        const answerPoint = riverFeature
-          ? representativePoint(riverFeature, "line")
-          : null;
-        addFact({
-          id: factId,
-          country: code,
-          category: "river",
-          interactions: ["mc"],
-          difficulty: 2,
-          question: `Welcher dieser Flüsse fließt durch ${country.name_acc}?`,
-          answer: {
-            label: correct,
-            ...(answerPoint ? { point: answerPoint } : {}),
-          },
-          options,
-          fact: `${correct} fließt durch ${country.name_acc}.`,
-          source: "https://www.naturalearthdata.com/",
-        });
-        if (riverFeature?.geometry) {
-          generatedReveals[factId] = createLineReveal(
-            riverFeature,
-            correct,
-            [
-              country.focus_bbox[0] - 6,
-              country.focus_bbox[1] - 6,
-              country.focus_bbox[2] + 6,
-              country.focus_bbox[3] + 6,
-            ],
-          );
-        }
-      } else {
-        skipped.push(`${code} river (distractors)`);
+      if (options.length !== 4) {
+        skipped.push(`${code} river${index + 1} (distractors)`);
+        continue;
       }
-    } else {
-      skipped.push(`${code} river`);
+
+      const factId =
+        index === 0 ? `gen-river-${code}` : `gen-river${index + 1}-${code}`;
+      const riverFeature = uniqueHits.get(correct);
+      const answerPoint = riverFeature
+        ? representativePoint(riverFeature, "line")
+        : null;
+      addFact({
+        id: factId,
+        country: code,
+        category: "river",
+        interactions: ["mc"],
+        difficulty: 2,
+        question: `Welcher dieser Flüsse fließt durch ${country.name_acc}?`,
+        answer: {
+          label: correct,
+          ...(answerPoint ? { point: answerPoint } : {}),
+        },
+        options,
+        fact: `${correct} fließt durch ${country.name_acc}.`,
+        source: "https://www.naturalearthdata.com/",
+      });
+      if (riverFeature?.geometry) {
+        generatedReveals[factId] = createLineReveal(
+          riverFeature,
+          correct,
+          [
+            country.focus_bbox[0] - 6,
+            country.focus_bbox[1] - 6,
+            country.focus_bbox[2] + 6,
+            country.focus_bbox[3] + 6,
+          ],
+        );
+      }
     }
   }
 
@@ -930,52 +1014,54 @@ for (const country of countries) {
         uniqueHits.set(name, hit);
       }
     }
-    const correct = [...uniqueHits.entries()].sort(
-      (a, b) => area(b[1]) - area(a[1]),
-    )[0]?.[0];
+    const rankedLakes = [...uniqueHits.entries()]
+      .sort((a, b) => area(b[1]) - area(a[1]))
+      .map(([name]) => name);
 
-    if (correct) {
+    for (const [index, correct] of rankedLakes.slice(0, 2).entries()) {
       const continentPool = lakePoolByContinent.get(continent) ?? [];
       const pool = unique([
         ...(continent === "europe" ? DISTRACTOR_LAKES : []),
         ...continentPool,
       ]).filter((name) => !uniqueHits.has(name));
       const options = distractors(correct, pool, rng);
-      if (options.length === 4) {
-        const factId = `gen-lake-${code}`;
-        const lakeFeature = uniqueHits.get(correct);
-        const answerPoint = lakeFeature
-          ? representativePoint(lakeFeature, "polygon")
-          : null;
-        addFact({
-          id: factId,
-          country: code,
-          category: "lake",
-          interactions: ["mc"],
-          difficulty: 2,
-          question: `Welcher dieser Seen liegt ${country.name_in}?`,
-          answer: {
-            label: correct,
-            ...(answerPoint ? { point: answerPoint } : {}),
-          },
-          options,
-          fact: `${correct} liegt ${country.name_in}.`,
-          source: "https://www.naturalearthdata.com/",
-        });
-        if (lakeFeature?.geometry) {
-          generatedReveals[factId] = createPolygonReveal(
-            lakeFeature,
-            correct,
-            [
-              country.focus_bbox[0] - 6,
-              country.focus_bbox[1] - 6,
-              country.focus_bbox[2] + 6,
-              country.focus_bbox[3] + 6,
-            ],
-          );
-        }
-      } else {
-        skipped.push(`${code} lake (distractors)`);
+      if (options.length !== 4) {
+        skipped.push(`${code} lake${index + 1} (distractors)`);
+        continue;
+      }
+
+      const factId =
+        index === 0 ? `gen-lake-${code}` : `gen-lake${index + 1}-${code}`;
+      const lakeFeature = uniqueHits.get(correct);
+      const answerPoint = lakeFeature
+        ? representativePoint(lakeFeature, "polygon")
+        : null;
+      addFact({
+        id: factId,
+        country: code,
+        category: "lake",
+        interactions: ["mc"],
+        difficulty: 2,
+        question: `Welcher dieser Seen liegt ${country.name_in}?`,
+        answer: {
+          label: correct,
+          ...(answerPoint ? { point: answerPoint } : {}),
+        },
+        options,
+        fact: `${correct} liegt ${country.name_in}.`,
+        source: "https://www.naturalearthdata.com/",
+      });
+      if (lakeFeature?.geometry) {
+        generatedReveals[factId] = createPolygonReveal(
+          lakeFeature,
+          correct,
+          [
+            country.focus_bbox[0] - 6,
+            country.focus_bbox[1] - 6,
+            country.focus_bbox[2] + 6,
+            country.focus_bbox[3] + 6,
+          ],
+        );
       }
     }
   }
@@ -1242,6 +1328,89 @@ for (const country of countries) {
     }
   }
 
+  // Animals --------------------------------------------------------------
+  const nativeAnimals: string[] = animalsData.countries?.[code] ?? [];
+  if (nativeAnimals.length >= 3) {
+    const nonNative = ANIMAL_POOL.filter(
+      (animal) =>
+        animal.continent !== continent &&
+        !nativeAnimals.includes(animal.name),
+    );
+    const picked =
+      nonNative.length > 0
+        ? nonNative[Math.floor(rng() * nonNative.length)]
+        : null;
+    if (picked) {
+      const natives = nativeAnimals.slice(0, 3);
+      addFact({
+        id: `gen-animal-${code}`,
+        country: code,
+        category: "animal",
+        interactions: ["mc"],
+        difficulty: 2,
+        question: `Welches Tier lebt nicht ${country.name_in}?`,
+        answer: { label: picked.name, countryCode: code },
+        options: shuffle([...natives, picked.name], rng),
+        fact: `${picked.name} lebt nicht ${country.name_in}. ${joinDe(natives)} kommen dort vor.`,
+        source: "Kuratiert nach IUCN-Verbreitungsangaben",
+      });
+    }
+  }
+
+  // Volcanoes ------------------------------------------------------------
+  const countryVolcanoes: any[] = (
+    volcanoesByCountry.get(code) ?? []
+  ).filter((volcano) => isInsideFocus(country, volcano.point));
+  if (countryVolcanoes.length > 0) {
+    const volcano = countryVolcanoes[0];
+    const name = volcano.name;
+    const options = distractors(name, volcanoPool, rng);
+    if (options.length === 4) {
+      const factId = `gen-volcano-${code}`;
+      const point = volcano.point as [number, number];
+      addFact({
+        id: factId,
+        country: code,
+        category: "volcano",
+        interactions: ["mc"],
+        difficulty: 3,
+        question: `Welcher Vulkan liegt ${country.name_in}?`,
+        answer: { label: name, point },
+        options,
+        fact: `${name} ist ein Vulkan ${country.name_in}.`,
+        source: "Kuratiert nach Smithsonian Global Volcanism Program",
+      });
+      generatedReveals[factId] = {
+        kind: "point",
+        point,
+        bbox: [point[0] - 0.3, point[1] - 0.24, point[0] + 0.3, point[1] + 0.24],
+        labelPoint: point,
+        label: name,
+      };
+
+      const locateId = `gen-volcano-locate-${code}`;
+      addFact({
+        id: locateId,
+        country: code,
+        category: "volcano",
+        interactions: ["drag"],
+        difficulty: 2,
+        question: `Wo liegt der Vulkan ${name}?`,
+        answer: { label: name, point },
+        options: [],
+        fact: `${name} ist ein Vulkan ${country.name_in}.`,
+        source: "Kuratiert nach Smithsonian Global Volcanism Program",
+      });
+      generatedReveals[locateId] = {
+        kind: "point",
+        point,
+        bbox: [point[0] - 0.3, point[1] - 0.24, point[0] + 0.3, point[1] + 0.24],
+        labelPoint: point,
+        label: name,
+      };
+    }
+  }
+
   // Landforms: desert, mountain range, island, peninsula -----------------
   if (feature) {
     const paddedFocus: [number, number, number, number] = [
@@ -1267,20 +1436,14 @@ for (const country of countries) {
           uniqueHits.set(name, hit);
         }
       }
-      const chosen = [...uniqueHits.entries()].sort(
-        (a, b) => area(b[1]) - area(a[1]),
-      )[0];
-      if (!chosen) continue;
+      const chosenList = [...uniqueHits.entries()]
+        .sort((a, b) => area(b[1]) - area(a[1]))
+        .slice(0, category === "island" ? 2 : 1);
+      if (chosenList.length === 0) continue;
 
-      const [name, landform] = chosen;
       const pool = (landformPoolByCategory.get(category) ?? []).filter(
         (candidate) => !uniqueHits.has(candidate),
       );
-      const options = distractors(name, pool, rng);
-      if (options.length !== 4) {
-        skipped.push(`${code} ${category} (distractors)`);
-        continue;
-      }
 
       const prompts: Record<string, string> = {
         desert: `Welche Wüste liegt ${country.name_in}?`,
@@ -1288,36 +1451,48 @@ for (const country of countries) {
         island: `Welche Insel liegt ${country.name_in}?`,
         peninsula: `Welche Halbinsel liegt ${country.name_in}?`,
       };
-      const facts: Record<string, string> = {
-        desert: `Die Wüste ${name} liegt ${country.name_in}.`,
-        mountain_range: `Das Gebirge ${name} liegt ${country.name_in}.`,
-        island: `Die Insel ${name} liegt ${country.name_in}.`,
-        peninsula: `Die Halbinsel ${name} liegt ${country.name_in}.`,
-      };
 
-      const factId = `gen-${category}-${code}`;
-      addFact({
-        id: factId,
-        country: code,
-        category,
-        interactions: ["mc"],
-        difficulty: 3,
-        question: prompts[category],
-        answer: { label: name },
-        options,
-        fact: facts[category],
-        source: "https://www.naturalearthdata.com/",
-      });
-      generatedReveals[factId] = createPolygonReveal(
-        landform,
-        name,
-        [
-          country.focus_bbox[0] - 6,
-          country.focus_bbox[1] - 6,
-          country.focus_bbox[2] + 6,
-          country.focus_bbox[3] + 6,
-        ],
-      );
+      for (const [index, [name, landform]] of chosenList.entries()) {
+        const options = distractors(name, pool, rng);
+        if (options.length !== 4) {
+          skipped.push(`${code} ${category}${index + 1} (distractors)`);
+          continue;
+        }
+
+        const factId =
+          index === 0
+            ? `gen-${category}-${code}`
+            : `gen-${category}${index + 1}-${code}`;
+        const facts: Record<string, string> = {
+          desert: `Die Wüste ${name} liegt ${country.name_in}.`,
+          mountain_range: `Das Gebirge ${name} liegt ${country.name_in}.`,
+          island: `Die Insel ${name} liegt ${country.name_in}.`,
+          peninsula: `Die Halbinsel ${name} liegt ${country.name_in}.`,
+        };
+
+        addFact({
+          id: factId,
+          country: code,
+          category,
+          interactions: ["mc"],
+          difficulty: 3,
+          question: prompts[category],
+          answer: { label: name },
+          options,
+          fact: facts[category],
+          source: "https://www.naturalearthdata.com/",
+        });
+        generatedReveals[factId] = createPolygonReveal(
+          landform,
+          name,
+          [
+            country.focus_bbox[0] - 6,
+            country.focus_bbox[1] - 6,
+            country.focus_bbox[2] + 6,
+            country.focus_bbox[3] + 6,
+          ],
+        );
+      }
     }
   }
 }

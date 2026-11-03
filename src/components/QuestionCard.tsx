@@ -22,6 +22,8 @@ const ICONS: Record<string, string> = {
   mountain_range: "⛰️",
   island: "🏝️",
   peninsula: "🌅",
+  animal: "🐾",
+  volcano: "🌋",
 };
 
 const PRECISION_LABEL: Record<string, string> = {
@@ -52,6 +54,8 @@ const CATEGORY_LABEL: Record<string, string> = {
   mountain_range: "Gebirge",
   island: "Insel",
   peninsula: "Halbinsel",
+  animal: "Tierwelt",
+  volcano: "Vulkan",
 };
 
 type Props = {

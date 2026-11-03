@@ -47,6 +47,8 @@ const CATEGORY_ORDER: FactCategory[] = [
   "mountain_range",
   "island",
   "peninsula",
+  "animal",
+  "volcano",
 ];
 
 export function buildAtlasFeatures(

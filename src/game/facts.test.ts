@@ -75,6 +75,8 @@ describe("real data + question engine", () => {
       "desert",
       "mountain_range",
       "island",
+      "animal",
+      "volcano",
     ]) {
       expect(facts.some((fact) => fact.category === category)).toBe(true);
     }

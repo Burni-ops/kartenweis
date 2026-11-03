@@ -24,7 +24,9 @@ export type FactCategory =
   | "desert"
   | "mountain_range"
   | "island"
-  | "peninsula";
+  | "peninsula"
+  | "animal"
+  | "volcano";
 
 export interface FactAnswer {
   label: string;

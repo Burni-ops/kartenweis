@@ -8,10 +8,10 @@ Alle nennenswerten Änderungen an Kartenweis.
 
 - Interaktive Weltkarte mit 193 Ländern auf sechs Kontinenten
 - 4.038 Regionen für 187 Länder
-- 1.748 Fakten und 838 Karten-Reveals
+- 2.109 Fakten und 1.074 Karten-Reveals
 - Quiz-Modus: Multiple Choice, Drag-to-Map, Land antippen, Region antippen
 - Kategorien: Hauptstädte, Regionen, Städte, Berge, Flüsse, Seen, Meere, Meerengen, Nachbarn, Ländervergleiche
-- Neue Kategorien: Währungen, Amtssprachen, Bevölkerung, Fläche, Wüsten, Gebirge und Inseln
+- Neue Kategorien: Währungen, Amtssprachen, Bevölkerung, Fläche, Wüsten, Gebirge, Inseln, Tierwelt und Vulkane
 - Länder-Atlas mit Filtern, Layern und Mastery
 - Sammlung, Erfolge, Tages-Challenge und Fortschrittsspeicherung
 - Onboarding, Sound, Einstellungen und Credits

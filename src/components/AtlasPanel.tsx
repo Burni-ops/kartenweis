@@ -25,6 +25,8 @@ const CATEGORY_LABEL: Record<string, string> = {
   mountain_range: "Gebirge",
   island: "Inseln",
   peninsula: "Halbinseln",
+  animal: "Tierwelt",
+  volcano: "Vulkane",
 };
 
 const CATEGORY_ICON: Record<string, string> = {
@@ -48,6 +50,8 @@ const CATEGORY_ICON: Record<string, string> = {
   mountain_range: "⛰️",
   island: "🏝️",
   peninsula: "🌅",
+  animal: "🐾",
+  volcano: "🌋",
 };
 
 const numberFormat = new Intl.NumberFormat("de-DE");
