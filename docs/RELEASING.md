@@ -14,6 +14,9 @@ Danach unter **GitHub → Actions → Release** den Lauf beobachten. Unter **Rel
 - `kartenweis-<version>-web.zip` — statischer Web-Build für beliebiges Hosting
 - `kartenweis-<version>-debug.apk` — installierbares Test-APK
 - optional `kartenweis-<version>-release.apk` — signiertes Release-APK
+- `Kartenweis-<version>-Setup.exe` — Windows-Installer (aus dem Desktop-Job)
+
+Der Windows-Installer wird ohne Code-Signing-Zertifikat gebaut; SmartScreen kann warnen. Mit einem späteren Zertifikat kann `electron-builder` signierte Installer erzeugen.
 
 Zusätzlich veröffentlicht die Action **Docker Image** bei jedem Push auf `main` und bei Tags ein Multi-Arch-Image:
 

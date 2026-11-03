@@ -94,14 +94,6 @@ function updateFromFeed(payload: any): UpdateInfo | null {
  * repository is private (GitHub answers 404 for unauthenticated requests).
  */
 export async function checkForUpdate(force = false): Promise<UpdateInfo | null> {
-  if (
-    import.meta.env.DEV &&
-    import.meta.env.VITE_UPDATE_CHECK !== "1" &&
-    !UPDATE_FEED
-  ) {
-    return null;
-  }
-
   const cached = readCache();
   if (!force && cached && Date.now() - cached.checkedAt < CHECK_INTERVAL) {
     return cached.latest;

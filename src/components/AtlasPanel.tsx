@@ -17,6 +17,14 @@ const CATEGORY_LABEL: Record<string, string> = {
   extreme: "Extreme",
   neighbor: "Nachbarn",
   country: "Länder",
+  currency: "Währungen",
+  language: "Sprachen",
+  population: "Bevölkerung",
+  area: "Fläche",
+  desert: "Wüsten",
+  mountain_range: "Gebirge",
+  island: "Inseln",
+  peninsula: "Halbinseln",
 };
 
 const CATEGORY_ICON: Record<string, string> = {
@@ -32,6 +40,14 @@ const CATEGORY_ICON: Record<string, string> = {
   extreme: "⚡",
   neighbor: "🤝",
   country: "🌍",
+  currency: "💱",
+  language: "🗣️",
+  population: "👥",
+  area: "📐",
+  desert: "🏜️",
+  mountain_range: "⛰️",
+  island: "🏝️",
+  peninsula: "🌅",
 };
 
 const numberFormat = new Intl.NumberFormat("de-DE");
@@ -107,7 +123,7 @@ export default function AtlasPanel({
     : features.filter((feature) => feature.category === filter);
 
   return (
-    <div className="relative z-20 flex min-h-0 shrink-0 flex-col">
+    <div className="absolute inset-x-0 bottom-0 z-20 flex flex-col">
       <div
         className="sheet safe-bottom sheet-enter mx-auto flex max-h-[58dvh] w-[96%] flex-col rounded-t-3xl px-4 pt-4 sm:mb-4 sm:max-h-[62dvh] sm:rounded-3xl"
         style={{ maxHeight: "52dvh" }}

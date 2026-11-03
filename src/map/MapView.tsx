@@ -59,6 +59,14 @@ const DRAG_ICONS: Record<string, string> = {
   region: "🗺️",
   country: "🌍",
   extreme: "⚡",
+  currency: "💱",
+  language: "🗣️",
+  population: "👥",
+  area: "📐",
+  desert: "🏜️",
+  mountain_range: "⛰️",
+  island: "🏝️",
+  peninsula: "🌅",
 };
 
 setWorkerUrl(maplibreWorkerUrl);

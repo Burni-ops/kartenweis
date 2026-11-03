@@ -74,14 +74,14 @@ export default function CountrySheet({
           onClick={onStartContinent}
           className="mt-4 w-full rounded-2xl bg-teal px-4 py-3 text-sm font-extrabold text-white shadow-sm transition hover:bg-teal/90 active:scale-[0.99]"
         >
-          {continentName}-Run starten · 10 Fragen
+          {continentName}-Run starten · Endlos
         </button>
         <button
           type="button"
           onClick={onStartWorld}
           className="mt-2 w-full rounded-2xl border border-teal/30 bg-teal-soft/50 px-4 py-2.5 text-sm font-bold text-teal transition hover:bg-teal-soft"
         >
-          🌍 Welt-Run starten · 10 Fragen
+          🌍 Welt-Run starten · Endlos
         </button>
         <button
           type="button"

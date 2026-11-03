@@ -59,7 +59,7 @@ Geografie-Lernspiele sind oft entweder trocken (Karte + Beschriftung) oder reine
 #### Ablauf
 
 1. **Kontinent wählen** (Europa, später Asien, Afrika, Nordamerika, Südamerika, Ozeanien).
-2. **Run startet** mit 10 Fragen (Standard) oder Endlosmodus.
+2. **Run startet** direkt im Endlosmodus; alle 30 Fragen wird ein neuer Block nachgeladen.
 3. **Frage beantworten** — je nach Typ: 4 Antworten, Symbol ziehen, Land/Region antippen, Marker wählen.
 4. **Sofortiges Feedback:** richtig/falsch, Punkte, Streak, Karte zoomt zum Ort, Mini-Fakt.
 5. **Ergebnis:** Punktzahl, Trefferquote, beste Serie, neu gelernte Fakten, XP, Länder-Fortschritt.
@@ -109,10 +109,10 @@ Geografie-Lernspiele sind oft entweder trocken (Karte + Beschriftung) oder reine
 
 | Format | Länge | Regeln | Zweck |
 |---|---|---|---|
-| **Standard-Run** | 10 Fragen | Keine Leben, Streak, Punktzahl | Einstieg & Lernen |
+| **Standard-Run** | Endlos | Keine Leben, Streak, Punktzahl | Einstieg & Lernen |
 | **Endlos** | offen | 3 Leben, steigende Schwierigkeit | Herausforderung & Highscore |
-| **Tages-Challenge** | 10 Fragen | Gleicher Seed für alle, 1 Versuch pro Tag | Retention, Vergleich |
-| **Länder-Run** *(später)* | 10 Fragen | Nur ein Land | Gezieltes Üben |
+| **Tages-Challenge** | Endlos | Gleicher Start-Seed für alle, 1 Versuch pro Tag | Retention, Vergleich |
+| **Länder-Run** | Endlos | Nur ein Land | Gezieltes Üben |
 
 ---
 
@@ -357,7 +357,7 @@ Boot
  └─ Hauptmenü
      ├─ Spielen
      │   ├─ Kontinent wählen
-     │   │   └─ Run (10 Fragen)
+     │   │   └─ Run (endlos)
      │   │       └─ Ergebnis → Nochmal / Atlas / Menü
      │   ├─ Tages-Challenge
      │   └─ Endlos
@@ -628,7 +628,7 @@ kartenweis/
 | **P1** | Europa: alle Länder antippbar, 10 Länder mit tiefen Fakten, Regionen (DACH + FR/IT/ES/PL/NL), Meere & Meerengen | Vertical Slice |
 | **P2** | Europa komplett: alle Länder mit Kernfakten (A–D, F, H, M für DACH) | Spielbare Vollversion Europa |
 | **P3** | Europa vertiefen: Seen, Extreme, Infrastruktur, Regionen für alle Länder | Content-Politur |
-| **P4** | Asien, Afrika, Nord-/Südamerika, Ozeanien: 193 Länder, 4.038 Regionen, 1.162 Fakten | Weltumspannend (erreicht) |
+| **P4** | Asien, Afrika, Nord-/Südamerika, Ozeanien: 193 Länder, 4.038 Regionen, 1.748 Fakten | Weltumspannend (erreicht) |
 | **P5** | Englisch, Tages-Leaderboard, weitere Fragetypen | Ausbau |
 
 **Länderumfang:** Ausgangspunkt 195 UN-Staaten; Sonderfälle (Kosovo, Taiwan, Westsahara, Gebiete) werden in der Recherchephase neutral und transparent festgelegt. Transkontinentale Länder (Russland, Türkei, Kasachstan, Georgien, Armenien, Aserbaidschan, Zypern) bekommen eine klare Kontinent-Zuordnung mit Hinweis.
@@ -673,8 +673,8 @@ kartenweis/
 ### M4 — Welt (alle Kontinente)
 
 - Globale Datenpipeline: 193 Länder, Weltkarte, sechs Kontinente, 4.038 Admin-1-Regionen.
-- 1.104 generierte Fakten zusätzlich zu 58 kuratierten: Städte, Flüsse, Seen, Meere, Meerengen, Nachbarn, Bevölkerungs- und Flächenvergleiche.
-- 620 Karten-Reveals; Meer-/Meerengen-Polygone werden auf den Länderfokus zugeschnitten.
+- 1.690 generierte Fakten zusätzlich zu 58 kuratierten: Städte, Flüsse, Seen, Meere, Meerengen, Nachbarn, Währungen, Amtssprachen, Bevölkerungs-/Flächenvergleiche, Wüsten, Gebirge und Inseln.
+- 838 Karten-Reveals; Meer-/Meerengen-Polygone werden auf den Länderfokus zugeschnitten.
 - Kontinent-Auswahl, Welt-Run, kontinentale Runs, Länder-Runs und globale Tages-Challenge.
 - **Abnahme:** Alle 193 Länder haben Hauptstadt, Regionen (sofern vorhanden), Atlas-Fakten und mindestens einen Run; `check`, `e2e` und `build` sind grün.
 

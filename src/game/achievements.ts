@@ -17,7 +17,7 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   {
     id: "perfect-run",
     title: "Perfekte Runde",
-    description: "Beantworte 10 von 10 Fragen richtig.",
+    description: "Beantworte 10 Fragen in einem Run ohne Fehler.",
     icon: "🏆",
   },
   {
@@ -67,6 +67,30 @@ export const ACHIEVEMENTS: AchievementDef[] = [
     title: "Meereskundler",
     description: "Meistere 5 Meere oder Meerengen.",
     icon: "⚓",
+  },
+  {
+    id: "currencies-5",
+    title: "Währungsprofi",
+    description: "Meistere 5 Währungs-Fakten.",
+    icon: "💱",
+  },
+  {
+    id: "languages-5",
+    title: "Sprachenkenner",
+    description: "Meistere 5 Sprach-Fakten.",
+    icon: "🗣️",
+  },
+  {
+    id: "deserts-3",
+    title: "Wüstenläufer",
+    description: "Meistere 3 Wüsten-Fakten.",
+    icon: "🏜️",
+  },
+  {
+    id: "ranges-5",
+    title: "Gebirgskenner",
+    description: "Meistere 5 Gebirgs-Fakten.",
+    icon: "⛰️",
   },
   {
     id: "atlas-10",
@@ -140,6 +164,18 @@ export function evaluateAchievements(
   }
   if (masteredByCategory(context.facts, ["sea", "strait"]) >= 5) {
     ids.push("seas-5");
+  }
+  if (masteredByCategory(context.facts, ["currency"]) >= 5) {
+    ids.push("currencies-5");
+  }
+  if (masteredByCategory(context.facts, ["language"]) >= 5) {
+    ids.push("languages-5");
+  }
+  if (masteredByCategory(context.facts, ["desert"]) >= 3) {
+    ids.push("deserts-3");
+  }
+  if (masteredByCategory(context.facts, ["mountain_range"]) >= 5) {
+    ids.push("ranges-5");
   }
   if (Object.keys(context.visitedCountries).length >= 10) {
     ids.push("atlas-10");

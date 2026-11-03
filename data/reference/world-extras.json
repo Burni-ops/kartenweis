@@ -1,0 +1,1746 @@
+{
+  "retrieved_at": "2026-11-03T15:22:26.003Z",
+  "source": "https://query.wikidata.org/",
+  "countries": {
+    "ID": {
+      "currencies": [
+        "indonesische Rupiah"
+      ],
+      "languages": [
+        "Indonesisch"
+      ]
+    },
+    "MY": {
+      "currencies": [
+        "Ringgit"
+      ],
+      "languages": [
+        "Malaiisch"
+      ]
+    },
+    "CL": {
+      "currencies": [
+        "chilenischer Peso"
+      ],
+      "languages": [
+        "Spanisch"
+      ]
+    },
+    "BO": {
+      "currencies": [
+        "Boliviano"
+      ],
+      "languages": [
+        "Aymara",
+        "Guaraní",
+        "Quechua",
+        "Spanisch"
+      ]
+    },
+    "PE": {
+      "currencies": [
+        "Nuevo Sol"
+      ],
+      "languages": [
+        "Aymara",
+        "Quechua",
+        "Spanisch"
+      ]
+    },
+    "AR": {
+      "currencies": [
+        "argentinischer Peso"
+      ],
+      "languages": [
+        "Spanisch"
+      ]
+    },
+    "CY": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Neugriechisch",
+        "Türkisch"
+      ]
+    },
+    "IN": {
+      "currencies": [
+        "Indische Rupie"
+      ],
+      "languages": [
+        "Englisch",
+        "Hindi"
+      ]
+    },
+    "CN": {
+      "currencies": [
+        "Renminbi"
+      ],
+      "languages": [
+        "Hochchinesisch"
+      ]
+    },
+    "IL": {
+      "currencies": [
+        "Schekel"
+      ],
+      "languages": [
+        "Hebräisch"
+      ]
+    },
+    "LB": {
+      "currencies": [
+        "libanesisches Pfund"
+      ],
+      "languages": [
+        "Arabisch"
+      ]
+    },
+    "ET": {
+      "currencies": [
+        "Äthiopischer Birr"
+      ],
+      "languages": [
+        "Amharisch"
+      ]
+    },
+    "SS": {
+      "currencies": [
+        "südsudanesisches Pfund"
+      ],
+      "languages": [
+        "Englisch"
+      ]
+    },
+    "SO": {
+      "currencies": [
+        "Somalia-Schilling"
+      ],
+      "languages": [
+        "Arabisch",
+        "Somali"
+      ]
+    },
+    "KE": {
+      "currencies": [
+        "Kenia-Schilling"
+      ],
+      "languages": [
+        "Englisch",
+        "Swahili"
+      ]
+    },
+    "MW": {
+      "currencies": [
+        "Malawi-Kwacha"
+      ],
+      "languages": [
+        "Chichewa",
+        "Englisch",
+        "Tumbuka"
+      ]
+    },
+    "TZ": {
+      "currencies": [
+        "Tansania-Schilling"
+      ],
+      "languages": [
+        "Englisch",
+        "Swahili"
+      ]
+    },
+    "SY": {
+      "currencies": [
+        "syrische Lira"
+      ],
+      "languages": [
+        "Arabisch"
+      ]
+    },
+    "SOL": {
+      "currencies": [
+        "Somaliland-Schilling"
+      ],
+      "languages": [
+        "Arabisch",
+        "Englisch",
+        "Somali"
+      ]
+    },
+    "FR": {
+      "currencies": [
+        "CFP-Franc",
+        "Euro"
+      ],
+      "languages": [
+        "Französisch"
+      ]
+    },
+    "SR": {
+      "currencies": [
+        "Suriname-Dollar"
+      ],
+      "languages": [
+        "Niederländisch"
+      ]
+    },
+    "GY": {
+      "currencies": [
+        "Guyana-Dollar"
+      ],
+      "languages": [
+        "Englisch"
+      ]
+    },
+    "KR": {
+      "currencies": [
+        "Korean mun",
+        "südkoreanischer Won"
+      ],
+      "languages": [
+        "Koreanisch",
+        "Koreanische Gebärdensprache"
+      ]
+    },
+    "KP": {
+      "currencies": [
+        "nordkoreanischer Won"
+      ],
+      "languages": [
+        "Koreanisch",
+        "nordkoreanische Standard-Sprache"
+      ]
+    },
+    "MA": {
+      "currencies": [
+        "Marokkanischer Dirham"
+      ],
+      "languages": [
+        "Arabisch",
+        "marokkanisches Amazigh"
+      ]
+    },
+    "CR": {
+      "currencies": [
+        "Costa-Rica-Colón"
+      ],
+      "languages": [
+        "Spanisch"
+      ]
+    },
+    "NI": {
+      "currencies": [
+        "Córdoba Oro"
+      ],
+      "languages": [
+        "Spanisch"
+      ]
+    },
+    "CG": {
+      "currencies": [
+        "CFA-Franc BEAC"
+      ],
+      "languages": [
+        "Französisch"
+      ]
+    },
+    "CD": {
+      "currencies": [
+        "Kongo-Franc"
+      ],
+      "languages": [
+        "Französisch"
+      ]
+    },
+    "BT": {
+      "currencies": [
+        "Ngultrum"
+      ],
+      "languages": [
+        "Dzongkha"
+      ]
+    },
+    "UA": {
+      "currencies": [
+        "Hrywnja"
+      ],
+      "languages": [
+        "Ukrainisch"
+      ]
+    },
+    "BY": {
+      "currencies": [
+        "Belarussischer Rubel"
+      ],
+      "languages": [
+        "Belarussisch",
+        "Russisch"
+      ]
+    },
+    "NA": {
+      "currencies": [
+        "Namibia-Dollar",
+        "südafrikanischer Rand"
+      ],
+      "languages": [
+        "Englisch"
+      ]
+    },
+    "ZA": {
+      "currencies": [
+        "südafrikanischer Rand"
+      ],
+      "languages": [
+        "Afrikaans",
+        "Englisch",
+        "IsiXhosa",
+        "isiZulu",
+        "Nord-Sotho",
+        "Sesotho",
+        "Setswana",
+        "Siswati",
+        "Süd-Ndebele",
+        "Südafrikanische Gebärdensprache",
+        "Tshivenda",
+        "Xitsonga"
+      ]
+    },
+    "OM": {
+      "currencies": [
+        "Omanischer Rial"
+      ],
+      "languages": [
+        "Arabisch"
+      ]
+    },
+    "UZ": {
+      "currencies": [
+        "Soʻm"
+      ],
+      "languages": [
+        "Usbekisch"
+      ]
+    },
+    "TJ": {
+      "currencies": [
+        "Somoni"
+      ],
+      "languages": [
+        "Tadschikisch"
+      ]
+    },
+    "LT": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Litauisch"
+      ]
+    },
+    "BR": {
+      "currencies": [
+        "brasilianischer Real"
+      ],
+      "languages": [
+        "Portugiesisch"
+      ]
+    },
+    "UY": {
+      "currencies": [
+        "uruguayischer Peso"
+      ],
+      "languages": []
+    },
+    "MN": {
+      "currencies": [
+        "Tögrög"
+      ],
+      "languages": [
+        "Mongolisch"
+      ]
+    },
+    "RU": {
+      "currencies": [
+        "russischer Rubel"
+      ],
+      "languages": [
+        "Russisch"
+      ]
+    },
+    "CZ": {
+      "currencies": [
+        "tschechische Krone"
+      ],
+      "languages": [
+        "Tschechisch"
+      ]
+    },
+    "DE": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Deutsch"
+      ]
+    },
+    "EE": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Estnisch"
+      ]
+    },
+    "LV": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Lettisch"
+      ]
+    },
+    "NO": {
+      "currencies": [
+        "norwegische Krone"
+      ],
+      "languages": [
+        "Bokmål",
+        "Norwegisch",
+        "Nynorsk",
+        "samische Sprachen"
+      ]
+    },
+    "SE": {
+      "currencies": [
+        "schwedische Krone"
+      ],
+      "languages": [
+        "Schwedisch"
+      ]
+    },
+    "FI": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Finnisch",
+        "Schwedisch"
+      ]
+    },
+    "VN": {
+      "currencies": [
+        "vietnamesischer Đồng"
+      ],
+      "languages": [
+        "Vietnamesisch"
+      ]
+    },
+    "KH": {
+      "currencies": [
+        "Kambodschanischer Riel"
+      ],
+      "languages": [
+        "Khmer"
+      ]
+    },
+    "LU": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Deutsch",
+        "Französisch",
+        "Luxemburgisch"
+      ]
+    },
+    "AE": {
+      "currencies": [
+        "VAE-Dirham"
+      ],
+      "languages": [
+        "Arabisch"
+      ]
+    },
+    "BE": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Deutsch",
+        "Französisch",
+        "Niederländisch"
+      ]
+    },
+    "GE": {
+      "currencies": [
+        "georgischer Lari"
+      ],
+      "languages": [
+        "Georgisch"
+      ]
+    },
+    "MK": {
+      "currencies": [
+        "mazedonischer Denar"
+      ],
+      "languages": [
+        "Albanisch",
+        "Mazedonisch"
+      ]
+    },
+    "AL": {
+      "currencies": [
+        "Albanischer Lek"
+      ],
+      "languages": [
+        "Albanisch"
+      ]
+    },
+    "AZ": {
+      "currencies": [
+        "Aserbaidschan-Manat"
+      ],
+      "languages": [
+        "Aserbaidschanisch",
+        "Azerbaijani Sign Language"
+      ]
+    },
+    "XK": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Albanisch",
+        "Serbisch"
+      ]
+    },
+    "TR": {
+      "currencies": [
+        "türkische Lira"
+      ],
+      "languages": [
+        "Türkisch"
+      ]
+    },
+    "ES": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Spanisch"
+      ]
+    },
+    "LA": {
+      "currencies": [
+        "Kip"
+      ],
+      "languages": [
+        "Laotisch"
+      ]
+    },
+    "KG": {
+      "currencies": [
+        "Som"
+      ],
+      "languages": [
+        "Kirgisisch"
+      ]
+    },
+    "AM": {
+      "currencies": [
+        "Dram"
+      ],
+      "languages": [
+        "Armenisch"
+      ]
+    },
+    "DK": {
+      "currencies": [
+        "dänische Krone"
+      ],
+      "languages": [
+        "Dänisch"
+      ]
+    },
+    "LY": {
+      "currencies": [
+        "libyscher Dinar"
+      ],
+      "languages": [
+        "Arabisch"
+      ]
+    },
+    "TN": {
+      "currencies": [
+        "tunesischer Dinar"
+      ],
+      "languages": [
+        "Arabisch"
+      ]
+    },
+    "RO": {
+      "currencies": [
+        "rumänischer Leu"
+      ],
+      "languages": [
+        "Rumänisch"
+      ]
+    },
+    "HU": {
+      "currencies": [
+        "Forint"
+      ],
+      "languages": [
+        "Ungarisch"
+      ]
+    },
+    "SK": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Slowakisch"
+      ]
+    },
+    "PL": {
+      "currencies": [
+        "Złoty"
+      ],
+      "languages": [
+        "Polnisch"
+      ]
+    },
+    "IE": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Englisch",
+        "Irisch"
+      ]
+    },
+    "GB": {
+      "currencies": [
+        "Pfund Sterling"
+      ],
+      "languages": [
+        "Englisch"
+      ]
+    },
+    "GR": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Griechisch"
+      ]
+    },
+    "ZM": {
+      "currencies": [
+        "sambischer Kwacha"
+      ],
+      "languages": [
+        "Englisch"
+      ]
+    },
+    "SL": {
+      "currencies": [
+        "Sierra-leonischer Leone"
+      ],
+      "languages": [
+        "Englisch",
+        "Krio"
+      ]
+    },
+    "GN": {
+      "currencies": [
+        "Franc Guinéen"
+      ],
+      "languages": [
+        "Französisch",
+        "Sprachen Guineas"
+      ]
+    },
+    "LR": {
+      "currencies": [
+        "Liberianischer Dollar"
+      ],
+      "languages": [
+        "Englisch"
+      ]
+    },
+    "CF": {
+      "currencies": [
+        "CFA-Franc BEAC"
+      ],
+      "languages": [
+        "Französisch",
+        "Sango"
+      ]
+    },
+    "SD": {
+      "currencies": [
+        "sudanesisches Pfund"
+      ],
+      "languages": [
+        "Arabisch",
+        "Englisch"
+      ]
+    },
+    "DJ": {
+      "currencies": [
+        "Dschibuti-Franc"
+      ],
+      "languages": [
+        "Arabisch",
+        "Französisch"
+      ]
+    },
+    "ER": {
+      "currencies": [
+        "eritreischer Nakfa"
+      ],
+      "languages": [
+        "Arabisch",
+        "Englisch",
+        "Tigrinya"
+      ]
+    },
+    "AT": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Deutsch",
+        "Österreichische Gebärdensprache"
+      ]
+    },
+    "IQ": {
+      "currencies": [
+        "irakischer Dinar"
+      ],
+      "languages": [
+        "Arabisch",
+        "Kurdisch"
+      ]
+    },
+    "IT": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Italienisch"
+      ]
+    },
+    "CH": {
+      "currencies": [
+        "Schweizer Franken"
+      ],
+      "languages": [
+        "Bündnerromanisch",
+        "Deutsch",
+        "Französisch",
+        "Italienisch"
+      ]
+    },
+    "IR": {
+      "currencies": [
+        "iranischer Rial"
+      ],
+      "languages": [
+        "Persisch"
+      ]
+    },
+    "NL": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Niederländisch"
+      ]
+    },
+    "LI": {
+      "currencies": [
+        "Schweizer Franken"
+      ],
+      "languages": [
+        "Deutsch"
+      ]
+    },
+    "CI": {
+      "currencies": [
+        "CFA-Franc BCEAO"
+      ],
+      "languages": [
+        "Französisch"
+      ]
+    },
+    "RS": {
+      "currencies": [
+        "serbischer Dinar"
+      ],
+      "languages": [
+        "Serbisch"
+      ]
+    },
+    "ML": {
+      "currencies": [
+        "CFA-Franc BCEAO"
+      ],
+      "languages": [
+        "Bambara",
+        "Bobo",
+        "Bozo",
+        "Dogon",
+        "Fulfulde",
+        "Hassania",
+        "Mamara",
+        "Maninka",
+        "Senufo-Sprachen",
+        "Songhai-Sprachen",
+        "Soninke",
+        "Tamascheq",
+        "Xaasongaxango"
+      ]
+    },
+    "SN": {
+      "currencies": [
+        "CFA-Franc BCEAO"
+      ],
+      "languages": [
+        "Badyara",
+        "Balanta",
+        "Französisch",
+        "Wolof"
+      ]
+    },
+    "NG": {
+      "currencies": [
+        "Naira"
+      ],
+      "languages": [
+        "Englisch"
+      ]
+    },
+    "BJ": {
+      "currencies": [
+        "CFA-Franc BCEAO"
+      ],
+      "languages": [
+        "Französisch"
+      ]
+    },
+    "AO": {
+      "currencies": [
+        "Kwanza"
+      ],
+      "languages": [
+        "Portugiesisch"
+      ]
+    },
+    "HR": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Kroatisch"
+      ]
+    },
+    "SI": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Slowenisch"
+      ]
+    },
+    "QA": {
+      "currencies": [
+        "Katar-Riyal"
+      ],
+      "languages": [
+        "Arabisch"
+      ]
+    },
+    "SA": {
+      "currencies": [
+        "Saudi-Rial"
+      ],
+      "languages": [
+        "Arabisch"
+      ]
+    },
+    "BW": {
+      "currencies": [
+        "botswanischer Pula"
+      ],
+      "languages": [
+        "Englisch"
+      ]
+    },
+    "ZW": {
+      "currencies": [
+        "Australischer Dollar",
+        "Euro",
+        "Indische Rupie",
+        "Pfund Sterling",
+        "Renminbi",
+        "Simbabwe-Dollar",
+        "Simbabwe-Gold",
+        "südafrikanischer Rand",
+        "US-Dollar",
+        "Yen"
+      ],
+      "languages": [
+        "Barwe",
+        "Chichewa",
+        "ChiTonga",
+        "Englisch",
+        "IsiXhosa",
+        "Kalanga",
+        "Khoisansprachen",
+        "Nambya",
+        "Ndau",
+        "Nord-Ndebele",
+        "Sesotho",
+        "Setswana",
+        "Shona",
+        "Simbabwische Gebärdensprache",
+        "Tshivenda",
+        "Xitsonga"
+      ]
+    },
+    "PK": {
+      "currencies": [
+        "pakistanische Rupie"
+      ],
+      "languages": [
+        "Englisch",
+        "Urdu"
+      ]
+    },
+    "BG": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Bulgarisch"
+      ]
+    },
+    "TH": {
+      "currencies": [
+        "Baht"
+      ],
+      "languages": [
+        "Thailändisch"
+      ]
+    },
+    "SM": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Italienisch"
+      ]
+    },
+    "HT": {
+      "currencies": [
+        "Gourde"
+      ],
+      "languages": [
+        "Französisch",
+        "Haitianisch-Kreolisch"
+      ]
+    },
+    "DO": {
+      "currencies": [
+        "dominikanischer Peso"
+      ],
+      "languages": [
+        "Spanisch"
+      ]
+    },
+    "TD": {
+      "currencies": [
+        "CFA-Franc BEAC"
+      ],
+      "languages": [
+        "Arabisch",
+        "Französisch"
+      ]
+    },
+    "KW": {
+      "currencies": [
+        "Kuwait-Dinar"
+      ],
+      "languages": [
+        "Arabisch"
+      ]
+    },
+    "SV": {
+      "currencies": [
+        "Bitcoin",
+        "US-Dollar"
+      ],
+      "languages": [
+        "Spanisch"
+      ]
+    },
+    "GT": {
+      "currencies": [
+        "guatemaltekischer Quetzal"
+      ],
+      "languages": [
+        "Spanisch"
+      ]
+    },
+    "TL": {
+      "currencies": [
+        "Münzen Osttimors",
+        "US-Dollar"
+      ],
+      "languages": [
+        "Portugiesisch",
+        "Tetum"
+      ]
+    },
+    "BN": {
+      "currencies": [
+        "Brunei-Dollar"
+      ],
+      "languages": [
+        "britisches Englisch",
+        "Malaiisch"
+      ]
+    },
+    "MC": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Französisch"
+      ]
+    },
+    "DZ": {
+      "currencies": [
+        "algerischer Dinar"
+      ],
+      "languages": [
+        "Algerische Berbersprache",
+        "Arabisch"
+      ]
+    },
+    "MZ": {
+      "currencies": [
+        "Metical"
+      ],
+      "languages": [
+        "Portugiesisch"
+      ]
+    },
+    "SZ": {
+      "currencies": [
+        "Lilangeni"
+      ],
+      "languages": [
+        "Englisch",
+        "Siswati"
+      ]
+    },
+    "BI": {
+      "currencies": [
+        "Burundi-Franc"
+      ],
+      "languages": [
+        "Englisch",
+        "Französisch",
+        "Kirundi"
+      ]
+    },
+    "RW": {
+      "currencies": [
+        "Ruanda-Franc"
+      ],
+      "languages": [
+        "Englisch",
+        "Französisch",
+        "Kinyarwanda",
+        "Swahili"
+      ]
+    },
+    "MM": {
+      "currencies": [
+        "Kyat"
+      ],
+      "languages": [
+        "Birmanisch"
+      ]
+    },
+    "BD": {
+      "currencies": [
+        "Taka"
+      ],
+      "languages": [
+        "Bengalisch"
+      ]
+    },
+    "AD": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Katalanisch"
+      ]
+    },
+    "AF": {
+      "currencies": [
+        "Afghani"
+      ],
+      "languages": [
+        "Arabisch",
+        "Belutschisch",
+        "Dari",
+        "Nuristani-Sprachen",
+        "Pamir",
+        "Paschtu",
+        "Pashai",
+        "Turkmenisch",
+        "Usbekisch"
+      ]
+    },
+    "ME": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Montenegrinisch"
+      ]
+    },
+    "BA": {
+      "currencies": [
+        "bosnischer Dinar",
+        "konvertible Mark"
+      ],
+      "languages": [
+        "Bosnisch",
+        "Kroatisch",
+        "Serbisch"
+      ]
+    },
+    "UG": {
+      "currencies": [
+        "Uganda-Schilling"
+      ],
+      "languages": [
+        "Englisch",
+        "Swahili"
+      ]
+    },
+    "HN": {
+      "currencies": [
+        "Lempira"
+      ],
+      "languages": [
+        "Spanisch"
+      ]
+    },
+    "EC": {
+      "currencies": [
+        "US-Dollar"
+      ],
+      "languages": [
+        "Kichwa",
+        "Shuar",
+        "Spanisch"
+      ]
+    },
+    "CO": {
+      "currencies": [
+        "kolumbianischer Peso"
+      ],
+      "languages": [
+        "Spanisch"
+      ]
+    },
+    "PY": {
+      "currencies": [
+        "Paraguayischer Guaraní"
+      ],
+      "languages": [
+        "Guaraní",
+        "Spanisch"
+      ]
+    },
+    "PT": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Portugiesisch"
+      ]
+    },
+    "MD": {
+      "currencies": [
+        "moldauischer Leu"
+      ],
+      "languages": [
+        "Rumänisch"
+      ]
+    },
+    "TM": {
+      "currencies": [
+        "Turkmenistan-Manat"
+      ],
+      "languages": [
+        "Turkmenisch"
+      ]
+    },
+    "JO": {
+      "currencies": [
+        "jordanischer Dinar"
+      ],
+      "languages": [
+        "Arabisch"
+      ]
+    },
+    "NP": {
+      "currencies": [
+        "Nepalesische Rupie"
+      ],
+      "languages": [
+        "Nepali"
+      ]
+    },
+    "LS": {
+      "currencies": [
+        "Lesothischer Loti",
+        "südafrikanischer Rand"
+      ],
+      "languages": [
+        "Englisch",
+        "Sesotho"
+      ]
+    },
+    "CM": {
+      "currencies": [
+        "CFA-Franc BEAC"
+      ],
+      "languages": [
+        "Englisch",
+        "Französisch"
+      ]
+    },
+    "GA": {
+      "currencies": [
+        "CFA-Franc BEAC"
+      ],
+      "languages": [
+        "Französisch"
+      ]
+    },
+    "NE": {
+      "currencies": [
+        "CFA-Franc BCEAO"
+      ],
+      "languages": [
+        "Hausa"
+      ]
+    },
+    "BF": {
+      "currencies": [
+        "CFA-Franc BCEAO"
+      ],
+      "languages": [
+        "Bissa",
+        "Dioula",
+        "Mòoré"
+      ]
+    },
+    "TG": {
+      "currencies": [
+        "CFA-Franc BCEAO"
+      ],
+      "languages": [
+        "Französisch"
+      ]
+    },
+    "GH": {
+      "currencies": [
+        "Cedi"
+      ],
+      "languages": [
+        "Englisch"
+      ]
+    },
+    "GW": {
+      "currencies": [
+        "CFA-Franc BCEAO"
+      ],
+      "languages": [
+        "Portugiesisch"
+      ]
+    },
+    "US": {
+      "currencies": [
+        "US-Dollar"
+      ],
+      "languages": [
+        "Chamorro",
+        "Hawaiisch",
+        "Karolinisch",
+        "Samoanisch",
+        "Spanisch"
+      ]
+    },
+    "CA": {
+      "currencies": [
+        "kanadischer Dollar"
+      ],
+      "languages": [
+        "Englisch",
+        "Französisch"
+      ]
+    },
+    "MX": {
+      "currencies": [
+        "Mexikanischer Peso"
+      ],
+      "languages": [
+        "Mayathan",
+        "Nahuatl",
+        "Spanisch"
+      ]
+    },
+    "BZ": {
+      "currencies": [
+        "Belize-Dollar"
+      ],
+      "languages": [
+        "Englisch"
+      ]
+    },
+    "PA": {
+      "currencies": [
+        "Panamaischer Balboa",
+        "US-Dollar"
+      ],
+      "languages": [
+        "Spanisch"
+      ]
+    },
+    "VE": {
+      "currencies": [
+        "sovereign bolivar"
+      ],
+      "languages": [
+        "Spanisch",
+        "Venezolanische Gebärdensprache"
+      ]
+    },
+    "PG": {
+      "currencies": [
+        "Kina"
+      ],
+      "languages": [
+        "Englisch",
+        "Hiri Motu",
+        "Papua-Neuguinea-Gebärdensprache",
+        "Tok Pisin"
+      ]
+    },
+    "EG": {
+      "currencies": [
+        "ägyptisches Pfund"
+      ],
+      "languages": [
+        "Arabisch"
+      ]
+    },
+    "YE": {
+      "currencies": [
+        "Jemen-Rial"
+      ],
+      "languages": [
+        "Arabisch"
+      ]
+    },
+    "MR": {
+      "currencies": [
+        "Ouguiya"
+      ],
+      "languages": [
+        "Arabisch",
+        "Französisch"
+      ]
+    },
+    "GQ": {
+      "currencies": [
+        "CFA-Franc BEAC"
+      ],
+      "languages": [
+        "Französisch",
+        "Portugiesisch",
+        "Spanisch"
+      ]
+    },
+    "GM": {
+      "currencies": [
+        "Dalasi"
+      ],
+      "languages": [
+        "Englisch"
+      ]
+    },
+    "VA": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Italienisch",
+        "Latein"
+      ]
+    },
+    "CYN": {
+      "currencies": [
+        "türkische Lira"
+      ],
+      "languages": [
+        "Türkisch"
+      ]
+    },
+    "AU": {
+      "currencies": [
+        "Australischer Dollar"
+      ],
+      "languages": [
+        "Englisch"
+      ]
+    },
+    "FJ": {
+      "currencies": [
+        "Fidschi-Dollar"
+      ],
+      "languages": [
+        "Englisch",
+        "Fidschi",
+        "Fidschi-Hindi"
+      ]
+    },
+    "NZ": {
+      "currencies": [
+        "Neuseeland-Dollar"
+      ],
+      "languages": [
+        "Englisch",
+        "Māori",
+        "neuseeländische Gebärdensprache"
+      ]
+    },
+    "MG": {
+      "currencies": [
+        "Ariary"
+      ],
+      "languages": [
+        "Französisch",
+        "Malagasy"
+      ]
+    },
+    "PH": {
+      "currencies": [
+        "philippinischer Peso"
+      ],
+      "languages": [
+        "Englisch",
+        "Filipino",
+        "Taglish"
+      ]
+    },
+    "LK": {
+      "currencies": [
+        "Sri-Lanka-Rupie"
+      ],
+      "languages": [
+        "Singhalesisch",
+        "Tamil"
+      ]
+    },
+    "BS": {
+      "currencies": [
+        "Bahama-Dollar"
+      ],
+      "languages": [
+        "Englisch"
+      ]
+    },
+    "TW": {
+      "currencies": [
+        "Neuer Taiwan-Dollar"
+      ],
+      "languages": [
+        "Amisisch",
+        "Atayal",
+        "Bunun",
+        "Kanakanavu",
+        "Kavalan",
+        "Kinmen dialect",
+        "Matsu dialect",
+        "Paiwan",
+        "Puyuma-Sprache",
+        "Rukai",
+        "Saaroa",
+        "Saisiyat",
+        "Sakizaya",
+        "Seediq",
+        "Taiwanese Hakka",
+        "Taiwanesische Gebärdensprache",
+        "Taiwanisch",
+        "taiwanisches Mandarin",
+        "Truku",
+        "Tsou",
+        "Wuqiu dialect",
+        "Yami"
+      ]
+    },
+    "JP": {
+      "currencies": [
+        "Yen"
+      ],
+      "languages": [
+        "Japanisch"
+      ]
+    },
+    "IS": {
+      "currencies": [
+        "isländische Krone"
+      ],
+      "languages": [
+        "Isländisch"
+      ]
+    },
+    "KI": {
+      "currencies": [
+        "Australischer Dollar",
+        "Kiribati-Dollar"
+      ],
+      "languages": [
+        "Englisch",
+        "Kiribatisch"
+      ]
+    },
+    "MH": {
+      "currencies": [
+        "SOV",
+        "US-Dollar"
+      ],
+      "languages": [
+        "Englisch",
+        "Marshallesisch"
+      ]
+    },
+    "TT": {
+      "currencies": [
+        "Trinidad-und-Tobago-Dollar"
+      ],
+      "languages": [
+        "Englisch"
+      ]
+    },
+    "GD": {
+      "currencies": [
+        "Ostkaribischer Dollar"
+      ],
+      "languages": [
+        "Englisch",
+        "Grenada-Kreolisch"
+      ]
+    },
+    "VC": {
+      "currencies": [
+        "Ostkaribischer Dollar"
+      ],
+      "languages": [
+        "Englisch"
+      ]
+    },
+    "BB": {
+      "currencies": [
+        "Barbados-Dollar"
+      ],
+      "languages": [
+        "Bajan Creole",
+        "Englisch"
+      ]
+    },
+    "LC": {
+      "currencies": [
+        "Ostkaribischer Dollar"
+      ],
+      "languages": [
+        "Englisch"
+      ]
+    },
+    "DM": {
+      "currencies": [
+        "Ostkaribischer Dollar"
+      ],
+      "languages": [
+        "Englisch"
+      ]
+    },
+    "AG": {
+      "currencies": [
+        "Ostkaribischer Dollar"
+      ],
+      "languages": [
+        "Englisch",
+        "Spanisch"
+      ]
+    },
+    "KN": {
+      "currencies": [
+        "Ostkaribischer Dollar"
+      ],
+      "languages": [
+        "Englisch"
+      ]
+    },
+    "JM": {
+      "currencies": [
+        "Jamaika-Dollar"
+      ],
+      "languages": [
+        "Englisch",
+        "Jamaikanisch-Kreolisch"
+      ]
+    },
+    "KM": {
+      "currencies": [
+        "Komoren-Franc"
+      ],
+      "languages": [
+        "Arabisch",
+        "Französisch",
+        "Komorisch"
+      ]
+    },
+    "ST": {
+      "currencies": [
+        "São-toméischer Dobra"
+      ],
+      "languages": [
+        "Portugiesisch"
+      ]
+    },
+    "CV": {
+      "currencies": [
+        "Kap-Verde-Escudo"
+      ],
+      "languages": [
+        "Kapverdisches Kreol",
+        "Portugiesisch"
+      ]
+    },
+    "MT": {
+      "currencies": [
+        "Euro"
+      ],
+      "languages": [
+        "Englisch",
+        "Maltesisch"
+      ]
+    },
+    "SG": {
+      "currencies": [
+        "Singapur-Dollar"
+      ],
+      "languages": [
+        "Englisch",
+        "Hochchinesisch",
+        "Malaiisch",
+        "Tamil"
+      ]
+    },
+    "TO": {
+      "currencies": [
+        "Paʻanga"
+      ],
+      "languages": [
+        "Englisch",
+        "Tongaisch"
+      ]
+    },
+    "WS": {
+      "currencies": [
+        "samoanischer Tala"
+      ],
+      "languages": [
+        "Englisch",
+        "Samoanisch"
+      ]
+    },
+    "SB": {
+      "currencies": [
+        "Salomonen-Dollar"
+      ],
+      "languages": [
+        "Englisch"
+      ]
+    },
+    "TV": {
+      "currencies": [
+        "Australischer Dollar",
+        "Tuvaluischer Dollar"
+      ],
+      "languages": [
+        "Englisch",
+        "Tuvaluisch"
+      ]
+    },
+    "NR": {
+      "currencies": [
+        "Australischer Dollar"
+      ],
+      "languages": [
+        "Englisch",
+        "Nauruisch"
+      ]
+    },
+    "FM": {
+      "currencies": [
+        "US-Dollar"
+      ],
+      "languages": [
+        "Englisch"
+      ]
+    },
+    "VU": {
+      "currencies": [
+        "Vatu"
+      ],
+      "languages": [
+        "Bislama",
+        "Englisch",
+        "Französisch"
+      ]
+    },
+    "PW": {
+      "currencies": [
+        "US-Dollar"
+      ],
+      "languages": [
+        "Englisch",
+        "Japanisch",
+        "Palauisch"
+      ]
+    },
+    "BH": {
+      "currencies": [
+        "Bahrain-Dinar"
+      ],
+      "languages": [
+        "Arabisch"
+      ]
+    }
+  }
+}

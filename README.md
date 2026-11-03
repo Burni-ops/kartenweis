@@ -6,13 +6,15 @@ Kartenweis ist ein Geografie-Lernspiel für Browser und Android. Statt Flaggen a
 
 ## Status
 
-**M5 (Welt + Android-Build).** Die Weltkarte läuft im Browser und als Android-App.
+**M6 (Desktop, Endlos & Updates).** Die Weltkarte läuft im Browser, als Android-App und als Windows-Desktop-App.
 
 - **193 Länder** auf sechs Kontinenten
 - **4.038 Regionen** für 187 Länder
-- **1.162 Fakten** (58 kuratiert + 1.104 generiert)
-- **620 Karten-Reveals** für Flüsse, Seen, Meere, Meerengen, Städte und Gipfel
+- **1.748 Fakten** (58 kuratiert + 1.690 generiert)
+- **838 Karten-Reveals** für Flüsse, Seen, Meere, Meerengen, Städte, Gipfel, Wüsten, Gebirge und Inseln
 - Quiz-Modus mit Multiple Choice, Drag-to-Map, Land- und Region-Antippen
+- Kategorien: Hauptstädte, Regionen, Städte, Berge, Flüsse, Seen, Meere, Meerengen, Nachbarn, Währungen, Amtssprachen, Bevölkerung, Fläche, Wüsten, Gebirge, Inseln
+- **Endlos-Runs** für Welt, Kontinente und einzelne Länder
 - Länder-Atlas, Mastery, Erfolge, Tages-Challenge, Onboarding, Sound und Einstellungen
 - Offline-fähige PWA und Android-App über Capacitor
 
@@ -58,6 +60,8 @@ npm run preview
 | `npm run data:flags` | Länderflaggen von flagcdn laden |
 | `npm run android:sync` | Web-Build erzeugen und nach `android/` synchronisieren |
 | `npm run android:build` | Debug-APK über Gradle bauen |
+| `npm run desktop:dev` | Desktop-App im Entwicklungsmodus starten |
+| `npm run desktop:build` | Windows-Setup-Datei in `release/` bauen |
 | `npm run docker:build` | Docker-Image lokal bauen |
 | `npm run docker:up` | Docker-Compose-Stack starten |
 
@@ -83,15 +87,31 @@ android/app/build/outputs/apk/debug/app-debug.apk
 
 Die Zurück-Taste schließt zuerst Dialoge, den Atlas, den Run oder die Länderauswahl, bevor sie die App verlässt. Safe Areas werden über `env(safe-area-inset-*)` berücksichtigt.
 
-## Desktop (PWA)
+## Desktop (PWA + Installer)
 
-Kartenweis wird als **PWA** auf dem Desktop installiert — dafür ist kein separates Electron-/Tauri-Bundle nötig. In Chrome oder Edge:
+Kartenweis gibt es auf dem Desktop in zwei Varianten:
+
+### Windows-Installer
+
+In den GitHub-Releases liegt eine einzelne Setup-Datei:
+
+```text
+Kartenweis-<version>-Setup.exe
+```
+
+Herunterladen, doppelklicken, installieren oder direkt öffnen — danach startet Kartenweis als eigenes Fenster. Es wird keine Browser-Erweiterung und kein separates Runtime-Paket benötigt.
+
+> Der Windows-Installer ist aktuell nicht code-signiert. Windows SmartScreen kann beim ersten Start warnen; „Weitere Informationen → Trotzdem ausführen“ wählen. Für eine signierte Version später ein Code-Signing-Zertifikat hinterlegen.
+
+### PWA
+
+Alternativ lässt sich die Web-App in Chrome oder Edge installieren:
 
 1. Kartenweis im Browser öffnen (lokal, GitHub Pages oder eigene Domain).
 2. In der Adressleiste **Installieren** bzw. **App installieren** wählen.
 3. Die App startet danach als eigenes Fenster, offline und mit eigenem Icon.
 
-Updates kommen über den Service Worker (Web) bzw. als neues APK (Android). Beim Start prüft die App zusätzlich die neueste GitHub-Release und zeigt bei Bedarf einen Update-Hinweis.
+Updates kommen über den Service Worker (Web) bzw. als neue Setup-Datei (Desktop) oder APK (Android). Beim Start prüft die App zusätzlich die neueste GitHub-Release und zeigt bei Bedarf einen Update-Hinweis.
 
 ## Docker / Homeserver
 
@@ -148,6 +168,7 @@ Die GitHub-Action **Release** baut dann automatisch:
 
 - den Web-Build als ZIP
 - ein installierbares Android-APK
+- die Windows-Setup-Datei (`Kartenweis-<version>-Setup.exe`)
 - die GitHub-Release-Seite mit Download-Links
 
 Details und optionales Signing stehen in [`docs/RELEASING.md`](docs/RELEASING.md).
@@ -193,6 +214,8 @@ public/
   flags/        SVG-Flaggen
 tools/          Datenaufbau, Referenzdaten und -validierung
 android/        Capacitor-Android-Projekt
+electron/       Desktop-Hülle (Electron)
+build/          Desktop-Icons für electron-builder
 deploy/         nginx-Konfiguration für Docker
 e2e/            Playwright-Tests
 docs/           Screenshots und Release-Dokumentation
@@ -205,8 +228,9 @@ docs/           Screenshots und Release-Dokumentation
 - [x] M1: Vertical Slice mit Quiz und Reveals
 - [x] M2: Atlas, Mastery, Erfolge, Daily
 - [x] M3: Europa komplett, Onboarding, Sound, Einstellungen
-- [x] M4: Welt, 193 Länder, 4.038 Regionen, 1.162 Fakten
+- [x] M4: Welt, 193 Länder, 4.038 Regionen, 1.748 Fakten
 - [x] M5: Capacitor-Android-Build
+- [x] M6: Windows-Installer, Endlos-Runs, PWA-Update und Docker
 - [ ] Playtest auf echten Geräten und Content-QA
 
 Der vollständige Plan steht in [`PLAN.md`](PLAN.md).

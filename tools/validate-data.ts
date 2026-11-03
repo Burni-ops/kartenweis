@@ -208,6 +208,14 @@ if (errors.length === 0) {
       "neighbor",
       "region",
       "extreme",
+      "currency",
+      "language",
+      "population",
+      "area",
+      "desert",
+      "mountain_range",
+      "island",
+      "peninsula",
     ]);
 
     for (const fact of facts) {

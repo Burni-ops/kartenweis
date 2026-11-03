@@ -61,6 +61,8 @@ import type {
 
 type Mode = "browse" | "run" | "result" | "atlas";
 
+const RUN_BATCH_SIZE = 30;
+
 export default function App() {
   const [dataset, setDataset] = useState<CountriesDataset | null>(null);
   const [world, setWorld] = useState<FeatureCollection<Geometry> | null>(
@@ -340,7 +342,7 @@ export default function App() {
       if (scope === "continent" && options?.continent === "world") {
         beginRun({
           scope: "world",
-          count: 10,
+          count: RUN_BATCH_SIZE,
           seed: Math.floor(Math.random() * 0xffffffff),
         });
         return;
@@ -352,7 +354,7 @@ export default function App() {
             ? (options?.continent as Exclude<ContinentScope, "world">)
             : undefined,
         countryCode: options?.countryCode,
-        count: 10,
+        count: RUN_BATCH_SIZE,
         seed: Math.floor(Math.random() * 0xffffffff),
       });
     },
@@ -378,7 +380,7 @@ export default function App() {
     if (dailyDone) return;
     beginRun({
       scope: "world",
-      count: 10,
+      count: RUN_BATCH_SIZE,
       seed: dailySeed(),
       daily: true,
     });
@@ -478,6 +480,31 @@ export default function App() {
     );
   }, [run, feedback, recordAnswer]);
 
+  const finishRun = useCallback(
+    (totalOverride?: number) => {
+      if (!run) return;
+      const answered = run.index + (feedback ? 1 : 0);
+      const result: RunSummary = {
+        config: run.config,
+        score: run.score,
+        correctCount: run.correctCount,
+        total: Math.max(0, totalOverride ?? answered),
+        bestStreak: run.bestStreak,
+        startedAt: run.startedAt,
+        finishedAt: Date.now(),
+      };
+      recordRun(result);
+      if (run.config.daily) {
+        recordDaily(todayKey());
+      }
+      setSummary(result);
+      setFeedback(null);
+      setRun(null);
+      setMode("result");
+    },
+    [run, feedback, recordRun, recordDaily],
+  );
+
   const handleNext = useCallback(() => {
     if (!run) return;
 
@@ -487,23 +514,34 @@ export default function App() {
       return;
     }
 
-    const result: RunSummary = {
-      config: run.config,
-      score: run.score,
-      correctCount: run.correctCount,
-      total: run.questions.length,
-      bestStreak: run.bestStreak,
-      startedAt: run.startedAt,
-      finishedAt: Date.now(),
-    };
-    recordRun(result);
-    if (run.config.daily) {
-      recordDaily(todayKey());
+    // Endless mode: append another batch when the current one is exhausted.
+    if (!dataset || !facts) {
+      finishRun(run.questions.length);
+      return;
     }
-    setSummary(result);
+
+    const seed = Math.floor(Math.random() * 0xffffffff);
+    const more = buildRun(
+      { ...run.config, count: RUN_BATCH_SIZE, seed },
+      dataset.countries,
+      regions,
+      facts,
+      masteryMap(),
+      mulberry32(seed),
+    );
+
+    if (more.length === 0) {
+      finishRun(run.questions.length);
+      return;
+    }
+
+    setRun({
+      ...run,
+      questions: [...run.questions, ...more],
+      index: run.index + 1,
+    });
     setFeedback(null);
-    setMode("result");
-  }, [run, recordRun, recordDaily]);
+  }, [run, dataset, facts, regions, finishRun]);
 
   const handleRestart = useCallback(() => {
     if (!summary) return;
@@ -514,19 +552,8 @@ export default function App() {
   }, [summary, startRun]);
 
   const handleExitRun = useCallback(() => {
-    if (
-      mode === "run" &&
-      !window.confirm(
-        "Run beenden? Der Fortschritt in diesem Run geht verloren.",
-      )
-    ) {
-      return;
-    }
-    setMode("browse");
-    setRun(null);
-    setFeedback(null);
-    setSummary(null);
-  }, [mode]);
+    finishRun();
+  }, [finishRun]);
 
   const handleExitResult = useCallback(() => {
     setMode("browse");
@@ -566,8 +593,8 @@ export default function App() {
   }
 
   return (
-    <main className="map-shell flex flex-col">
-      <div className="relative min-h-0 flex-1">
+    <main className="map-shell">
+      <div className="absolute inset-0">
         <MapView
           countries={dataset.countries}
           world={world}
@@ -714,7 +741,7 @@ export default function App() {
       </div>
 
       {mode === "browse" && (
-        <div className="relative z-20 shrink-0">
+        <div className="absolute inset-x-0 bottom-0 z-20">
           <CountrySheet
             country={selectedCountry}
             regions={regions.filter(
@@ -750,14 +777,14 @@ export default function App() {
       )}
 
       {mode === "run" && run && activeQuestion && (
-        <div className="relative z-30 shrink-0">
+        <div className="absolute inset-x-0 bottom-0 z-30">
           <QuestionCard
             question={activeQuestion}
             feedback={feedback}
             onAnswer={handleRunAnswer}
             onNext={handleNext}
             onSkip={handleSkip}
-            isLast={run.index + 1 >= run.questions.length}
+            isLast={false}
             showRevealHint={showRevealHint}
           />
         </div>

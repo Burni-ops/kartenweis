@@ -16,7 +16,15 @@ export type FactCategory =
   | "landmark"
   | "neighbor"
   | "region"
-  | "extreme";
+  | "extreme"
+  | "currency"
+  | "language"
+  | "population"
+  | "area"
+  | "desert"
+  | "mountain_range"
+  | "island"
+  | "peninsula";
 
 export interface FactAnswer {
   label: string;

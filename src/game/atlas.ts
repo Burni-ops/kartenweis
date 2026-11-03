@@ -39,6 +39,14 @@ const CATEGORY_ORDER: FactCategory[] = [
   "extreme",
   "neighbor",
   "country",
+  "currency",
+  "language",
+  "population",
+  "area",
+  "desert",
+  "mountain_range",
+  "island",
+  "peninsula",
 ];
 
 export function buildAtlasFeatures(

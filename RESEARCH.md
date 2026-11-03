@@ -32,7 +32,7 @@ Zusätzlich in `vite.config.ts`: `worker.format = "es"` und `optimizeDeps.exclud
 - CSS: 105 kB (17 kB gzip)
 - MapLibre-Worker: 519 kB
 - PWA-Precache: 206 Dateien, ca. 13,1 MB
-- Startdaten: `countries.json` ca. 150 kB, `world.geojson` 1,29 MB, `world-regions.geojson` 4,26 MB, generierte Fakten 0,53 MB, generierte Reveals 1,73 MB
+- Startdaten: `countries.json` ca. 150 kB, `world.geojson` 1,29 MB, `world-regions.geojson` 4,26 MB, generierte Fakten 0,81 MB, generierte Reveals 3,61 MB
 
 **Fazit:** Der Stack funktioniert. Die Weltkarte bleibt mit 10-%-Vereinfachung und selektiven Regionen handhabbar; die PWA precacht Karte, Regionen und Fakten für Offline-Nutzung.
 

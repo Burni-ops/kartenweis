@@ -8,9 +8,10 @@ Alle nennenswerten Änderungen an Kartenweis.
 
 - Interaktive Weltkarte mit 193 Ländern auf sechs Kontinenten
 - 4.038 Regionen für 187 Länder
-- 1.162 Fakten und 620 Karten-Reveals
+- 1.748 Fakten und 838 Karten-Reveals
 - Quiz-Modus: Multiple Choice, Drag-to-Map, Land antippen, Region antippen
 - Kategorien: Hauptstädte, Regionen, Städte, Berge, Flüsse, Seen, Meere, Meerengen, Nachbarn, Ländervergleiche
+- Neue Kategorien: Währungen, Amtssprachen, Bevölkerung, Fläche, Wüsten, Gebirge und Inseln
 - Länder-Atlas mit Filtern, Layern und Mastery
 - Sammlung, Erfolge, Tages-Challenge und Fortschrittsspeicherung
 - Onboarding, Sound, Einstellungen und Credits
@@ -21,3 +22,5 @@ Alle nennenswerten Änderungen an Kartenweis.
 - Desktop-Installation als PWA
 - Dockerfile, nginx-Konfiguration und GHCR-Image für Homeserver
 - Update-Prüfung gegen GitHub-Releases mit Hinweis-Banner und Einstellungs-Button
+- Endlos-Runs für Welt, Kontinente, Länder und Tages-Challenge
+- Windows-Desktop-Installer über Electron (`Kartenweis-<version>-Setup.exe`)

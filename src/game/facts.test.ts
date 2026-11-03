@@ -66,5 +66,17 @@ describe("real data + question engine", () => {
           question.countryCode === "EU",
       ),
     ).toBe(true);
+
+    for (const category of [
+      "currency",
+      "language",
+      "population",
+      "area",
+      "desert",
+      "mountain_range",
+      "island",
+    ]) {
+      expect(facts.some((fact) => fact.category === category)).toBe(true);
+    }
   });
 });

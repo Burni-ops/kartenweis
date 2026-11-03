@@ -14,6 +14,14 @@ const ICONS: Record<string, string> = {
   neighbor: "🤝",
   region: "🗺️",
   extreme: "⚡",
+  currency: "💱",
+  language: "🗣️",
+  population: "👥",
+  area: "📐",
+  desert: "🏜️",
+  mountain_range: "⛰️",
+  island: "🏝️",
+  peninsula: "🌅",
 };
 
 const PRECISION_LABEL: Record<string, string> = {
@@ -36,6 +44,14 @@ const CATEGORY_LABEL: Record<string, string> = {
   neighbor: "Nachbar",
   region: "Region",
   extreme: "Extrem",
+  currency: "Währung",
+  language: "Sprache",
+  population: "Bevölkerung",
+  area: "Fläche",
+  desert: "Wüste",
+  mountain_range: "Gebirge",
+  island: "Insel",
+  peninsula: "Halbinsel",
 };
 
 type Props = {

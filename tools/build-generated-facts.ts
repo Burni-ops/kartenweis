@@ -24,6 +24,17 @@ const marine = readJson(
 );
 const places = readJson("data/raw/ne_10m_populated_places.geojson");
 const curated = readJson("public/data/facts/europe.json") as any[];
+const extrasFile = path.join(ROOT, "data/reference/world-extras.json");
+const extras = fs.existsSync(extrasFile) ? readJson(
+  "data/reference/world-extras.json",
+) : null;
+const landformFile = path.join(
+  ROOT,
+  "data/raw/ne_10m_geography_regions_polys.geojson",
+);
+const landforms = fs.existsSync(landformFile)
+  ? readJson("data/raw/ne_10m_geography_regions_polys.geojson")
+  : { features: [] };
 
 const RIVER_DE: Record<string, string> = {
   Rhine: "Rhein",
@@ -290,6 +301,35 @@ const marineName = (feature: any) =>
   feature.properties?.name ??
   null;
 
+const landformName = (feature: any) =>
+  feature.properties?.NAME_DE ??
+  feature.properties?.NAME ??
+  feature.properties?.NAME_EN ??
+  null;
+
+const LANDFORM_CATEGORIES = {
+  desert: "Desert",
+  mountain_range: "Range/mtn",
+  island: "Island",
+  peninsula: "Peninsula",
+} as const;
+
+const landformFeatures = landforms.features.filter((feature: any) =>
+  Object.values(LANDFORM_CATEGORIES).includes(feature.properties?.FEATURECLA),
+);
+const landformPoolByCategory = new Map<string, string[]>();
+for (const [category, featurecla] of Object.entries(LANDFORM_CATEGORIES)) {
+  landformPoolByCategory.set(
+    category,
+    unique(
+      landformFeatures
+        .filter((feature: any) => feature.properties.FEATURECLA === featurecla)
+        .map(landformName)
+        .filter(Boolean) as string[],
+    ),
+  );
+}
+
 const countryFeatureByCode = new Map<string, any>();
 for (const feature of world.features) {
   const code = feature.properties.code;
@@ -531,7 +571,9 @@ const marineFeatures = marine.features.filter((feature: any) => {
   );
 });
 
-const unique = <T,>(values: T[]): T[] => [...new Set(values)];
+function unique<T>(values: T[]): T[] {
+  return [...new Set(values)];
+}
 
 const riverPoolByContinent = new Map<string, string[]>();
 const lakePoolByContinent = new Map<string, string[]>();
@@ -615,6 +657,11 @@ for (const place of places.features) {
   else placesByCountry.set(code, [place]);
 }
 
+const CITY_OVERRIDE: Record<string, string> = {
+  // Natural Earth's POP_MIN ranking puts Durban ahead of Johannesburg.
+  ZA: "Johannesburg",
+};
+
 const largestCityByCountry = new Map<string, any>();
 for (const [code, list] of placesByCountry) {
   const country = countryByCode.get(code);
@@ -633,7 +680,15 @@ for (const [code, list] of placesByCountry) {
     return lon >= box[0] && lon <= box[2] && lat >= box[1] && lat <= box[3];
   };
 
-  const best = sorted.find(insideFocus) ?? sorted[0];
+  const override = CITY_OVERRIDE[code];
+  const overridden = override
+    ? sorted.find(
+        (place) =>
+          place.properties.NAME_DE === override ||
+          place.properties.NAME === override,
+      )
+    : null;
+  const best = overridden ?? sorted.find(insideFocus) ?? sorted[0];
   if (best) largestCityByCountry.set(code, best);
 }
 
@@ -1102,6 +1157,169 @@ for (const country of countries) {
       }
     }
   }
+
+  // Currency -------------------------------------------------------------
+  const extra = extras?.countries?.[code];
+  const currencies: string[] = (extra?.currencies ?? []).filter(
+    (currency: string) =>
+      !["Korean mun", "SOV", "Münzen Osttimors", "bosnischer Dinar"].includes(
+        currency,
+      ),
+  );
+  if (currencies.length) {
+    const label = currencies.join(" und ");
+    const currencyPool = unique(
+      Object.values(extras.countries).flatMap(
+        (entry: any) => entry.currencies ?? [],
+      ),
+    ).filter(
+      (currency) =>
+        !currencies.includes(currency) &&
+        !["Korean mun", "SOV", "Münzen Osttimors", "bosnischer Dinar"].includes(
+          currency,
+        ),
+    );
+    const options = distractors(label, currencyPool, rng);
+    if (options.length === 4) {
+      addFact({
+        id: `gen-currency-${code}`,
+        country: code,
+        category: "currency",
+        interactions: ["mc"],
+        difficulty: 2,
+        question: `Welche Währung wird ${country.name_in} verwendet?`,
+        answer: { label, countryCode: code },
+        options,
+        fact: `Die Währung ${country.name_in} ist ${label}.`,
+        source: "https://query.wikidata.org/",
+      });
+    } else {
+      skipped.push(`${code} currency (distractors)`);
+    }
+  }
+
+  // Official language ----------------------------------------------------
+  const languages: string[] = extra?.languages ?? [];
+  if (languages.length >= 1 && languages.length <= 3) {
+    const label =
+      languages.length === 1
+        ? languages[0]
+        : languages.length === 2
+          ? `${languages[0]} und ${languages[1]}`
+          : `${languages[0]}, ${languages[1]} und ${languages[2]}`;
+    const languagePool = unique(
+      Object.values(extras.countries).flatMap(
+        (entry: any) => entry.languages ?? [],
+      ),
+    ).filter(
+      (language) =>
+        !languages.includes(language) &&
+        !/Gebärdensprache|Sign Language|britisches Englisch|amerikanisches Englisch|australisches Englisch|kanadisches Englisch/i.test(
+          language,
+        ),
+    );
+    const options = distractors(label, languagePool, rng);
+    if (options.length === 4) {
+      const plural = languages.length > 1;
+      addFact({
+        id: `gen-language-${code}`,
+        country: code,
+        category: "language",
+        interactions: ["mc"],
+        difficulty: 2,
+        question: plural
+          ? `Welche Sprachen sind ${country.name_in} Amtssprachen?`
+          : `Welche Sprache ist ${country.name_in} Amtssprache?`,
+        answer: { label, countryCode: code },
+        options,
+        fact: plural
+          ? `Die Amtssprachen ${country.name_in} sind ${label}.`
+          : `Die Amtssprache ${country.name_in} ist ${label}.`,
+        source: "https://query.wikidata.org/",
+      });
+    } else {
+      skipped.push(`${code} language (distractors)`);
+    }
+  }
+
+  // Landforms: desert, mountain range, island, peninsula -----------------
+  if (feature) {
+    const paddedFocus: [number, number, number, number] = [
+      country.focus_bbox[0] - 5,
+      country.focus_bbox[1] - 5,
+      country.focus_bbox[2] + 5,
+      country.focus_bbox[3] + 5,
+    ];
+    for (const [category, featurecla] of Object.entries(
+      LANDFORM_CATEGORIES,
+    )) {
+      const hits = landformFeatures.filter((candidate: any) => {
+        if (candidate.properties.FEATURECLA !== featurecla) return false;
+        if (!inBBox(bbox(candidate), paddedFocus)) return false;
+        return intersects(feature, candidate);
+      });
+      const uniqueHits = new Map<string, any>();
+      for (const hit of hits) {
+        const name = landformName(hit);
+        if (!name) continue;
+        const previous = uniqueHits.get(name);
+        if (!previous || area(hit) > area(previous)) {
+          uniqueHits.set(name, hit);
+        }
+      }
+      const chosen = [...uniqueHits.entries()].sort(
+        (a, b) => area(b[1]) - area(a[1]),
+      )[0];
+      if (!chosen) continue;
+
+      const [name, landform] = chosen;
+      const pool = (landformPoolByCategory.get(category) ?? []).filter(
+        (candidate) => !uniqueHits.has(candidate),
+      );
+      const options = distractors(name, pool, rng);
+      if (options.length !== 4) {
+        skipped.push(`${code} ${category} (distractors)`);
+        continue;
+      }
+
+      const prompts: Record<string, string> = {
+        desert: `Welche Wüste liegt ${country.name_in}?`,
+        mountain_range: `Welches Gebirge liegt ${country.name_in}?`,
+        island: `Welche Insel liegt ${country.name_in}?`,
+        peninsula: `Welche Halbinsel liegt ${country.name_in}?`,
+      };
+      const facts: Record<string, string> = {
+        desert: `Die Wüste ${name} liegt ${country.name_in}.`,
+        mountain_range: `Das Gebirge ${name} liegt ${country.name_in}.`,
+        island: `Die Insel ${name} liegt ${country.name_in}.`,
+        peninsula: `Die Halbinsel ${name} liegt ${country.name_in}.`,
+      };
+
+      const factId = `gen-${category}-${code}`;
+      addFact({
+        id: factId,
+        country: code,
+        category,
+        interactions: ["mc"],
+        difficulty: 3,
+        question: prompts[category],
+        answer: { label: name },
+        options,
+        fact: facts[category],
+        source: "https://www.naturalearthdata.com/",
+      });
+      generatedReveals[factId] = createPolygonReveal(
+        landform,
+        name,
+        [
+          country.focus_bbox[0] - 6,
+          country.focus_bbox[1] - 6,
+          country.focus_bbox[2] + 6,
+          country.focus_bbox[3] + 6,
+        ],
+      );
+    }
+  }
 }
 
 // --- Population and area comparisons -------------------------------------
@@ -1116,6 +1334,7 @@ for (const country of countries) {
 function comparisonFacts(
   key: "population" | "area_km2",
   idPrefix: string,
+  category: "population" | "area",
   prompt: (a: string, b: string) => string,
   factText: (winner: string, loser: string) => string,
 ) {
@@ -1152,7 +1371,7 @@ function comparisonFacts(
       addFact({
         id: `${idPrefix}-${country.code}`,
         country: country.code,
-        category: "country",
+        category,
         interactions: ["mc"],
         difficulty: 2,
         question: prompt(country.name.de, peer.name.de),
@@ -1169,6 +1388,7 @@ function comparisonFacts(
 comparisonFacts(
   "population",
   "gen-pop",
+  "population",
   (a, b) => `Welches Land hat mehr Einwohner: ${a} oder ${b}?`,
   (winner, loser) =>
     `${winner} hat mehr Einwohner als ${loser}.`,
@@ -1177,6 +1397,7 @@ comparisonFacts(
 comparisonFacts(
   "area_km2",
   "gen-area",
+  "area",
   (a, b) => `Welches Land ist flächenmäßig größer: ${a} oder ${b}?`,
   (winner, loser) => `${winner} ist flächenmäßig größer als ${loser}.`,
 );

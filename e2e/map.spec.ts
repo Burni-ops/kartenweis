@@ -1,4 +1,35 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, type Page } from "@playwright/test";
+
+async function waitForMapSettled(page: Page) {
+  await page.waitForFunction(
+    () =>
+      Boolean(
+        (window as unknown as { __map?: { loaded(): boolean } }).__map?.loaded(),
+      ),
+    undefined,
+    { timeout: 20_000 },
+  );
+  // Give the initial continent fit animation time to finish before projecting.
+  await page.waitForTimeout(1_500);
+  await page.evaluate(
+    () =>
+      new Promise<void>((resolve) => {
+        const map = (
+          window as unknown as {
+            __map?: {
+              isMoving(): boolean;
+              once(event: string, callback: () => void): void;
+            };
+          }
+        ).__map;
+        if (!map || !map.isMoving()) {
+          resolve();
+          return;
+        }
+        map.once("idle", () => resolve());
+      }),
+  );
+}
 
 test.beforeEach(async ({ page }) => {
   await page.addInitScript(() => {
@@ -26,9 +57,15 @@ test("loads the Europe map and selects Germany and Bavaria", async ({
     timeout: 20_000,
   });
 
-  await page.waitForFunction(
-    () => Boolean((window as unknown as { __map?: { loaded(): boolean } }).__map?.loaded()),
-  );
+  await waitForMapSettled(page);
+  await page.evaluate(() => {
+    (
+      window as unknown as {
+        __map: { jumpTo(options: { center: [number, number]; zoom: number }): void };
+      }
+    ).__map.jumpTo({ center: [10.45, 51.16], zoom: 5 });
+  });
+  await page.waitForTimeout(500);
 
   const point = await page.evaluate(() => {
     const map = (
@@ -61,7 +98,7 @@ test("starts a Europe run and gives feedback on the first question", async ({
   });
 
   await page.getByRole("button", { name: /Europa-Run starten/ }).click();
-  await expect(page.getByText(/Frage 1 \/ \d+/)).toBeVisible();
+  await expect(page.getByText(/Frage 1\b/)).toBeVisible();
 
   const question = await page.evaluate(() => {
     const app = (
@@ -104,7 +141,7 @@ test("reveals a sea or strait answer on the map", async ({ page }) => {
   });
 
   await page.getByRole("button", { name: /Europa-Run starten/ }).click();
-  await expect(page.getByText(/Frage 1 \/ \d+/)).toBeVisible();
+  await expect(page.getByText(/Frage 1\b/)).toBeVisible();
 
   const target = await page.evaluate(() => {
     const app = (
@@ -162,12 +199,15 @@ test("opens the atlas, selects a river and reveals it on the map", async ({
     timeout: 20_000,
   });
 
-  await page.waitForFunction(
-    () =>
-      Boolean(
-        (window as unknown as { __map?: { loaded(): boolean } }).__map?.loaded(),
-      ),
-  );
+  await waitForMapSettled(page);
+  await page.evaluate(() => {
+    (
+      window as unknown as {
+        __map: { jumpTo(options: { center: [number, number]; zoom: number }): void };
+      }
+    ).__map.jumpTo({ center: [10.45, 51.16], zoom: 5 });
+  });
+  await page.waitForTimeout(500);
   const point = await page.evaluate(() => {
     const map = (
       window as unknown as {
@@ -210,7 +250,7 @@ test("switches continents and starts a world run", async ({ page }) => {
   await page
     .getByRole("button", { name: "Welt-Run starten", exact: true })
     .click();
-  await expect(page.getByText(/Frage 1 \/ \d+/)).toBeVisible();
+  await expect(page.getByText(/Frage 1\b/)).toBeVisible();
 
   const run = await page.evaluate(() => {
     const app = (
@@ -288,7 +328,7 @@ test("opens the collection and the daily challenge", async ({ page }) => {
   await page
     .getByRole("button", { name: "📅 Tages-Challenge starten", exact: true })
     .click();
-  await expect(page.getByText(/Frage 1 \/ \d+/)).toBeVisible();
+  await expect(page.getByText(/Frage 1\b/)).toBeVisible();
 
   const daily = await page.evaluate(() => {
     const app = (
