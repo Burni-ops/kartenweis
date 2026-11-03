@@ -36,6 +36,10 @@ const volcanoesFile = path.join(ROOT, "data/reference/volcanoes.json");
 const volcanoesData = fs.existsSync(volcanoesFile)
   ? readJson("data/reference/volcanoes.json")
   : [];
+const landmarksFile = path.join(ROOT, "data/reference/landmarks.json");
+const landmarksData = fs.existsSync(landmarksFile)
+  ? readJson("data/reference/landmarks.json")
+  : [];
 const landformFile = path.join(
   ROOT,
   "data/raw/ne_10m_geography_regions_polys.geojson",
@@ -397,6 +401,15 @@ for (const volcano of volcanoesData) {
 const volcanoPool: string[] = unique(
   volcanoesData.map((volcano: any) => volcano.name).filter(Boolean),
 ) as string[];
+const landmarksByCountry = new Map<string, any[]>();
+for (const landmark of landmarksData) {
+  const bucket = landmarksByCountry.get(landmark.country);
+  if (bucket) bucket.push(landmark);
+  else landmarksByCountry.set(landmark.country, [landmark]);
+}
+const landmarkPool = unique(
+  landmarksData.map((landmark: any) => landmark.name).filter(Boolean),
+) as string[];
 
 const countryFeatureByCode = new Map<string, any>();
 for (const feature of world.features) {
@@ -638,6 +651,11 @@ const curatedNeighborCountries = new Set(
     .filter((fact) => fact.category === "neighbor")
     .map((fact) => fact.country),
 );
+const curatedLandmarkCountries = new Set(
+  curated
+    .filter((fact) => fact.category === "landmark")
+    .map((fact) => fact.country),
+);
 
 const riverFeatures = rivers.features.filter(
   (feature: any) =>
@@ -746,7 +764,7 @@ const CITY_OVERRIDE: Record<string, string> = {
   ZA: "Johannesburg",
 };
 
-const largestCityByCountry = new Map<string, any>();
+const largestCitiesByCountry = new Map<string, any[]>();
 for (const [code, list] of placesByCountry) {
   const country = countryByCode.get(code);
   const populationOf = (place: any) =>
@@ -773,7 +791,15 @@ for (const [code, list] of placesByCountry) {
       )
     : null;
   const best = overridden ?? sorted.find(insideFocus) ?? sorted[0];
-  if (best) largestCityByCountry.set(code, best);
+  if (best) {
+    const rest = sorted.filter(
+      (place) =>
+        place !== best &&
+        (place.properties.NAME_DE || place.properties.NAME) !==
+          (best.properties.NAME_DE || best.properties.NAME),
+    );
+    largestCitiesByCountry.set(code, [best, ...rest]);
+  }
 }
 
 const cityPoolByContinent = new Map<string, string[]>();
@@ -1066,55 +1092,58 @@ for (const country of countries) {
     }
   }
 
-  // Largest city ---------------------------------------------------------
+  // Largest cities -------------------------------------------------------
   if (!curatedCityCountries.has(code)) {
-    const city = largestCityByCountry.get(code);
-    if (city) {
+    const cities = (largestCitiesByCountry.get(code) ?? []).slice(0, 2);
+    const continentPool = cityPoolByContinent.get(continent) ?? [];
+    const localNames = new Set(
+      (placesByCountry.get(code) ?? []).map(
+        (place) => place.properties.NAME_DE || place.properties.NAME,
+      ),
+    );
+    for (const [index, city] of cities.entries()) {
       const name = city.properties.NAME_DE || city.properties.NAME;
       const point = [
         Number(city.properties.LONGITUDE.toFixed(4)),
         Number(city.properties.LATITUDE.toFixed(4)),
       ];
-      const continentPool = cityPoolByContinent.get(continent) ?? [];
-      const localNames = new Set(
-        (placesByCountry.get(code) ?? []).map(
-          (place) => place.properties.NAME_DE || place.properties.NAME,
-        ),
-      );
       const options = distractors(
         name,
         continentPool.filter((cityName) => !localNames.has(cityName)),
         rng,
       );
-      if (options.length === 4) {
-        const factId = `gen-city-${code}`;
-        const population =
-          city.properties.POP_MIN ?? city.properties.POP_MAX;
-        addFact({
-          id: factId,
-          country: code,
-          category: "city",
-          interactions: ["mc"],
-          difficulty: 2,
-          question: `Welche Stadt ${country.name_in} ist die größte?`,
-          answer: { label: name, point },
-          options,
-          fact:
-            population && population > 0
-              ? `${name} ist mit rund ${Math.round(population).toLocaleString("de-DE")} Einwohnern die größte Stadt ${country.name_in}.`
-              : `${name} ist die größte Stadt ${country.name_in}.`,
-          source: "https://www.naturalearthdata.com/",
-        });
-        generatedReveals[factId] = {
-          kind: "point",
-          point,
-          bbox: [point[0] - 0.25, point[1] - 0.2, point[0] + 0.25, point[1] + 0.2],
-          labelPoint: point,
-          label: name,
-        };
-      } else {
-        skipped.push(`${code} city (distractors)`);
+      if (options.length !== 4) {
+        skipped.push(`${code} city${index + 1} (distractors)`);
+        continue;
       }
+      const factId =
+        index === 0 ? `gen-city-${code}` : `gen-city${index + 1}-${code}`;
+      const population = city.properties.POP_MIN ?? city.properties.POP_MAX;
+      addFact({
+        id: factId,
+        country: code,
+        category: "city",
+        interactions: ["mc"],
+        difficulty: index === 0 ? 2 : 3,
+        question:
+          index === 0
+            ? `Welche Stadt ${country.name_in} ist die größte?`
+            : `Welche Stadt ${country.name_in} ist die zweitgrößte?`,
+        answer: { label: name, point },
+        options,
+        fact:
+          population && population > 0
+            ? `${name} ist mit rund ${Math.round(population).toLocaleString("de-DE")} Einwohnern die ${index === 0 ? "größte" : "zweitgrößte"} Stadt ${country.name_in}.`
+            : `${name} ist die ${index === 0 ? "größte" : "zweitgrößte"} Stadt ${country.name_in}.`,
+        source: "https://www.naturalearthdata.com/",
+      });
+      generatedReveals[factId] = {
+        kind: "point",
+        point,
+        bbox: [point[0] - 0.25, point[1] - 0.2, point[0] + 0.25, point[1] + 0.2],
+        labelPoint: point,
+        label: name,
+      };
     }
   }
 
@@ -1124,8 +1153,6 @@ for (const country of countries) {
       countryByCode.has(neighbor),
     );
     if (neighbors.length > 0) {
-      const chosen = neighbors[0];
-      const neighbor = countryByCode.get(chosen);
       const neighborSet = new Set(neighbors);
       const sameContinent = countries
         .filter(
@@ -1135,18 +1162,29 @@ for (const country of countries) {
             !neighborSet.has(other.code),
         )
         .map((other) => other.name.de);
-      const options = distractors(
-        neighbor.name.de,
-        sameContinent.length >= 3
-          ? sameContinent
-          : countries
-              .filter((other) => other.code !== code && !neighborSet.has(other.code))
-              .map((other) => other.name.de),
-        rng,
-      );
-      if (options.length === 4) {
+      const fallback = countries
+        .filter(
+          (other) => other.code !== code && !neighborSet.has(other.code),
+        )
+        .map((other) => other.name.de);
+
+      for (const [index, chosen] of neighbors.slice(0, 2).entries()) {
+        const neighbor = countryByCode.get(chosen);
+        if (!neighbor) continue;
+        const options = distractors(
+          neighbor.name.de,
+          sameContinent.length >= 3 ? sameContinent : fallback,
+          rng,
+        );
+        if (options.length !== 4) {
+          skipped.push(`${code} neighbor${index + 1} (distractors)`);
+          continue;
+        }
         addFact({
-          id: `gen-neighbor-${code}`,
+          id:
+            index === 0
+              ? `gen-neighbor-${code}`
+              : `gen-neighbor${index + 1}-${code}`,
           country: code,
           category: "neighbor",
           interactions: ["mc"],
@@ -1157,8 +1195,6 @@ for (const country of countries) {
           fact: `${country.name.de} grenzt an ${neighbor.name.de}.`,
           source: "https://www.naturalearthdata.com/",
         });
-      } else {
-        skipped.push(`${code} neighbor (distractors)`);
       }
     }
   }
@@ -1336,18 +1372,21 @@ for (const country of countries) {
         animal.continent !== continent &&
         !nativeAnimals.includes(animal.name),
     );
-    const picked =
-      nonNative.length > 0
-        ? nonNative[Math.floor(rng() * nonNative.length)]
-        : null;
-    if (picked) {
-      const natives = nativeAnimals.slice(0, 3);
+    const picks = shuffle(nonNative, rng).slice(0, 2);
+    for (const [index, picked] of picks.entries()) {
+      const natives = [
+        ...nativeAnimals.slice(index),
+        ...nativeAnimals.slice(0, index),
+      ].slice(0, 3);
       addFact({
-        id: `gen-animal-${code}`,
+        id:
+          index === 0
+            ? `gen-animal-${code}`
+            : `gen-animal${index + 1}-${code}`,
         country: code,
         category: "animal",
         interactions: ["mc"],
-        difficulty: 2,
+        difficulty: index === 0 ? 2 : 3,
         question: `Welches Tier lebt nicht ${country.name_in}?`,
         answer: { label: picked.name, countryCode: code },
         options: shuffle([...natives, picked.name], rng),
@@ -1362,11 +1401,15 @@ for (const country of countries) {
     volcanoesByCountry.get(code) ?? []
   ).filter((volcano) => isInsideFocus(country, volcano.point));
   if (countryVolcanoes.length > 0) {
-    const volcano = countryVolcanoes[0];
-    const name = volcano.name;
-    const options = distractors(name, volcanoPool, rng);
-    if (options.length === 4) {
-      const factId = `gen-volcano-${code}`;
+    for (const [index, volcano] of countryVolcanoes.slice(0, 2).entries()) {
+      const name = volcano.name;
+      const options = distractors(name, volcanoPool, rng);
+      if (options.length !== 4) {
+        skipped.push(`${code} volcano${index + 1} (distractors)`);
+        continue;
+      }
+      const factId =
+        index === 0 ? `gen-volcano-${code}` : `gen-volcano${index + 1}-${code}`;
       const point = volcano.point as [number, number];
       addFact({
         id: factId,
@@ -1388,7 +1431,10 @@ for (const country of countries) {
         label: name,
       };
 
-      const locateId = `gen-volcano-locate-${code}`;
+      const locateId =
+        index === 0
+          ? `gen-volcano-locate-${code}`
+          : `gen-volcano-locate${index + 1}-${code}`;
       addFact({
         id: locateId,
         country: code,
@@ -1400,6 +1446,74 @@ for (const country of countries) {
         options: [],
         fact: `${name} ist ein Vulkan ${country.name_in}.`,
         source: "Kuratiert nach Smithsonian Global Volcanism Program",
+      });
+      generatedReveals[locateId] = {
+        kind: "point",
+        point,
+        bbox: [point[0] - 0.3, point[1] - 0.24, point[0] + 0.3, point[1] + 0.24],
+        labelPoint: point,
+        label: name,
+      };
+    }
+  }
+
+  // Landmarks ------------------------------------------------------------
+  if (!curatedLandmarkCountries.has(code)) {
+    const landmarks = (landmarksByCountry.get(code) ?? []).slice(0, 2);
+    const localLandmarkNames = new Set(
+      (landmarksByCountry.get(code) ?? []).map((landmark: any) => landmark.name),
+    );
+    for (const [index, landmark] of landmarks.entries()) {
+      const name = landmark.name;
+      const point = landmark.point as [number, number];
+      const options = distractors(
+        name,
+        landmarkPool.filter((candidate) => !localLandmarkNames.has(candidate)),
+        rng,
+      );
+      if (options.length !== 4) {
+        skipped.push(`${code} landmark${index + 1} (distractors)`);
+        continue;
+      }
+      const factId =
+        index === 0
+          ? `gen-landmark-${code}`
+          : `gen-landmark${index + 1}-${code}`;
+      addFact({
+        id: factId,
+        country: code,
+        category: "landmark",
+        interactions: ["mc"],
+        difficulty: 2,
+        question: `Welches Wahrzeichen befindet sich ${country.name_in}?`,
+        answer: { label: name, point },
+        options,
+        fact: `${name} ist ein Wahrzeichen ${country.name_in}.`,
+        source: "Kuratiert",
+      });
+      generatedReveals[factId] = {
+        kind: "point",
+        point,
+        bbox: [point[0] - 0.3, point[1] - 0.24, point[0] + 0.3, point[1] + 0.24],
+        labelPoint: point,
+        label: name,
+      };
+
+      const locateId =
+        index === 0
+          ? `gen-landmark-locate-${code}`
+          : `gen-landmark-locate${index + 1}-${code}`;
+      addFact({
+        id: locateId,
+        country: code,
+        category: "landmark",
+        interactions: ["drag"],
+        difficulty: 2,
+        question: `Wo befindet sich ${name}?`,
+        answer: { label: name, point },
+        options: [],
+        fact: `${name} ist ein Wahrzeichen ${country.name_in}.`,
+        source: "Kuratiert",
       });
       generatedReveals[locateId] = {
         kind: "point",
@@ -1438,7 +1552,7 @@ for (const country of countries) {
       }
       const chosenList = [...uniqueHits.entries()]
         .sort((a, b) => area(b[1]) - area(a[1]))
-        .slice(0, category === "island" ? 2 : 1);
+        .slice(0, 2);
       if (chosenList.length === 0) continue;
 
       const pool = (landformPoolByCategory.get(category) ?? []).filter(

@@ -628,7 +628,7 @@ kartenweis/
 | **P1** | Europa: alle Länder antippbar, 10 Länder mit tiefen Fakten, Regionen (DACH + FR/IT/ES/PL/NL), Meere & Meerengen | Vertical Slice |
 | **P2** | Europa komplett: alle Länder mit Kernfakten (A–D, F, H, M für DACH) | Spielbare Vollversion Europa |
 | **P3** | Europa vertiefen: Seen, Extreme, Infrastruktur, Regionen für alle Länder | Content-Politur |
-| **P4** | Asien, Afrika, Nord-/Südamerika, Ozeanien: 193 Länder, 4.038 Regionen, 2.109 Fakten | Weltumspannend (erreicht) |
+| **P4** | Asien, Afrika, Nord-/Südamerika, Ozeanien: 193 Länder, 4.038 Regionen, 2.778 Fakten | Weltumspannend (erreicht) |
 | **P5** | Englisch, Tages-Leaderboard, weitere Fragetypen | Ausbau |
 
 **Länderumfang:** Ausgangspunkt 195 UN-Staaten; Sonderfälle (Kosovo, Taiwan, Westsahara, Gebiete) werden in der Recherchephase neutral und transparent festgelegt. Transkontinentale Länder (Russland, Türkei, Kasachstan, Georgien, Armenien, Aserbaidschan, Zypern) bekommen eine klare Kontinent-Zuordnung mit Hinweis.
@@ -673,8 +673,8 @@ kartenweis/
 ### M4 — Welt (alle Kontinente)
 
 - Globale Datenpipeline: 193 Länder, Weltkarte, sechs Kontinente, 4.038 Admin-1-Regionen.
-- 2.051 generierte Fakten zusätzlich zu 58 kuratierten: Städte, Flüsse, Seen, Meere, Meerengen, Nachbarn, Währungen, Amtssprachen, Bevölkerungs-/Flächenvergleiche, Wüsten, Gebirge und Inseln.
-- 1.074 Karten-Reveals; Meer-/Meerengen-Polygone werden auf den Länderfokus zugeschnitten.
+- 2.720 generierte Fakten zusätzlich zu 58 kuratierten: Städte, Flüsse, Seen, Meere, Meerengen, Nachbarn, Währungen, Amtssprachen, Bevölkerungs-/Flächenvergleiche, Wüsten, Gebirge, Inseln, Wahrzeichen, Tierwelt und Vulkane.
+- 1.490 Karten-Reveals; Meer-/Meerengen-Polygone werden auf den Länderfokus zugeschnitten.
 - Kontinent-Auswahl, Welt-Run, kontinentale Runs, Länder-Runs und globale Tages-Challenge.
 - **Abnahme:** Alle 193 Länder haben Hauptstadt, Regionen (sofern vorhanden), Atlas-Fakten und mindestens einen Run; `check`, `e2e` und `build` sind grün.
 
