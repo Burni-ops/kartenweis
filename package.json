@@ -18,7 +18,7 @@
     "data:flags": "node tools/download-flags.mjs",
     "data:reveals": "node tools/build-reveals.mjs",
     "android:sync": "npm run build && npx cap sync android",
-    "android:build": "npm run android:sync && cd android && gradlew assembleDebug",
+    "android:build": "npm run android:sync && node tools/build-android.mjs",
     "docker:build": "docker build -t kartenweis:local .",
     "docker:up": "docker compose up -d --build"
   },
