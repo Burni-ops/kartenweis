@@ -580,7 +580,7 @@ export default function App() {
                 </div>
                 <div className="min-w-0">
                   <div className="truncate text-sm font-extrabold leading-tight tracking-tight">
-                    Spasmitflaggen
+                    Kartenweis
                   </div>
                   <div className="text-[11px] font-medium text-ink-muted">
                     {CONTINENT_NAMES[activeContinent]} ·{" "}
@@ -590,7 +590,7 @@ export default function App() {
                           (country) =>
                             country.continent === activeContinent,
                         ).length}{" "}
-                    Länder · M4
+                    Länder · v0.1
                   </div>
                 </div>
                 <div className="ml-auto flex shrink-0 items-center gap-1.5">

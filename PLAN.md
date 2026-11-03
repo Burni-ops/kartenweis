@@ -1,7 +1,7 @@
-# Spasmitflaggen — Detailplan (v0.1)
+# Kartenweis — Detailplan (v0.1)
 
-> **Arbeitstitel:** „Spasmitflaggen“ (der Ordnername passt nicht mehr, weil es nicht um Flaggen geht).
-> **Status:** Plan zur Abstimmung — es wurde noch kein Spielcode geschrieben.
+> **Arbeitstitel:** „Kartenweis“ — Die Welt entdecken, Karte für Karte.
+> **Status:** Umgesetzt bis M5 (Welt + Android-Build).
 > **Ziel:** Ein Geografie-Spiel für den Browser (Desktop + Smartphone), später als native Android-App.
 
 ---
@@ -457,7 +457,7 @@ Boot
 ### 9.2 Architektur & Projektstruktur
 
 ```
-spasmitflaggen/
+kartenweis/
 ├─ package.json
 ├─ vite.config.ts
 ├─ tsconfig.json

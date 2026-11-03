@@ -1,4 +1,4 @@
-package de.spasmitflaggen.app;
+package de.kartenweis.app;
 
 import com.getcapacitor.BridgeActivity;
 

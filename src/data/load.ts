@@ -4,23 +4,25 @@ import type {
   RegionFeatureCollection,
 } from "./types";
 import type { Fact, RevealMap } from "../game/types";
+import { assetUrl } from "../utils/assets";
 
 const cache = new Map<string, Promise<unknown>>();
 
 export function loadJson<T>(url: string): Promise<T> {
-  const cached = cache.get(url);
+  const resolved = assetUrl(url);
+  const cached = cache.get(resolved);
   if (cached) return cached as Promise<T>;
 
-  const promise = fetch(url).then(async (response) => {
+  const promise = fetch(resolved).then(async (response) => {
     if (!response.ok) {
       throw new Error(
-        `Daten konnten nicht geladen werden: ${url} (${response.status})`,
+        `Daten konnten nicht geladen werden: ${resolved} (${response.status})`,
       );
     }
     return (await response.json()) as T;
   });
 
-  cache.set(url, promise);
+  cache.set(resolved, promise);
   return promise;
 }
 

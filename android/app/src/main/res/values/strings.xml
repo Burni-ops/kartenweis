@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Spasmitflaggen</string>
-    <string name="title_activity_main">Spasmitflaggen</string>
-    <string name="package_name">de.spasmitflaggen.app</string>
-    <string name="custom_url_scheme">de.spasmitflaggen.app</string>
+    <string name="app_name">Kartenweis</string>
+    <string name="title_activity_main">Kartenweis</string>
+    <string name="package_name">de.kartenweis.app</string>
+    <string name="custom_url_scheme">de.kartenweis.app</string>
 </resources>

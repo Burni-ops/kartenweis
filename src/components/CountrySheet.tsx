@@ -1,5 +1,6 @@
 import type { Country, Region } from "../data/types";
 import { CONTINENT_NAMES } from "../data/continents";
+import { assetUrl } from "../utils/assets";
 import type { MasterySummary } from "../game/atlas";
 
 const numberFormat = new Intl.NumberFormat("de-DE");
@@ -90,7 +91,7 @@ export default function CountrySheet({
           📅 {dailyDone ? "Tages-Challenge erledigt" : "Tages-Challenge starten"}
         </button>
         <p className="mt-3 text-center text-[10px] text-ink-muted">
-          Karten: Natural Earth (Public Domain) · Prototyp M4
+          Karten: Natural Earth (Public Domain) · v0.1
         </p>
       </div>
     );
@@ -109,7 +110,7 @@ export default function CountrySheet({
       <div className="flex items-start gap-3">
         <div className="grid h-12 w-12 shrink-0 place-items-center overflow-hidden rounded-2xl bg-white shadow-sm">
           <img
-            src={country.flag_url}
+            src={assetUrl(country.flag_url)}
             alt={`Flagge von ${country.name.de}`}
             className="h-9 w-9 rounded-lg object-cover"
           />
@@ -247,7 +248,7 @@ export default function CountrySheet({
       </div>
 
       <p className="mt-2 text-center text-[10px] text-ink-muted">
-        Prototyp M4 · Karten: Natural Earth (Public Domain) ·{" "}
+        Kartenweis v0.1 · Karten: Natural Earth (Public Domain) ·{" "}
         {country.population_year
           ? `Einwohner ${country.population_year}`
           : "Einwohner ca."}

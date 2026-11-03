@@ -26,7 +26,7 @@ const PRECISION_LABEL: Record<string, string> = {
 const CATEGORY_LABEL: Record<string, string> = {
   capital: "Hauptstadt",
   city: "Stadt",
-  country: "Land finden",
+  country: "Länderwissen",
   river: "Fluss",
   mountain: "Berg",
   lake: "See",

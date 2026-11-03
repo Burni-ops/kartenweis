@@ -3,7 +3,10 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { VitePWA } from "vite-plugin-pwa";
 
+const base = process.env.VITE_BASE || "/";
+
 export default defineConfig({
+  base,
   plugins: [
     react(),
     tailwindcss(),
@@ -11,18 +14,19 @@ export default defineConfig({
       registerType: "autoUpdate",
       includeAssets: ["favicon.svg"],
       manifest: {
-        name: "Spasmitflaggen — Geografie entdecken",
-        short_name: "Spasmitflaggen",
+        name: "Kartenweis — Die Welt entdecken",
+        short_name: "Kartenweis",
         description:
           "Entdecke Länder über ihre Orte, Landschaften und Rekorde.",
         theme_color: "#0f8b8d",
         background_color: "#f6f1e7",
         display: "standalone",
-        start_url: "/",
+        start_url: base,
+        scope: base,
         lang: "de",
         icons: [
           {
-            src: "/favicon.svg",
+            src: "favicon.svg",
             sizes: "any",
             type: "image/svg+xml",
             purpose: "any",
@@ -47,5 +51,17 @@ export default defineConfig({
   server: {
     host: true,
     port: 5173,
+    watch: {
+      ignored: [
+        "**/tools/jdk*/**",
+        "**/tools/android-sdk/**",
+        "**/android/**/build/**",
+        "**/android/.gradle/**",
+        "**/android/app/src/main/assets/**",
+        "**/dist/**",
+        "**/test-results/**",
+        "**/playwright-report/**",
+      ],
+    },
   },
 });

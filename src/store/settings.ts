@@ -33,7 +33,7 @@ export const useSettings = create<SettingsState>()(
       resetSettings: () => set({ ...DEFAULTS }),
     }),
     {
-      name: "spasmitflaggen.settings.v1",
+      name: "kartenweis.settings.v1",
       version: 1,
     },
   ),

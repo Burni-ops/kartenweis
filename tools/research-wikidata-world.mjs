@@ -51,7 +51,7 @@ console.log(`Querying Wikidata for ${countries.length} countries …`);
 
 const response = await fetch(url, {
   headers: {
-    "User-Agent": "Spasmitflaggen/0.2 (research; local prototype)",
+    "User-Agent": "Kartenweis/0.2 (research; local prototype)",
     Accept: "application/sparql-results+json",
   },
   signal: AbortSignal.timeout(120_000),

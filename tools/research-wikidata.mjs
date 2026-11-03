@@ -25,7 +25,7 @@ SELECT ?country ?countryLabel ?capitalLabel ?area ?population ?highestLabel ?ele
 const url = `https://query.wikidata.org/sparql?format=json&query=${encodeURIComponent(query)}`;
 const response = await fetch(url, {
   headers: {
-    "User-Agent": "Spasmitflaggen/0.1 (research; local prototype)",
+    "User-Agent": "Kartenweis/0.1 (research; local prototype)",
     Accept: "application/sparql-results+json",
   },
 });

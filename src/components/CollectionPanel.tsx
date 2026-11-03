@@ -7,6 +7,7 @@ import {
 } from "../game/atlas";
 import { ACHIEVEMENTS } from "../game/achievements";
 import { useProgress } from "../store/progress";
+import { assetUrl } from "../utils/assets";
 
 type Props = {
   countries: Country[];
@@ -160,7 +161,7 @@ export default function CollectionPanel({
               className="flex items-center gap-2.5 rounded-xl border border-line/60 bg-white/60 px-2.5 py-2"
             >
               <img
-                src={country.flag_url}
+                src={assetUrl(country.flag_url)}
                 alt=""
                 className="h-6 w-6 rounded object-cover"
               />

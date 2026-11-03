@@ -190,7 +190,7 @@ export const useProgress = create<ProgressState>()(
         }),
     }),
     {
-      name: "spasmitflaggen.progress.v1",
+      name: "kartenweis.progress.v1",
       version: 2,
       migrate: (persisted: unknown) => {
         const state = (persisted ?? {}) as Partial<ProgressState>;

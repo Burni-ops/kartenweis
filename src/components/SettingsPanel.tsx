@@ -65,7 +65,7 @@ export default function SettingsPanel({ onClose }: Props) {
           </div>
           <div className="min-w-0 flex-1">
             <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-teal">
-              Spasmitflaggen
+              Kartenweis
             </div>
             <h2 className="text-xl font-extrabold tracking-tight">
               Einstellungen
@@ -168,7 +168,7 @@ export default function SettingsPanel({ onClose }: Props) {
             </li>
           </ul>
           <p className="mt-2 text-[10px] text-ink-muted">
-            Prototyp M4 · Angaben ohne Gewähr · Keine Accounts, keine
+            Kartenweis v0.1 · Angaben ohne Gewähr · Keine Accounts, keine
             Werbung, kein Tracking.
           </p>
         </div>

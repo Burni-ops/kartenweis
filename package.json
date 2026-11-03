@@ -1,9 +1,9 @@
 {
-  "name": "spasmitflaggen",
+  "name": "kartenweis",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Geografie-Spiel: Länder über ihre Orte, Landschaften und Rekorde entdecken.",
+  "description": "Kartenweis — Die Welt entdecken, Karte für Karte. Geografie-Lernspiel für Browser und Android.",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
@@ -21,11 +21,16 @@
     "android:build": "npm run android:sync && cd android && gradlew assembleDebug"
   },
   "keywords": [
-    "geography",
+    "geografie",
     "quiz",
-    "game",
-    "maplibre"
+    "lernspiel",
+    "karte",
+    "maplibre",
+    "kartenweis"
   ],
+  "engines": {
+    "node": ">=22"
+  },
   "author": "",
   "license": "MIT",
   "dependencies": {

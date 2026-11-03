@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import type { Country } from "../data/types";
 import type { AtlasFeature, MasterySummary } from "../game/atlas";
 import type { FactProgress } from "../store/progress";
+import { assetUrl } from "../utils/assets";
 
 const CATEGORY_LABEL: Record<string, string> = {
   capital: "Hauptstädte",
@@ -116,7 +117,7 @@ export default function AtlasPanel({
         <div className="flex items-start gap-3">
           <div className="grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-2xl bg-white shadow-sm">
             <img
-              src={country.flag_url}
+              src={assetUrl(country.flag_url)}
               alt={`Flagge von ${country.name.de}`}
               className="h-8 w-8 rounded-md object-cover"
             />

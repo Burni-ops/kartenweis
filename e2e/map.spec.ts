@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test.beforeEach(async ({ page }) => {
   await page.addInitScript(() => {
     localStorage.setItem(
-      "spasmitflaggen.settings.v1",
+      "kartenweis.settings.v1",
       JSON.stringify({
         state: {
           sound: false,
