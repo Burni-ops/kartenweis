@@ -202,6 +202,17 @@ Die Datenpipeline liegt in `tools/`. Rohdaten werden nicht eingecheckt; die erze
 
 Kartenweis hat keine Konten, keine Werbung und kein Tracking. Fortschritt und Einstellungen werden ausschließlich lokal im Browser bzw. auf dem Gerät gespeichert. Weitere Informationen in [`PRIVACY.md`](PRIVACY.md).
 
+## Rechtliches & KI
+
+- Der Quellcode steht unter MIT ([`LICENSE`](LICENSE)).
+- Datenlizenzen, Attributionen und Drittanbieter-Software sind in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) dokumentiert.
+- World-Bank-Daten (CC BY 4.0) werden aggregiert und mit Quellenangabe verwendet.
+- Teile der Code- und Datenaufbereitung wurden mit KI-Unterstützung erstellt und anschließend geprüft. Die App liefert keine KI-generierten Bilder, Stimmen oder Videos.
+- Bei Hosting über GitHub Pages oder einen eigenen Server können technische Zugriffslogs (z. B. IP-Adresse) beim Hoster anfallen. Das ist in [`PRIVACY.md`](PRIVACY.md) beschrieben.
+- Vor einer kommerziellen Veröffentlichung sollten Marken-/Domain-Verfügbarkeit und die Nutzung von Länderflaggen geprüft werden.
+
+Dies ist keine Rechtsberatung.
+
 ## Projektstruktur
 
 ```text

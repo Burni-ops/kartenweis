@@ -23,5 +23,6 @@ Alle nennenswerten Änderungen an Kartenweis.
 - Desktop-Installation als PWA
 - Dockerfile, nginx-Konfiguration und GHCR-Image für Homeserver
 - Update-Prüfung gegen GitHub-Releases mit Hinweis-Banner und Einstellungs-Button
+- Datenschutz-, Lizenz- und KI-Hinweise für eine öffentliche Veröffentlichung
 - Endlos-Runs für Welt, Kontinente, Länder und Tages-Challenge
 - Windows-Desktop-Installer über Electron (`Kartenweis-<version>-Setup.exe`)

@@ -221,11 +221,21 @@ export default function SettingsPanel({ onClose }: Props) {
             </li>
             <li>
               <strong className="text-ink">World Bank Open Data</strong> —
-              Einwohner und Fläche (CC BY 4.0).
+              Einwohner und Fläche (CC BY 4.0), aggregiert und für das Spiel
+              aufbereitet.
             </li>
             <li>
               <strong className="text-ink">Flagpedia / flagcdn.com</strong> —
-              Flaggen (freie Nutzung, Backlink).
+              Flaggen (freie Nutzung, Backlink zu{" "}
+              <a
+                href="https://flagpedia.net"
+                target="_blank"
+                rel="noreferrer"
+                className="font-semibold text-teal underline"
+              >
+                flagpedia.net
+              </a>
+              ).
             </li>
             <li>
               <strong className="text-ink">MapLibre GL JS</strong> —
@@ -236,9 +246,14 @@ export default function SettingsPanel({ onClose }: Props) {
               — Open Source (MIT).
             </li>
           </ul>
-          <p className="mt-2 text-[10px] text-ink-muted">
-            Kartenweis v{APP_VERSION} · Angaben ohne Gewähr · Keine Accounts, keine
-            Werbung, kein Tracking.
+          <p className="mt-2 text-[10px] leading-relaxed text-ink-muted">
+            Teile der Code- und Datenaufbereitung wurden mit
+            KI-Unterstützung erstellt und anschließend geprüft. Inhalte sind
+            eigenständig formuliert; Angaben ohne Gewähr.
+          </p>
+          <p className="mt-1 text-[10px] text-ink-muted">
+            Kartenweis v{APP_VERSION} · Keine Accounts, keine Werbung, kein
+            Tracking.
           </p>
         </div>
 
