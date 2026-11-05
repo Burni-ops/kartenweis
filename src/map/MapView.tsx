@@ -69,6 +69,7 @@ const DRAG_ICONS: Record<string, string> = {
   peninsula: "🌅",
   animal: "🐾",
   volcano: "🌋",
+  waterfall: "💦",
 };
 
 setWorkerUrl(maplibreWorkerUrl);

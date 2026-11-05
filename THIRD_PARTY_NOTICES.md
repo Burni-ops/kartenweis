@@ -26,6 +26,47 @@ Die Weltbank-Daten wurden für Kartenweis aggregiert, gerundet und mit Natural-E
 - [mapshaper](https://github.com/mbloch/mapshaper) — MPL-2.0
 - [Turf.js](https://turfjs.org/) — MIT
 
+### Direkte npm-Abhängigkeiten
+
+| Paket | Version | Lizenz |
+|---|---|---|
+| @capacitor/android | 7.6.10 | MIT |
+| @capacitor/app | 7.1.2 | MIT |
+| @capacitor/browser | 7.0.5 | MIT |
+| @capacitor/cli | 7.6.10 | MIT |
+| @capacitor/core | 7.6.10 | MIT |
+| @capacitor/status-bar | 7.0.6 | MIT |
+| @turf/area | 7.4.0 | MIT |
+| @turf/bbox | 7.4.0 | MIT |
+| @turf/boolean-intersects | 7.4.0 | MIT |
+| @turf/helpers | 7.4.0 | MIT |
+| @turf/intersect | 7.4.0 | MIT |
+| @turf/length | 7.4.0 | MIT |
+| framer-motion | 14.9.0 | MIT |
+| howler | 2.2.4 | MIT |
+| i18next | 26.7.1 | MIT |
+| idb-keyval | 6.3.0 | Apache-2.0 |
+| maplibre-gl | 6.16.0 | BSD-3-Clause |
+| react | 19.3.1 | MIT |
+| react-dom | 19.3.1 | MIT |
+| react-i18next | 17.1.11 | MIT |
+| shapefile | 0.6.6 | BSD-3-Clause |
+| zustand | 5.0.16 | MIT |
+| @playwright/test | 1.64.1 | Apache-2.0 |
+| @tailwindcss/vite | 4.3.3 | MIT |
+| @testing-library/jest-dom | 7.0.1 | MIT |
+| @testing-library/react | 16.3.3 | MIT |
+| electron | 45.2.1 | MIT |
+| electron-builder | 26.18.0 | MIT |
+| mapshaper | 0.7.101 | MPL-2.0 |
+| tailwindcss | 4.3.3 | MIT |
+| typescript | 7.0.2 | Apache-2.0 |
+| vite | 8.3.5 | MIT |
+| vite-plugin-pwa | 2.0.0 | MIT |
+| vitest | 5.0.5 | MIT |
+
+Transitive Abhängigkeiten unterliegen den Lizenzen der jeweiligen Pakete. Die vollständigen Lizenztexte liegen in den Paketen unter `node_modules/<paket>/LICENSE` bzw. sind über die Paket-Repositories abrufbar. Die wichtigsten Lizenztexte sind zusätzlich unter [`THIRD_PARTY_LICENSES/`](THIRD_PARTY_LICENSES/) abgelegt.
+
 Die vollständigen Lizenztexte der eingesetzten npm-Pakete liegen in den jeweiligen Paketen unter `node_modules/<paket>/LICENSE` bzw. sind über die Paket-Repositories abrufbar.
 
 ## Marken und Namen

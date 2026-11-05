@@ -24,6 +24,7 @@ const ICONS: Record<string, string> = {
   peninsula: "🌅",
   animal: "🐾",
   volcano: "🌋",
+  waterfall: "💦",
 };
 
 const PRECISION_LABEL: Record<string, string> = {
@@ -56,6 +57,7 @@ const CATEGORY_LABEL: Record<string, string> = {
   peninsula: "Halbinsel",
   animal: "Tierwelt",
   volcano: "Vulkan",
+  waterfall: "Wasserfall",
 };
 
 type Props = {

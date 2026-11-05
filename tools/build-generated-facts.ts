@@ -40,6 +40,10 @@ const landmarksFile = path.join(ROOT, "data/reference/landmarks.json");
 const landmarksData = fs.existsSync(landmarksFile)
   ? readJson("data/reference/landmarks.json")
   : [];
+const waterfallsFile = path.join(ROOT, "data/reference/waterfalls.json");
+const waterfallsData = fs.existsSync(waterfallsFile)
+  ? readJson("data/reference/waterfalls.json")
+  : [];
 const landformFile = path.join(
   ROOT,
   "data/raw/ne_10m_geography_regions_polys.geojson",
@@ -409,6 +413,15 @@ for (const landmark of landmarksData) {
 }
 const landmarkPool = unique(
   landmarksData.map((landmark: any) => landmark.name).filter(Boolean),
+) as string[];
+const waterfallsByCountry = new Map<string, any[]>();
+for (const waterfall of waterfallsData) {
+  const bucket = waterfallsByCountry.get(waterfall.country);
+  if (bucket) bucket.push(waterfall);
+  else waterfallsByCountry.set(waterfall.country, [waterfall]);
+}
+const waterfallPool = unique(
+  waterfallsData.map((waterfall: any) => waterfall.name).filter(Boolean),
 ) as string[];
 
 const countryFeatureByCode = new Map<string, any>();
@@ -1523,6 +1536,65 @@ for (const country of countries) {
         label: name,
       };
     }
+  }
+
+  // Waterfalls -----------------------------------------------------------
+  const countryWaterfalls = waterfallsByCountry.get(code) ?? [];
+  for (const [index, waterfall] of countryWaterfalls.slice(0, 2).entries()) {
+    const name = waterfall.name;
+    const point = waterfall.point as [number, number];
+    const options = distractors(name, waterfallPool, rng);
+    if (options.length !== 4) {
+      skipped.push(`${code} waterfall${index + 1} (distractors)`);
+      continue;
+    }
+    const factId =
+      index === 0
+        ? `gen-waterfall-${code}`
+        : `gen-waterfall${index + 1}-${code}`;
+    addFact({
+      id: factId,
+      country: code,
+      category: "waterfall",
+      interactions: ["mc"],
+      difficulty: 2,
+      question: `Welcher Wasserfall liegt ${country.name_in}?`,
+      answer: { label: name, point },
+      options,
+      fact: `${name} ist ein Wasserfall ${country.name_in}.`,
+      source: "Kuratiert",
+    });
+    generatedReveals[factId] = {
+      kind: "point",
+      point,
+      bbox: [point[0] - 0.3, point[1] - 0.24, point[0] + 0.3, point[1] + 0.24],
+      labelPoint: point,
+      label: name,
+    };
+
+    const locateId =
+      index === 0
+        ? `gen-waterfall-locate-${code}`
+        : `gen-waterfall-locate${index + 1}-${code}`;
+    addFact({
+      id: locateId,
+      country: code,
+      category: "waterfall",
+      interactions: ["drag"],
+      difficulty: 2,
+      question: `Wo liegt der Wasserfall ${name}?`,
+      answer: { label: name, point },
+      options: [],
+      fact: `${name} ist ein Wasserfall ${country.name_in}.`,
+      source: "Kuratiert",
+    });
+    generatedReveals[locateId] = {
+      kind: "point",
+      point,
+      bbox: [point[0] - 0.3, point[1] - 0.24, point[0] + 0.3, point[1] + 0.24],
+      labelPoint: point,
+      label: name,
+    };
   }
 
   // Landforms: desert, mountain range, island, peninsula -----------------

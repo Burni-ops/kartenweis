@@ -3504,6 +3504,51 @@
     "source": "Kuratiert nach Smithsonian Global Volcanism Program"
   },
   {
+    "id": "gen-waterfall-ET",
+    "country": "ET",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in Äthiopien?",
+    "answer": {
+      "label": "Blue-Nile-Fälle",
+      "point": [
+        37.57,
+        11.49
+      ]
+    },
+    "options": [
+      "Blue-Nile-Fälle",
+      "Athirappilly-Fälle",
+      "Jim Jim Falls",
+      "Krimmler Wasserfälle"
+    ],
+    "fact": "Blue-Nile-Fälle ist ein Wasserfall in Äthiopien.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate-ET",
+    "country": "ET",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Blue-Nile-Fälle?",
+    "answer": {
+      "label": "Blue-Nile-Fälle",
+      "point": [
+        37.57,
+        11.49
+      ]
+    },
+    "options": [],
+    "fact": "Blue-Nile-Fälle ist ein Wasserfall in Äthiopien.",
+    "source": "Kuratiert"
+  },
+  {
     "id": "gen-desert-ET",
     "country": "ET",
     "category": "desert",
@@ -3516,9 +3561,9 @@
       "label": "Sahara"
     },
     "options": [
-      "White-Sands-Nationalpark",
-      "Große Salzwüste",
-      "Akchâr",
+      "Kawir",
+      "Dschabal Sauda",
+      "Trarza",
       "Sahara"
     ],
     "fact": "Die Wüste Sahara liegt in Äthiopien.",
@@ -3538,9 +3583,9 @@
     },
     "options": [
       "Chalbi-Wüste",
-      "Tanamiwüste",
-      "Nubische Wüste",
-      "Große Sandwüste"
+      "Kawir",
+      "Hamada de Tinrhert",
+      "Rigestan"
     ],
     "fact": "Die Wüste Chalbi-Wüste liegt in Äthiopien.",
     "source": "https://www.naturalearthdata.com/"
@@ -3558,10 +3603,10 @@
       "label": "Hochland von Abessinien"
     },
     "options": [
-      "Cambrian Mountains",
-      "Tumuk-Humak-Gebirge",
       "Hochland von Abessinien",
-      "Kristallberg"
+      "Balkangebirge",
+      "Caribou Mountains",
+      "Neuguinea highlands"
     ],
     "fact": "Das Gebirge Hochland von Abessinien liegt in Äthiopien.",
     "source": "https://www.naturalearthdata.com/"
@@ -3579,10 +3624,10 @@
       "label": "Ahmar-Gebirge"
     },
     "options": [
+      "Kolymagebirge",
       "Ahmar-Gebirge",
-      "Karasberge",
-      "Tumuk-Humak-Gebirge",
-      "Serra dos Gradaús"
+      "Transsilvanische Alpen",
+      "Inyangani"
     ],
     "fact": "Das Gebirge Ahmar-Gebirge liegt in Äthiopien.",
     "source": "https://www.naturalearthdata.com/"
@@ -4003,6 +4048,96 @@
     "source": "Kuratiert"
   },
   {
+    "id": "gen-waterfall-AU",
+    "country": "AU",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in Australien?",
+    "answer": {
+      "label": "Wallaman Falls",
+      "point": [
+        145.8,
+        -18.6
+      ]
+    },
+    "options": [
+      "Triberger Wasserfälle",
+      "Kravica-Wasserfälle",
+      "Iguazú-Wasserfälle",
+      "Wallaman Falls"
+    ],
+    "fact": "Wallaman Falls ist ein Wasserfall in Australien.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate-AU",
+    "country": "AU",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Wallaman Falls?",
+    "answer": {
+      "label": "Wallaman Falls",
+      "point": [
+        145.8,
+        -18.6
+      ]
+    },
+    "options": [],
+    "fact": "Wallaman Falls ist ein Wasserfall in Australien.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall2-AU",
+    "country": "AU",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in Australien?",
+    "answer": {
+      "label": "Jim Jim Falls",
+      "point": [
+        132.8,
+        -13.27
+      ]
+    },
+    "options": [
+      "Jim Jim Falls",
+      "Yosemite Falls",
+      "Plitvicer Seen",
+      "Nachi-Fälle"
+    ],
+    "fact": "Jim Jim Falls ist ein Wasserfall in Australien.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate2-AU",
+    "country": "AU",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Jim Jim Falls?",
+    "answer": {
+      "label": "Jim Jim Falls",
+      "point": [
+        132.8,
+        -13.27
+      ]
+    },
+    "options": [],
+    "fact": "Jim Jim Falls ist ein Wasserfall in Australien.",
+    "source": "Kuratiert"
+  },
+  {
     "id": "gen-desert-AU",
     "country": "AU",
     "category": "desert",
@@ -4015,10 +4150,10 @@
       "label": "Große Sandwüste"
     },
     "options": [
+      "El Djouf",
+      "Caatinga",
       "Große Sandwüste",
-      "Erg Chech",
-      "Kalahari",
-      "Hammada du Draa"
+      "Taklamakan"
     ],
     "fact": "Die Wüste Große Sandwüste liegt in Australien.",
     "source": "https://www.naturalearthdata.com/"
@@ -4037,9 +4172,9 @@
     },
     "options": [
       "Große Victoria-Wüste",
-      "Westliche Wüste",
-      "Tassili n’Ajjer",
-      "Trarza"
+      "Negev",
+      "Arabische Wüste",
+      "Rub al-Chali"
     ],
     "fact": "Die Wüste Große Victoria-Wüste liegt in Australien.",
     "source": "https://www.naturalearthdata.com/"
@@ -4057,9 +4192,9 @@
       "label": "Great Dividing Range"
     },
     "options": [
-      "Blue Ridge Mountains",
-      "Mogollon Rim",
-      "Napier Mountains",
+      "Changai-Gebirge",
+      "Owen-Stanley-Gebirge",
+      "Kalabrien",
       "Great Dividing Range"
     ],
     "fact": "Das Gebirge Great Dividing Range liegt in Australien.",
@@ -4078,10 +4213,10 @@
       "label": "MacDonnell Ranges"
     },
     "options": [
-      "Napier Mountains",
-      "Truong-Son-Gebirge",
-      "Östliches Sajangebirge",
-      "MacDonnell Ranges"
+      "Tellatlas",
+      "Naga Hills",
+      "MacDonnell Ranges",
+      "Grampian Mountains"
     ],
     "fact": "Das Gebirge MacDonnell Ranges liegt in Australien.",
     "source": "https://www.naturalearthdata.com/"
@@ -4099,10 +4234,10 @@
       "label": "Tasmanien"
     },
     "options": [
-      "Aldabra",
-      "Tanna",
-      "Mangaia",
-      "Tasmanien"
+      "Bolschewik-Insel",
+      "Grande Comore",
+      "Tasmanien",
+      "Sardinien"
     ],
     "fact": "Die Insel Tasmanien liegt in Australien.",
     "source": "https://www.naturalearthdata.com/"
@@ -4120,10 +4255,10 @@
       "label": "Melville Island"
     },
     "options": [
-      "Melville Island",
-      "Nordostland",
-      "Kotelny-Insel",
-      "Panay"
+      "Samar",
+      "Jan Mayen",
+      "Tapón del Darién",
+      "Melville Island"
     ],
     "fact": "Die Insel Melville Island liegt in Australien.",
     "source": "https://www.naturalearthdata.com/"
@@ -6664,6 +6799,51 @@
     "source": "Kuratiert nach IUCN-Verbreitungsangaben"
   },
   {
+    "id": "gen-waterfall-BA",
+    "country": "BA",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in Bosnien und Herzegowina?",
+    "answer": {
+      "label": "Kravica-Wasserfälle",
+      "point": [
+        17.6,
+        43.15
+      ]
+    },
+    "options": [
+      "Kravica-Wasserfälle",
+      "Plitvicer Seen",
+      "Kaieteur Falls",
+      "Jog Falls"
+    ],
+    "fact": "Kravica-Wasserfälle ist ein Wasserfall in Bosnien und Herzegowina.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate-BA",
+    "country": "BA",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Kravica-Wasserfälle?",
+    "answer": {
+      "label": "Kravica-Wasserfälle",
+      "point": [
+        17.6,
+        43.15
+      ]
+    },
+    "options": [],
+    "fact": "Kravica-Wasserfälle ist ein Wasserfall in Bosnien und Herzegowina.",
+    "source": "Kuratiert"
+  },
+  {
     "id": "gen-mountain_range-BA",
     "country": "BA",
     "category": "mountain_range",
@@ -6676,10 +6856,10 @@
       "label": "Dinarisches Gebirge"
     },
     "options": [
-      "Kristallberg",
-      "Gangbaekjeonggan",
+      "Qilian Shan",
       "Dinarisches Gebirge",
-      "Witwatersrand"
+      "Alaskakette",
+      "Gregory Range"
     ],
     "fact": "Das Gebirge Dinarisches Gebirge liegt in Bosnien und Herzegowina.",
     "source": "https://www.naturalearthdata.com/"
@@ -7353,6 +7533,51 @@
     "source": "Kuratiert"
   },
   {
+    "id": "gen-waterfall-BR",
+    "country": "BR",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in Brasilien?",
+    "answer": {
+      "label": "Iguazú-Wasserfälle",
+      "point": [
+        -54.44,
+        -25.69
+      ]
+    },
+    "options": [
+      "Shoshone Falls",
+      "Jog Falls",
+      "Iguazú-Wasserfälle",
+      "Triberger Wasserfälle"
+    ],
+    "fact": "Iguazú-Wasserfälle ist ein Wasserfall in Brasilien.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate-BR",
+    "country": "BR",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Iguazú-Wasserfälle?",
+    "answer": {
+      "label": "Iguazú-Wasserfälle",
+      "point": [
+        -54.44,
+        -25.69
+      ]
+    },
+    "options": [],
+    "fact": "Iguazú-Wasserfälle ist ein Wasserfall in Brasilien.",
+    "source": "Kuratiert"
+  },
+  {
     "id": "gen-desert-BR",
     "country": "BR",
     "category": "desert",
@@ -7365,10 +7590,10 @@
       "label": "Caatinga"
     },
     "options": [
-      "Etosha-Pfanne",
-      "Gobi",
+      "Atacamawüste",
+      "Dschabal Sauda",
       "Caatinga",
-      "Große Victoria-Wüste"
+      "Tanamiwüste"
     ],
     "fact": "Die Wüste Caatinga liegt in Brasilien.",
     "source": "https://www.naturalearthdata.com/"
@@ -7386,9 +7611,9 @@
       "label": "Guayana"
     },
     "options": [
-      "Scott Mountains",
-      "Saharaatlas",
-      "Kirthar-Gebirge",
+      "Östliches Sajangebirge",
+      "Rocky Mountains",
+      "Adirondack Mountains",
       "Guayana"
     ],
     "fact": "Das Gebirge Guayana liegt in Brasilien.",
@@ -7407,10 +7632,10 @@
       "label": "Serra Geral"
     },
     "options": [
-      "Serra Geral",
-      "Hadramaut",
-      "Hoher Atlas",
-      "Hindukusch"
+      "Stanowoigebirge",
+      "Cambrian Mountains",
+      "Kirthar-Gebirge",
+      "Serra Geral"
     ],
     "fact": "Das Gebirge Serra Geral liegt in Brasilien.",
     "source": "https://www.naturalearthdata.com/"
@@ -7428,10 +7653,10 @@
       "label": "Marajó"
     },
     "options": [
-      "Sankt-Lorenz-Insel",
-      "Victoria-Insel",
       "Marajó",
-      "Rowley Shoals"
+      "Irland",
+      "Choiseul",
+      "Westfalkland"
     ],
     "fact": "Die Insel Marajó liegt in Brasilien.",
     "source": "https://www.naturalearthdata.com/"
@@ -9358,6 +9583,96 @@
     "source": "Kuratiert"
   },
   {
+    "id": "gen-waterfall-CN",
+    "country": "CN",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in China?",
+    "answer": {
+      "label": "Huangguoshu-Wasserfall",
+      "point": [
+        105.67,
+        25.99
+      ]
+    },
+    "options": [
+      "Iguazú-Wasserfälle",
+      "Huangguoshu-Wasserfall",
+      "Tugela Falls",
+      "Kaieteur Falls"
+    ],
+    "fact": "Huangguoshu-Wasserfall ist ein Wasserfall in China.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate-CN",
+    "country": "CN",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Huangguoshu-Wasserfall?",
+    "answer": {
+      "label": "Huangguoshu-Wasserfall",
+      "point": [
+        105.67,
+        25.99
+      ]
+    },
+    "options": [],
+    "fact": "Huangguoshu-Wasserfall ist ein Wasserfall in China.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall2-CN",
+    "country": "CN",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in China?",
+    "answer": {
+      "label": "Detian-Wasserfall",
+      "point": [
+        106.75,
+        22.85
+      ]
+    },
+    "options": [
+      "Blue-Nile-Fälle",
+      "Plitvicer Seen",
+      "Detian-Wasserfall",
+      "Niagarafälle"
+    ],
+    "fact": "Detian-Wasserfall ist ein Wasserfall in China.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate2-CN",
+    "country": "CN",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Detian-Wasserfall?",
+    "answer": {
+      "label": "Detian-Wasserfall",
+      "point": [
+        106.75,
+        22.85
+      ]
+    },
+    "options": [],
+    "fact": "Detian-Wasserfall ist ein Wasserfall in China.",
+    "source": "Kuratiert"
+  },
+  {
     "id": "gen-desert-CN",
     "country": "CN",
     "category": "desert",
@@ -9371,9 +9686,9 @@
     },
     "options": [
       "Gobi",
-      "Simpsonwüste",
-      "Chalbi-Wüste",
-      "Karakum"
+      "Tassili oua-n-Ahaggar",
+      "Kysylkum",
+      "Etosha-Pfanne"
     ],
     "fact": "Die Wüste Gobi liegt in China.",
     "source": "https://www.naturalearthdata.com/"
@@ -9391,9 +9706,9 @@
       "label": "Taklamakan"
     },
     "options": [
-      "El Djouf",
-      "Hungersteppe",
-      "Rigestan",
+      "Simpsonwüste",
+      "Negev",
+      "Kalahari",
       "Taklamakan"
     ],
     "fact": "Die Wüste Taklamakan liegt in China.",
@@ -9412,10 +9727,10 @@
       "label": "Himalaya"
     },
     "options": [
-      "Aïr",
-      "Flood Range",
+      "Serra dos Gradaús",
+      "Napier Mountains",
       "Himalaya",
-      "Mbang-Gebirge"
+      "Salzgebirge"
     ],
     "fact": "Das Gebirge Himalaya liegt in China.",
     "source": "https://www.naturalearthdata.com/"
@@ -9433,10 +9748,10 @@
       "label": "Altai"
     },
     "options": [
-      "Harz",
-      "Kirthar-Gebirge",
-      "Altai",
-      "Napier Mountains"
+      "Bitterrootkette",
+      "Front Range",
+      "Mbang-Gebirge",
+      "Altai"
     ],
     "fact": "Das Gebirge Altai liegt in China.",
     "source": "https://www.naturalearthdata.com/"
@@ -9454,10 +9769,10 @@
       "label": "Insel Hainan"
     },
     "options": [
-      "Kreta",
-      "Fatu Hiva",
-      "Bangka",
-      "Insel Hainan"
+      "Karaginski",
+      "Insel Hainan",
+      "Labrador",
+      "Fuerteventura"
     ],
     "fact": "Die Insel Insel Hainan liegt in China.",
     "source": "https://www.naturalearthdata.com/"
@@ -10146,6 +10461,51 @@
     "source": "Kuratiert nach IUCN-Verbreitungsangaben"
   },
   {
+    "id": "gen-waterfall-DE",
+    "country": "DE",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in Deutschland?",
+    "answer": {
+      "label": "Triberger Wasserfälle",
+      "point": [
+        8.23,
+        48.13
+      ]
+    },
+    "options": [
+      "Triberger Wasserfälle",
+      "Blue-Nile-Fälle",
+      "Kravica-Wasserfälle",
+      "Niagarafälle"
+    ],
+    "fact": "Triberger Wasserfälle ist ein Wasserfall in Deutschland.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate-DE",
+    "country": "DE",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Triberger Wasserfälle?",
+    "answer": {
+      "label": "Triberger Wasserfälle",
+      "point": [
+        8.23,
+        48.13
+      ]
+    },
+    "options": [],
+    "fact": "Triberger Wasserfälle ist ein Wasserfall in Deutschland.",
+    "source": "Kuratiert"
+  },
+  {
     "id": "gen-mountain_range-DE",
     "country": "DE",
     "category": "mountain_range",
@@ -10158,10 +10518,10 @@
       "label": "Alpen"
     },
     "options": [
-      "Chugach Mountains",
-      "Westghats",
+      "Siwaliks",
+      "Appalachen",
       "Alpen",
-      "Ligurischer Apennin"
+      "Kolymagebirge"
     ],
     "fact": "Das Gebirge Alpen liegt in Deutschland.",
     "source": "https://www.naturalearthdata.com/"
@@ -10179,10 +10539,10 @@
       "label": "Vogesen"
     },
     "options": [
-      "Tellatlas",
-      "Kaukasus",
-      "Ruwenzori-Gebirge",
-      "Vogesen"
+      "Vogesen",
+      "Hadramaut",
+      "Jam-Alin",
+      "Mbang-Gebirge"
     ],
     "fact": "Das Gebirge Vogesen liegt in Deutschland.",
     "source": "https://www.naturalearthdata.com/"
@@ -16193,6 +16553,51 @@
     "source": "Kuratiert nach IUCN-Verbreitungsangaben"
   },
   {
+    "id": "gen-waterfall-GY",
+    "country": "GY",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in Guyana?",
+    "answer": {
+      "label": "Kaieteur Falls",
+      "point": [
+        -59.48,
+        5.17
+      ]
+    },
+    "options": [
+      "Tugela Falls",
+      "Kaieteur Falls",
+      "Murchison Falls",
+      "Huangguoshu-Wasserfall"
+    ],
+    "fact": "Kaieteur Falls ist ein Wasserfall in Guyana.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate-GY",
+    "country": "GY",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Kaieteur Falls?",
+    "answer": {
+      "label": "Kaieteur Falls",
+      "point": [
+        -59.48,
+        5.17
+      ]
+    },
+    "options": [],
+    "fact": "Kaieteur Falls ist ein Wasserfall in Guyana.",
+    "source": "Kuratiert"
+  },
+  {
     "id": "gen-mountain_range-GY",
     "country": "GY",
     "category": "mountain_range",
@@ -16205,9 +16610,9 @@
       "label": "Guayana"
     },
     "options": [
-      "Kōh-e Sulaymān",
-      "Atlas",
-      "MacDonnell Ranges",
+      "Großes Hinggan-Gebirge",
+      "Abakangebirge",
+      "Serra do Espinhaço",
       "Guayana"
     ],
     "fact": "Das Gebirge Guayana liegt in Guyana.",
@@ -16226,10 +16631,10 @@
       "label": "Pacaraima-Gebirge"
     },
     "options": [
-      "Taihang Shan",
-      "Ligurischer Apennin",
-      "Kopet-Dag",
-      "Pacaraima-Gebirge"
+      "Pacaraima-Gebirge",
+      "Ahmar-Gebirge",
+      "Pensacola Mountains",
+      "Dongrek-Gebirge"
     ],
     "fact": "Das Gebirge Pacaraima-Gebirge liegt in Guyana.",
     "source": "https://www.naturalearthdata.com/"
@@ -17040,6 +17445,96 @@
     "source": "Kuratiert"
   },
   {
+    "id": "gen-waterfall-IN",
+    "country": "IN",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in Indien?",
+    "answer": {
+      "label": "Jog Falls",
+      "point": [
+        75,
+        14.23
+      ]
+    },
+    "options": [
+      "Jog Falls",
+      "Yosemite Falls",
+      "Sutherland Falls",
+      "Gullfoss"
+    ],
+    "fact": "Jog Falls ist ein Wasserfall in Indien.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate-IN",
+    "country": "IN",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Jog Falls?",
+    "answer": {
+      "label": "Jog Falls",
+      "point": [
+        75,
+        14.23
+      ]
+    },
+    "options": [],
+    "fact": "Jog Falls ist ein Wasserfall in Indien.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall2-IN",
+    "country": "IN",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in Indien?",
+    "answer": {
+      "label": "Athirappilly-Fälle",
+      "point": [
+        76.57,
+        10.29
+      ]
+    },
+    "options": [
+      "Athirappilly-Fälle",
+      "Nachi-Fälle",
+      "Dettifoss",
+      "Detian-Wasserfall"
+    ],
+    "fact": "Athirappilly-Fälle ist ein Wasserfall in Indien.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate2-IN",
+    "country": "IN",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Athirappilly-Fälle?",
+    "answer": {
+      "label": "Athirappilly-Fälle",
+      "point": [
+        76.57,
+        10.29
+      ]
+    },
+    "options": [],
+    "fact": "Athirappilly-Fälle ist ein Wasserfall in Indien.",
+    "source": "Kuratiert"
+  },
+  {
     "id": "gen-desert-IN",
     "country": "IN",
     "category": "desert",
@@ -17052,10 +17547,10 @@
       "label": "Thar"
     },
     "options": [
-      "Große Salzwüste",
-      "Salar de Uyuni",
+      "Sarïr Kalanshiyu ar Ramli al Kabi",
       "Thar",
-      "Arabische Wüste"
+      "Akchâr",
+      "Big-Bend-Nationalpark"
     ],
     "fact": "Die Wüste Thar liegt in Indien.",
     "source": "https://www.naturalearthdata.com/"
@@ -17073,10 +17568,10 @@
       "label": "Punjab"
     },
     "options": [
+      "Östlicher Großer Erg",
       "Punjab",
-      "Hungersteppe",
-      "Tassili n’Ajjer",
-      "Rigestan"
+      "Gibsonwüste",
+      "Nubische Wüste"
     ],
     "fact": "Die Wüste Punjab liegt in Indien.",
     "source": "https://www.naturalearthdata.com/"
@@ -17094,10 +17589,10 @@
       "label": "Himalaya"
     },
     "options": [
-      "Rocky Mountains",
-      "Kungej-Alatau",
-      "Ruwenzori-Gebirge",
-      "Himalaya"
+      "Tuwaiq",
+      "Dabie Shan",
+      "Himalaya",
+      "Burejagebirge"
     ],
     "fact": "Das Gebirge Himalaya liegt in Indien.",
     "source": "https://www.naturalearthdata.com/"
@@ -17115,10 +17610,10 @@
       "label": "Hindukusch"
     },
     "options": [
-      "Hadschar-Gebirge",
+      "Chentii-Gebirge",
       "Hindukusch",
-      "Mbang-Gebirge",
-      "Ural"
+      "Jam-Alin",
+      "Qaratau"
     ],
     "fact": "Das Gebirge Hindukusch liegt in Indien.",
     "source": "https://www.naturalearthdata.com/"
@@ -17136,10 +17631,10 @@
       "label": "Middle Andaman Island"
     },
     "options": [
+      "Manihiki",
       "Middle Andaman Island",
-      "Shikoku",
-      "Futuna",
-      "Madura"
+      "Bäreninsel",
+      "Baffininsel"
     ],
     "fact": "Die Insel Middle Andaman Island liegt in Indien.",
     "source": "https://www.naturalearthdata.com/"
@@ -17157,10 +17652,10 @@
       "label": "South Andaman Island"
     },
     "options": [
-      "South Andaman Island",
-      "James-Ross-Insel",
-      "Lānaʻi",
-      "Fraser Island"
+      "Niuafoʻou",
+      "Anticosti",
+      "Bolschoi Begitschew",
+      "South Andaman Island"
     ],
     "fact": "Die Insel South Andaman Island liegt in Indien.",
     "source": "https://www.naturalearthdata.com/"
@@ -19171,6 +19666,96 @@
     "source": "Kuratiert"
   },
   {
+    "id": "gen-waterfall-IS",
+    "country": "IS",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in Island?",
+    "answer": {
+      "label": "Gullfoss",
+      "point": [
+        -20.12,
+        64.327
+      ]
+    },
+    "options": [
+      "Multnomah Falls",
+      "Sutherland Falls",
+      "Gullfoss",
+      "Plitvicer Seen"
+    ],
+    "fact": "Gullfoss ist ein Wasserfall in Island.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate-IS",
+    "country": "IS",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Gullfoss?",
+    "answer": {
+      "label": "Gullfoss",
+      "point": [
+        -20.12,
+        64.327
+      ]
+    },
+    "options": [],
+    "fact": "Gullfoss ist ein Wasserfall in Island.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall2-IS",
+    "country": "IS",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in Island?",
+    "answer": {
+      "label": "Dettifoss",
+      "point": [
+        -16.384,
+        65.814
+      ]
+    },
+    "options": [
+      "Tugela Falls",
+      "Dettifoss",
+      "Sutherland Falls",
+      "Victoriafälle"
+    ],
+    "fact": "Dettifoss ist ein Wasserfall in Island.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate2-IS",
+    "country": "IS",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Dettifoss?",
+    "answer": {
+      "label": "Dettifoss",
+      "point": [
+        -16.384,
+        65.814
+      ]
+    },
+    "options": [],
+    "fact": "Dettifoss ist ein Wasserfall in Island.",
+    "source": "Kuratiert"
+  },
+  {
     "id": "gen-mountain_range-IS",
     "country": "IS",
     "category": "mountain_range",
@@ -19183,9 +19768,9 @@
       "label": "Vatnajökull"
     },
     "options": [
-      "Tscherskigebirge",
-      "Ahmar-Gebirge",
-      "Selwyn Range",
+      "Serra do Mar",
+      "Ural",
+      "Black Hills",
       "Vatnajökull"
     ],
     "fact": "Das Gebirge Vatnajökull liegt in Island.",
@@ -19204,10 +19789,10 @@
       "label": "Island"
     },
     "options": [
-      "Pitcairn",
-      "Island",
-      "Long Island",
-      "Mill-Insel"
+      "Choiseul",
+      "Heard",
+      "Réunion",
+      "Island"
     ],
     "fact": "Die Insel Island liegt in Island.",
     "source": "https://www.naturalearthdata.com/"
@@ -20440,6 +21025,51 @@
     "source": "Kuratiert"
   },
   {
+    "id": "gen-waterfall-JP",
+    "country": "JP",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in Japan?",
+    "answer": {
+      "label": "Nachi-Fälle",
+      "point": [
+        135.89,
+        33.67
+      ]
+    },
+    "options": [
+      "Kaieteur Falls",
+      "Nachi-Fälle",
+      "Niagarafälle",
+      "Yosemite Falls"
+    ],
+    "fact": "Nachi-Fälle ist ein Wasserfall in Japan.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate-JP",
+    "country": "JP",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Nachi-Fälle?",
+    "answer": {
+      "label": "Nachi-Fälle",
+      "point": [
+        135.89,
+        33.67
+      ]
+    },
+    "options": [],
+    "fact": "Nachi-Fälle ist ein Wasserfall in Japan.",
+    "source": "Kuratiert"
+  },
+  {
     "id": "gen-island-JP",
     "country": "JP",
     "category": "island",
@@ -20452,10 +21082,10 @@
       "label": "Honshū"
     },
     "options": [
-      "Terceira",
-      "Brabant-Insel",
+      "Ross-Insel",
+      "Livingston-Insel",
       "Honshū",
-      "Aneityum"
+      "Sardinien"
     ],
     "fact": "Die Insel Honshū liegt in Japan.",
     "source": "https://www.naturalearthdata.com/"
@@ -20473,10 +21103,10 @@
       "label": "Hokkaidō"
     },
     "options": [
-      "Simeuluë",
+      "Sal",
       "Hokkaidō",
-      "Tanna",
-      "Timor"
+      "Flores",
+      "Stewart Island"
     ],
     "fact": "Die Insel Hokkaidō liegt in Japan.",
     "source": "https://www.naturalearthdata.com/"
@@ -22232,6 +22862,51 @@
     "source": "Kuratiert"
   },
   {
+    "id": "gen-waterfall-CA",
+    "country": "CA",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in Kanada?",
+    "answer": {
+      "label": "Niagarafälle",
+      "point": [
+        -79.074,
+        43.079
+      ]
+    },
+    "options": [
+      "Kravica-Wasserfälle",
+      "Niagarafälle",
+      "Blue-Nile-Fälle",
+      "Kaieteur Falls"
+    ],
+    "fact": "Niagarafälle ist ein Wasserfall in Kanada.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate-CA",
+    "country": "CA",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Niagarafälle?",
+    "answer": {
+      "label": "Niagarafälle",
+      "point": [
+        -79.074,
+        43.079
+      ]
+    },
+    "options": [],
+    "fact": "Niagarafälle ist ein Wasserfall in Kanada.",
+    "source": "Kuratiert"
+  },
+  {
     "id": "gen-mountain_range-CA",
     "country": "CA",
     "category": "mountain_range",
@@ -22244,10 +22919,10 @@
       "label": "Rocky Mountains"
     },
     "options": [
-      "Stanowoigebirge",
-      "Cordillera de Mérida",
-      "Hamersley Range",
-      "Rocky Mountains"
+      "Rocky Mountains",
+      "Momagebirge",
+      "Prince Charles Mountains",
+      "Altun"
     ],
     "fact": "Das Gebirge Rocky Mountains liegt in Kanada.",
     "source": "https://www.naturalearthdata.com/"
@@ -22265,10 +22940,10 @@
       "label": "Appalachen"
     },
     "options": [
-      "Pindos",
-      "Qilian Shan",
+      "Tellatlas",
+      "Asir-Gebirge",
       "Appalachen",
-      "Serra do Cachimbo"
+      "Flinders Ranges"
     ],
     "fact": "Das Gebirge Appalachen liegt in Kanada.",
     "source": "https://www.naturalearthdata.com/"
@@ -22286,10 +22961,10 @@
       "label": "Baffininsel"
     },
     "options": [
-      "Lanzarote",
+      "Pemba",
       "Baffininsel",
-      "Tematangi",
-      "Bangka"
+      "Farwell-Insel",
+      "Uschakow-Insel"
     ],
     "fact": "Die Insel Baffininsel liegt in Kanada.",
     "source": "https://www.naturalearthdata.com/"
@@ -22307,10 +22982,10 @@
       "label": "Victoria-Insel"
     },
     "options": [
-      "Puerto Rico",
-      "Insel Hainan",
+      "San Félix",
       "Victoria-Insel",
-      "Mindoro"
+      "Bolschoi Begitschew",
+      "Fuerteventura"
     ],
     "fact": "Die Insel Victoria-Insel liegt in Kanada.",
     "source": "https://www.naturalearthdata.com/"
@@ -24343,6 +25018,51 @@
     "source": "Kuratiert"
   },
   {
+    "id": "gen-waterfall-HR",
+    "country": "HR",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in Kroatien?",
+    "answer": {
+      "label": "Plitvicer Seen",
+      "point": [
+        15.62,
+        44.87
+      ]
+    },
+    "options": [
+      "Augrabies Falls",
+      "Plitvicer Seen",
+      "Sutherland Falls",
+      "Nachi-Fälle"
+    ],
+    "fact": "Plitvicer Seen ist ein Wasserfall in Kroatien.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate-HR",
+    "country": "HR",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Plitvicer Seen?",
+    "answer": {
+      "label": "Plitvicer Seen",
+      "point": [
+        15.62,
+        44.87
+      ]
+    },
+    "options": [],
+    "fact": "Plitvicer Seen ist ein Wasserfall in Kroatien.",
+    "source": "Kuratiert"
+  },
+  {
     "id": "gen-mountain_range-HR",
     "country": "HR",
     "category": "mountain_range",
@@ -24355,10 +25075,10 @@
       "label": "Dinarisches Gebirge"
     },
     "options": [
-      "Arakan-Joma-Gebirge",
-      "Böhmerwald",
-      "Mittlerer Atlas",
-      "Dinarisches Gebirge"
+      "Dinarisches Gebirge",
+      "Hindukusch",
+      "Alpen",
+      "Cuchilla Grande"
     ],
     "fact": "Das Gebirge Dinarisches Gebirge liegt in Kroatien.",
     "source": "https://www.naturalearthdata.com/"
@@ -31886,6 +32606,96 @@
     "source": "Kuratiert"
   },
   {
+    "id": "gen-waterfall-NZ",
+    "country": "NZ",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in Neuseeland?",
+    "answer": {
+      "label": "Sutherland Falls",
+      "point": [
+        167.28,
+        -44.83
+      ]
+    },
+    "options": [
+      "Sutherland Falls",
+      "Huangguoshu-Wasserfall",
+      "Krimmler Wasserfälle",
+      "Jim Jim Falls"
+    ],
+    "fact": "Sutherland Falls ist ein Wasserfall in Neuseeland.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate-NZ",
+    "country": "NZ",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Sutherland Falls?",
+    "answer": {
+      "label": "Sutherland Falls",
+      "point": [
+        167.28,
+        -44.83
+      ]
+    },
+    "options": [],
+    "fact": "Sutherland Falls ist ein Wasserfall in Neuseeland.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall2-NZ",
+    "country": "NZ",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in Neuseeland?",
+    "answer": {
+      "label": "Huka Falls",
+      "point": [
+        176.09,
+        -38.65
+      ]
+    },
+    "options": [
+      "Huka Falls",
+      "Iguazú-Wasserfälle",
+      "Jog Falls",
+      "Wallaman Falls"
+    ],
+    "fact": "Huka Falls ist ein Wasserfall in Neuseeland.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate2-NZ",
+    "country": "NZ",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Huka Falls?",
+    "answer": {
+      "label": "Huka Falls",
+      "point": [
+        176.09,
+        -38.65
+      ]
+    },
+    "options": [],
+    "fact": "Huka Falls ist ein Wasserfall in Neuseeland.",
+    "source": "Kuratiert"
+  },
+  {
     "id": "gen-mountain_range-NZ",
     "country": "NZ",
     "category": "mountain_range",
@@ -31898,10 +32708,10 @@
       "label": "Neuseeländische Alpen"
     },
     "options": [
-      "Ligurischer Apennin",
-      "Sierra Morena",
-      "Pontisches Gebirge",
-      "Neuseeländische Alpen"
+      "Ahaggar",
+      "Neuseeländische Alpen",
+      "Chentii-Gebirge",
+      "Salzgebirge"
     ],
     "fact": "Das Gebirge Neuseeländische Alpen liegt in Neuseeland.",
     "source": "https://www.naturalearthdata.com/"
@@ -31919,10 +32729,10 @@
       "label": "Südinsel"
     },
     "options": [
-      "Nias",
-      "Ostfalkland",
+      "Grande Comore",
       "Südinsel",
-      "Halmahera"
+      "Cornwallis Island",
+      "Jan Mayen"
     ],
     "fact": "Die Insel Südinsel liegt in Neuseeland.",
     "source": "https://www.naturalearthdata.com/"
@@ -31940,10 +32750,10 @@
       "label": "Nordinsel"
     },
     "options": [
-      "Palawan",
-      "Siberut",
-      "Beringinsel",
-      "Nordinsel"
+      "Aldabra",
+      "Malta",
+      "Nordinsel",
+      "Hispaniola"
     ],
     "fact": "Die Insel Nordinsel liegt in Neuseeland.",
     "source": "https://www.naturalearthdata.com/"
@@ -34370,6 +35180,51 @@
     "source": "Kuratiert nach IUCN-Verbreitungsangaben"
   },
   {
+    "id": "gen-waterfall-AT",
+    "country": "AT",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in Österreich?",
+    "answer": {
+      "label": "Krimmler Wasserfälle",
+      "point": [
+        12.17,
+        47.2
+      ]
+    },
+    "options": [
+      "Krimmler Wasserfälle",
+      "Shoshone Falls",
+      "Multnomah Falls",
+      "Athirappilly-Fälle"
+    ],
+    "fact": "Krimmler Wasserfälle ist ein Wasserfall in Österreich.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate-AT",
+    "country": "AT",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Krimmler Wasserfälle?",
+    "answer": {
+      "label": "Krimmler Wasserfälle",
+      "point": [
+        12.17,
+        47.2
+      ]
+    },
+    "options": [],
+    "fact": "Krimmler Wasserfälle ist ein Wasserfall in Österreich.",
+    "source": "Kuratiert"
+  },
+  {
     "id": "gen-mountain_range-AT",
     "country": "AT",
     "category": "mountain_range",
@@ -34382,10 +35237,10 @@
       "label": "Alpen"
     },
     "options": [
-      "Kunlun",
       "Alpen",
-      "Changai-Gebirge",
-      "Dongrek-Gebirge"
+      "Siwaliks",
+      "Altun",
+      "Tannu-ola-Gebirge"
     ],
     "fact": "Das Gebirge Alpen liegt in Österreich.",
     "source": "https://www.naturalearthdata.com/"
@@ -34403,9 +35258,9 @@
       "label": "Böhmerwald"
     },
     "options": [
-      "Serra do Mar",
-      "Kaukasus",
-      "Serra dos Gradaús",
+      "Qilian Shan",
+      "Acarai-Berge",
+      "Ogilvie Mountains",
       "Böhmerwald"
     ],
     "fact": "Das Gebirge Böhmerwald liegt in Österreich.",
@@ -38244,6 +39099,51 @@
     "source": "Kuratiert"
   },
   {
+    "id": "gen-waterfall-RO",
+    "country": "RO",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in Rumänien?",
+    "answer": {
+      "label": "Bigăr-Wasserfall",
+      "point": [
+        22,
+        45
+      ]
+    },
+    "options": [
+      "Huka Falls",
+      "Athirappilly-Fälle",
+      "Bigăr-Wasserfall",
+      "Wallaman Falls"
+    ],
+    "fact": "Bigăr-Wasserfall ist ein Wasserfall in Rumänien.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate-RO",
+    "country": "RO",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Bigăr-Wasserfall?",
+    "answer": {
+      "label": "Bigăr-Wasserfall",
+      "point": [
+        22,
+        45
+      ]
+    },
+    "options": [],
+    "fact": "Bigăr-Wasserfall ist ein Wasserfall in Rumänien.",
+    "source": "Kuratiert"
+  },
+  {
     "id": "gen-mountain_range-RO",
     "country": "RO",
     "category": "mountain_range",
@@ -38256,10 +39156,10 @@
       "label": "Karpaten"
     },
     "options": [
-      "Birch Mountains",
+      "Kuhrud-Gebirge",
       "Karpaten",
-      "Skandinavisches Gebirge",
-      "Pamir"
+      "Rocky Mountains",
+      "Blue Mountains"
     ],
     "fact": "Das Gebirge Karpaten liegt in Rumänien.",
     "source": "https://www.naturalearthdata.com/"
@@ -38277,9 +39177,9 @@
       "label": "Transsilvanische Alpen"
     },
     "options": [
-      "Balkangebirge",
-      "Atlas",
-      "Mittlerer Atlas",
+      "Brookskette",
+      "Sierra Madre Occidental",
+      "Taurusgebirge",
       "Transsilvanische Alpen"
     ],
     "fact": "Das Gebirge Transsilvanische Alpen liegt in Rumänien.",
@@ -39357,6 +40257,51 @@
     "source": "Kuratiert nach IUCN-Verbreitungsangaben"
   },
   {
+    "id": "gen-waterfall-ZM",
+    "country": "ZM",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in Sambia?",
+    "answer": {
+      "label": "Victoriafälle",
+      "point": [
+        25.85,
+        -17.92
+      ]
+    },
+    "options": [
+      "Victoriafälle",
+      "Augrabies Falls",
+      "Rheinfall",
+      "Huangguoshu-Wasserfall"
+    ],
+    "fact": "Victoriafälle ist ein Wasserfall in Sambia.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate-ZM",
+    "country": "ZM",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Victoriafälle?",
+    "answer": {
+      "label": "Victoriafälle",
+      "point": [
+        25.85,
+        -17.92
+      ]
+    },
+    "options": [],
+    "fact": "Victoriafälle ist ein Wasserfall in Sambia.",
+    "source": "Kuratiert"
+  },
+  {
     "id": "gen-mountain_range-ZM",
     "country": "ZM",
     "category": "mountain_range",
@@ -39369,10 +40314,10 @@
       "label": "Muchinga-Gebirge"
     },
     "options": [
+      "Lebomboberge",
       "Muchinga-Gebirge",
-      "Blue Ridge Mountains",
-      "Östliches Sajangebirge",
-      "Jablonowygebirge"
+      "Momagebirge",
+      "Ligurischer Apennin"
     ],
     "fact": "Das Gebirge Muchinga-Gebirge liegt in Sambia.",
     "source": "https://www.naturalearthdata.com/"
@@ -40386,6 +41331,51 @@
     "source": "Kuratiert nach IUCN-Verbreitungsangaben"
   },
   {
+    "id": "gen-waterfall-CH",
+    "country": "CH",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in der Schweiz?",
+    "answer": {
+      "label": "Rheinfall",
+      "point": [
+        8.615,
+        47.677
+      ]
+    },
+    "options": [
+      "Kaieteur Falls",
+      "Rheinfall",
+      "Kravica-Wasserfälle",
+      "Jog Falls"
+    ],
+    "fact": "Rheinfall ist ein Wasserfall in der Schweiz.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate-CH",
+    "country": "CH",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Rheinfall?",
+    "answer": {
+      "label": "Rheinfall",
+      "point": [
+        8.615,
+        47.677
+      ]
+    },
+    "options": [],
+    "fact": "Rheinfall ist ein Wasserfall in der Schweiz.",
+    "source": "Kuratiert"
+  },
+  {
     "id": "gen-mountain_range-CH",
     "country": "CH",
     "category": "mountain_range",
@@ -40398,10 +41388,10 @@
       "label": "Alpen"
     },
     "options": [
+      "Serra do Espinhaço",
       "Alpen",
-      "Australische Alpen",
-      "Flood Range",
-      "Drakensberge"
+      "Sierra Nevada",
+      "Ahaggar"
     ],
     "fact": "Das Gebirge Alpen liegt in der Schweiz.",
     "source": "https://www.naturalearthdata.com/"
@@ -40419,10 +41409,10 @@
       "label": "Jura"
     },
     "options": [
-      "Jura",
-      "Böhmerwald",
-      "Acarai-Berge",
-      "Arakan-Joma-Gebirge"
+      "Serra Dourada",
+      "Dongrek-Gebirge",
+      "Queen Alexandra Range",
+      "Jura"
     ],
     "fact": "Das Gebirge Jura liegt in der Schweiz.",
     "source": "https://www.naturalearthdata.com/"
@@ -43756,6 +44746,96 @@
     "source": "Kuratiert"
   },
   {
+    "id": "gen-waterfall-ZA",
+    "country": "ZA",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in Südafrika?",
+    "answer": {
+      "label": "Augrabies Falls",
+      "point": [
+        20.34,
+        -28.59
+      ]
+    },
+    "options": [
+      "Augrabies Falls",
+      "Rheinfall",
+      "Jim Jim Falls",
+      "Niagarafälle"
+    ],
+    "fact": "Augrabies Falls ist ein Wasserfall in Südafrika.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate-ZA",
+    "country": "ZA",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Augrabies Falls?",
+    "answer": {
+      "label": "Augrabies Falls",
+      "point": [
+        20.34,
+        -28.59
+      ]
+    },
+    "options": [],
+    "fact": "Augrabies Falls ist ein Wasserfall in Südafrika.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall2-ZA",
+    "country": "ZA",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in Südafrika?",
+    "answer": {
+      "label": "Tugela Falls",
+      "point": [
+        28.76,
+        -28.75
+      ]
+    },
+    "options": [
+      "Niagarafälle",
+      "Krimmler Wasserfälle",
+      "Jim Jim Falls",
+      "Tugela Falls"
+    ],
+    "fact": "Tugela Falls ist ein Wasserfall in Südafrika.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate2-ZA",
+    "country": "ZA",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Tugela Falls?",
+    "answer": {
+      "label": "Tugela Falls",
+      "point": [
+        28.76,
+        -28.75
+      ]
+    },
+    "options": [],
+    "fact": "Tugela Falls ist ein Wasserfall in Südafrika.",
+    "source": "Kuratiert"
+  },
+  {
     "id": "gen-desert-ZA",
     "country": "ZA",
     "category": "desert",
@@ -43768,10 +44848,10 @@
       "label": "Kalahari"
     },
     "options": [
-      "Dascht-e Lut",
-      "Makgadikgadi-Salzpfannen",
-      "Syrische Wüste",
-      "Kalahari"
+      "Kalahari",
+      "Salar de Uyuni",
+      "Erg Murzuk",
+      "Etosha-Pfanne"
     ],
     "fact": "Die Wüste Kalahari liegt in Südafrika.",
     "source": "https://www.naturalearthdata.com/"
@@ -43789,9 +44869,9 @@
       "label": "Drakensberge"
     },
     "options": [
-      "Darling Range",
-      "Tian Shan",
-      "Jura",
+      "Pontisches Gebirge",
+      "Serra do Espinhaço",
+      "Hadschar-Gebirge",
       "Drakensberge"
     ],
     "fact": "Das Gebirge Drakensberge liegt in Südafrika.",
@@ -43810,9 +44890,9 @@
       "label": "Karasberge"
     },
     "options": [
-      "Cambrian Mountains",
-      "Kungej-Alatau",
-      "Grampian Mountains",
+      "Cordillera Oriental",
+      "Sierra Nevada",
+      "Werchojansker Gebirge",
       "Karasberge"
     ],
     "fact": "Das Gebirge Karasberge liegt in Südafrika.",
@@ -49200,6 +50280,51 @@
     "source": "Kuratiert nach IUCN-Verbreitungsangaben"
   },
   {
+    "id": "gen-waterfall-UG",
+    "country": "UG",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in Uganda?",
+    "answer": {
+      "label": "Murchison Falls",
+      "point": [
+        31.68,
+        2.28
+      ]
+    },
+    "options": [
+      "Jim Jim Falls",
+      "Augrabies Falls",
+      "Murchison Falls",
+      "Nachi-Fälle"
+    ],
+    "fact": "Murchison Falls ist ein Wasserfall in Uganda.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate-UG",
+    "country": "UG",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Murchison Falls?",
+    "answer": {
+      "label": "Murchison Falls",
+      "point": [
+        31.68,
+        2.28
+      ]
+    },
+    "options": [],
+    "fact": "Murchison Falls ist ein Wasserfall in Uganda.",
+    "source": "Kuratiert"
+  },
+  {
     "id": "gen-mountain_range-UG",
     "country": "UG",
     "category": "mountain_range",
@@ -49212,10 +50337,10 @@
       "label": "Mitumba-gebirge"
     },
     "options": [
-      "Jabal bin Ghunaymah",
-      "Mitumba-gebirge",
-      "Korjakengebirge",
-      "Flinders Ranges"
+      "Ahmar-Gebirge",
+      "Tschuktschen-Gebirge",
+      "Arakan-Joma-Gebirge",
+      "Mitumba-gebirge"
     ],
     "fact": "Das Gebirge Mitumba-gebirge liegt in Uganda.",
     "source": "https://www.naturalearthdata.com/"
@@ -49233,10 +50358,10 @@
       "label": "Ruwenzori-Gebirge"
     },
     "options": [
-      "Vogesen",
+      "Central Makran Range",
       "Ruwenzori-Gebirge",
-      "Prince Charles Mountains",
-      "Karasberge"
+      "Executive Committee Range",
+      "Tuwaiq"
     ],
     "fact": "Das Gebirge Ruwenzori-Gebirge liegt in Uganda.",
     "source": "https://www.naturalearthdata.com/"
@@ -50739,6 +51864,96 @@
     "source": "Kuratiert"
   },
   {
+    "id": "gen-waterfall-US",
+    "country": "US",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in den USA?",
+    "answer": {
+      "label": "Yosemite Falls",
+      "point": [
+        -119.596,
+        37.756
+      ]
+    },
+    "options": [
+      "Yosemite Falls",
+      "Rheinfall",
+      "Kravica-Wasserfälle",
+      "Multnomah Falls"
+    ],
+    "fact": "Yosemite Falls ist ein Wasserfall in den USA.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate-US",
+    "country": "US",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Yosemite Falls?",
+    "answer": {
+      "label": "Yosemite Falls",
+      "point": [
+        -119.596,
+        37.756
+      ]
+    },
+    "options": [],
+    "fact": "Yosemite Falls ist ein Wasserfall in den USA.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall2-US",
+    "country": "US",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in den USA?",
+    "answer": {
+      "label": "Multnomah Falls",
+      "point": [
+        -122.115,
+        45.576
+      ]
+    },
+    "options": [
+      "Huangguoshu-Wasserfall",
+      "Rheinfall",
+      "Gullfoss",
+      "Multnomah Falls"
+    ],
+    "fact": "Multnomah Falls ist ein Wasserfall in den USA.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate2-US",
+    "country": "US",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Multnomah Falls?",
+    "answer": {
+      "label": "Multnomah Falls",
+      "point": [
+        -122.115,
+        45.576
+      ]
+    },
+    "options": [],
+    "fact": "Multnomah Falls ist ein Wasserfall in den USA.",
+    "source": "Kuratiert"
+  },
+  {
     "id": "gen-desert-US",
     "country": "US",
     "category": "desert",
@@ -50751,10 +51966,10 @@
       "label": "Chihuahua-Wüste"
     },
     "options": [
-      "Große Sandwüste",
       "Chihuahua-Wüste",
-      "Erg Iguidi",
-      "Libysche Wüste"
+      "Etosha-Pfanne",
+      "Kawir",
+      "Erg Murzuk"
     ],
     "fact": "Die Wüste Chihuahua-Wüste liegt in den USA.",
     "source": "https://www.naturalearthdata.com/"
@@ -50772,10 +51987,10 @@
       "label": "Sonora-Wüste"
     },
     "options": [
-      "Akchâr",
-      "Hungersteppe",
+      "Nefud",
       "Sonora-Wüste",
-      "Nubische Wüste"
+      "Kawir",
+      "Namib"
     ],
     "fact": "Die Wüste Sonora-Wüste liegt in den USA.",
     "source": "https://www.naturalearthdata.com/"
@@ -50793,10 +52008,10 @@
       "label": "Rocky Mountains"
     },
     "options": [
+      "Sredinny-Höhenrücken",
       "Rocky Mountains",
-      "Nan Ling",
-      "Queen Alexandra Range",
-      "Suntar-Chajata-Gebirge"
+      "Selwyn Range",
+      "Altai"
     ],
     "fact": "Das Gebirge Rocky Mountains liegt in den USA.",
     "source": "https://www.naturalearthdata.com/"
@@ -50815,9 +52030,9 @@
     },
     "options": [
       "Appalachen",
-      "Tscherskigebirge",
-      "Sichote-Alin",
-      "Blue Mountains"
+      "Südliche Ghats",
+      "Ruwenzori-Gebirge",
+      "Skandinavisches Gebirge"
     ],
     "fact": "Das Gebirge Appalachen liegt in den USA.",
     "source": "https://www.naturalearthdata.com/"
@@ -50835,10 +52050,10 @@
       "label": "Long Island"
     },
     "options": [
-      "Akimiski Island",
-      "Malta",
-      "Mansel Island",
-      "Long Island"
+      "Huahine",
+      "Long Island",
+      "Gotland",
+      "Saipan"
     ],
     "fact": "Die Insel Long Island liegt in den USA.",
     "source": "https://www.naturalearthdata.com/"
@@ -51808,6 +53023,51 @@
     "source": "Kuratiert nach IUCN-Verbreitungsangaben"
   },
   {
+    "id": "gen-waterfall-VE",
+    "country": "VE",
+    "category": "waterfall",
+    "interactions": [
+      "mc"
+    ],
+    "difficulty": 2,
+    "question": "Welcher Wasserfall liegt in Venezuela?",
+    "answer": {
+      "label": "Angel Falls",
+      "point": [
+        -62.535,
+        5.97
+      ]
+    },
+    "options": [
+      "Huangguoshu-Wasserfall",
+      "Murchison Falls",
+      "Angel Falls",
+      "Dettifoss"
+    ],
+    "fact": "Angel Falls ist ein Wasserfall in Venezuela.",
+    "source": "Kuratiert"
+  },
+  {
+    "id": "gen-waterfall-locate-VE",
+    "country": "VE",
+    "category": "waterfall",
+    "interactions": [
+      "drag"
+    ],
+    "difficulty": 2,
+    "question": "Wo liegt der Wasserfall Angel Falls?",
+    "answer": {
+      "label": "Angel Falls",
+      "point": [
+        -62.535,
+        5.97
+      ]
+    },
+    "options": [],
+    "fact": "Angel Falls ist ein Wasserfall in Venezuela.",
+    "source": "Kuratiert"
+  },
+  {
     "id": "gen-mountain_range-VE",
     "country": "VE",
     "category": "mountain_range",
@@ -51820,10 +53080,10 @@
       "label": "Anden"
     },
     "options": [
-      "Neuguinea highlands",
-      "Dalou Shan",
       "Anden",
-      "Salmon River Mountains"
+      "Mbang-Gebirge",
+      "Tannu-ola-Gebirge",
+      "Black Hills"
     ],
     "fact": "Das Gebirge Anden liegt in Venezuela.",
     "source": "https://www.naturalearthdata.com/"
@@ -51841,10 +53101,10 @@
       "label": "Guayana"
     },
     "options": [
-      "Königin-Maud-Gebirge",
-      "Großes Hinggan-Gebirge",
+      "Südliche Ghats",
       "Guayana",
-      "Great Dividing Range"
+      "Hindukusch",
+      "Neuseeländische Alpen"
     ],
     "fact": "Das Gebirge Guayana liegt in Venezuela.",
     "source": "https://www.naturalearthdata.com/"

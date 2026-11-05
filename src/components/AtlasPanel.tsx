@@ -27,6 +27,7 @@ const CATEGORY_LABEL: Record<string, string> = {
   peninsula: "Halbinseln",
   animal: "Tierwelt",
   volcano: "Vulkane",
+  waterfall: "Wasserfälle",
 };
 
 const CATEGORY_ICON: Record<string, string> = {
@@ -52,6 +53,7 @@ const CATEGORY_ICON: Record<string, string> = {
   peninsula: "🌅",
   animal: "🐾",
   volcano: "🌋",
+  waterfall: "💦",
 };
 
 const numberFormat = new Intl.NumberFormat("de-DE");

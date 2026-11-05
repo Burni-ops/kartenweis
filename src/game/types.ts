@@ -26,7 +26,8 @@ export type FactCategory =
   | "island"
   | "peninsula"
   | "animal"
-  | "volcano";
+  | "volcano"
+  | "waterfall";
 
 export interface FactAnswer {
   label: string;

@@ -105,6 +105,12 @@ export const ACHIEVEMENTS: AchievementDef[] = [
     icon: "🌋",
   },
   {
+    id: "waterfalls-3",
+    title: "Wasserfall-Fan",
+    description: "Meistere 3 Wasserfall-Fakten.",
+    icon: "💦",
+  },
+  {
     id: "atlas-10",
     title: "Atlas-Fan",
     description: "Besuche 10 Länder im Atlas.",
@@ -194,6 +200,9 @@ export function evaluateAchievements(
   }
   if (masteredByCategory(context.facts, ["volcano"]) >= 3) {
     ids.push("volcanoes-3");
+  }
+  if (masteredByCategory(context.facts, ["waterfall"]) >= 3) {
+    ids.push("waterfalls-3");
   }
   if (Object.keys(context.visitedCountries).length >= 10) {
     ids.push("atlas-10");
