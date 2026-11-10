@@ -1396,7 +1396,7 @@ export default function MapView({
       )}
 
       {runQuestion?.interaction === "drag" && !runFeedback && (
-        <div className="pointer-events-none absolute inset-x-0 bottom-6 z-30 flex justify-center">
+        <div className="pointer-events-none absolute inset-x-0 top-[clamp(10rem,24%,18rem)] z-30 flex justify-center">
           <button
             type="button"
             aria-label="Symbol auf die Karte ziehen"
