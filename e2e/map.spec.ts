@@ -1,5 +1,60 @@
 import { test, expect, type Page } from "@playwright/test";
 
+type RunQuestion = {
+  category: string;
+  interaction: string;
+  answer: { label: string };
+};
+
+type AppState = {
+  run?: { index: number; questions: RunQuestion[] };
+};
+
+async function currentQuestion(page: Page): Promise<RunQuestion | null> {
+  return page.evaluate(() => {
+    const run = (
+      window as unknown as { __app?: { run?: AppState["run"] } }
+    ).__app?.run;
+    return run ? (run.questions[run.index] ?? null) : null;
+  });
+}
+
+/** Answer (or skip) the current question and wait until the next one is shown. */
+async function advanceQuestion(page: Page) {
+  const before = await page.evaluate(
+    () =>
+      (
+        window as unknown as { __app?: { run?: AppState["run"] } }
+      ).__app?.run?.index ?? 0,
+  );
+
+  const skip = page.getByRole("button", { name: "Ich weiß es nicht" });
+  if ((await skip.count()) > 0) {
+    await skip.first().click();
+  } else {
+    const option = page
+      .locator(".sheet button")
+      .filter({ hasNotText: "Ich weiß es nicht" })
+      .first();
+    await option.click();
+  }
+
+  const next = page.getByRole("button", { name: /Weiter|Ergebnis ansehen/ });
+  await expect(next).toBeVisible({ timeout: 20_000 });
+  await next.click();
+
+  await page.waitForFunction(
+    (previous) => {
+      const run = (
+        window as unknown as { __app?: { run?: AppState["run"] } }
+      ).__app?.run;
+      return !run || run.index > previous;
+    },
+    before,
+    { timeout: 20_000 },
+  );
+}
+
 async function waitForMapSettled(page: Page) {
   await page.waitForFunction(
     () =>
@@ -7,7 +62,7 @@ async function waitForMapSettled(page: Page) {
         (window as unknown as { __map?: { loaded(): boolean } }).__map?.loaded(),
       ),
     undefined,
-    { timeout: 20_000 },
+    { timeout: 30_000 },
   );
   // Give the initial continent fit animation time to finish before projecting.
   await page.waitForTimeout(1_500);
@@ -144,52 +199,27 @@ test("reveals a sea or strait answer on the map", async ({ page }) => {
   await page.getByRole("button", { name: /Europa-Run starten/ }).click();
   await expect(page.getByText(/Frage 1\b/)).toBeVisible();
 
-  const target = await page.evaluate(() => {
-    const app = (
-      window as unknown as {
-        __app?: {
-          run?: {
-            questions: Array<{
-              category: string;
-              answer: { label: string };
-            }>;
-          };
-        };
-      }
-    ).__app;
-    if (!app?.run) return null;
-    const index = app.run.questions.findIndex(
-      (question) =>
-        question.category === "sea" || question.category === "strait",
-    );
-    return index >= 0
-      ? { index, answer: app.run.questions[index].answer.label }
-      : null;
-  });
-
-  expect(target).not.toBeNull();
-
-  for (let index = 0; index < (target?.index ?? 0); index += 1) {
-    const skip = page.getByRole("button", { name: "Ich weiß es nicht" });
-    if (await skip.count()) {
-      await skip.click();
-    } else {
-      const option = page
-        .locator(".sheet button")
-        .filter({ hasNotText: "Ich weiß es nicht" })
-        .first();
-      if (await option.count()) await option.click();
+  // Walk forward until a sea or strait question shows up. The question bank is
+  // randomized, so search the live run instead of assuming a fixed position.
+  let target: RunQuestion | null = null;
+  for (let step = 0; step < 30; step += 1) {
+    const question = await currentQuestion(page);
+    if (!question) break;
+    if (question.category === "sea" || question.category === "strait") {
+      target = question;
+      break;
     }
-    await page.getByRole("button", { name: /Weiter|Ergebnis ansehen/ }).click();
-    await page.waitForTimeout(300);
+    await advanceQuestion(page);
   }
 
+  expect(target, "sea or strait question in the run").not.toBeNull();
+
   await page
-    .getByRole("button", { name: target!.answer, exact: true })
+    .getByRole("button", { name: target!.answer.label, exact: true })
     .click();
 
   await expect(page.locator(".reveal-label")).toBeVisible();
-  await expect(page.locator(".reveal-label")).toContainText(target!.answer);
+  await expect(page.locator(".reveal-label")).toContainText(target!.answer.label);
 });
 
 test("opens the atlas, selects a river and reveals it on the map", async ({

@@ -184,11 +184,9 @@ Danach unter **Settings → Actions → General** sicherstellen, dass Workflows 
 
 ## GitHub Pages (optional)
 
-Die Action **Deploy Web** veröffentlicht den Web-Build auf GitHub Pages. Die Pages-Site muss einmalig unter **Settings → Pages → Source: GitHub Actions** aktiviert werden.
+Die Action **Deploy Web** veröffentlicht den Web-Build auf GitHub Pages: <https://burni-ops.github.io/kartenweis/>. Ist die Pages-Site im Repository noch nicht aktiviert, bricht der Workflow nicht mehr ab, sondern beendet sich mit einem Hinweis.
 
-Optional kann der Workflow die Site selbst anlegen: Dafür ein Repository-Secret `PAGES_TOKEN` mit einem PAT (Scope `repo` bzw. Pages write) hinterlegen. Ohne diesen Token nutzt der Workflow das normale `GITHUB_TOKEN`, das keine Pages-Site anlegen darf.
-
-Bei privaten Repositories kann GitHub Pages vom GitHub-Plan abhängen. Alternativ den Web-Build aus dem Release-ZIP oder den Docker-Container nutzen.
+Einmalig nötig: **Settings → Pages → Source: GitHub Actions**. Die Site selbst kann nur mit einem Admin-Token angelegt werden; das `GITHUB_TOKEN` der Action darf das nicht. Wer das automatisieren will, hinterlegt ein Repository-Secret `PAGES_TOKEN` mit einem PAT (Scope `repo` bzw. Pages write).
 
 ## Daten & Lizenzen
 
