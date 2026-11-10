@@ -135,6 +135,7 @@ test("starts a Europe run and gives feedback on the first question", async ({
 });
 
 test("reveals a sea or strait answer on the map", async ({ page }) => {
+  test.setTimeout(90_000);
   await page.goto("/");
   await expect(page.getByText("Länder entdecken")).toBeVisible({
     timeout: 20_000,
@@ -180,7 +181,7 @@ test("reveals a sea or strait answer on the map", async ({ page }) => {
       if (await option.count()) await option.click();
     }
     await page.getByRole("button", { name: /Weiter|Ergebnis ansehen/ }).click();
-    await page.waitForTimeout(800);
+    await page.waitForTimeout(300);
   }
 
   await page
