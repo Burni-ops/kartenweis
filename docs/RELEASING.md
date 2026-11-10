@@ -89,3 +89,5 @@ Der Workflow `.github/workflows/deploy-web.yml` veröffentlicht den Web-Build. E
 2. **Source: GitHub Actions**
 
 Der Basis-Pfad wird automatisch aus dem Repository-Namen gesetzt.
+
+Optional: Mit dem Secret `PAGES_TOKEN` (PAT mit `repo`/Pages-Write) kann der Workflow die Pages-Site selbst anlegen. Ohne dieses Secret muss Pages vorher manuell aktiviert werden.

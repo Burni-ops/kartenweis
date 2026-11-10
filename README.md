@@ -184,7 +184,9 @@ Danach unter **Settings → Actions → General** sicherstellen, dass Workflows 
 
 ## GitHub Pages (optional)
 
-Die Action **Deploy Web** veröffentlicht den Web-Build auf GitHub Pages und versucht die Pages-Site automatisch zu aktivieren. Falls das Repository Pages nicht automatisch freigibt, einmalig unter **Settings → Pages → Source** die Option **GitHub Actions** wählen. Der Build berücksichtigt den Repository-Namen automatisch als Basis-Pfad.
+Die Action **Deploy Web** veröffentlicht den Web-Build auf GitHub Pages. Die Pages-Site muss einmalig unter **Settings → Pages → Source: GitHub Actions** aktiviert werden.
+
+Optional kann der Workflow die Site selbst anlegen: Dafür ein Repository-Secret `PAGES_TOKEN` mit einem PAT (Scope `repo` bzw. Pages write) hinterlegen. Ohne diesen Token nutzt der Workflow das normale `GITHUB_TOKEN`, das keine Pages-Site anlegen darf.
 
 Bei privaten Repositories kann GitHub Pages vom GitHub-Plan abhängen. Alternativ den Web-Build aus dem Release-ZIP oder den Docker-Container nutzen.
 

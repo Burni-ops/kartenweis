@@ -17,6 +17,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PAGES_TOKEN: ${{ secrets.PAGES_TOKEN }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -28,9 +30,15 @@ jobs:
         env:
           VITE_BASE: /${{ github.event.repository.name }}/
         run: npm run build
-      - uses: actions/configure-pages@v6
+      - name: Configure Pages (auto-enable with PAGES_TOKEN)
+        if: env.PAGES_TOKEN != ''
+        uses: actions/configure-pages@v6
         with:
           enablement: true
+          token: ${{ env.PAGES_TOKEN }}
+      - name: Configure Pages (existing site)
+        if: env.PAGES_TOKEN == ''
+        uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:
           path: dist
