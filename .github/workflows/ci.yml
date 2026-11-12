@@ -34,3 +34,13 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run e2e
+      - name: Upload Playwright results
+        if: failure()
+        uses: actions/upload-artifact@v5
+        with:
+          name: playwright-results
+          path: |
+            test-results
+            playwright-report
+          retention-days: 7
+          if-no-files-found: ignore

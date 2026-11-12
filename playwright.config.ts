@@ -13,7 +13,6 @@ export default defineConfig({
   use: {
     baseURL: "http://127.0.0.1:5173",
     trace: "on-first-retry",
-    video: isCI ? "retain-on-failure" : "off",
   },
   webServer: {
     command: "npm run dev",
